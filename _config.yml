@@ -1,0 +1,13 @@
+# Site settings
+title: Monket.net
+email: karl@monket.net
+description: >
+  Personal homepage of Karl O'Keeffe
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://monket.net" # the base hostname & protocol for your site
+twitter_username: karlrokeeffe
+github_username:  karl
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
