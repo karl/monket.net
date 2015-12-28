@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title>The Wintersmith's blog
+    <title>Karl O'Keeffe
     </title>
-    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="/css/main.css">
   </head>
@@ -14,8 +14,8 @@
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
-          <h1><a href="http://localhost:8080">The Wintersmith's blog</a></h1>
-          <p class="description">Ramblings of an immor(t)al demigod</p>
+          <h1><a href="/">Karl O'Keeffe</a></h1>
+          <p class="description"></p>
         </div>
       </div>
     </header>
@@ -23,34 +23,168 @@
       <div class="content-wrap">
         <article class="article intro">
           <header>
-            <p class="date"><span>30. April 2013</span></p>
-            <h2><a href="/articles/hello-world/">README</a></h2>
+            <p class="date"><span>12. April 2010</span></p>
+            <h2><a href="/articles/small-update-to-loris-0-1-3/">Small Update to Loris (0.1.3)</a></h2>
           </header>
-          <section class="content"><p>Welcome to your new blog! This is the default blog template with <span class="caps">RSS</span>, pagination and an archive. There are other templates available – run <code>wintersmith new --help</code> to list&nbsp;them.</p>
+          <section class="content"><p>A few months ago <a href="http://monket.net/blog/2009/11/loris-autotest-for-javascript/">I wrote about Loris</a>, a small tool that will automatically run your javascript tests whenever a file&nbsp;changes.</p>
+<p>I’ve just released a new version of the <a href="http://rubygems.org/gems/loris">Loris gem</a> with a couple of minor&nbsp;fixes:</p>
+<ul>
+<li><p>The dependency on <code>win32-process</code> has now been removed from the gem. This means the gem now installs correctly on <span class="caps">OSX</span>. Windows users will manually need to install the <code>win32-process</code> gem.</p>
+</li>
+<li><p>The dependancy on <code>visionmedia-bind</code> has been updated to just <code>bind</code>, reflecting the gems new name on&nbsp;RubyGems.</p>
+</li>
+<li><p>The <span class="caps">JS</span> Test Driver server is now reset between all tests. This stops it getting into a situation where it failed to pick up changes to&nbsp;files.</p>
+</li>
+</ul>
+<p>Because <a href="http://rubygems.org/">RubyGems</a> is now the default gem host, this install process is a little&nbsp;simpler.</p>
+<pre><code class="lang-bash">sudo gem install loris
+</code></pre>
+<p>or on&nbsp;Windows</p>
+<pre><code class="lang-bash">gem install loris
+gem install win32-process
+</code></pre>
 
-            <p class="more"><a href="/articles/hello-world/">more</a></p>
           </section>
         </article>
         <article class="article intro">
           <header>
-            <p class="date"><span>01. April 2013</span></p>
-            <h2><a href="/articles/red-herring/">A red herring</a></h2>
+            <p class="date"><span>09. April 2010</span></p>
+            <h2><a href="/articles/qunitadapter-1-1-0/">QUnitAdapter 1.1.0</a></h2>
           </header>
-          <section class="content"><p>A long time ago, when the world was young – someone put some food on their tongue.
-They tasted the food, and thought it was nice. Most fruit liked it – but banana’s thought&nbsp;twice.</p>
-<p>
-            <p class="more"><a href="/articles/red-herring/">more</a></p>
+          <section class="content"><p>I’ve updated the <span class="caps">JS</span> Test Driver <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnitAdapter</a> to improve compatibility with&nbsp;QUnit.</p>
+<p>Variables set on the <code>this</code> object within are now available within setup, teardown, and the tests&nbsp;themselves.</p>
+<pre><code class="lang-javascript"><span class="built_in">module</span>(<span class="string">'Lifecycle'</span>, {
+  setup: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.mockString = <span class="string">"some string"</span>;
+  },
+  teardown: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    equals(<span class="keyword">this</span>.mockString, <span class="string">"some string"</span>);
+  }
+});
+
+test(<span class="string">"Things assigned to this in setup are available in test"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  equals(<span class="keyword">this</span>.mockString, <span class="string">"some string"</span>);
+});
+</code></pre>
+<p>The <code>test</code> function now supports the optional second parameter of the expected number of&nbsp;assertions.</p>
+<pre><code class="lang-javascript"><span class="comment">// declare that this test has expects 1 assertion</span>
+test(<span class="string">'Test with expected defined as 2<span class="ord">nd</span> param'</span>, <span class="number">1</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+  ok(<span class="literal">true</span>);
+});
+</code></pre>
+<p>My thanks go to <code>anotherhero</code> for providing the <a href="http://code.google.com/p/js-test-driver/issues/detail?id=116">patch</a> to fix both these&nbsp;issues.</p>
+<p>You can always <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">download the latest version of QUnitAdapter from Google Code</a>.</p>
+
           </section>
         </article>
         <article class="article intro">
           <header>
-            <p class="date"><span>01. October 2012</span></p>
-            <h2><a href="/articles/another-test/">Code and stuff!</a></h2>
+            <p class="date"><span>12. February 2010</span></p>
+            <h2><a href="/articles/detecting-when-a-page-is-loaded-from-the-browser-cache/">Detecting when a page is loaded from the browser cache</a></h2>
           </header>
-          <section class="content"><p>Syntax highlighting with <a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a>.
-The theme used is tomorrow, you can find more themes <a href="http://jmblog.github.io/color-themes-for-highlightjs/">here</a>.</p>
-<p>
-            <p class="more"><a href="/articles/another-test/">more</a></p>
+          <section class="content"><p>When a user presses the back button in their browser to return to a previous page, that page is usually loaded straight from the browser’s cache, without any requests being made to the server. When that page shows information that could be out of date (such a an old list of products in your basket) this can cause&nbsp;problems.</p>
+<p>So how about we knock up a little code that allows us to determine whether the page has been loaded from the server or the browsers cache. Then we can reload those parts of the page that may need updating (such as the&nbsp;basket).</p>
+<p>We can do this by setting a cookie on every response from the server, and modifying that cookie using javascript. We can then use this cookie to know whether the page has been loaded from the server or the browser&nbsp;cache.</p>
+
+            <p class="more"><a href="/articles/detecting-when-a-page-is-loaded-from-the-browser-cache/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>10. November 2009</span></p>
+            <h2><a href="/articles/qunitadapter-1-0-3/">QUnitAdapter 1.0.3</a></h2>
+          </header>
+          <section class="content"><p>Just a small update to the <span class="caps">JS</span> Test Driver <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnitAdapter</a>. Version 1.0.3 has been released, and fixes a single&nbsp;bug:</p>
+<p><strong><a href="http://code.google.com/p/js-test-driver/issues/detail?id=64">Issue 64</a>: QUnit Adapter fails to run tests if you don’t include a&nbsp;module</strong></p>
+<p>You can now declare tests without a module, and they will run under the <code>Default Module</code>. In previous versions these tests would be silently ignored&nbsp;(whoops!).</p>
+<p>You can always <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">download the latest version of QUnitAdapter from Google Code</a>.</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>06. November 2009</span></p>
+            <h2><a href="/articles/loris-autotest-for-javascript/">Loris Autotest for Javascript</a></h2>
+          </header>
+          <section class="content"><p>I’ve <a href="http://monket.net/blog/tag/autotest/">previously written a number of posts on javascript and autotest</a>. Explaining how to integrate javascript lint, unit tests, and growl with the ruby <a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a>&nbsp;project.</p>
+<p>While this all worked, it felt a little clunky as Autotest doesn’t natively support the idea of running multiple tasks one after the other. Rather than hack at the Autotest codebase, I thought I’d get some ruby experience by rolling my own autotest-style framework. Not great for reuse of code, but a great way for me to learn&nbsp;:)</p>
+
+            <p class="more"><a href="/articles/loris-autotest-for-javascript/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>14. September 2009</span></p>
+            <h2><a href="/articles/screenshots-of-failing-cucumber-scenarios/">Screenshots of Failing Cucumber Scenarios</a></h2>
+          </header>
+          <section class="content"><p>At 7digital we use <a href="http://cukes.info/">Cucumber</a> and <a href="http://wtr.rubyforge.org/">Watir</a> for running acceptance tests on some of our&nbsp;websites.</p>
+<p>These tests can help greatly in spotting problems with configuration, databases, load balancing, etc that unit testing&nbsp;misses.</p>
+<p>But because the tests exercise the whole system, from the browser all the way through the the database, they can tend be flakier than unit tests. Then can fail one minute and work the next, which can make debugging them a&nbsp;nightmare.</p>
+<p>So, to make the task of spotting the cause of failing acceptance tests easier, how about we set up Cucumber to take a screenshot of the desktop (and therefore browser) any time a scenario&nbsp;fails.</p>
+
+            <p class="more"><a href="/articles/screenshots-of-failing-cucumber-scenarios/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>03. September 2009</span></p>
+            <h2><a href="/articles/cucumber-tests-as-first-class-citizens-in-teamcity/">Cucumber Tests as First Class Citizens in TeamCity</a></h2>
+          </header>
+          <section class="content"><p><a href="http://www.jetbrains.com/teamcity/">TeamCity</a> is a great continuous integration server, and has brilliant built in support for running <a href="http://www.nunit.org/">NUnit</a> tests. The web interface updates automatically as each test is run, and gives immediate feedback on which tests have failed without waiting for the entire suite to finish. It also keeps track of tests over multiple builds, showing you exactly when each test first failed, how often they fail&nbsp;etc.</p>
+<p>If like me you are using <a href="http://cukes.info/">Cucumber</a> to run your acceptance tests, wouldn’t it be great to get the same level of TeamCity integration for every Cucumber test. Well now you can, using the <code>TeamCity::Cucumber::Formatter</code> from the TeamCity 5.0 <span class="caps">EAP</span>&nbsp;release.</p>
+<p>JetBrains, the makers of TeamCity, released a <a href="http://blogs.jetbrains.com/ruby/2009/08/testing-rubymine-with-cucumber/">blog post demostrating the Cucumber test integration</a>, but without any details in how to set it up yourself. So I’ll take you through it&nbsp;here.</p>
+
+            <p class="more"><a href="/articles/cucumber-tests-as-first-class-citizens-in-teamcity/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>03. September 2009</span></p>
+            <h2><a href="/articles/qunit-to-jspec-adapter/">QUnit to JSpec Adapter</a></h2>
+          </header>
+          <section class="content"><p><a href="http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/">JSpec</a> is a Javascript <span class="caps">BDD</span> framework with a lot of great things going for it: It can run without a browser (great for continuous integration servers), it
+has a Ruby style custom syntax which makes tests easier to write and read, and
+it uses a BDD style describe/should&nbsp;syntax.</p>
+<p>It’s a very tempting framework to use, but I already have a large collection
+of tests using qunit. I don’t want to use two frameworks for one project, and I
+don’t want to rewrite 300+ tests, so what to&nbsp;do?</p>
+<p>How about a QUnit to JSpec Adapter, in the vein of my
+<a href="http://github.com/visionmedia/js-mock-timers/tree/master">QUnit to <span class="caps">JS</span> Test Driver Adapter</a>. Just load the adapter into JSpec as a
+normal javascript file, and you can now<code>exec()</code> qunit test files in&nbsp;JSpec.</p>
+
+            <p class="more"><a href="/articles/qunit-to-jspec-adapter/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>30. August 2009</span></p>
+            <h2><a href="/articles/qunit-adapter-1-0-2/">QUnit Adapter 1.0.2</a></h2>
+          </header>
+          <section class="content"><p>A new version of the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter"><span class="caps">JS</span> Test Driver QUnit Adapter</a> is&nbsp;available. </p>
+<p>Version 1.0.2 fixes a small bug where a module lifecycle object without Setup or Teardown methods would cause a test to error. For&nbsp;example:</p>
+<pre><code class="lang-javascript"><span class="built_in">module</span>(<span class="string">'Lifecycle'</span>, {});
+
+test(<span class="string">''</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    expect(<span class="number">1</span>);
+    ok(<span class="literal">true</span>, <span class="string">'tests still run successfully even if Setup and Teardown are undefined'</span>);
+});
+</code></pre>
+<p>Would give the error <code>Lifecycle.test  error (1.00 ms): Result of expression &#39;l.setUp&#39; [undefined] is not a function.</code>.</p>
+<p>This is now fixed so the test behaves as if no lifecycle was&nbsp;defined.</p>
+<p>You can get the new <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">1.0.2 verison of the QUnit Adapter from Google Code</a>.</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>25. August 2009</span></p>
+            <h2><a href="/articles/running-js-test-driver-in-team-city/">Running JS Test Driver in Team City</a></h2>
+          </header>
+          <section class="content"><p><a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> is a great new Javascript Testing Framework from the guys at Google. It provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great&nbsp;overview.</p>
+<p>Getting <span class="caps">JS</span> Test Driver up and running on your development workstation is easy enough. But how about on a continuous integration server such as <a href="http://www.jetbrains.com/teamcity/">TeamCity</a>?</p>
+<p>It’s easy, just follow the instructions&nbsp;below!</p>
+
+            <p class="more"><a href="/articles/running-js-test-driver-in-team-city/">more</a></p>
           </section>
         </article>
       </div>
@@ -59,21 +193,11 @@ The theme used is tomorrow, you can find more themes <a href="http://jmblog.gith
       <div class="content-wrap">
         <div class="nav"><a href="/archive.html">« Archives</a><a href="/page/2/">Next page »</a>
         </div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
 
         </section>
         <section class="copy">
-          <p>&copy; 2015 Someone &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
-          </p>
+          <p>© 2015 Karl O'Keeffe</p>
         </section>
       </div>
     </footer>

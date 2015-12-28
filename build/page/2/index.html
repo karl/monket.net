@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title>The Wintersmith's blog
+    <title>Karl O'Keeffe
     </title>
-    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="/css/main.css">
   </head>
@@ -14,8 +14,8 @@
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
-          <h1><a href="http://localhost:8080">The Wintersmith's blog</a></h1>
-          <p class="description">Ramblings of an immor(t)al demigod</p>
+          <h1><a href="/">Karl O'Keeffe</a></h1>
+          <p class="description"></p>
         </div>
       </div>
     </header>
@@ -23,47 +23,153 @@
       <div class="content-wrap">
         <article class="article intro">
           <header>
-            <p class="date"><span>02. February 2012</span></p>
-            <h2><a href="/articles/markdown-syntax/">Markdown syntax</a></h2>
+            <p class="date"><span>24. July 2009</span></p>
+            <h2><a href="/articles/new-version-of-autotest-growl-with-window-support/">New version of Autotest Growl (with Window support)</a></h2>
           </header>
-          <section class="content"><p>Full markdown syntax taken from John Gruber’s <a href="http://daringfireball.net/projects/markdown/syntax">Daring Fireball</a>.
-Did you know that 9 out of 10 bloggers prefer to write in&nbsp;markdown?</p>
+          <section class="content"><p>In a previous post I detailed changes I made to <a href="http://monket.net/blog/2009/07/autotest-growl-for-windows/">add Growl for Windows support to Autotest Growl</a>.</p>
+<p>These changes have now been integrated back into the <code>autotest-growl</code> gem. Along with some major improvements to the analysis of test results, and the details in the notifications. Thanks to <a href="http://github.com/svoop">Svoop</a>, the creator of <code>autotest-growl</code>.</p>
+<p>This gem isn’t yet available on <a href="http://rubyforge.org/">Rubyforge</a>, but you can grab a copy from my fork on GitHub until it&nbsp;is:</p>
+<pre><code class="lang-bash">gem install karl-autotest-growl --source http://gems.github.com
+</code></pre>
+<p>This should be a drop in replacement for the previous version of <code>karl-autotest-growl</code>, the only thing you should notice more detail from the growl&nbsp;notifications!</p>
+<p>I’ll post again once the official gem is available on <a href="http://rubyforge.org/">Rubyforge</a>.</p>
 
-            <p class="more"><a href="/articles/markdown-syntax/">more</a></p>
           </section>
         </article>
         <article class="article intro">
           <header>
-            <p class="date"><span>01. February 2012</span></p>
-            <h2><a href="/articles/bamboo-cutter/">Taketori Monogatari</a></h2>
+            <p class="date"><span>17. July 2009</span></p>
+            <h2><a href="/articles/ruby-growl-notifications-in-windows/">Ruby Growl Notifications in Windows</a></h2>
           </header>
-          <section class="content"><p>Long, long ago, there lived an old bamboo&nbsp;wood-cutter.</p>
-<p>He was very poor and sad also, for no child had Heaven sent to cheer his old age, and in his heart there was no hope of rest from work till he died and was laid in the quiet grave. Every morning he went forth into the woods and hills wherever the bamboo reared its lithe green plumes against the sky. When he had made his choice, he would cut down these feathers of the forest, and splitting them lengthwise, or cutting them into joints, would carry the bamboo wood home and make it into various articles for the household, and he and his old wife gained a small livelihood by selling&nbsp;them.</p>
-<p>
-            <p class="more"><a href="/articles/bamboo-cutter/">more</a></p>
+          <section class="content"><p>I previously posted an update that enables <a href="http://monket.net/blog/2009/07/autotest-growl-for-windows/">Growl notifications for Autotest in Windows</a>.</p>
+<p>Which is nice, but what about other Ruby programs, they might want to send Growl notifications too. To this end Vision Media have produced a <a href="http://github.com/visionmedia/growl/tree/master">Ruby Growl gem</a> which makes it easy for any Ruby program to send Growl&nbsp;notifications.</p>
+<p>But the visionmedia-growl gem only works on&nbsp;<span class="caps">OSX</span>.</p>
+
+            <p class="more"><a href="/articles/ruby-growl-notifications-in-windows/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>10. July 2009</span></p>
+            <h2><a href="/articles/autotest-growl-for-windows/">Autotest Growl for Windows</a></h2>
+          </header>
+          <section class="content"><p>In a previous blog post I detailed <a href="http://monket.net/blog/2009/06/autotest-growl-notifications-on-windows-using-snarl/">how to get Autotest Growl notifications on Windows using Snarl</a>. But, there now exists an <a href="http://www.growlforwindows.com/gfw/">official Growl client for Windows</a>.</p>
+<p>So how about we update <code>autotest-growl</code> to support Windows (on top of it’s existing support for&nbsp;<span class="caps">OSX</span>).</p>
+<p>If you don’t want to know all the gory details, you can just install my fork of the <code>autotest-growl</code> gem, that includes native Growl Windows&nbsp;support:</p>
+<pre><code class="lang-bash">gem install karl-autotest-growl --source http://gems.github.com
+</code></pre>
+<p>Obviously, you’ll need to have <a href="http://www.growlforwindows.com/gfw/">Growl for Windows</a> installed as&nbsp;well!</p>
+
+            <p class="more"><a href="/articles/autotest-growl-for-windows/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>02. July 2009</span></p>
+            <h2><a href="/articles/update-to-qunit-adapter/">Update to QUnit Adapter</a></h2>
+          </header>
+          <section class="content"><p>I’ve made a small update to the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnit Adapter for <span class="caps">JS</span> Test Driver</a>.</p>
+<p>This fixes a bug where the <code>ok()</code> assertion was much stricter than the qunit equivalent. It was only succeeding when passed a boolean <code>true</code> value.</p>
+<p>Now it behaves the same as the qunit version, and succeeds with all values other than <code>0</code>, <code>false</code>, or <code>null</code>.</p>
+<p>You can get the new <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">1.0.1 verison of the QUnit Adapter from Google Code</a>.</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>01. July 2009</span></p>
+            <h2><a href="/articles/jsunit-mock-timeouts-and-js-test-driver/">jsUnit Mock Timeouts and JS Test Driver</a></h2>
+          </header>
+          <section class="content"><p>As part of my experimenting with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>, I have been porting over a suite of about 300 existing&nbsp;tests.</p>
+<p>Some of these tests deal with time based logic, such as delayed callbacks or time limited user interaction. Currently these tests are run in a <span class="caps">HTML</span> page using <a href="http://docs.jquery.com/QUnit">qunit</a>.</p>
+<p>To deal with the time based logic I use the jsUnit’s Mock Timeout. See <a href="http://googletesting.blogspot.com/2007/03/javascript-simulating-time-in-jsunit.html">Simulating Time in jsUnit Tests on the Google Testing Blog</a>.</p>
+<p>jsUnit’s Mock Timeout overrides the built in <code>setTimeout</code>, <code>clearTimeout</code>, <code>setInterval</code>, and <code>clearInterval</code> methods, and provides a <code>Clock</code> object that allows you to control the passage of&nbsp;time. </p>
+
+            <p class="more"><a href="/articles/jsunit-mock-timeouts-and-js-test-driver/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>01. July 2009</span></p>
+            <h2><a href="/articles/qunitadapter-now-part-of-js-test-driver/">QUnitAdapter now part of JS Test Driver</a></h2>
+          </header>
+          <section class="content"><p>In my last post I <a href="http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/">introduced a QUnit to <span class="caps">JS</span> Test Driver adapter</a>, a small adapter which converts QUnit tests into native <span class="caps">JS</span> Test Driver&nbsp;tests.</p>
+<p>This adapter is now part of the <span class="caps">JS</span> Test Driver&nbsp;project.</p>
+<p>There is now a <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnit Adapter wiki page</a> on the <span class="caps">JS</span> Test Driver project site. This will be updated to keep up with any changes to the&nbsp;adapter.</p>
+<p>The code is now stored within the <span class="caps">JS</span> Test Driver subversion repository. You can always <a href="http://code.google.com/p/js-test-driver/source/browse/#svn/trunk/JsTestDriver/contrib/qunit">download the latest version of the QUnit Adapter</a> using the Google Code web&nbsp;interface.</p>
+<p>Thanks to Jeremie Lenfant-engelmann for deeming QUnit Adapter worthy of official regonition&nbsp;:)</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>23. June 2009</span></p>
+            <h2><a href="/articles/new-qunit-to-js-test-driver-adapter/">New QUnit to JS Test Driver adapter</a></h2>
+          </header>
+          <section class="content"><div class="info">The code in this post is out of date. The latest code can always be found in the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter"><span class="caps">JS</span> Test Driver google code site</a></div>
+
+<p>In my <a href="http://monket.net/blog/2009/06/qunit-and-js-test-driver/">previous post on QUnit and <span class="caps">JS</span> Test Driver</a> I showed how to run your <a href="http://docs.jquery.com/QUnit">qunit</a> tests with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>.</p>
+<p>The technique used was to run the tests with qunit, and report either their success or failure to <span class="caps">JS</span> Test Driver. This works, but you miss out on the important feedback of exactly which assertions have failed, and&nbsp;why.</p>
+<p>This problem has led me to taking a new approach to running qunit tests with <span class="caps">JS</span> Test Driver, where I don’t use any of the existing qunit code, and instead just create an interface wrapper that converts qunit style tests and assertions directly into JS Test Driver tests and&nbsp;assertions.</p>
+<p>This gives assertion level error reporting, making it much easier to write and debug tests. Essentially this adapter allows you to write native <span class="caps">JS</span> Test Driver tests, but using the less verbose qunit&nbsp;syntax.</p>
+<p>The new approach also means that qunit lifecycles (setup and teardown)&nbsp;work.</p>
+
+            <p class="more"><a href="/articles/new-qunit-to-js-test-driver-adapter/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>21. June 2009</span></p>
+            <h2><a href="/articles/qunit-and-js-test-driver/">QUnit and JS Test Driver</a></h2>
+          </header>
+          <section class="content"><div class="info">This post has obsoleted been the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">new QUnit Adapter</a> I created, check it out!</div>
+
+<p>I was very impressed by the new Google <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> project, which provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great&nbsp;overview.</p>
+<p>I previously described how to <a href="http://monket.net/blog/2009/06/autotest-and-js-test-driver/">run <span class="caps">JS</span> Test Driver automatically with Autotest</a>.</p>
+<p>But I have an existing project that uses the jQuery testing framework <a href="http://docs.jquery.com/QUnit">qunit</a> for testing. I didn’t really fancy rewriting 300+ tests just so I could use the <span class="caps">JS</span> Test Driver&nbsp;framework.</p>
+<p>So I wrote a converter that automatically converts qunit modules and tests into <span class="caps">JS</span> Test Driver TestCases and test&nbsp;methods.</p>
+
+            <p class="more"><a href="/articles/qunit-and-js-test-driver/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>19. June 2009</span></p>
+            <h2><a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">Autotest Growl notifications on Windows (using Snarl)</a></h2>
+          </header>
+          <section class="content"><p><a href="http://monket.net/blog/2009/06/simple-example-of-autotest-cucumber-and-growl/">Growl and Autotest work brilliantly together</a>. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the&nbsp;tests.</p>
+<p>But what about those users working on the Windows&nbsp;platform?</p>
+<p><a href="http://www.fullphat.net/index.php">Snarl</a> is a windows counterpart to Growl. Providing much of the same&nbsp;functionality.</p>
+<p>And there is a Snarl Ruby gem allowing us to create Snarl notifications from&nbsp;Ruby.</p>
+<p>So lets convert our Growl calls to Snarl calls, and get Autotest notifications under&nbsp;Windows.</p>
+
+            <p class="more"><a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>19. June 2009</span></p>
+            <h2><a href="/articles/autotest-and-js-test-driver/">Autotest and JS Test Driver</a></h2>
+          </header>
+          <section class="content"><p>Google recently released a new Javascript testing framework, <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>. It provides incredibly fast execution for Javascript unit tests, and can be run from the command line without the need for manual control of browsers. Check out this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a>.</p>
+<p>Fast test execution and the ability to be run from the command line make it a perfect fit to integrate into the Autotest test cycle. So I&nbsp;have.</p>
+<p>The module below hooks into Autotest just before the normal tests are run. It runs <span class="caps">JS</span> Test Driver over all the tests in the project, outputs the results, and finally fires off a <code>:ran_js_test_driver</code> hook.</p>
+<p>Errors and failed tests will automatically be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). By default successful tests runs are not notified through Growl, in order to keep distracting popups to a&nbsp;minimum.</p>
+
+            <p class="more"><a href="/articles/autotest-and-js-test-driver/">more</a></p>
           </section>
         </article>
       </div>
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="/">« Newer</a>
+        <div class="nav"><a href="/">« Newer</a><a href="/page/3/">Next page »</a>
         </div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
 
         </section>
         <section class="copy">
-          <p>&copy; 2015 Someone &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
-          </p>
+          <p>© 2015 Karl O'Keeffe</p>
         </section>
       </div>
     </footer>

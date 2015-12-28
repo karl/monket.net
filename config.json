@@ -1,9 +1,9 @@
 {
   "locals": {
-    "url": "http://localhost:8080",
-    "name": "The Wintersmith's blog",
-    "owner": "Someone",
-    "description": "Ramblings of an immor(t)al demigod"
+    "url": "/",
+    "name": "Karl O'Keeffe",
+    "owner": "Karl O'Keeffe",
+    "description": ""
   },
   "plugins": [
     "./plugins/paginator.coffee"
@@ -21,6 +21,6 @@
     "smartypants": true
   },
   "paginator": {
-    "perPage": 3
+    "perPage": 10
   }
 }
