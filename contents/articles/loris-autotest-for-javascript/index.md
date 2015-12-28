@@ -5,7 +5,7 @@ date: Fri, 06 Nov 2009 14:26:54 GMT
 template: article.jade
 ---
 
-I've [previously written a number of posts on javascript and autotest](http://monket.net/blog/tag/autotest/). Explaining how to integrate javascript lint, unit tests, and growl with the ruby [Autotest](http://ph7spot.com/articles/getting_started_with_autotest) project.
+I've previously written a number of posts on javascript and autotest. Explaining how to integrate javascript lint, unit tests, and growl with the ruby [Autotest](http://ph7spot.com/articles/getting_started_with_autotest) project.
 
 While this all worked, it felt a little clunky as Autotest doesn't natively support the idea of running multiple tasks one after the other. Rather than hack at the Autotest codebase, I thought I'd get some ruby experience by rolling my own autotest-style framework. Not great for reuse of code, but a great way for me to learn :)
 

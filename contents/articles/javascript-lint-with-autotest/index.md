@@ -5,7 +5,7 @@ date: Mon, 15 Jun 2009 09:00:00 GMT
 template: article.jade
 ---
 
-As well as using [Autotest to run Cucumber scenarios](http://monket.net/blog/2009/06/autotest-cucumber-and-growl/) I have also been looking into integrating lower level test into the Autotest cycle.
+As well as using [Autotest to run Cucumber scenarios](/articles/autotest-cucumber-and-growl/) I have also been looking into integrating lower level test into the Autotest cycle.
 
 My first attempt at this is a small module to run [Javascript Lint](http://javascriptlint.com/) on all the javascript files within a project any time any file changes.
 

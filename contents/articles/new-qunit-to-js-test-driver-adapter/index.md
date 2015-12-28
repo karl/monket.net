@@ -7,7 +7,7 @@ template: article.jade
 
 <div class="info">The code in this post is out of date. The latest code can always be found in the [JS Test Driver google code site](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter)</div>
 
-In my [previous post on QUnit and JS Test Driver](http://monket.net/blog/2009/06/qunit-and-js-test-driver/) I showed how to run your [qunit](http://docs.jquery.com/QUnit) tests with [JS Test Driver](http://code.google.com/p/js-test-driver/).
+In my [previous post on QUnit and JS Test Driver](/articles/qunit-and-js-test-driver/) I showed how to run your [qunit](http://docs.jquery.com/QUnit) tests with [JS Test Driver](http://code.google.com/p/js-test-driver/).
 
 The technique used was to run the tests with qunit, and report either their success or failure to JS Test Driver. This works, but you miss out on the important feedback of exactly which assertions have failed, and why.
 

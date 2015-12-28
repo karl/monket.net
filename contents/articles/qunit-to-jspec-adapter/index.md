@@ -19,7 +19,7 @@ How about a QUnit to JSpec Adapter, in the vein of my
 [QUnit to JS Test Driver Adapter][2]. Just load the adapter into JSpec as a
 normal javascript file, and you can now`exec()` qunit test files in JSpec.
 
- [2]: http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/
+ [2]: /articles/new-qunit-to-js-test-driver-adapter/
 
 ## Downloading the QUnit to JSpec Adapter
 
@@ -266,7 +266,7 @@ And you should now see your QUnit tests running in JSpec:
 This adapter has many of the same limitations and my
 [QUnit to JS Test Driver adapter][1].
 
- [1]: http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/
+ [1]: /articles/new-qunit-to-js-test-driver-adapter/
 
 The tests must run synchronously (which means no use of the qunit `stop` and
 `start` methods).

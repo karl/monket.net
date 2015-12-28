@@ -5,7 +5,7 @@ date: Mon, 12 Apr 2010 13:11:21 GMT
 template: article.jade
 ---
 
-A few months ago [I wrote about Loris](http://monket.net/blog/2009/11/loris-autotest-for-javascript/), a small tool that will automatically run your javascript tests whenever a file changes.
+A few months ago [I wrote about Loris](/articles/loris-autotest-for-javascript/), a small tool that will automatically run your javascript tests whenever a file changes.
 
 I've just released a new version of the [Loris gem](http://rubygems.org/gems/loris) with a couple of minor fixes:
 

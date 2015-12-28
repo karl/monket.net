@@ -5,7 +5,7 @@ date: Fri, 17 Jul 2009 14:24:57 GMT
 template: article.jade
 ---
 
-I previously posted an update that enables [Growl notifications for Autotest in Windows](http://monket.net/blog/2009/07/autotest-growl-for-windows/).
+I previously posted an update that enables [Growl notifications for Autotest in Windows](/articles/autotest-growl-for-windows/).
 
 Which is nice, but what about other Ruby programs, they might want to send Growl notifications too. To this end Vision Media have produced a [Ruby Growl gem](http://github.com/visionmedia/growl/tree/master) which makes it easy for any Ruby program to send Growl notifications.
 

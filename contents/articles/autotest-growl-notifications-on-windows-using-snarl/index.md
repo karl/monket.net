@@ -5,7 +5,7 @@ date: Fri, 19 Jun 2009 11:31:18 GMT
 template: article.jade
 ---
 
-[Growl and Autotest work brilliantly together](http://monket.net/blog/2009/06/simple-example-of-autotest-cucumber-and-growl/). Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the tests.
+[Growl and Autotest work brilliantly together](/articles/simple-example-of-autotest-cucumber-and-growl/). Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the tests.
 
 But what about those users working on the Windows platform?
 

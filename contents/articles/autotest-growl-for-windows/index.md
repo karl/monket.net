@@ -5,7 +5,7 @@ date: Fri, 10 Jul 2009 10:32:48 GMT
 template: article.jade
 ---
 
-In a previous blog post I detailed [how to get Autotest Growl notifications on Windows using Snarl](http://monket.net/blog/2009/06/autotest-growl-notifications-on-windows-using-snarl/). But, there now exists an [official Growl client for Windows](http://www.growlforwindows.com/gfw/).
+In a previous blog post I detailed [how to get Autotest Growl notifications on Windows using Snarl](/articles/autotest-growl-notifications-on-windows-using-snarl/). But, there now exists an [official Growl client for Windows](http://www.growlforwindows.com/gfw/).
 
 So how about we update `autotest-growl` to support Windows (on top of it's existing support for OSX).
 

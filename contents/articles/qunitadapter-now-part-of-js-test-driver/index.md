@@ -5,7 +5,7 @@ date: Wed, 01 Jul 2009 07:54:25 GMT
 template: article.jade
 ---
 
-In my last post I [introduced a QUnit to JS Test Driver adapter](http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/), a small adapter which converts QUnit tests into native JS Test Driver tests.
+In my last post I [introduced a QUnit to JS Test Driver adapter](/articles/new-qunit-to-js-test-driver-adapter/), a small adapter which converts QUnit tests into native JS Test Driver tests.
 
 This adapter is now part of the JS Test Driver project.
 

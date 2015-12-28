@@ -1,4 +1,1 @@
-
-# Blog
-
-The default [wintersmith](https://github.com/jnordberg/wintersmith) template
+# Karl O'Keeffe's Personal Website

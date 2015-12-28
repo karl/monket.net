@@ -9,7 +9,7 @@ template: article.jade
 
 I was very impressed by the new Google [JS Test Driver](http://code.google.com/p/js-test-driver/) project, which provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this [introduction to JS Test Driver by Miško Hevery](http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/) for a great overview.
 
-I previously described how to [run JS Test Driver automatically with Autotest](http://monket.net/blog/2009/06/autotest-and-js-test-driver/).
+I previously described how to [run JS Test Driver automatically with Autotest](/articles/autotest-and-js-test-driver/).
 
 But I have an existing project that uses the jQuery testing framework [qunit](http://docs.jquery.com/QUnit) for testing. I didn't really fancy rewriting 300+ tests just so I could use the JS Test Driver framework.
 

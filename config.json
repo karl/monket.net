@@ -6,7 +6,8 @@
     "description": ""
   },
   "plugins": [
-    "./plugins/paginator.coffee"
+    "./plugins/paginator.coffee",
+    "wintersmith-redirect"
   ],
   "require": {
     "moment": "moment",
@@ -22,5 +23,8 @@
   },
   "paginator": {
     "perPage": 10
+  },
+  "redirects": {
+    "old/page.html": "new/page.html"
   }
 }
