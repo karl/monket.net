@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Small Update to Loris (0.1.3) - Karl O'Keeffe
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Small Update to Loris (0.1.3)</h1>
+        <p class="author">Written by <span class="author"><a href="mailto:blog@monket.net">Karl O'Keeffe</a></span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>A few months ago <a href="/articles/loris-autotest-for-javascript/">I wrote about Loris</a>, a small tool that will automatically run your javascript tests whenever a file&nbsp;changes.</p>
+<p>I’ve just released a new version of the <a href="http://rubygems.org/gems/loris">Loris gem</a> with a couple of minor&nbsp;fixes:</p>
+<ul>
+<li><p>The dependency on <code>win32-process</code> has now been removed from the gem. This means the gem now installs correctly on <span class="caps">OSX</span>. Windows users will manually need to install the <code>win32-process</code> gem.</p>
+</li>
+<li><p>The dependancy on <code>visionmedia-bind</code> has been updated to just <code>bind</code>, reflecting the gems new name on&nbsp;RubyGems.</p>
+</li>
+<li><p>The <span class="caps">JS</span> Test Driver server is now reset between all tests. This stops it getting into a situation where it failed to pick up changes to&nbsp;files.</p>
+</li>
+</ul>
+<p>Because <a href="http://rubygems.org/">RubyGems</a> is now the default gem host, this install process is a little&nbsp;simpler.</p>
+<pre><code class="lang-bash">sudo gem install loris
+</code></pre>
+<p>or on&nbsp;Windows</p>
+<pre><code class="lang-bash">gem install loris
+gem install win32-process
+</code></pre>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

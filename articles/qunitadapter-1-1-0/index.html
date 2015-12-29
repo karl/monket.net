@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnitAdapter 1.1.0 - Karl O'Keeffe
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>QUnitAdapter 1.1.0</h1>
+        <p class="author">Written by <span class="author"><a href="mailto:blog@monket.net">Karl O'Keeffe</a></span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>I’ve updated the <span class="caps">JS</span> Test Driver <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnitAdapter</a> to improve compatibility with&nbsp;QUnit.</p>
+<p>Variables set on the <code>this</code> object within are now available within setup, teardown, and the tests&nbsp;themselves.</p>
+<pre><code class="lang-javascript"><span class="built_in">module</span>(<span class="string">'Lifecycle'</span>, {
+  setup: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.mockString = <span class="string">"some string"</span>;
+  },
+  teardown: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    equals(<span class="keyword">this</span>.mockString, <span class="string">"some string"</span>);
+  }
+});
+
+test(<span class="string">"Things assigned to this in setup are available in test"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  equals(<span class="keyword">this</span>.mockString, <span class="string">"some string"</span>);
+});
+</code></pre>
+<p>The <code>test</code> function now supports the optional second parameter of the expected number of&nbsp;assertions.</p>
+<pre><code class="lang-javascript"><span class="comment">// declare that this test has expects 1 assertion</span>
+test(<span class="string">'Test with expected defined as 2<span class="ord">nd</span> param'</span>, <span class="number">1</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+  ok(<span class="literal">true</span>);
+});
+</code></pre>
+<p>My thanks go to <code>anotherhero</code> for providing the <a href="http://code.google.com/p/js-test-driver/issues/detail?id=116">patch</a> to fix both these&nbsp;issues.</p>
+<p>You can always <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">download the latest version of QUnitAdapter from Google Code</a>.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

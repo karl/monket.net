@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Autotest and JS Test Driver - Karl O'Keeffe
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Autotest and JS Test Driver</h1>
+        <p class="author">Written by <span class="author"><a href="mailto:blog@monket.net">Karl O'Keeffe</a></span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>Google recently released a new Javascript testing framework, <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>. It provides incredibly fast execution for Javascript unit tests, and can be run from the command line without the need for manual control of browsers. Check out this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a>.</p>
+<p>Fast test execution and the ability to be run from the command line make it a perfect fit to integrate into the Autotest test cycle. So I&nbsp;have.</p>
+<p>The module below hooks into Autotest just before the normal tests are run. It runs <span class="caps">JS</span> Test Driver over all the tests in the project, outputs the results, and finally fires off a <code>:ran_js_test_driver</code> hook.</p>
+<p>Errors and failed tests will automatically be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). By default successful tests runs are not notified through Growl, in order to keep distracting popups to a&nbsp;minimum.</p>
+<h2 id="installing-autotest-js-test-driver">Installing Autotest <span class="caps">JS</span> Test&nbsp;Driver</h2>
+<p>First you need to <a href="http://code.google.com/p/js-test-driver/downloads/list">download a copy of <span class="caps">JS</span> Test Driver</a>.</p>
+<p>Save the <span class="caps">JS</span> Test Driver jar file to the <code>lib/</code> directory within your&nbsp;project.</p>
+<p>Then copy the code below to <code>lib/autotest/js-test-driver.rb</code></p>
+<h4 id="js-test-driver-rb">js-test-driver.rb</h4>
+<pre><code class="lang-ruby"><span class="comment"># Run <span class="caps">JS</span> Test Driver as part of autotest</span>
+<span class="comment"># Supports Growl notifications if using autotest-growl</span>
+
+<span class="keyword">require</span> <span class="string">'autotest'</span>
+
+<span class="class"><span class="keyword">module</span> <span class="title">Autotest::JsTestDriver</span></span>
+
+    <span class="variable">@@jar</span> = <span class="constant">File</span>.dirname(__FILE_<span class="number">_</span>) + <span class="string">'/JsTestDriver-1.0b.jar'</span>
+    <span class="variable">@@config_file</span> = <span class="string">'jsTestDriver.conf'</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">jar=</span><span class="params">(string)</span></span>
+        <span class="variable">@@jar</span> = string
+    <span class="keyword">end</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">config_file=</span><span class="params">(string)</span></span>
+        <span class="variable">@@config_file</span> = string
+    <span class="keyword">end</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">show_success=</span><span class="params">(bool)</span></span>
+        <span class="variable">@@show_success</span>=bool
+    <span class="keyword">end</span>
+
+    <span class="constant">Autotest</span>.add_hook <span class="symbol">:run_command</span> <span class="keyword">do</span> |at|
+        <span class="comment"># run js test driver</span>
+        results = <span class="string">'<span class="caps">JS</span> Test Driver:'</span>
+        results += <span class="string">`java -jar "<span class="subst">#{<span class="variable">@@jar</span>}</span>" --config "<span class="subst">#{<span class="variable">@@config_file</span>}</span>" --tests all --verbose`</span>
+        puts results
+
+        at.results = [] <span class="keyword">if</span> at.results.<span class="keyword">nil</span>?
+        at.results.concat(results.split(<span class="string">"\n"</span>))
+
+        at.hook <span class="symbol">:ran_js_test_driver</span>
+
+    <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+
+<span class="class"><span class="keyword">module</span> <span class="title">Autotest::Growl</span></span>
+
+    <span class="variable">@@show_js_test_success</span> = <span class="keyword">false</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">show_js_test_success=</span><span class="params">(bool)</span></span>
+        <span class="variable">@@show_js_test_success</span>=bool
+    <span class="keyword">end</span>
+
+  <span class="comment"># Growl results of <span class="caps">JS</span> Test Driver</span>
+  <span class="constant">Autotest</span>.add_hook <span class="symbol">:ran_js_test_driver</span> <span class="keyword">do</span> |autotest|
+
+    gist = autotest.results.grep( <span class="regexp">/Total\s+\d+\s+tests/</span> ).join(<span class="string">" / "</span>).strip()
+
+    <span class="keyword">if</span> gist == <span class="string">''</span>
+      growl <span class="variable">@label</span> + <span class="string">'Cannot run <span class="caps">JS</span> Test Driver.'</span>, gist, <span class="string">'error'</span>
+    <span class="keyword">else</span>
+      <span class="keyword">if</span> gist =~ <span class="regexp">/Errors:\s+[1-9]\d*/</span>
+        growl <span class="variable">@label</span> + <span class="string">'Error running some <span class="caps">JS</span> tests.'</span>, gist, <span class="string">'failed'</span>
+      <span class="keyword">elsif</span> gist =~ <span class="regexp">/Fails:\s+[1-9]\d*/</span>
+        growl <span class="variable">@label</span> + <span class="string">'<span class="caps">JS</span> Test: Some tests failed.'</span>, gist, <span class="string">'failed'</span>
+      <span class="keyword">elsif</span> <span class="variable">@@show_js_test_success</span>
+        growl <span class="variable">@label</span> + <span class="string">'<span class="caps">JS</span> Test: All files are clean.'</span>, gist, <span class="string">'passed'</span>
+      <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">false</span>
+  <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+</code></pre>
+<h2 id="configuring-autotest-and-js-test-driver">Configuring Autotest and <span class="caps">JS</span> Test&nbsp;Driver</h2>
+<p><span class="caps">JS</span> Test Driver uses a configuration file to connect with the JS Test Driver server, and to decide which javscript files to&nbsp;load.</p>
+<p>Create a <code>jsTestDriver.conf</code> file in the project root directory as&nbsp;follows.</p>
+<pre><code class="lang-yaml">server: http://localhost:9876
+
+load:
+  - src/js/*.js
+  - tests/js/*.js
+</code></pre>
+<p>This assumes that you have our javascript source files will be in the <code>src/js/</code> directory, and our javascript test files will be in the <code>src/js/</code> directory. We will create a test file, and associated code&nbsp;later.</p>
+<p>The <code>server:</code> lets <span class="caps">JS</span> Test Driver know we will be connecting to a server on our local machine, on port 9876. We’ll get this server running&nbsp;later.</p>
+<p>Next we need to configure Autotest to run <span class="caps">JS</span> Test Driver, by requiring the module and specifying the location of the JS Test Driver&nbsp;jar.</p>
+<pre><code class="lang-ruby"><span class="comment"># Require the <span class="caps">JS</span> Test Driver module</span>
+<span class="keyword">require</span> <span class="string">'lib/autotest/js-test-driver'</span>
+
+<span class="comment"># Set the location of the <span class="caps">JS</span> Test Driver jar</span>
+<span class="constant">Autotest::JsTestDriver::</span>jar = <span class="string">'./lib/jsTestDriver-1.0b.jar'</span>
+</code></pre>
+<p>You can also configure the location of the <span class="caps">JS</span> Test Driver config file, and whether or not to show successful test&nbsp;runs.</p>
+<pre><code class="lang-ruby"><span class="comment"># Uncomment this if you have autotest-growl, and Growl installed</span>
+<span class="comment"># And want to have notifications of <span class="caps">JS</span> Test Driver runs</span>
+<span class="comment"># require 'autotest/growl'</span>
+
+<span class="comment"># Uncomment this to change the location of the <span class="caps">JS</span> Test Driver config file</span>
+<span class="comment"># By default we look for a jsTestDriver.conf file in the directory autotest is run from</span>
+<span class="comment"># Autotest::JsTestDriver::config_file = './jsTestDriver.conf'</span>
+
+<span class="comment"># Uncomment this to show successful test runs</span>
+<span class="comment"># Autotest::Growl::show_js_test_success = true</span>
+</code></pre>
+<p>Now that all the installation and configuration is done, let get everything&nbsp;running.</p>
+<h2 id="running-autotest-with-js-test-driver">Running Autotest with <span class="caps">JS</span> Test&nbsp;Driver</h2>
+<p>First up we need to get our <span class="caps">JS</span> Test Driver server up and running. Open a Terminal, and navigate to the directory containing the JS Test Driver jar. Run the following to start a&nbsp;server:</p>
+<pre><code class="lang-bash">java -jar JsTestDriver-<span class="number">1.0</span>b.jar --port <span class="number">9876</span>
+</code></pre>
+<p>Now we need to capture a browser to use for testing. Open a browser and automatically capture it for use with <span class="caps">JS</span> Test Driver by going to the following&nbsp;URL:</p>
+<pre><code>http://localhost:9876/capture
+</code></pre><p>Now we can run autotest, and watch as it runs <span class="caps">JS</span> Test Driver and reports the results to us on every file&nbsp;change:</p>
+<pre><code class="lang-bash">autotest
+</code></pre>
+<p><span class="caps">JS</span> Test Driver will probably report that no tests were run, as we haven’t written any tests yet. Tests are written using the <a href="http://code.google.com/p/js-test-driver/wiki/TestCase"><code>TestCase</code></a> object, which exposes JUnit style&nbsp;functionality.</p>
+<h2 id="writing-some-tests">Writing Some&nbsp;Tests</h2>
+<p>Here is an example test file, and the production code it&nbsp;tests:</p>
+<h4 id="greetertest-js">GreeterTest.js</h4>
+<pre><code class="lang-javascript">GreeterTest = TestCase(<span class="string">"GreeterTest"</span>);
+
+GreeterTest.prototype.testGreet = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">var</span> greeter = <span class="keyword">new</span> myapp.Greeter();
+  assertEquals(<span class="string">"Hello World."</span>, greeter.greet(<span class="string">"World"</span>));
+};
+</code></pre>
+<h4 id="greeter-js">Greeter.js</h4>
+<pre><code class="lang-javascript">myapp = {};
+
+myapp.Greeter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{ };
+
+myapp.Greeter.prototype.greet = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>{
+  <span class="keyword">return</span> <span class="string">"Hello "</span> + name + <span class="string">"!"</span>;
+};
+</code></pre>
+<p>If you copy these to your <code>tests/js/</code> and <code>src/js/</code> directories respectively, Autotest should pick up the new files, run the tests and notify you that there is an error. See if you can spot it&nbsp;:P</p>
+<h2 id="to-do">To&nbsp;Do</h2>
+<p>This would be nice packaged up as a gem. It would also be nice if failed Javascript tests could stop further tests being&nbsp;run.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
