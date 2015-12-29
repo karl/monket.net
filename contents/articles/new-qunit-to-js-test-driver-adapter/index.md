@@ -19,11 +19,11 @@ The new approach also means that qunit lifecycles (setup and teardown) work.
 
 ## Installing the QUnit Adapter
 
-First up download the [equiv.js](http://monket.net/blog/wp-content/uploads/2009/06/equiv.js) file, which is required for the qunit `same` assertion.
+First up download the [equiv.js](equiv.js) file, which is required for the qunit `same` assertion.
 
-Then download the [QUnitAdapter.js](http://monket.net/blog/wp-content/uploads/2009/06/QUnitAdapter.js) file (or copy the code below).
+Then download the [QUnitAdapter.js](QUnitAdapter.js) file (or copy the code below).
 
-#### [QUnitAdapter.js](http://monket.net/blog/wp-content/uploads/2009/06/QUnitAdapter.js)
+#### [QUnitAdapter.js](QUnitAdapter.js)
 
 ```javascript
 (function() {

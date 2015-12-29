@@ -7,7 +7,7 @@
     <title>jsUnit Mock Timeouts and JS Test Driver - Karl O'Keeffe
     </title>
     <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body class="article-detail">
@@ -24,14 +24,14 @@
           <section class="content"><p>As part of my experimenting with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>, I have been porting over a suite of about 300 existing&nbsp;tests.</p>
 <p>Some of these tests deal with time based logic, such as delayed callbacks or time limited user interaction. Currently these tests are run in a <span class="caps">HTML</span> page using <a href="http://docs.jquery.com/QUnit">qunit</a>.</p>
 <p>To deal with the time based logic I use the jsUnit’s Mock Timeout. See <a href="http://googletesting.blogspot.com/2007/03/javascript-simulating-time-in-jsunit.html">Simulating Time in jsUnit Tests on the Google Testing Blog</a>.</p>
-<p>jsUnit’s Mock Timeout overrides the built in <code>setTimeout</code>, <code>clearTimeout</code>, <code>setInterval</code>, and <code>clearInterval</code> methods, and provides a <code>Clock</code> object that allows you to control the passage of&nbsp;time. </p>
+<p>jsUnit’s Mock Timeout overrides the built in <code>setTimeout</code>, <code>clearTimeout</code>, <code>setInterval</code>, and <code>clearInterval</code> methods, and provides a <code>Clock</code> object that allows you to control the passage of&nbsp;time.</p>
 <h2 id="problem">Problem</h2>
 <p>This works fine in qunit, but it fails catastrophically in <span class="caps">JS</span> Test Driver. This is because JS Test Driver uses the <code>setTimeout</code> and <code>setInterval</code> methods to control it’s own behaviour. Once these have been overridden with the mock versions <span class="caps">JS</span> Test Driver no longer&nbsp;works.</p>
 <p>As a temporary fix for this I have created a patched version of <span class="caps">JS</span> Test Driver, which creates it’s own copies of the original <code>setTimeout</code>, <code>clearTimeout</code>, <code>setInterval</code>, and <code>clearInterval</code> methods, before loading any code. This ensures it works well with the jsUnit Mock&nbsp;Timeout.</p>
 <h2 id="patched-js-test-driver">Patched <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p><a href="http://monket.net/blog/wp-content/uploads/2009/07/JsTestDriver-1.0b-own-timeouts.jar">Download a patched JsTestDriver with no-confilict&nbsp;timeouts.</a></p>
+<p><a href="/articles/jsunit-mock-timeouts-and-js-test-driver/JsTestDriver-1.0b-own-timeouts.jar">Download a patched JsTestDriver with no-confilict&nbsp;timeouts.</a></p>
 <p>Just use this jar in place of the original <code>JsTestDriver-1.0b.jar</code>, and you can include <code>jsUnitMockTimeout.js</code> in your tests without breaking <span class="caps">JS</span> Test&nbsp;Driver!</p>
-<p>You may also want to <a href="http://monket.net/blog/wp-content/uploads/2009/07/jsUnitMockTimeout.js">download jsUnitMockTimeout.js</a> (to save you finding it within the jsUnit&nbsp;source).</p>
+<p>You may also want to <a href="/articles/jsunit-mock-timeouts-and-js-test-driver/jsUnitMockTimeout.js">download jsUnitMockTimeout.js</a> (to save you finding it within the jsUnit&nbsp;source).</p>
 <h2 id="the-future">The&nbsp;Future</h2>
 <p>I see this patched <span class="caps">JS</span> Test Driver as very much a temporary stepping stone, while the correct solution is worked out. Beware of relying on it too&nbsp;heavily!</p>
 <div class="info" markdown="1">

@@ -5,7 +5,7 @@ date: Wed, 17 Jun 2009 15:47:09 GMT
 template: article.jade
 ---
 
-As an example of getting Autotest, Cucumber, and Growl up and running I've created a super simple test project. You can [download the example project](http://monket.net/blog/wp-content/uploads/2009/06/Autotest-Cucumber1.zip), or just create it from the code on this post.
+As an example of getting Autotest, Cucumber, and Growl up and running I've created a super simple test project. You can [download the example project](Autotest-Cucumber.zip), or just create it from the code on this post.
 
 ## Install Ruby, Growl, and Gems
 
@@ -27,7 +27,7 @@ Next we need to ensure that the Growl application itself is installed. If not [d
 
 ## Create Project
 
-Now we are ready to create our project. The either [download the example project](http://monket.net/blog/wp-content/uploads/2009/06/Autotest-Cucumber1.zip) or create the file heirarchy below:
+Now we are ready to create our project. The either [download the example project](Autotest-Cucumber.zip) or create the file heirarchy below:
 
 *   [dir] Autotest-Cucumber
 

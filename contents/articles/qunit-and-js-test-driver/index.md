@@ -19,7 +19,7 @@ So I wrote a converter that automatically converts qunit modules and tests into 
 
 In order to convert from qunit tests I've had to add a few extra hooks into the qunit `testrunner.js` file.
 
-Either [download the patched testrunner.js](http://monket.net/blog/wp-content/uploads/2009/06/testrunner.js) file, or just add the 3 lines below:
+Either [download the patched testrunner.js](testrunner.js) file, or just add the 3 lines below:
 
 ```javascript
     QUnit: {
@@ -36,7 +36,7 @@ Either [download the patched testrunner.js](http://monket.net/blog/wp-content/up
     },
 ```
 
-Next [download QUnitToTestCases.js](http://monket.net/blog/wp-content/uploads/2009/06/QUnitToTestCases.js) and save it to the same folder as `testrunner.js`. This is the file which converts the qunit tests into TestCases that JS Test Driver understands.
+Next [download QUnitToTestCases.js](QUnitToTestCases.js) and save it to the same folder as `testrunner.js`. This is the file which converts the qunit tests into TestCases that JS Test Driver understands.
 
 It works by overriding the qunit `test()` function, and rather than adding the test to qunit, it creates a test method on a TestCase object which, when called by JS Test Driver adds the test to qunit and runs it.
 

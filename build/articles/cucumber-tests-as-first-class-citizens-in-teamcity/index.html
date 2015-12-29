@@ -7,7 +7,7 @@
     <title>Cucumber Tests as First Class Citizens in TeamCity - Karl O'Keeffe
     </title>
     <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body class="article-detail">
@@ -26,7 +26,7 @@
 <p>JetBrains, the makers of TeamCity, released a <a href="http://blogs.jetbrains.com/ruby/2009/08/testing-rubymine-with-cucumber/">blog post demostrating the Cucumber test integration</a>, but without any details in how to set it up yourself. So I’ll take you through it&nbsp;here.</p>
 <h2 id="getting-a-copy-of-the-teamcity-cucumber-formatter">Getting a Copy of the TeamCity Cucumber&nbsp;Formatter</h2>
 <p>The <a href="http://www.jetbrains.net/confluence/display/TW/TeamCity+EAP">latest TeamCity <span class="caps">EAP</span></a> contains the new Cucumber Formatter hidden deep in it’s bowels. Rather than make you wade through it all, I’ve extracted the relevant files and they are available to download&nbsp;here:</p>
-<h4 id="-download-the-teamcity-cucumber-formatter-http-monket-net-blog-wp-content-uploads-2009-09-teamcitycucumberformatter-zip-"><a href="http://monket.net/blog/wp-content/uploads/2009/09/TeamCityCucumberFormatter.zip">Download the TeamCity Cucumber&nbsp;Formatter</a></h4>
+<h4 id="-download-the-teamcity-cucumber-formatter-teamcitycucumberformatter-zip-"><a href="/articles/cucumber-tests-as-first-class-citizens-in-teamcity/TeamCityCucumberFormatter.zip">Download the TeamCity Cucumber&nbsp;Formatter</a></h4>
 <p>The archive contains the formatter and the TeamCity library files it requires to run. Extract the archive in your project root and it will add the following&nbsp;files:</p>
 <pre><code class="lang-plain">features/
     support/
@@ -58,7 +58,7 @@ teamcity: features -q --no-c  -f JBTeamCityFormatter
 </code></pre>
 <h2 id="running-cucumber-with-teamcity">Running Cucumber with&nbsp;TeamCity</h2>
 <p>Now when you run Cucumber within TeamCity (using the <code>teamcity</code> profile) it will report tests in real time, with all the feedback you are used to. Just add a call to the Cucumber executable to your build script (NAnt, MSBuild, Ant, Rake,&nbsp;etc).</p>
-<p><img src="http://monket.net/blog/wp-content/uploads/2009/09/cucumber-tests-in-teamcity-cropped.png" alt="Cucumber tests in TeamCity"></p>
+<p><img src="/articles/cucumber-tests-as-first-class-citizens-in-teamcity/cucumber-tests-in-teamcity-cropped.png" alt="Cucumber tests in TeamCity"></p>
 <p>Enjoy the new found treatment of Cucumber tests as first class citizens in&nbsp;TeamCity!</p>
 </section>
         </article>

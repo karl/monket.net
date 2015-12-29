@@ -26,7 +26,7 @@ normal javascript file, and you can now`exec()` qunit test files in JSpec.
 First up [download the QUnit to JSpec Adapter][3], or copy the code below, and
 save it somewhere in your project (e.g. a `lib` folder).
 
- [3]: http://monket.net/blog/wp-content/uploads/2009/09/QUnitToJSpecAdapter.js
+ [3]: QUnitToJSpecAdapter.js
 
 #### [QUnitToJSpecAdapter.js][3]
 

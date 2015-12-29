@@ -309,7 +309,7 @@ Total 8 tests (Passed: 8; Fails: 0; Errors: 0) (3.00 ms)
 &lt;p&gt;JetBrains, the makers of TeamCity, released a &lt;a href=&quot;http://blogs.jetbrains.com/ruby/2009/08/testing-rubymine-with-cucumber/&quot;&gt;blog post demostrating the Cucumber test integration&lt;/a&gt;, but without any details in how to set it up yourself. So I’ll take you through it here.&lt;/p&gt;
 &lt;h2 id=&quot;getting-a-copy-of-the-teamcity-cucumber-formatter&quot;&gt;Getting a Copy of the TeamCity Cucumber Formatter&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&quot;http://www.jetbrains.net/confluence/display/TW/TeamCity+EAP&quot;&gt;latest TeamCity EAP&lt;/a&gt; contains the new Cucumber Formatter hidden deep in it’s bowels. Rather than make you wade through it all, I’ve extracted the relevant files and they are available to download here:&lt;/p&gt;
-&lt;h4 id=&quot;-download-the-teamcity-cucumber-formatter-http-monket-net-blog-wp-content-uploads-2009-09-teamcitycucumberformatter-zip-&quot;&gt;&lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/09/TeamCityCucumberFormatter.zip&quot;&gt;Download the TeamCity Cucumber Formatter&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;-download-the-teamcity-cucumber-formatter-teamcitycucumberformatter-zip-&quot;&gt;&lt;a href=&quot;/articles/cucumber-tests-as-first-class-citizens-in-teamcity/TeamCityCucumberFormatter.zip&quot;&gt;Download the TeamCity Cucumber Formatter&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;The archive contains the formatter and the TeamCity library files it requires to run. Extract the archive in your project root and it will add the following files:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-plain&quot;&gt;features/
     support/
@@ -341,7 +341,7 @@ teamcity: features -q --no-c  -f JBTeamCityFormatter
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;running-cucumber-with-teamcity&quot;&gt;Running Cucumber with TeamCity&lt;/h2&gt;
 &lt;p&gt;Now when you run Cucumber within TeamCity (using the &lt;code&gt;teamcity&lt;/code&gt; profile) it will report tests in real time, with all the feedback you are used to. Just add a call to the Cucumber executable to your build script (NAnt, MSBuild, Ant, Rake, etc).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://monket.net/blog/wp-content/uploads/2009/09/cucumber-tests-in-teamcity-cropped.png&quot; alt=&quot;Cucumber tests in TeamCity&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/cucumber-tests-as-first-class-citizens-in-teamcity/cucumber-tests-in-teamcity-cropped.png&quot; alt=&quot;Cucumber tests in TeamCity&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Enjoy the new found treatment of Cucumber tests as first class citizens in TeamCity!&lt;/p&gt;
 </description>
     </item>
@@ -361,9 +361,9 @@ don’t want to rewrite 300+ tests, so what to do?&lt;/p&gt;
 &lt;a href=&quot;http://github.com/visionmedia/js-mock-timers/tree/master&quot;&gt;QUnit to JS Test Driver Adapter&lt;/a&gt;. Just load the adapter into JSpec as a
 normal javascript file, and you can now&lt;code&gt;exec()&lt;/code&gt; qunit test files in JSpec.&lt;/p&gt;
 &lt;h2 id=&quot;downloading-the-qunit-to-jspec-adapter&quot;&gt;Downloading the QUnit to JSpec Adapter&lt;/h2&gt;
-&lt;p&gt;First up &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/09/QUnitToJSpecAdapter.js&quot;&gt;download the QUnit to JSpec Adapter&lt;/a&gt;, or copy the code below, and
+&lt;p&gt;First up &lt;a href=&quot;/articles/qunit-to-jspec-adapter/QUnitToJSpecAdapter.js&quot;&gt;download the QUnit to JSpec Adapter&lt;/a&gt;, or copy the code below, and
 save it somewhere in your project (e.g. a &lt;code&gt;lib&lt;/code&gt; folder).&lt;/p&gt;
-&lt;h4 id=&quot;-qunittojspecadapter-js-3-&quot;&gt;&lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/09/QUnitToJSpecAdapter.js&quot;&gt;QUnitToJSpecAdapter.js&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;-qunittojspecadapter-js-3-&quot;&gt;&lt;a href=&quot;/articles/qunit-to-jspec-adapter/QUnitToJSpecAdapter.js&quot;&gt;QUnitToJSpecAdapter.js&lt;/a&gt;&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*
 QUnitToJSpecAdapter
 Version: 1.0.0
@@ -676,7 +676,7 @@ load:
 &lt;/ul&gt;
 &lt;p&gt;Now when you run your build again you will see your JS Test Driver tests showing up in the Tests tab, and test failures now stop the build.&lt;/p&gt;
 &lt;p&gt;Your Javascript unit tests now sit as first class citizens within TeamCity!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/08/JSTestDriverFailedTest.png&quot;&gt;&lt;img src=&quot;http://monket.net/blog/wp-content/uploads/2009/08/JSTestDriverFailedTest.png&quot; alt=&quot;JSTestDriverFailedTest&quot; title=&quot;JSTestDriverFailedTest&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/articles/running-js-test-driver-in-team-city/JSTestDriverFailedTest.png&quot;&gt;&lt;img src=&quot;/articles/running-js-test-driver-in-team-city/JSTestDriverFailedTest.png&quot; alt=&quot;JSTestDriverFailedTest&quot; title=&quot;JSTestDriverFailedTest&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -886,14 +886,14 @@ gem install karl-autotest-growl --source http://gems.github.com
       <description>&lt;p&gt;As part of my experimenting with &lt;a href=&quot;http://code.google.com/p/js-test-driver/&quot;&gt;JS Test Driver&lt;/a&gt;, I have been porting over a suite of about 300 existing tests.&lt;/p&gt;
 &lt;p&gt;Some of these tests deal with time based logic, such as delayed callbacks or time limited user interaction. Currently these tests are run in a HTML page using &lt;a href=&quot;http://docs.jquery.com/QUnit&quot;&gt;qunit&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To deal with the time based logic I use the jsUnit’s Mock Timeout. See &lt;a href=&quot;http://googletesting.blogspot.com/2007/03/javascript-simulating-time-in-jsunit.html&quot;&gt;Simulating Time in jsUnit Tests on the Google Testing Blog&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;jsUnit’s Mock Timeout overrides the built in &lt;code&gt;setTimeout&lt;/code&gt;, &lt;code&gt;clearTimeout&lt;/code&gt;, &lt;code&gt;setInterval&lt;/code&gt;, and &lt;code&gt;clearInterval&lt;/code&gt; methods, and provides a &lt;code&gt;Clock&lt;/code&gt; object that allows you to control the passage of time. &lt;/p&gt;
+&lt;p&gt;jsUnit’s Mock Timeout overrides the built in &lt;code&gt;setTimeout&lt;/code&gt;, &lt;code&gt;clearTimeout&lt;/code&gt;, &lt;code&gt;setInterval&lt;/code&gt;, and &lt;code&gt;clearInterval&lt;/code&gt; methods, and provides a &lt;code&gt;Clock&lt;/code&gt; object that allows you to control the passage of time.&lt;/p&gt;
 &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 &lt;p&gt;This works fine in qunit, but it fails catastrophically in JS Test Driver. This is because JS Test Driver uses the &lt;code&gt;setTimeout&lt;/code&gt; and &lt;code&gt;setInterval&lt;/code&gt; methods to control it’s own behaviour. Once these have been overridden with the mock versions JS Test Driver no longer works.&lt;/p&gt;
 &lt;p&gt;As a temporary fix for this I have created a patched version of JS Test Driver, which creates it’s own copies of the original &lt;code&gt;setTimeout&lt;/code&gt;, &lt;code&gt;clearTimeout&lt;/code&gt;, &lt;code&gt;setInterval&lt;/code&gt;, and &lt;code&gt;clearInterval&lt;/code&gt; methods, before loading any code. This ensures it works well with the jsUnit Mock Timeout.&lt;/p&gt;
 &lt;h2 id=&quot;patched-js-test-driver&quot;&gt;Patched JS Test Driver&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/07/JsTestDriver-1.0b-own-timeouts.jar&quot;&gt;Download a patched JsTestDriver with no-confilict timeouts.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/articles/jsunit-mock-timeouts-and-js-test-driver/JsTestDriver-1.0b-own-timeouts.jar&quot;&gt;Download a patched JsTestDriver with no-confilict timeouts.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Just use this jar in place of the original &lt;code&gt;JsTestDriver-1.0b.jar&lt;/code&gt;, and you can include &lt;code&gt;jsUnitMockTimeout.js&lt;/code&gt; in your tests without breaking JS Test Driver!&lt;/p&gt;
-&lt;p&gt;You may also want to &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/07/jsUnitMockTimeout.js&quot;&gt;download jsUnitMockTimeout.js&lt;/a&gt; (to save you finding it within the jsUnit source).&lt;/p&gt;
+&lt;p&gt;You may also want to &lt;a href=&quot;/articles/jsunit-mock-timeouts-and-js-test-driver/jsUnitMockTimeout.js&quot;&gt;download jsUnitMockTimeout.js&lt;/a&gt; (to save you finding it within the jsUnit source).&lt;/p&gt;
 &lt;h2 id=&quot;the-future&quot;&gt;The Future&lt;/h2&gt;
 &lt;p&gt;I see this patched JS Test Driver as very much a temporary stepping stone, while the correct solution is worked out. Beware of relying on it too heavily!&lt;/p&gt;
 &lt;div class=&quot;info&quot; markdown=&quot;1&quot;&gt;
@@ -928,9 +928,9 @@ gem install karl-autotest-growl --source http://gems.github.com
 &lt;p&gt;This gives assertion level error reporting, making it much easier to write and debug tests. Essentially this adapter allows you to write native JS Test Driver tests, but using the less verbose qunit syntax.&lt;/p&gt;
 &lt;p&gt;The new approach also means that qunit lifecycles (setup and teardown) work.&lt;/p&gt;
 &lt;h2 id=&quot;installing-the-qunit-adapter&quot;&gt;Installing the QUnit Adapter&lt;/h2&gt;
-&lt;p&gt;First up download the &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/equiv.js&quot;&gt;equiv.js&lt;/a&gt; file, which is required for the qunit &lt;code&gt;same&lt;/code&gt; assertion.&lt;/p&gt;
-&lt;p&gt;Then download the &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/QUnitAdapter.js&quot;&gt;QUnitAdapter.js&lt;/a&gt; file (or copy the code below).&lt;/p&gt;
-&lt;h4 id=&quot;-qunitadapter-js-http-monket-net-blog-wp-content-uploads-2009-06-qunitadapter-js-&quot;&gt;&lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/QUnitAdapter.js&quot;&gt;QUnitAdapter.js&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;First up download the &lt;a href=&quot;/articles/new-qunit-to-js-test-driver-adapter/equiv.js&quot;&gt;equiv.js&lt;/a&gt; file, which is required for the qunit &lt;code&gt;same&lt;/code&gt; assertion.&lt;/p&gt;
+&lt;p&gt;Then download the &lt;a href=&quot;/articles/new-qunit-to-js-test-driver-adapter/QUnitAdapter.js&quot;&gt;QUnitAdapter.js&lt;/a&gt; file (or copy the code below).&lt;/p&gt;
+&lt;h4 id=&quot;-qunitadapter-js-qunitadapter-js-&quot;&gt;&lt;a href=&quot;/articles/new-qunit-to-js-test-driver-adapter/QUnitAdapter.js&quot;&gt;QUnitAdapter.js&lt;/a&gt;&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
 
     &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.module = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name, lifecycle&lt;/span&gt;) &lt;/span&gt;{
@@ -1032,7 +1032,7 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
 &lt;p&gt;So I wrote a converter that automatically converts qunit modules and tests into JS Test Driver TestCases and test methods.&lt;/p&gt;
 &lt;h2 id=&quot;download-converter-and-patched-testrunner&quot;&gt;Download Converter and Patched Testrunner&lt;/h2&gt;
 &lt;p&gt;In order to convert from qunit tests I’ve had to add a few extra hooks into the qunit &lt;code&gt;testrunner.js&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;Either &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/testrunner.js&quot;&gt;download the patched testrunner.js&lt;/a&gt; file, or just add the 3 lines below:&lt;/p&gt;
+&lt;p&gt;Either &lt;a href=&quot;/articles/qunit-and-js-test-driver/testrunner.js&quot;&gt;download the patched testrunner.js&lt;/a&gt; file, or just add the 3 lines below:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;    QUnit: {
         &lt;span class=&quot;comment&quot;&gt;// Add the following 3 lines&lt;/span&gt;
         runTest: runTest,
@@ -1046,7 +1046,7 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
         log: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;result, message&lt;/span&gt;)&lt;/span&gt;{}
     },
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/QUnitToTestCases.js&quot;&gt;download QUnitToTestCases.js&lt;/a&gt; and save it to the same folder as &lt;code&gt;testrunner.js&lt;/code&gt;. This is the file which converts the qunit tests into TestCases that JS Test Driver understands.&lt;/p&gt;
+&lt;p&gt;Next &lt;a href=&quot;/articles/qunit-and-js-test-driver/QUnitToTestCases.js&quot;&gt;download QUnitToTestCases.js&lt;/a&gt; and save it to the same folder as &lt;code&gt;testrunner.js&lt;/code&gt;. This is the file which converts the qunit tests into TestCases that JS Test Driver understands.&lt;/p&gt;
 &lt;p&gt;It works by overriding the qunit &lt;code&gt;test()&lt;/code&gt; function, and rather than adding the test to qunit, it creates a test method on a TestCase object which, when called by JS Test Driver adds the test to qunit and runs it.&lt;/p&gt;
 &lt;h2 id=&quot;configuring-js-test-driver&quot;&gt;Configuring JS Test Driver&lt;/h2&gt;
 &lt;p&gt;Once you have the patched &lt;code&gt;testrunner.js&lt;/code&gt; and &lt;code&gt;QUnitToTestCases.js&lt;/code&gt;, you just need to let JS Test Driver know to load them before your qunit tests. They need to be loaded in order, with  &lt;code&gt;testrunner.js&lt;/code&gt; first, followed by &lt;code&gt;QUnitTiTestCases.js&lt;/code&gt;, as the converter modifies some of the testrunner methods.&lt;/p&gt;
@@ -1282,7 +1282,7 @@ myapp.Greeter.prototype.greet = &lt;span class=&quot;function&quot;&gt;&lt;span 
       <pubDate>Wed, 17 Jun 2009 16:47:09 +0100</pubDate>
       <guid isPermaLink="true">//articles/simple-example-of-autotest-cucumber-and-growl/</guid>
       <author></author>
-      <description>&lt;p&gt;As an example of getting Autotest, Cucumber, and Growl up and running I’ve created a super simple test project. You can &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/Autotest-Cucumber1.zip&quot;&gt;download the example project&lt;/a&gt;, or just create it from the code on this post.&lt;/p&gt;
+      <description>&lt;p&gt;As an example of getting Autotest, Cucumber, and Growl up and running I’ve created a super simple test project. You can &lt;a href=&quot;/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip&quot;&gt;download the example project&lt;/a&gt;, or just create it from the code on this post.&lt;/p&gt;
 &lt;h2 id=&quot;install-ruby-growl-and-gems&quot;&gt;Install Ruby, Growl, and Gems&lt;/h2&gt;
 &lt;p&gt;First up we need to ensure that we have all our dependancies installed.&lt;/p&gt;
 &lt;p&gt;If you haven’t already, &lt;a href=&quot;http://www.ruby-lang.org/en/downloads/&quot;&gt;download and install Ruby&lt;/a&gt;.&lt;/p&gt;
@@ -1295,7 +1295,7 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next we need to ensure that the Growl application itself is installed. If not &lt;a href=&quot;http://growl.info/&quot;&gt;download and install Growl&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;create-project&quot;&gt;Create Project&lt;/h2&gt;
-&lt;p&gt;Now we are ready to create our project. The either &lt;a href=&quot;http://monket.net/blog/wp-content/uploads/2009/06/Autotest-Cucumber1.zip&quot;&gt;download the example project&lt;/a&gt; or create the file heirarchy below:&lt;/p&gt;
+&lt;p&gt;Now we are ready to create our project. The either &lt;a href=&quot;/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip&quot;&gt;download the example project&lt;/a&gt; or create the file heirarchy below:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;[dir] Autotest-Cucumber&lt;/p&gt;
 &lt;ul&gt;

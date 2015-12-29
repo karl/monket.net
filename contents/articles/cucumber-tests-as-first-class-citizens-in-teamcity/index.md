@@ -15,7 +15,7 @@ JetBrains, the makers of TeamCity, released a [blog post demostrating the Cucumb
 
 The [latest TeamCity EAP](http://www.jetbrains.net/confluence/display/TW/TeamCity+EAP) contains the new Cucumber Formatter hidden deep in it's bowels. Rather than make you wade through it all, I've extracted the relevant files and they are available to download here:
 
-#### [Download the TeamCity Cucumber Formatter](http://monket.net/blog/wp-content/uploads/2009/09/TeamCityCucumberFormatter.zip)
+#### [Download the TeamCity Cucumber Formatter](TeamCityCucumberFormatter.zip)
 
 The archive contains the formatter and the TeamCity library files it requires to run. Extract the archive in your project root and it will add the following files:
 
@@ -65,6 +65,6 @@ teamcity: features -q --no-c  -f JBTeamCityFormatter
 
 Now when you run Cucumber within TeamCity (using the `teamcity` profile) it will report tests in real time, with all the feedback you are used to. Just add a call to the Cucumber executable to your build script (NAnt, MSBuild, Ant, Rake, etc).
 
-![Cucumber tests in TeamCity](http://monket.net/blog/wp-content/uploads/2009/09/cucumber-tests-in-teamcity-cropped.png)
+![Cucumber tests in TeamCity](cucumber-tests-in-teamcity-cropped.png)
 
 Enjoy the new found treatment of Cucumber tests as first class citizens in TeamCity!

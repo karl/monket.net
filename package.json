@@ -3,12 +3,15 @@
     "start": "wintersmith preview",
     "build": "wintersmith build",
     "deploy": "./deploy.sh"
-
   },
   "dependencies": {
     "moment": "2.3.x",
     "underscore": "1.4.x",
     "typogr": "0.5.x"
   },
-  "private": "true"
+  "private": "true",
+  "devDependencies": {
+    "wintersmith": "^2.2.4",
+    "wintersmith-redirect": "^0.1.0"
+  }
 }

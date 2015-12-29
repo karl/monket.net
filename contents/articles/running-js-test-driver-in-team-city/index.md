@@ -81,4 +81,4 @@ Now when you run your build again you will see your JS Test Driver tests showing
 
 Your Javascript unit tests now sit as first class citizens within TeamCity!
 
-[![JSTestDriverFailedTest](http://monket.net/blog/wp-content/uploads/2009/08/JSTestDriverFailedTest.png "JSTestDriverFailedTest")](http://monket.net/blog/wp-content/uploads/2009/08/JSTestDriverFailedTest.png)
+[![JSTestDriverFailedTest](JSTestDriverFailedTest.png "JSTestDriverFailedTest")](JSTestDriverFailedTest.png)

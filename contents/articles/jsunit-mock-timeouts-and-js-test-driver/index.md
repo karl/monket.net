@@ -11,7 +11,7 @@ Some of these tests deal with time based logic, such as delayed callbacks or tim
 
 To deal with the time based logic I use the jsUnit's Mock Timeout. See [Simulating Time in jsUnit Tests on the Google Testing Blog](http://googletesting.blogspot.com/2007/03/javascript-simulating-time-in-jsunit.html).
 
-jsUnit's Mock Timeout overrides the built in `setTimeout`, `clearTimeout`, `setInterval`, and `clearInterval` methods, and provides a `Clock` object that allows you to control the passage of time. 
+jsUnit's Mock Timeout overrides the built in `setTimeout`, `clearTimeout`, `setInterval`, and `clearInterval` methods, and provides a `Clock` object that allows you to control the passage of time.
 
 ## Problem
 
@@ -21,11 +21,11 @@ As a temporary fix for this I have created a patched version of JS Test Driver, 
 
 ## Patched JS Test Driver
 
-[Download a patched JsTestDriver with no-confilict timeouts.](http://monket.net/blog/wp-content/uploads/2009/07/JsTestDriver-1.0b-own-timeouts.jar)
+[Download a patched JsTestDriver with no-confilict timeouts.](JsTestDriver-1.0b-own-timeouts.jar)
 
 Just use this jar in place of the original `JsTestDriver-1.0b.jar`, and you can include `jsUnitMockTimeout.js` in your tests without breaking JS Test Driver!
 
-You may also want to [download jsUnitMockTimeout.js](http://monket.net/blog/wp-content/uploads/2009/07/jsUnitMockTimeout.js) (to save you finding it within the jsUnit source).
+You may also want to [download jsUnitMockTimeout.js](jsUnitMockTimeout.js) (to save you finding it within the jsUnit source).
 
 ## The Future
 
