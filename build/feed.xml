@@ -14,7 +14,7 @@
       <pubDate>Mon, 12 Apr 2010 14:11:21 +0100</pubDate>
       <guid isPermaLink="true">//articles/small-update-to-loris-0-1-3/</guid>
       <author></author>
-      <description>&lt;p&gt;A few months ago &lt;a href=&quot;http://monket.net/blog/2009/11/loris-autotest-for-javascript/&quot;&gt;I wrote about Loris&lt;/a&gt;, a small tool that will automatically run your javascript tests whenever a file changes.&lt;/p&gt;
+      <description>&lt;p&gt;A few months ago &lt;a href=&quot;/articles/loris-autotest-for-javascript/&quot;&gt;I wrote about Loris&lt;/a&gt;, a small tool that will automatically run your javascript tests whenever a file changes.&lt;/p&gt;
 &lt;p&gt;I’ve just released a new version of the &lt;a href=&quot;http://rubygems.org/gems/loris&quot;&gt;Loris gem&lt;/a&gt; with a couple of minor fixes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;The dependency on &lt;code&gt;win32-process&lt;/code&gt; has now been removed from the gem. This means the gem now installs correctly on OSX. Windows users will manually need to install the &lt;code&gt;win32-process&lt;/code&gt; gem.&lt;/p&gt;
@@ -154,7 +154,7 @@ $(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;f
       <pubDate>Fri, 06 Nov 2009 14:26:54 +0000</pubDate>
       <guid isPermaLink="true">//articles/loris-autotest-for-javascript/</guid>
       <author></author>
-      <description>&lt;p&gt;I’ve &lt;a href=&quot;http://monket.net/blog/tag/autotest/&quot;&gt;previously written a number of posts on javascript and autotest&lt;/a&gt;. Explaining how to integrate javascript lint, unit tests, and growl with the ruby &lt;a href=&quot;http://ph7spot.com/articles/getting_started_with_autotest&quot;&gt;Autotest&lt;/a&gt; project.&lt;/p&gt;
+      <description>&lt;p&gt;I’ve previously written a number of posts on javascript and autotest. Explaining how to integrate javascript lint, unit tests, and growl with the ruby &lt;a href=&quot;http://ph7spot.com/articles/getting_started_with_autotest&quot;&gt;Autotest&lt;/a&gt; project.&lt;/p&gt;
 &lt;p&gt;While this all worked, it felt a little clunky as Autotest doesn’t natively support the idea of running multiple tasks one after the other. Rather than hack at the Autotest codebase, I thought I’d get some ruby experience by rolling my own autotest-style framework. Not great for reuse of code, but a great way for me to learn :)&lt;/p&gt;
 &lt;h2 id=&quot;loris&quot;&gt;Loris&lt;/h2&gt;
 &lt;p&gt;Loris will monitor your project and run &lt;a href=&quot;http://www.javascriptlint.com/&quot;&gt;Javascript Lint&lt;/a&gt; and &lt;a href=&quot;http://code.google.com/p/js-test-driver/&quot;&gt;JS Test Driver&lt;/a&gt; whenever a file changes, it will report the results to the command line and using &lt;a href=&quot;http://growl.info/&quot;&gt;Growl&lt;/a&gt;. If required, Loris will automatically start the JS Test Driver server and register your default browser with it.&lt;/p&gt;
@@ -351,7 +351,7 @@ teamcity: features -q --no-c  -f JBTeamCityFormatter
       <pubDate>Thu, 03 Sep 2009 09:07:16 +0100</pubDate>
       <guid isPermaLink="true">//articles/qunit-to-jspec-adapter/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/&quot;&gt;JSpec&lt;/a&gt; is a Javascript BDD framework with a lot of great things going for it: It can run without a browser (great for continuous integration servers), it
+      <description>&lt;p&gt;&lt;a href=&quot;/articles/new-qunit-to-js-test-driver-adapter/&quot;&gt;JSpec&lt;/a&gt; is a Javascript BDD framework with a lot of great things going for it: It can run without a browser (great for continuous integration servers), it
 has a Ruby style custom syntax which makes tests easier to write and read, and
 it uses a BDD style describe/should syntax.&lt;/p&gt;
 &lt;p&gt;It’s a very tempting framework to use, but I already have a large collection
@@ -571,7 +571,7 @@ terminal window and run:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
 &lt;p&gt;This adapter has many of the same limitations and my
-&lt;a href=&quot;http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/&quot;&gt;QUnit to JS Test Driver adapter&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;/articles/new-qunit-to-js-test-driver-adapter/&quot;&gt;QUnit to JS Test Driver adapter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The tests must run synchronously (which means no use of the qunit &lt;code&gt;stop&lt;/code&gt; and
 &lt;code&gt;start&lt;/code&gt; methods).&lt;/p&gt;
 &lt;p&gt;If you need to test timeouts, intervals, or other asynchronous sections of code
@@ -685,7 +685,7 @@ load:
       <pubDate>Fri, 24 Jul 2009 10:16:35 +0100</pubDate>
       <guid isPermaLink="true">//articles/new-version-of-autotest-growl-with-window-support/</guid>
       <author></author>
-      <description>&lt;p&gt;In a previous post I detailed changes I made to &lt;a href=&quot;http://monket.net/blog/2009/07/autotest-growl-for-windows/&quot;&gt;add Growl for Windows support to Autotest Growl&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;In a previous post I detailed changes I made to &lt;a href=&quot;/articles/autotest-growl-for-windows/&quot;&gt;add Growl for Windows support to Autotest Growl&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;These changes have now been integrated back into the &lt;code&gt;autotest-growl&lt;/code&gt; gem. Along with some major improvements to the analysis of test results, and the details in the notifications. Thanks to &lt;a href=&quot;http://github.com/svoop&quot;&gt;Svoop&lt;/a&gt;, the creator of &lt;code&gt;autotest-growl&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;This gem isn’t yet available on &lt;a href=&quot;http://rubyforge.org/&quot;&gt;Rubyforge&lt;/a&gt;, but you can grab a copy from my fork on GitHub until it is:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;gem install karl-autotest-growl --source http://gems.github.com
@@ -700,7 +700,7 @@ load:
       <pubDate>Fri, 17 Jul 2009 15:24:57 +0100</pubDate>
       <guid isPermaLink="true">//articles/ruby-growl-notifications-in-windows/</guid>
       <author></author>
-      <description>&lt;p&gt;I previously posted an update that enables &lt;a href=&quot;http://monket.net/blog/2009/07/autotest-growl-for-windows/&quot;&gt;Growl notifications for Autotest in Windows&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;I previously posted an update that enables &lt;a href=&quot;/articles/autotest-growl-for-windows/&quot;&gt;Growl notifications for Autotest in Windows&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Which is nice, but what about other Ruby programs, they might want to send Growl notifications too. To this end Vision Media have produced a &lt;a href=&quot;http://github.com/visionmedia/growl/tree/master&quot;&gt;Ruby Growl gem&lt;/a&gt; which makes it easy for any Ruby program to send Growl notifications.&lt;/p&gt;
 &lt;p&gt;But the visionmedia-growl gem only works on OSX.&lt;/p&gt;
 &lt;h2 id=&quot;now-with-added-windows-support&quot;&gt;Now With Added Windows Support&lt;/h2&gt;
@@ -818,7 +818,7 @@ load:
       <pubDate>Fri, 10 Jul 2009 11:32:48 +0100</pubDate>
       <guid isPermaLink="true">//articles/autotest-growl-for-windows/</guid>
       <author></author>
-      <description>&lt;p&gt;In a previous blog post I detailed &lt;a href=&quot;http://monket.net/blog/2009/06/autotest-growl-notifications-on-windows-using-snarl/&quot;&gt;how to get Autotest Growl notifications on Windows using Snarl&lt;/a&gt;. But, there now exists an &lt;a href=&quot;http://www.growlforwindows.com/gfw/&quot;&gt;official Growl client for Windows&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;In a previous blog post I detailed &lt;a href=&quot;/articles/autotest-growl-notifications-on-windows-using-snarl/&quot;&gt;how to get Autotest Growl notifications on Windows using Snarl&lt;/a&gt;. But, there now exists an &lt;a href=&quot;http://www.growlforwindows.com/gfw/&quot;&gt;official Growl client for Windows&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;So how about we update &lt;code&gt;autotest-growl&lt;/code&gt; to support Windows (on top of it’s existing support for OSX).&lt;/p&gt;
 &lt;p&gt;If you don’t want to know all the gory details, you can just install my fork of the &lt;code&gt;autotest-growl&lt;/code&gt; gem, that includes native Growl Windows support:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;gem install karl-autotest-growl --source http://gems.github.com
@@ -907,7 +907,7 @@ gem install karl-autotest-growl --source http://gems.github.com
       <pubDate>Wed, 01 Jul 2009 08:54:25 +0100</pubDate>
       <guid isPermaLink="true">//articles/qunitadapter-now-part-of-js-test-driver/</guid>
       <author></author>
-      <description>&lt;p&gt;In my last post I &lt;a href=&quot;http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/&quot;&gt;introduced a QUnit to JS Test Driver adapter&lt;/a&gt;, a small adapter which converts QUnit tests into native JS Test Driver tests.&lt;/p&gt;
+      <description>&lt;p&gt;In my last post I &lt;a href=&quot;/articles/new-qunit-to-js-test-driver-adapter/&quot;&gt;introduced a QUnit to JS Test Driver adapter&lt;/a&gt;, a small adapter which converts QUnit tests into native JS Test Driver tests.&lt;/p&gt;
 &lt;p&gt;This adapter is now part of the JS Test Driver project.&lt;/p&gt;
 &lt;p&gt;There is now a &lt;a href=&quot;http://code.google.com/p/js-test-driver/wiki/QUnitAdapter&quot;&gt;QUnit Adapter wiki page&lt;/a&gt; on the JS Test Driver project site. This will be updated to keep up with any changes to the adapter.&lt;/p&gt;
 &lt;p&gt;The code is now stored within the JS Test Driver subversion repository. You can always &lt;a href=&quot;http://code.google.com/p/js-test-driver/source/browse/#svn/trunk/JsTestDriver/contrib/qunit&quot;&gt;download the latest version of the QUnit Adapter&lt;/a&gt; using the Google Code web interface.&lt;/p&gt;
@@ -922,7 +922,7 @@ gem install karl-autotest-growl --source http://gems.github.com
       <author></author>
       <description>&lt;div class=&quot;info&quot;&gt;The code in this post is out of date. The latest code can always be found in the &lt;a href=&quot;http://code.google.com/p/js-test-driver/wiki/QUnitAdapter&quot;&gt;JS Test Driver google code site&lt;/a&gt;&lt;/div&gt;
 
-&lt;p&gt;In my &lt;a href=&quot;http://monket.net/blog/2009/06/qunit-and-js-test-driver/&quot;&gt;previous post on QUnit and JS Test Driver&lt;/a&gt; I showed how to run your &lt;a href=&quot;http://docs.jquery.com/QUnit&quot;&gt;qunit&lt;/a&gt; tests with &lt;a href=&quot;http://code.google.com/p/js-test-driver/&quot;&gt;JS Test Driver&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&quot;/articles/qunit-and-js-test-driver/&quot;&gt;previous post on QUnit and JS Test Driver&lt;/a&gt; I showed how to run your &lt;a href=&quot;http://docs.jquery.com/QUnit&quot;&gt;qunit&lt;/a&gt; tests with &lt;a href=&quot;http://code.google.com/p/js-test-driver/&quot;&gt;JS Test Driver&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The technique used was to run the tests with qunit, and report either their success or failure to JS Test Driver. This works, but you miss out on the important feedback of exactly which assertions have failed, and why.&lt;/p&gt;
 &lt;p&gt;This problem has led me to taking a new approach to running qunit tests with JS Test Driver, where I don’t use any of the existing qunit code, and instead just create an interface wrapper that converts qunit style tests and assertions directly into JS Test Driver tests and assertions.&lt;/p&gt;
 &lt;p&gt;This gives assertion level error reporting, making it much easier to write and debug tests. Essentially this adapter allows you to write native JS Test Driver tests, but using the less verbose qunit syntax.&lt;/p&gt;
@@ -1027,7 +1027,7 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
       <description>&lt;div class=&quot;info&quot;&gt;This post has obsoleted been the &lt;a href=&quot;http://code.google.com/p/js-test-driver/wiki/QUnitAdapter&quot;&gt;new QUnit Adapter&lt;/a&gt; I created, check it out!&lt;/div&gt;
 
 &lt;p&gt;I was very impressed by the new Google &lt;a href=&quot;http://code.google.com/p/js-test-driver/&quot;&gt;JS Test Driver&lt;/a&gt; project, which provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this &lt;a href=&quot;http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/&quot;&gt;introduction to JS Test Driver by Miško Hevery&lt;/a&gt; for a great overview.&lt;/p&gt;
-&lt;p&gt;I previously described how to &lt;a href=&quot;http://monket.net/blog/2009/06/autotest-and-js-test-driver/&quot;&gt;run JS Test Driver automatically with Autotest&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I previously described how to &lt;a href=&quot;/articles/autotest-and-js-test-driver/&quot;&gt;run JS Test Driver automatically with Autotest&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But I have an existing project that uses the jQuery testing framework &lt;a href=&quot;http://docs.jquery.com/QUnit&quot;&gt;qunit&lt;/a&gt; for testing. I didn’t really fancy rewriting 300+ tests just so I could use the JS Test Driver framework.&lt;/p&gt;
 &lt;p&gt;So I wrote a converter that automatically converts qunit modules and tests into JS Test Driver TestCases and test methods.&lt;/p&gt;
 &lt;h2 id=&quot;download-converter-and-patched-testrunner&quot;&gt;Download Converter and Patched Testrunner&lt;/h2&gt;
@@ -1087,7 +1087,7 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
       <pubDate>Fri, 19 Jun 2009 12:31:18 +0100</pubDate>
       <guid isPermaLink="true">//articles/autotest-growl-notifications-on-windows-using-snarl/</guid>
       <author></author>
-      <description>&lt;p&gt;&lt;a href=&quot;http://monket.net/blog/2009/06/simple-example-of-autotest-cucumber-and-growl/&quot;&gt;Growl and Autotest work brilliantly together&lt;/a&gt;. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the tests.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&quot;/articles/simple-example-of-autotest-cucumber-and-growl/&quot;&gt;Growl and Autotest work brilliantly together&lt;/a&gt;. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the tests.&lt;/p&gt;
 &lt;p&gt;But what about those users working on the Windows platform?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.fullphat.net/index.php&quot;&gt;Snarl&lt;/a&gt; is a windows counterpart to Growl. Providing much of the same functionality.&lt;/p&gt;
 &lt;p&gt;And there is a Snarl Ruby gem allowing us to create Snarl notifications from Ruby.&lt;/p&gt;
@@ -1352,7 +1352,7 @@ end
       <pubDate>Mon, 15 Jun 2009 21:17:30 +0100</pubDate>
       <guid isPermaLink="true">//articles/patched-cucumber-notifications-in-autotest-growl-gem/</guid>
       <author></author>
-      <description>&lt;p&gt;Following on to my &lt;a href=&quot;http://monket.net/blog/2009/06/autotest-cucumber-and-growl/&quot;&gt;previous post on Autotest, Cucumber, and Growl&lt;/a&gt;, I have forked the autotest-growl repository, and applied my fix for Cucumber notifications.&lt;/p&gt;
+      <description>&lt;p&gt;Following on to my &lt;a href=&quot;/articles/autotest-cucumber-and-growl/&quot;&gt;previous post on Autotest, Cucumber, and Growl&lt;/a&gt;, I have forked the autotest-growl repository, and applied my fix for Cucumber notifications.&lt;/p&gt;
 &lt;p&gt;You find my &lt;a href=&quot;http://github.com/karl/autotest-growl/tree/master&quot;&gt;patched version of autotest-growl on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can switch to this version of autotest-growl by uninstalling any existing version, and then installing from my fork on GitHub:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;sudo gem uninstall autotest-growl
@@ -1366,7 +1366,7 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
       <pubDate>Mon, 15 Jun 2009 10:00:00 +0100</pubDate>
       <guid isPermaLink="true">//articles/javascript-lint-with-autotest/</guid>
       <author></author>
-      <description>&lt;p&gt;As well as using &lt;a href=&quot;http://monket.net/blog/2009/06/autotest-cucumber-and-growl/&quot;&gt;Autotest to run Cucumber scenarios&lt;/a&gt; I have also been looking into integrating lower level test into the Autotest cycle.&lt;/p&gt;
+      <description>&lt;p&gt;As well as using &lt;a href=&quot;/articles/autotest-cucumber-and-growl/&quot;&gt;Autotest to run Cucumber scenarios&lt;/a&gt; I have also been looking into integrating lower level test into the Autotest cycle.&lt;/p&gt;
 &lt;p&gt;My first attempt at this is a small module to run &lt;a href=&quot;http://javascriptlint.com/&quot;&gt;Javascript Lint&lt;/a&gt; on all the javascript files within a project any time any file changes.&lt;/p&gt;
 &lt;p&gt;The module below hooks in to Autotest just before the tests are normally run. It runs javascript lint over all the &lt;code&gt;*.js&lt;/code&gt; files in the project, outputs the results to the autotest results object and the standard output, and finally fires a new &lt;code&gt;ran_javascript_lint&lt;/code&gt; hook&lt;/p&gt;
 &lt;p&gt;Errors and warnings found by Javascript Lint will also be notified through &lt;a href=&quot;http://growl.info/&quot;&gt;Growl&lt;/a&gt; (if Growl and &lt;a href=&quot;http://github.com/svoop/autotest-growl/tree/master&quot;&gt;autotest-growl&lt;/a&gt; are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a minimum.&lt;/p&gt;

@@ -21,7 +21,7 @@
     <div id="content">
       <div class="content-wrap">
         <article class="article">
-          <section class="content"><p>I’ve <a href="http://monket.net/blog/tag/autotest/">previously written a number of posts on javascript and autotest</a>. Explaining how to integrate javascript lint, unit tests, and growl with the ruby <a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a>&nbsp;project.</p>
+          <section class="content"><p>I’ve previously written a number of posts on javascript and autotest. Explaining how to integrate javascript lint, unit tests, and growl with the ruby <a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a>&nbsp;project.</p>
 <p>While this all worked, it felt a little clunky as Autotest doesn’t natively support the idea of running multiple tasks one after the other. Rather than hack at the Autotest codebase, I thought I’d get some ruby experience by rolling my own autotest-style framework. Not great for reuse of code, but a great way for me to learn&nbsp;:)</p>
 <h2 id="loris">Loris</h2>
 <p>Loris will monitor your project and run <a href="http://www.javascriptlint.com/">Javascript Lint</a> and <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> whenever a file changes, it will report the results to the command line and using <a href="http://growl.info/">Growl</a>. If required, Loris will automatically start the <span class="caps">JS</span> Test Driver server and register your default browser with&nbsp;it.</p>

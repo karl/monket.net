@@ -26,7 +26,7 @@
             <p class="date"><span>24. July 2009</span></p>
             <h2><a href="/articles/new-version-of-autotest-growl-with-window-support/">New version of Autotest Growl (with Window support)</a></h2>
           </header>
-          <section class="content"><p>In a previous post I detailed changes I made to <a href="http://monket.net/blog/2009/07/autotest-growl-for-windows/">add Growl for Windows support to Autotest Growl</a>.</p>
+          <section class="content"><p>In a previous post I detailed changes I made to <a href="/articles/autotest-growl-for-windows/">add Growl for Windows support to Autotest Growl</a>.</p>
 <p>These changes have now been integrated back into the <code>autotest-growl</code> gem. Along with some major improvements to the analysis of test results, and the details in the notifications. Thanks to <a href="http://github.com/svoop">Svoop</a>, the creator of <code>autotest-growl</code>.</p>
 <p>This gem isn’t yet available on <a href="http://rubyforge.org/">Rubyforge</a>, but you can grab a copy from my fork on GitHub until it&nbsp;is:</p>
 <pre><code class="lang-bash">gem install karl-autotest-growl --source http://gems.github.com
@@ -41,7 +41,7 @@
             <p class="date"><span>17. July 2009</span></p>
             <h2><a href="/articles/ruby-growl-notifications-in-windows/">Ruby Growl Notifications in Windows</a></h2>
           </header>
-          <section class="content"><p>I previously posted an update that enables <a href="http://monket.net/blog/2009/07/autotest-growl-for-windows/">Growl notifications for Autotest in Windows</a>.</p>
+          <section class="content"><p>I previously posted an update that enables <a href="/articles/autotest-growl-for-windows/">Growl notifications for Autotest in Windows</a>.</p>
 <p>Which is nice, but what about other Ruby programs, they might want to send Growl notifications too. To this end Vision Media have produced a <a href="http://github.com/visionmedia/growl/tree/master">Ruby Growl gem</a> which makes it easy for any Ruby program to send Growl&nbsp;notifications.</p>
 <p>But the visionmedia-growl gem only works on&nbsp;<span class="caps">OSX</span>.</p>
 
@@ -53,7 +53,7 @@
             <p class="date"><span>10. July 2009</span></p>
             <h2><a href="/articles/autotest-growl-for-windows/">Autotest Growl for Windows</a></h2>
           </header>
-          <section class="content"><p>In a previous blog post I detailed <a href="http://monket.net/blog/2009/06/autotest-growl-notifications-on-windows-using-snarl/">how to get Autotest Growl notifications on Windows using Snarl</a>. But, there now exists an <a href="http://www.growlforwindows.com/gfw/">official Growl client for Windows</a>.</p>
+          <section class="content"><p>In a previous blog post I detailed <a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">how to get Autotest Growl notifications on Windows using Snarl</a>. But, there now exists an <a href="http://www.growlforwindows.com/gfw/">official Growl client for Windows</a>.</p>
 <p>So how about we update <code>autotest-growl</code> to support Windows (on top of it’s existing support for&nbsp;<span class="caps">OSX</span>).</p>
 <p>If you don’t want to know all the gory details, you can just install my fork of the <code>autotest-growl</code> gem, that includes native Growl Windows&nbsp;support:</p>
 <pre><code class="lang-bash">gem install karl-autotest-growl --source http://gems.github.com
@@ -93,7 +93,7 @@
             <p class="date"><span>01. July 2009</span></p>
             <h2><a href="/articles/qunitadapter-now-part-of-js-test-driver/">QUnitAdapter now part of JS Test Driver</a></h2>
           </header>
-          <section class="content"><p>In my last post I <a href="http://monket.net/blog/2009/06/new-qunit-to-js-test-driver-adapter/">introduced a QUnit to <span class="caps">JS</span> Test Driver adapter</a>, a small adapter which converts QUnit tests into native <span class="caps">JS</span> Test Driver&nbsp;tests.</p>
+          <section class="content"><p>In my last post I <a href="/articles/new-qunit-to-js-test-driver-adapter/">introduced a QUnit to <span class="caps">JS</span> Test Driver adapter</a>, a small adapter which converts QUnit tests into native <span class="caps">JS</span> Test Driver&nbsp;tests.</p>
 <p>This adapter is now part of the <span class="caps">JS</span> Test Driver&nbsp;project.</p>
 <p>There is now a <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnit Adapter wiki page</a> on the <span class="caps">JS</span> Test Driver project site. This will be updated to keep up with any changes to the&nbsp;adapter.</p>
 <p>The code is now stored within the <span class="caps">JS</span> Test Driver subversion repository. You can always <a href="http://code.google.com/p/js-test-driver/source/browse/#svn/trunk/JsTestDriver/contrib/qunit">download the latest version of the QUnit Adapter</a> using the Google Code web&nbsp;interface.</p>
@@ -108,7 +108,7 @@
           </header>
           <section class="content"><div class="info">The code in this post is out of date. The latest code can always be found in the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter"><span class="caps">JS</span> Test Driver google code site</a></div>
 
-<p>In my <a href="http://monket.net/blog/2009/06/qunit-and-js-test-driver/">previous post on QUnit and <span class="caps">JS</span> Test Driver</a> I showed how to run your <a href="http://docs.jquery.com/QUnit">qunit</a> tests with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>.</p>
+<p>In my <a href="/articles/qunit-and-js-test-driver/">previous post on QUnit and <span class="caps">JS</span> Test Driver</a> I showed how to run your <a href="http://docs.jquery.com/QUnit">qunit</a> tests with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>.</p>
 <p>The technique used was to run the tests with qunit, and report either their success or failure to <span class="caps">JS</span> Test Driver. This works, but you miss out on the important feedback of exactly which assertions have failed, and&nbsp;why.</p>
 <p>This problem has led me to taking a new approach to running qunit tests with <span class="caps">JS</span> Test Driver, where I don’t use any of the existing qunit code, and instead just create an interface wrapper that converts qunit style tests and assertions directly into JS Test Driver tests and&nbsp;assertions.</p>
 <p>This gives assertion level error reporting, making it much easier to write and debug tests. Essentially this adapter allows you to write native <span class="caps">JS</span> Test Driver tests, but using the less verbose qunit&nbsp;syntax.</p>
@@ -125,7 +125,7 @@
           <section class="content"><div class="info">This post has obsoleted been the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">new QUnit Adapter</a> I created, check it out!</div>
 
 <p>I was very impressed by the new Google <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> project, which provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great&nbsp;overview.</p>
-<p>I previously described how to <a href="http://monket.net/blog/2009/06/autotest-and-js-test-driver/">run <span class="caps">JS</span> Test Driver automatically with Autotest</a>.</p>
+<p>I previously described how to <a href="/articles/autotest-and-js-test-driver/">run <span class="caps">JS</span> Test Driver automatically with Autotest</a>.</p>
 <p>But I have an existing project that uses the jQuery testing framework <a href="http://docs.jquery.com/QUnit">qunit</a> for testing. I didn’t really fancy rewriting 300+ tests just so I could use the <span class="caps">JS</span> Test Driver&nbsp;framework.</p>
 <p>So I wrote a converter that automatically converts qunit modules and tests into <span class="caps">JS</span> Test Driver TestCases and test&nbsp;methods.</p>
 
@@ -137,7 +137,7 @@
             <p class="date"><span>19. June 2009</span></p>
             <h2><a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">Autotest Growl notifications on Windows (using Snarl)</a></h2>
           </header>
-          <section class="content"><p><a href="http://monket.net/blog/2009/06/simple-example-of-autotest-cucumber-and-growl/">Growl and Autotest work brilliantly together</a>. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the&nbsp;tests.</p>
+          <section class="content"><p><a href="/articles/simple-example-of-autotest-cucumber-and-growl/">Growl and Autotest work brilliantly together</a>. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the&nbsp;tests.</p>
 <p>But what about those users working on the Windows&nbsp;platform?</p>
 <p><a href="http://www.fullphat.net/index.php">Snarl</a> is a windows counterpart to Growl. Providing much of the same&nbsp;functionality.</p>
 <p>And there is a Snarl Ruby gem allowing us to create Snarl notifications from&nbsp;Ruby.</p>

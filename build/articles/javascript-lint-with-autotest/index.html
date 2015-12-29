@@ -21,7 +21,7 @@
     <div id="content">
       <div class="content-wrap">
         <article class="article">
-          <section class="content"><p>As well as using <a href="http://monket.net/blog/2009/06/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest&nbsp;cycle.</p>
+          <section class="content"><p>As well as using <a href="/articles/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest&nbsp;cycle.</p>
 <p>My first attempt at this is a small module to run <a href="http://javascriptlint.com/">Javascript Lint</a> on all the javascript files within a project any time any file&nbsp;changes.</p>
 <p>The module below hooks in to Autotest just before the tests are normally run. It runs javascript lint over all the <code>*.js</code> files in the project, outputs the results to the autotest results object and the standard output, and finally fires a new <code>ran_javascript_lint</code> hook</p>
 <p>Errors and warnings found by Javascript Lint will also be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a&nbsp;minimum.</p>

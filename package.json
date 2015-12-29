@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "start": "wintersmith preview",
+    "build": "wintersmith build",
+    "deploy": "./deploy.sh"
+
+  },
   "dependencies": {
     "moment": "2.3.x",
     "underscore": "1.4.x",

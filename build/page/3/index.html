@@ -36,7 +36,7 @@
             <p class="date"><span>15. June 2009</span></p>
             <h2><a href="/articles/patched-cucumber-notifications-in-autotest-growl-gem/">Patched Cucumber notifications in autotest-growl gem</a></h2>
           </header>
-          <section class="content"><p>Following on to my <a href="http://monket.net/blog/2009/06/autotest-cucumber-and-growl/">previous post on Autotest, Cucumber, and Growl</a>, I have forked the autotest-growl repository, and applied my fix for Cucumber&nbsp;notifications.</p>
+          <section class="content"><p>Following on to my <a href="/articles/autotest-cucumber-and-growl/">previous post on Autotest, Cucumber, and Growl</a>, I have forked the autotest-growl repository, and applied my fix for Cucumber&nbsp;notifications.</p>
 <p>You find my <a href="http://github.com/karl/autotest-growl/tree/master">patched version of autotest-growl on GitHub</a>.</p>
 <p>You can switch to this version of autotest-growl by uninstalling any existing version, and then installing from my fork on&nbsp;GitHub:</p>
 <pre><code class="lang-bash">sudo gem uninstall autotest-growl
@@ -50,7 +50,7 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
             <p class="date"><span>15. June 2009</span></p>
             <h2><a href="/articles/javascript-lint-with-autotest/">Javascript Lint with Autotest</a></h2>
           </header>
-          <section class="content"><p>As well as using <a href="http://monket.net/blog/2009/06/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest&nbsp;cycle.</p>
+          <section class="content"><p>As well as using <a href="/articles/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest&nbsp;cycle.</p>
 <p>My first attempt at this is a small module to run <a href="http://javascriptlint.com/">Javascript Lint</a> on all the javascript files within a project any time any file&nbsp;changes.</p>
 <p>The module below hooks in to Autotest just before the tests are normally run. It runs javascript lint over all the <code>*.js</code> files in the project, outputs the results to the autotest results object and the standard output, and finally fires a new <code>ran_javascript_lint</code> hook</p>
 <p>Errors and warnings found by Javascript Lint will also be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a&nbsp;minimum.</p>
