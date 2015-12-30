@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>JavaScript Logging Framework - Karl O'Keeffe's Blog
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>JavaScript Logging Framework</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>A simple javascript logging&nbsp;framework.</p>
+<p>Javascript Logging provides an unobtrusive way of debugging your javascript. A small expandable div positioned in the top left corner of your page displays the logs. Any errors logged using logError(e) automatically expand the log, providing instant feedback when something goes wrong. Logging can be turned off for production systems without having to remove all the logging&nbsp;code.</p>
+<h2 id="screenshot">Screenshot</h2>
+<p><img src="/javascript-logging/JavascriptLogging.png" alt="Image:JavascriptLogging.png"></p>
+<h2 id="download-latest-version">Download Latest&nbsp;Version</h2>
+<p><a href="/javascript-logging/javascript-logging-1.2.zip">Javascript Logging&nbsp;v1.2</a></p>
+<h3 id="all-versions">All&nbsp;Versions</h3>
+<ul>
+<li><a href="/javascript-logging/javascript-logging-1.2.zip">Javascript Logging&nbsp;v1.2</a></li>
+<li><a href="/javascript-logging/javascript-logging-1.1.01.zipzip%22">Javascript Logging&nbsp;v1.1.01</a></li>
+<li><a href="/javascript-logging/javascript-logging-1.1.zip">Javascript Logging&nbsp;v1.1</a></li>
+<li><a href="/javascript-logging/javscript-logging-1.0.zip">Javascript Logging v1.0</a> (does not work, missing&nbsp;class.js)</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<h3 id="in-your-html">In Your&nbsp;<span class="caps">HTML</span></h3>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">"JavaScript"</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"js/logging.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre>
+<h3 id="in-your-javascript">In Your&nbsp;Javascript</h3>
+<pre><code class="lang-javascript"><span class="keyword">try</span> {
+  <span class="comment">// ...</span>
+  log(<span class="string">'value of foo: '</span> + foo);
+  <span class="comment">//...</span>
+} <span class="keyword">catch</span>(e) {
+  logError(e);
+}
+</code></pre>
+<h2 id="options">Options</h2>
+<pre><code class="lang-javascript">loggingDisplay = <span class="literal">false</span>;                   <span class="comment">// The log will no longer be created or displayed</span>
+
+loggingStartExpanded = <span class="literal">true</span>;              <span class="comment">// The log will start expanded</span>
+
+LOGGING_BASE = <span class="string">'/javascript-logging/'</span>;    <span class="comment">// The location where javascript logging was unzipped to</span>
+</code></pre>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/blog/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

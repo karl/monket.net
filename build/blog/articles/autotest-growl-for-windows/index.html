@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Autotest Growl for Windows - Karl O'Keeffe's Blog
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Autotest Growl for Windows</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>In a previous blog post I detailed <a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">how to get Autotest Growl notifications on Windows using Snarl</a>. But, there now exists an <a href="http://www.growlforwindows.com/gfw/">official Growl client for Windows</a>.</p>
+<p>So how about we update <code>autotest-growl</code> to support Windows (on top of it’s existing support for&nbsp;<span class="caps">OSX</span>).</p>
+<p>If you don’t want to know all the gory details, you can just install my fork of the <code>autotest-growl</code> gem, that includes native Growl Windows&nbsp;support:</p>
+<pre><code class="lang-bash">gem install karl-autotest-growl --source http://gems.github.com
+</code></pre>
+<p>Obviously, you’ll need to have <a href="http://www.growlforwindows.com/gfw/">Growl for Windows</a> installed as&nbsp;well!</p>
+<h2 id="updating-autotest-growl-to-support-windows">Updating Autotest Growl to support&nbsp;Windows</h2>
+<p>First up <a href="http://www.growlforwindows.com/gfw/">download and install Growl for Windows</a> (if you haven’t&nbsp;already).</p>
+<p>Updating Autotest Growl turns out to be pretty simple. We need to download <a href="http://www.growlforwindows.com/gfw/help/growlnotify.aspx">growlnotify for Windows</a>, and add it to the <code>growl/</code> directory.</p>
+<p>Then we can update the <code>autotest-growl</code> code to decide which <code>growlnotify</code> to use depending on the Operating&nbsp;System.</p>
+<pre><code class="lang-ruby">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">is_windows?</span></span>
+    processor, platform, *rest = <span class="constant">RUBY_PLATFORM</span>.split(<span class="string">"-"</span>)
+    platform == <span class="string">'mswin32'</span>
+  <span class="keyword">end</span>
+
+  <span class="comment">##</span>
+  <span class="comment"># Display a message through Growl.</span>
+  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">growl</span> <span class="title">title</span>, <span class="title">message</span>, <span class="title">icon</span>, <span class="title">priority=</span>0, <span class="title">stick=</span>""</span>
+    growl = <span class="constant">File</span>.join(<span class="constant">GEM_PATH</span>, <span class="string">'growl'</span>, <span class="string">'growlnotify'</span>)
+    image = <span class="constant">File</span>.join(<span class="constant"><span class="caps">ENV</span></span>[<span class="string">'<span class="caps">HOME</span>'</span>], <span class="string">'.autotest-growl'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>)
+    image = <span class="constant">File</span>.join(<span class="constant">GEM_PATH</span>, <span class="string">'img'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>) <span class="keyword">unless</span> <span class="constant">File</span>.exists?(image)
+
+    <span class="keyword">if</span> is_windows?
+      growl += <span class="string">'.com'</span>
+      cmd = <span class="string">"<span class="subst">#{growl}</span> <span class="subst">#{message.inspect}</span> /a:\"autotest\" /r:\"Autotest\" /n:\"Autotest\" /i:\"<span class="subst">#{image}</span>\" /p:<span class="subst">#{priority}</span> /t:\"<span class="subst">#{title}</span>\""</span>
+    <span class="keyword">else</span>
+      <span class="keyword">if</span> <span class="variable">@@remote_notification</span>
+        cmd = <span class="string">"<span class="subst">#{growl}</span> -H localhost -n autotest --image '<span class="subst">#{image}</span>' -p <span class="subst">#{priority}</span> -m <span class="subst">#{message.inspect}</span> '<span class="subst">#{title}</span>' <span class="subst">#{stick}</span>"</span>
+      <span class="keyword">else</span>
+        cmd = <span class="string">"<span class="subst">#{growl}</span> -n autotest --image '<span class="subst">#{image}</span>' -p <span class="subst">#{priority}</span> -m <span class="subst">#{message.inspect}</span> '<span class="subst">#{title}</span>' <span class="subst">#{stick}</span>"</span>
+      <span class="keyword">end</span>
+    <span class="keyword">end</span>
+
+  system cmd
+  <span class="keyword">end</span>
+</code></pre>
+<p>You’ll notice that the command line flags are slightly different for the Windows version of <code>growlnotify</code>, the using the <code>/x:</code> format, rather than the <span class="caps">OSX</span> <code>-x</code> format.</p>
+<p>The Windows version also adds the flat <code>/r:&quot;Autotest&quot;</code> to ensure the Autotest application is registered the first time it is&nbsp;run.</p>
+<p>There is no need to deal with the <code>@@remote_notification</code> settings, as Growl for Windows does not have the same problem with <a href="https://bugs.launchpad.net/growl/+bug/267767">intermittent notification loss</a> that <span class="caps">OSX</span>&nbsp;does.</p>
+<h2 id="installing-updated-autotest-growl-gem">Installing updated Autotest Growl&nbsp;gem</h2>
+<p>I have rolled all these changes into my fork of <code>autotest-growl</code>. To switch over to this fork, open a Windows command prompt and&nbsp;enter:</p>
+<pre><code class="lang-bash">gem uninstall autotest-growl
+gem install karl-autotest-growl --source http://gems.github.com
+</code></pre>
+<p>And then watch the notifications roll&nbsp;in!</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/blog/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Detecting when a page is loaded from the browser cache - Karl O'Keeffe's Blog
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Detecting when a page is loaded from the browser cache</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>When a user presses the back button in their browser to return to a previous page, that page is usually loaded straight from the browser’s cache, without any requests being made to the server. When that page shows information that could be out of date (such a an old list of products in your basket) this can cause&nbsp;problems.</p>
+<p>So how about we knock up a little code that allows us to determine whether the page has been loaded from the server or the browsers cache. Then we can reload those parts of the page that may need updating (such as the&nbsp;basket).</p>
+<p>We can do this by setting a cookie on every response from the server, and modifying that cookie using javascript. We can then use this cookie to know whether the page has been loaded from the server or the browser&nbsp;cache.</p>
+<h2 id="setting-the-cookie-on-every-response-from-the-server">Setting the cookie on every response from the&nbsp;server</h2>
+<p>We will use a <code>loadedFromBrowserCache</code> cookie to facilitate the cache detection. We will set it to <code>false</code> every time a page is loaded from the&nbsp;server.</p>
+<p>You can use the <code>BrowserCacheIndicator</code> class below to manage the&nbsp;cookie.</p>
+<h3 id="browsercacheindicator-cs">BrowserCacheIndicator.cs</h3>
+<pre><code class="lang-csharp"><span class="keyword">using</span> System.Web;
+
+<span class="keyword">namespace</span> <span class="title">SevenDigital.Web.Com.Code</span> {
+    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">BrowserCacheIndicator</span> {
+        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> CACHE_COOKIE = <span class="string">"loadedFromBrowserCache"</span>;
+
+        <span class="comment">// This works with the javascript on the site to determine whether</span>
+        <span class="comment">// a page has been loaded from the browser cache</span>
+
+        <span class="comment">// *Every time* a page is loaded from the server we need to set</span>
+        <span class="comment">// the loadedFromBrowserCache cookie to false</span>
+
+        <span class="comment">// This method should be called in all Master Pages</span>
+        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ClearCacheCookie</span>(<span class="params">HttpResponse response</span>) </span>{
+            response.SetCookie(<span class="keyword">new</span> HttpCookie(CACHE_COOKIE, <span class="string">"false"</span>));
+        }
+    }
+}
+</code></pre>
+<p>And then set the cookie in every Master&nbsp;page:</p>
+<pre><code class="lang-csharp"><span class="keyword">namespace</span> <span class="title">SevenDigital.Web.Com</span> {
+    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">ExampleMasterPage</span>: <span class="title">BaseMasterPage</span> {
+        <span class="keyword">protected</span> <span class="keyword">readonly</span> BrowserCacheIndicator BrowserCacheIndicator = <span class="keyword">new</span> BrowserCacheIndicator();
+
+        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">Page_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>) </span>{
+            BrowserCacheIndicator.ClearCacheCookie(Response);
+        }
+    }
+}
+</code></pre>
+<h2 id="using-the-cookie-to-know-whether-the-page-was-loaded-from-the-browser-cache">Using the cookie to know whether the page was loaded from the browser&nbsp;cache</h2>
+<p>The <code>loadedFromBrowserCache</code> cookie will be reset set to <code>false</code> by the <span class="caps">HTTP</span> Response header every time the page is loaded from the server. But it will not be reset when the page is loaded from the cache. We can use this to our advantage by setting the <code>loadedFromBrowserCache</code> cookie to <code>true</code> in&nbsp;javascript.</p>
+<p>Then we know that the browser was loaded from the cache if the cookie is true on page load (because it was not reset by the&nbsp;server).</p>
+<p>We just need to make sure we check the cookie before we set it to <code>true</code>!</p>
+<h3 id="browser-cache-js">browser-cache.js</h3>
+<pre><code class="lang-javascript"><span class="comment">// Detect whether or not we are loading this page from the browser cache</span>
+<span class="comment">// Set the value $.loadedFromBrowserCache, which other scripts can use</span>
+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">var</span> CACHE_COOKIE = <span class="string">'loadedFromBrowserCache'</span>;
+    jQuery.loadedFromBrowserCache = getCookie(CACHE_COOKIE) == <span class="string">'true'</span>;
+    setCookie(CACHE_COOKIE, <span class="string">'true'</span>);
+})();
+</code></pre>
+<p>Now we have a <code>$.loadedFromBrowserCache&lt;</code> variable that let’s us know whether the page was loaded from the browser&nbsp;cache.</p>
+<p>Note, the above function can run immediately, it does not need to wait for the <code>jQuery</code> <code>ready</code> event, or the <code>window.onload</code> event as it does not modify the&nbsp;<span class="caps">DOM</span>.</p>
+<h2 id="using-loadedfrombrowsercache-to-do-something-useful">Using <code>$.loadedFromBrowserCache</code> to do something&nbsp;useful</h2>
+<p>Now we can do something useful with the knowledge a page was reloaded from the cache. How about reloading the users basket to ensure it is always up to&nbsp;date:</p>
+<pre><code class="lang-javascript"><span class="comment">// Reload the basket using ajax</span>
+<span class="comment">// This is so that users still see the latest basket when using the back</span>
+<span class="comment">// button in their browsers</span>
+$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">if</span> ($.loadedFromBrowserCache) {
+        refreshBasket();
+    }
+});
+</code></pre>
+<p>Enjoy!</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/blog/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
