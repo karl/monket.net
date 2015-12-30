@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Update to QUnit Adapter - Karl O'Keeffe's Blog
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Update to QUnit Adapter</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>I’ve made a small update to the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnit Adapter for <span class="caps">JS</span> Test Driver</a>.</p>
+<p>This fixes a bug where the <code>ok()</code> assertion was much stricter than the qunit equivalent. It was only succeeding when passed a boolean <code>true</code> value.</p>
+<p>Now it behaves the same as the qunit version, and succeeds with all values other than <code>0</code>, <code>false</code>, or <code>null</code>.</p>
+<p>You can get the new <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">1.0.1 verison of the QUnit Adapter from Google Code</a>.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/blog/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

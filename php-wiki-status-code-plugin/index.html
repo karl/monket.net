@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>PHP Wiki Status Code Plugin - Karl O'Keeffe's Blog
+    </title>
+    <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>PHP Wiki Status Code Plugin</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><h2 id="description">Description</h2>
+<p>A plugin to give a wiki page an alternate http return&nbsp;code.</p>
+<p>e.g. 404 Not Found - when a wiki page has no&nbsp;revisions.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li><a href="/php-wiki-status-code-plugin/StatusCode.php">StatusCode.php</a></li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Placed in a normal wiki&nbsp;page:</p>
+<pre><code class="lang-php"><span class="preprocessor">&lt;?</span>plugin StatusCode code=<span class="string">"404"</span> <span class="preprocessor">?&gt;</span>
+</code></pre>
+<p>this will cause the page to be returned as 404 Not&nbsp;Found.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+
+<dt>code</dt>
+
+<dd>The http return code to&nbsp;use.</dd>
+
+</dl>
+
+<dl>
+
+<dt>text</dt>
+
+<dd>The text to return with the code. If this is not present a look up table is used to find the correct text for that error&nbsp;code.</dd>
+
+</dl>
+
+<h2 id="code">Code</h2>
+<pre><code class="lang-php"><span class="preprocessor">&lt;?php</span>
+
+<span class="class"><span class="keyword">class</span> <span class="title">WikiPlugin_StatusCode</span> <span class="keyword">extends</span> <span class="title">WikiPlugin</span> </span>{
+
+    <span class="function"><span class="keyword">function</span> <span class="title">getName</span> <span class="params">()</span> </span>{
+        <span class="keyword">return</span> _(<span class="string">"StatusCode"</span>);
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">getDescription</span> <span class="params">()</span> </span>{
+        <span class="keyword">return</span> _(<span class="string">"Return the Page with an alternate status code (e.g. 404 for page not found)"</span>);
+
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">getDefaultArguments</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'code'</span> =&gt; <span class="number">200</span>,
+                     <span class="string">'text'</span> =&gt; <span class="keyword">null</span>);
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">run</span><span class="params">(<span class="variable">$dbi</span>, <span class="variable">$argstr</span>, <span class="variable">$request</span>)</span> </span>{
+        extract(<span class="variable">$this</span>-&gt;getArgs(<span class="variable">$argstr</span>, <span class="variable">$request</span>));
+
+        <span class="comment">// Return Codes copied from:</span>
+        <span class="comment">// http://www.cknow.com/ckinfo/def_h/httpreturncodes.shtml</span>
+        <span class="variable">$HttpReturnCodes</span> = <span class="keyword">array</span>(
+            <span class="number">100</span> =&gt; <span class="string">'Continue'</span>,
+            <span class="number">101</span> =&gt; <span class="string">'Switching Protocols'</span>,
+
+            <span class="number">200</span> =&gt; <span class="string">'<span class="caps">OK</span>'</span>,
+            <span class="number">201</span> =&gt; <span class="string">'Created'</span>,
+            <span class="number">202</span> =&gt; <span class="string">'Accepted'</span>,
+            <span class="number">203</span> =&gt; <span class="string">'Non-Authoritative Information'</span>,
+            <span class="number">204</span> =&gt; <span class="string">'No New Content'</span>,
+            <span class="number">205</span> =&gt; <span class="string">'Reset Content'</span>,
+            <span class="number">206</span> =&gt; <span class="string">'Partial Content'</span>,
+
+            <span class="number">300</span> =&gt; <span class="string">'Multiple Choice'</span>,
+            <span class="number">301</span> =&gt; <span class="string">'Moved Permanently'</span>,
+            <span class="number">302</span> =&gt; <span class="string">'Moved Temporarily'</span>,
+            <span class="number">303</span> =&gt; <span class="string">'See Other'</span>,
+            <span class="number">304</span> =&gt; <span class="string">'Not Modified'</span>,
+            <span class="number">305</span> =&gt; <span class="string">'Use Proxy'</span>,
+
+            <span class="number">400</span> =&gt; <span class="string">'Bad Request'</span>,
+            <span class="number">401</span> =&gt; <span class="string">'Unauthorized'</span>,
+            <span class="number">402</span> =&gt; <span class="string">'Payment Required'</span>,
+            <span class="number">403</span> =&gt; <span class="string">'Forbidden'</span>,
+            <span class="number">404</span> =&gt; <span class="string">'Not Found'</span>,
+            <span class="number">405</span> =&gt; <span class="string">'Method Not Allowed'</span>,
+            <span class="number">406</span> =&gt; <span class="string">'Not Acceptable'</span>,
+            <span class="number">407</span> =&gt; <span class="string">'Proxy Authentication Required'</span>,
+            <span class="number">408</span> =&gt; <span class="string">'Request Timeout'</span>,
+            <span class="number">409</span> =&gt; <span class="string">'Conflict'</span>,
+            <span class="number">410</span> =&gt; <span class="string">'Gone'</span>,
+            <span class="number">411</span> =&gt; <span class="string">'Length Required'</span>,
+            <span class="number">412</span> =&gt; <span class="string">'Precondition Failed'</span>,
+            <span class="number">413</span> =&gt; <span class="string">'Request Entity Too Large'</span>,
+            <span class="number">414</span> =&gt; <span class="string">'Request-<span class="caps">URI</span> Too Long'</span>,
+            <span class="number">415</span> =&gt; <span class="string">'Unsupported Media Type'</span>,
+
+            <span class="number">500</span> =&gt; <span class="string">'Internal Server Error'</span>,
+            <span class="number">501</span> =&gt; <span class="string">'Not Implemented'</span>,
+            <span class="number">502</span> =&gt; <span class="string">'Bad Gateway'</span>,
+            <span class="number">503</span> =&gt; <span class="string">'Service Unavailable'</span>,
+            <span class="number">504</span> =&gt; <span class="string">'Gateway Timeout'</span>,
+            <span class="number">505</span> =&gt; <span class="string">'<span class="caps">HTTP</span> Version Not Supported'</span>
+        );
+
+        settype( <span class="variable">$code</span>, <span class="string">'integer'</span> );
+
+        <span class="keyword">if</span> ( <span class="variable">$text</span> == <span class="keyword">null</span> ) {
+            <span class="variable">$text</span> = <span class="variable">$HttpReturnCodes</span>[ <span class="variable">$code</span> ];
+        }
+
+        <span class="variable">$text</span> = str_replace( <span class="string">"\n"</span>, <span class="string">''</span>, <span class="variable">$text</span> );
+
+        header( <span class="variable">$_SERVER</span>[<span class="string">'SERVER_PROTOCOL'</span>] . <span class="string">' '</span> . <span class="variable">$code</span> . <span class="string">' '</span> . <span class="variable">$text</span>);
+    }
+}
+
+<span class="preprocessor">?&gt;</span>
+</code></pre>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/blog/">« Full blog</a></div>
+        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+
+        </section>
+        <section class="copy">
+          <p>© 2015 Karl O'Keeffe</p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
