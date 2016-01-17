@@ -83,7 +83,8 @@ hr {
 /* page header */
 
 .header {
-  margin: 3em 0 5em;
+  padding: 2em;
+  background: #FFA91A;
 }
 
 .header h1 {
@@ -95,35 +96,7 @@ hr {
 
 .header a, .header a:hover {
   text-decoration: none;
-  color: #171717;
-}
-
-.header .author {
-  font-family: 'Merriweather', serif;
-  font-variant: small-caps;
-  text-transform: lowercase;
-  text-rendering: auto;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-
-.header .description {
-  font-size: 1.2em;
-  font-style: italic;
-  text-align: center;
-  margin-top: -0.3em;
-}
-
-body.article-detail > header h1 {
-  font-size: 2.5em;
-  font-style: italic;
-  font-weight: 400;
-  margin-bottom: -0.2em;
-}
-
-body.article-detail > header {
-  margin-bottom: 3em;
+  color: #ffffff;
 }
 
 /* page footer */
@@ -383,14 +356,10 @@ code.lang-markdown .bullet {
     padding: 0 1em;
   }
   .header {
-    margin: 1em 0;
+    padding: 1em;
   }
   .header h1 {
     font-size: 1.4em;
-    margin-bottom: 0.6em;
-  }
-  .header .description {
-    font-size: 1em;
   }
   .article {
     margin: 1em 0 2.5em;
