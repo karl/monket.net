@@ -1,13 +1,14 @@
 {
   "locals": {
     "url": "/",
-    "name": "Karl O'Keeffe's Blog",
+    "name": "Karl O'Keeffe",
     "owner": "Karl O'Keeffe",
     "description": ""
   },
   "plugins": [
     "./plugins/paginator.coffee",
-    "wintersmith-redirect"
+    "wintersmith-redirect",
+    "wintersmith-livereload"
   ],
   "require": {
     "moment": "moment",
