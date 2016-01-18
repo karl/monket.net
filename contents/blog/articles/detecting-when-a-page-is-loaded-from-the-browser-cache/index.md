@@ -72,7 +72,7 @@ We just need to make sure we check the cookie before we set it to `true`!
 })();
 ```
 
-Now we have a `$.loadedFromBrowserCache<` variable that let's us know whether the page was loaded from the browser cache.
+Now we have a `$.loadedFromBrowserCache` variable that let's us know whether the page was loaded from the browser cache.
 
 Note, the above function can run immediately, it does not need to wait for the `jQuery` `ready` event, or the `window.onload` event as it does not modify the DOM.
 
