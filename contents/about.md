@@ -2,4 +2,4 @@
 view: none
 ---
 
-Personal homepage of Karl O'Keeffe.
+Personal homepage of [Karl O'Keeffe](/).

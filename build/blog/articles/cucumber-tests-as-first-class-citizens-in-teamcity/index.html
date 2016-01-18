@@ -9,18 +9,21 @@
     <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="/css/main.css">
   </head>
-  <body class="article-detail">
+  <body>
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
           <h1><a href="/">Karl O'Keeffe</a></h1>
-          <p class="description"></p>
         </div>
       </div>
     </header>
     <div id="content">
       <div class="content-wrap">
         <article class="article">
+          <header>
+            <h2><a href="/blog/articles/cucumber-tests-as-first-class-citizens-in-teamcity/">Cucumber Tests as First Class Citizens in TeamCity</a></h2>
+            <p class="date"><span>03. September 2009</span></p>
+          </header>
           <section class="content"><p><a href="http://www.jetbrains.com/teamcity/">TeamCity</a> is a great continuous integration server, and has brilliant built in support for running <a href="http://www.nunit.org/">NUnit</a> tests. The web interface updates automatically as each test is run, and gives immediate feedback on which tests have failed without waiting for the entire suite to finish. It also keeps track of tests over multiple builds, showing you exactly when each test first failed, how often they fail&nbsp;etc.</p>
 <p>If like me you are using <a href="http://cukes.info/">Cucumber</a> to run your acceptance tests, wouldn’t it be great to get the same level of TeamCity integration for every Cucumber test. Well now you can, using the <code>TeamCity::Cucumber::Formatter</code> from the TeamCity 5.0 <span class="caps">EAP</span>&nbsp;release.</p>
 <p>JetBrains, the makers of TeamCity, released a <a href="http://blogs.jetbrains.com/ruby/2009/08/testing-rubymine-with-cucumber/">blog post demostrating the Cucumber test integration</a>, but without any details in how to set it up yourself. So I’ll take you through it&nbsp;here.</p>
@@ -66,8 +69,8 @@ teamcity: features -q --no-c  -f JBTeamCityFormatter
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="/blog/">« Full blog</a></div>
-        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+        <div class="nav"><a href="/blog/">Full blog</a></div>
+        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
 
         </section>
       </div>
