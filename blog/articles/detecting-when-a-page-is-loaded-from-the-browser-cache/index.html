@@ -74,7 +74,7 @@
     setCookie(CACHE_COOKIE, <span class="string">'true'</span>);
 })();
 </code></pre>
-<p>Now we have a <code>$.loadedFromBrowserCache&lt;</code> variable that let’s us know whether the page was loaded from the browser&nbsp;cache.</p>
+<p>Now we have a <code>$.loadedFromBrowserCache</code> variable that let’s us know whether the page was loaded from the browser&nbsp;cache.</p>
 <p>Note, the above function can run immediately, it does not need to wait for the <code>jQuery</code> <code>ready</code> event, or the <code>window.onload</code> event as it does not modify the&nbsp;<span class="caps">DOM</span>.</p>
 <h2 id="using-loadedfrombrowsercache-to-do-something-useful">Using <code>$.loadedFromBrowserCache</code> to do something&nbsp;useful</h2>
 <p>Now we can do something useful with the knowledge a page was reloaded from the cache. How about reloading the users basket to ensure it is always up to&nbsp;date:</p>
