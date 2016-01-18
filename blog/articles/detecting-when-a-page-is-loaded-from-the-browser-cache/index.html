@@ -9,7 +9,7 @@
     <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="/css/main.css">
   </head>
-  <body class="article-detail">
+  <body>
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
@@ -20,6 +20,10 @@
     <div id="content">
       <div class="content-wrap">
         <article class="article">
+          <header>
+            <h2><a href="/blog/articles/detecting-when-a-page-is-loaded-from-the-browser-cache/">Detecting when a page is loaded from the browser cache</a></h2>
+            <p class="date"><span>12. February 2010</span></p>
+          </header>
           <section class="content"><p>When a user presses the back button in their browser to return to a previous page, that page is usually loaded straight from the browser’s cache, without any requests being made to the server. When that page shows information that could be out of date (such a an old list of products in your basket) this can cause&nbsp;problems.</p>
 <p>So how about we knock up a little code that allows us to determine whether the page has been loaded from the server or the browsers cache. Then we can reload those parts of the page that may need updating (such as the&nbsp;basket).</p>
 <p>We can do this by setting a cookie on every response from the server, and modifying that cookie using javascript. We can then use this cookie to know whether the page has been loaded from the server or the browser&nbsp;cache.</p>
@@ -90,8 +94,8 @@ $(<span class="function"><span class="keyword">function</span>(<span class="para
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="/blog/">« Full blog</a></div>
-        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+        <div class="nav"><a href="/blog/">Full blog</a></div>
+        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
 
         </section>
       </div>

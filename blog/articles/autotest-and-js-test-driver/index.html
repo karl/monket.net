@@ -9,7 +9,7 @@
     <link rel="alternate" href="//feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="/css/main.css">
   </head>
-  <body class="article-detail">
+  <body>
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
@@ -20,6 +20,10 @@
     <div id="content">
       <div class="content-wrap">
         <article class="article">
+          <header>
+            <h2><a href="/blog/articles/autotest-and-js-test-driver/">Autotest and JS Test Driver</a></h2>
+            <p class="date"><span>19. June 2009</span></p>
+          </header>
           <section class="content"><p>Google recently released a new Javascript testing framework, <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>. It provides incredibly fast execution for Javascript unit tests, and can be run from the command line without the need for manual control of browsers. Check out this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a>.</p>
 <p>Fast test execution and the ability to be run from the command line make it a perfect fit to integrate into the Autotest test cycle. So I&nbsp;have.</p>
 <p>The module below hooks into Autotest just before the normal tests are run. It runs <span class="caps">JS</span> Test Driver over all the tests in the project, outputs the results, and finally fires off a <code>:ran_js_test_driver</code> hook.</p>
@@ -164,8 +168,8 @@ myapp.Greeter.prototype.greet = <span class="function"><span class="keyword">fun
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="/blog/">« Full blog</a></div>
-        <section class="about"><p>Personal homepage of Karl O’Keeffe.</p>
+        <div class="nav"><a href="/blog/">Full blog</a></div>
+        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
 
         </section>
       </div>
