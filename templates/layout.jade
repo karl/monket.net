@@ -1,6 +1,4 @@
 doctype html
-block vars
-  - var bodyclass = null;
 html(lang='en')
   head
     block head
@@ -11,7 +9,8 @@ html(lang='en')
         block title
           = locals.name
       link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
-      link(rel='stylesheet', href=contents.css['main.css'].url)
+      style
+        include ../css/main.css
   body
     header.header
       div.content-wrap

@@ -20,7 +20,8 @@ block prepend footer
   div.nav
     if prevPage
       a(href=prevPage.url) « Newer
-    else
-      a(href='/blog/archives/') « Archives
+
+    a(href='/blog/archives/') Archives
+
     if nextPage
-      a(href=nextPage.url) Next page »
+      a(href=nextPage.url) Older »
