@@ -70,4 +70,4 @@ A plugin to give a wiki page an alternate http return code (for [PhpWiki](http:/
 
 ## Other
 
-### [Curriculum Vitae](https://www.karlokeeffe.com)
+### [Curriculum Vitae](cv/)
