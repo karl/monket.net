@@ -44,7 +44,7 @@ Designing and building the widgets project from scratch in CoffeeScript and PHP.
 
 angular, javascript, coffeescript, jquery, less, jenkins, html, css, php
 
-### Frond End Web Developer | 7 Digital, London
+### Front End Web Developer | 7 Digital, London
 
 _May 2008 – April 2010_
 
