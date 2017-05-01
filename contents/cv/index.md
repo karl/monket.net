@@ -20,7 +20,7 @@ I'm interested in moving into contracting as an opportunity to work with more te
 
 ## Experience
 
-### Front End Developer | Geckoboard, London
+### Team Lead & Front End Developer | Geckoboard, London
 
 _November 2015 – Current_
 
