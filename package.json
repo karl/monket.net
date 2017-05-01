@@ -12,6 +12,7 @@
   "private": "true",
   "devDependencies": {
     "wintersmith": "^2.2.4",
+    "wintersmith-livereload": "^0.2.2",
     "wintersmith-redirect": "^0.1.0"
   }
 }
