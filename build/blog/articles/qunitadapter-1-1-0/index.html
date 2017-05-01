@@ -329,10 +329,10 @@ code.lang-markdown .bullet {
           <section class="content"><p>I’ve updated the <span class="caps">JS</span> Test Driver <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnitAdapter</a> to improve compatibility with&nbsp;QUnit.</p>
 <p>Variables set on the <code>this</code> object within are now available within setup, teardown, and the tests&nbsp;themselves.</p>
 <pre><code class="lang-javascript"><span class="built_in">module</span>(<span class="string">'Lifecycle'</span>, {
-  setup: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="attr">setup</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     <span class="keyword">this</span>.mockString = <span class="string">"some string"</span>;
   },
-  teardown: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="attr">teardown</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     equals(<span class="keyword">this</span>.mockString, <span class="string">"some string"</span>);
   }
 });

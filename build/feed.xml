@@ -42,10 +42,10 @@ gem install win32-process
       <description>&lt;p&gt;I’ve updated the JS Test Driver &lt;a href=&quot;http://code.google.com/p/js-test-driver/wiki/QUnitAdapter&quot;&gt;QUnitAdapter&lt;/a&gt; to improve compatibility with QUnit.&lt;/p&gt;
 &lt;p&gt;Variables set on the &lt;code&gt;this&lt;/code&gt; object within are now available within setup, teardown, and the tests themselves.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'Lifecycle'&lt;/span&gt;, {
-  setup: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;attr&quot;&gt;setup&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
     &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mockString = &lt;span class=&quot;string&quot;&gt;&quot;some string&quot;&lt;/span&gt;;
   },
-  teardown: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;attr&quot;&gt;teardown&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
     equals(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mockString, &lt;span class=&quot;string&quot;&gt;&quot;some string&quot;&lt;/span&gt;);
   }
 });
@@ -184,14 +184,14 @@ gem tumble
 &lt;h3 id=&quot;configuring-js-test-driver&quot;&gt;Configuring JS Test Driver&lt;/h3&gt;
 &lt;p&gt;To enable JS Test Driver, create a &lt;code&gt;jsTestDriver.conf&lt;/code&gt; file in the folder where you run Loris. This should be a standard &lt;a href=&quot;http://code.google.com/p/js-test-driver/wiki/ConfigurationFile&quot;&gt;JS Test Driver config file&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This should specify which files JS Test Driver should process, and how it connects to the JS Test Driver server. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;server: http://localhost:9876
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;server:&lt;/span&gt; http://localhost:&lt;span class=&quot;number&quot;&gt;9876&lt;/span&gt;
 
-load:
-  - tests/qunit/equiv.js
-  - tests/qunit/QUnitAdapter.js
+&lt;span class=&quot;attr&quot;&gt;load:&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/qunit/equiv.js
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/qunit/QUnitAdapter.js
 
-  - src/js/*.js
-  - tests/js/*.js
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; src/js/*.js
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/js/*.js
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If no &lt;code&gt;jsTestDriver.conf&lt;/code&gt; file is found, the JS Test Driver task is silently skipped.&lt;/p&gt;
 &lt;p&gt;To make it really simple to run JS Test Driver tests, if the server is set to run on &lt;code&gt;localhost&lt;/code&gt;, and Loris doesn’t detect one running, it will automatically start one, and register your default browser with it.&lt;/p&gt;
@@ -258,17 +258,17 @@ Total 8 tests (Passed: 8; Fails: 0; Errors: 0) (3.00 ms)
 &lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;DefaultWorld&lt;/span&gt;&lt;/span&gt;
 
   &lt;span class=&quot;comment&quot;&gt;# Screenshot directory, relative to this env.rb file&lt;/span&gt;
-  &lt;span class=&quot;constant&quot;&gt;DEFAULT_SCREENSHOT_PATH&lt;/span&gt; = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.expand_path(&lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/../../../output/cucumber/screenshots/'&lt;/span&gt;)
+  DEFAULT_SCREENSHOT_PATH = File.expand_path(File.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/../../../output/cucumber/screenshots/'&lt;/span&gt;)
 
   &lt;span class=&quot;comment&quot;&gt;# Absolute location of SnapIt&lt;/span&gt;
-  &lt;span class=&quot;constant&quot;&gt;SNAPIT_PATH&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;'C:\\Tools\\SnapIt.exe'&lt;/span&gt;
+  SNAPIT_PATH = &lt;span class=&quot;string&quot;&gt;'C:\\Tools\\SnapIt.exe'&lt;/span&gt;
 
   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;take_screenshot_if_failed&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(scenario)&lt;/span&gt;&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (scenario.status != &lt;span class=&quot;symbol&quot;&gt;:passed&lt;/span&gt;)
       scenario_name = scenario.to_sexp[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;].gsub /[^\w\-]/, &lt;span class=&quot;string&quot;&gt;' '&lt;/span&gt;
-      time = &lt;span class=&quot;constant&quot;&gt;Time&lt;/span&gt;.now.strftime(&lt;span class=&quot;string&quot;&gt;&quot;%Y-%m-%d %H%M&quot;&lt;/span&gt;)
-      screenshot_path = &lt;span class=&quot;constant&quot;&gt;DefaultWorld::DEFAULT_SCREENSHOT_PATH&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt; +  time + &lt;span class=&quot;string&quot;&gt;' - '&lt;/span&gt; + scenario_name + &lt;span class=&quot;string&quot;&gt;'.png'&lt;/span&gt;
-      cmd = &lt;span class=&quot;constant&quot;&gt;DefaultWorld::SNAPIT_PATH&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;' &quot;'&lt;/span&gt; + screenshot_path + &lt;span class=&quot;string&quot;&gt;'&quot;'&lt;/span&gt;
+      time = Time.now.strftime(&lt;span class=&quot;string&quot;&gt;&quot;%Y-%m-%d %H%M&quot;&lt;/span&gt;)
+      screenshot_path = DefaultWorld::DEFAULT_SCREENSHOT_PATH + &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt; +  time + &lt;span class=&quot;string&quot;&gt;' - '&lt;/span&gt; + scenario_name + &lt;span class=&quot;string&quot;&gt;'.png'&lt;/span&gt;
+      cmd = DefaultWorld::SNAPIT_PATH + &lt;span class=&quot;string&quot;&gt;' &quot;'&lt;/span&gt; + screenshot_path + &lt;span class=&quot;string&quot;&gt;'&quot;'&lt;/span&gt;
       &lt;span class=&quot;string&quot;&gt;%x{&lt;span class=&quot;subst&quot;&gt;#{cmd}&lt;/span&gt;}&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;    
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
@@ -277,11 +277,11 @@ Total 8 tests (Passed: 8; Fails: 0; Errors: 0) (3.00 ms)
 
 &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
-&lt;span class=&quot;constant&quot;&gt;World&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;constant&quot;&gt;DefaultWorld&lt;/span&gt;.new
+World &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;
+  DefaultWorld.new
 &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
-&lt;span class=&quot;constant&quot;&gt;After&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |scenario|
+After &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|scenario|&lt;/span&gt;
   take_screenshot_if_failed(scenario)
 
   &lt;span class=&quot;comment&quot;&gt;# [...] Other After hook code here if needed  &lt;/span&gt;
@@ -322,22 +322,22 @@ lib/
 &lt;p&gt;The formatter in my download has been tweaked to look in a new location for the teamcity support files, and has been changed to be a single class in a module named &lt;code&gt;JBTeamCityFormatter&lt;/code&gt; (to ease calling it from the command line).&lt;/p&gt;
 &lt;p&gt;The relevant changes in the file are:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;
-&lt;span class=&quot;variable&quot;&gt;$:&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.expand_path(&lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/../../lib/'&lt;/span&gt;)
+$: &amp;lt;&amp;lt; File.expand_path(File.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/../../lib/'&lt;/span&gt;)
 &lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'teamcity/runner_common'&lt;/span&gt;
 &lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'teamcity/utils/service_message_factory'&lt;/span&gt;
 &lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'teamcity/utils/runner_utils'&lt;/span&gt;
 &lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'teamcity/utils/url_formatter'&lt;/span&gt;
 
-&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JBTeamCityFormatter&lt;/span&gt; &lt;span class=&quot;inheritance&quot;&gt;&amp;lt; &lt;/span&gt;::&lt;span class=&quot;title&quot;&gt;Cucumber::Ast::Visitor&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JBTeamCityFormatter&lt;/span&gt; &amp;lt; ::&lt;span class=&quot;title&quot;&gt;Cucumber::Ast::Visitor&lt;/span&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;setting-up-cucumber-to-use-the-teamcity-formatter&quot;&gt;Setting up Cucumber to use the TeamCity Formatter&lt;/h2&gt;
 &lt;p&gt;Once you have the formatter installed you can use it as with any Cucumber formatter by adding it as a command line parameter:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;cucumber features &lt;span class=&quot;operator&quot;&gt;-f&lt;/span&gt; JBTeamCityFormatter
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;cucumber features &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; JBTeamCityFormatter
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To use it with TeamCity, add a profile your &lt;code&gt;cucumber.yml&lt;/code&gt; file that runs all your features using the new formatter:&lt;/p&gt;
 &lt;h4 id=&quot;cucumber-yml&quot;&gt;cucumber.yml&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;default: features -q
-teamcity: features -q --no-c  -f JBTeamCityFormatter
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;default:&lt;/span&gt; features -q
+&lt;span class=&quot;attr&quot;&gt;teamcity:&lt;/span&gt; features -q --&lt;span class=&quot;literal&quot;&gt;no&lt;/span&gt;-c  -f JBTeamCityFormatter
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;running-cucumber-with-teamcity&quot;&gt;Running Cucumber with TeamCity&lt;/h2&gt;
 &lt;p&gt;Now when you run Cucumber within TeamCity (using the &lt;code&gt;teamcity&lt;/code&gt; profile) it will report tests in real time, with all the feedback you are used to. Just add a call to the Cucumber executable to your build script (NAnt, MSBuild, Ant, Rake, etc).&lt;/p&gt;
@@ -382,21 +382,21 @@ you need to set it up and tear it down in each test.
 (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
 
     JSpec.addMatchers({
-        be_ok : &lt;span class=&quot;string&quot;&gt;'!!actual'&lt;/span&gt;
+        &lt;span class=&quot;attr&quot;&gt;be_ok&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;'!!actual'&lt;/span&gt;
     });
 
     JSpec.context = JSpec.defaultContext;
     JSpec.context.QUnitAdapter = {
-        modules: []
+        &lt;span class=&quot;attr&quot;&gt;modules&lt;/span&gt;: []
     };
 
     &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name, lifecycle&lt;/span&gt;) &lt;/span&gt;{
 
         JSpec.context.QUnitAdapter.modules.push({
-            name: name,
-            tests: [],
-            setup:    (lifecycle &amp;amp;&amp;amp; lifecycle.setup)    ? lifecycle.setup    : &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{},
-            teardown: (lifecycle &amp;amp;&amp;amp; lifecycle.teardown) ? lifecycle.teardown : &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{}
+            &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;: name,
+            &lt;span class=&quot;attr&quot;&gt;tests&lt;/span&gt;: [],
+            &lt;span class=&quot;attr&quot;&gt;setup&lt;/span&gt;:    (lifecycle &amp;amp;&amp;amp; lifecycle.setup)    ? lifecycle.setup    : &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{},
+            &lt;span class=&quot;attr&quot;&gt;teardown&lt;/span&gt;: (lifecycle &amp;amp;&amp;amp; lifecycle.teardown) ? lifecycle.teardown : &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{}
         });
 
         JSpec.describe(name, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
@@ -405,45 +405,45 @@ you need to set it up and tear it down in each test.
             &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; length; i++) {
                 it(QUnitAdapter.modules[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].tests[i].name, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
                     &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; adapter = {
-                        expectedAsserts: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
-                        calledAsserts: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+                        &lt;span class=&quot;attr&quot;&gt;expectedAsserts&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
+                        &lt;span class=&quot;attr&quot;&gt;calledAsserts&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,
 
-                        expect: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;count&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;expect&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;count&lt;/span&gt;) &lt;/span&gt;{
                             adapter.expectedAsserts = count;
                         },
 
-                        ok: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;actual, msg&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;ok&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;actual, msg&lt;/span&gt;) &lt;/span&gt;{
                             adapter.calledAsserts++;
                             JSpec.expect(actual).to(JSpec.matchers.be_ok);
                         },
 
-                        equals: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a, b, msg&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;equals&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a, b, msg&lt;/span&gt;) &lt;/span&gt;{
                             adapter.calledAsserts++;
                             JSpec.expect(a).to(JSpec.matchers.be, b);
                         },
 
-                        start: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;start&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
                             &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'start and stop methods are not available when using JSpec.\n'&lt;/span&gt; +
                                 &lt;span class=&quot;string&quot;&gt;'Use the JSpec timer to deal with timeouts and intervals:\n'&lt;/span&gt; +
                                 &lt;span class=&quot;string&quot;&gt;'http://github.com/visionmedia/jspec/tree/master'&lt;/span&gt;;
                         },
 
-                        stop: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;stop&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
                             &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'start and stop methods are not available when using JSpec.\n'&lt;/span&gt; +
                                 &lt;span class=&quot;string&quot;&gt;'Use the JSpec timer to deal with timeouts and intervals:\n'&lt;/span&gt; +
                                 &lt;span class=&quot;string&quot;&gt;'http://github.com/visionmedia/jspec/tree/master'&lt;/span&gt;;
                         },
 
-                        same: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a, b, msg&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;same&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a, b, msg&lt;/span&gt;) &lt;/span&gt;{
                             adapter.calledAsserts++;
                             JSpec.expect(a).to(JSpec.matchers.eql, b);
                         },
 
-                        reset: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;reset&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
                             &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'reset method is not available when using JSpec'&lt;/span&gt;;
                         },
 
-                        isLocal: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+                        &lt;span class=&quot;attr&quot;&gt;isLocal&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
                             &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;
                         }
                     };
@@ -476,8 +476,8 @@ you need to set it up and tear it down in each test.
 
     test = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name, testCallback&lt;/span&gt;) &lt;/span&gt;{
         JSpec.context.QUnitAdapter.modules[JSpec.context.QUnitAdapter.modules.length - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;].tests.push({
-            name: name,
-            testCallback: testCallback
+            &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;: name,
+            &lt;span class=&quot;attr&quot;&gt;testCallback&lt;/span&gt;: testCallback
         });
     };
 
@@ -496,10 +496,10 @@ test(&lt;span class=&quot;string&quot;&gt;'True is ok'&lt;/span&gt;, &lt;span cl
 });
 
 &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'Examples with lifecycle'&lt;/span&gt;, {
-  setup: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;attr&quot;&gt;setup&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
     started = &lt;span class=&quot;string&quot;&gt;'yes'&lt;/span&gt;;
   },
-  teardown: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+  &lt;span class=&quot;attr&quot;&gt;teardown&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
     ok(started);
     started = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
   }
@@ -521,7 +521,7 @@ load(&lt;span class=&quot;string&quot;&gt;'lib/QUnitAdapter.js'&lt;/span&gt;)
 
 JSpec
 .exec(&lt;span class=&quot;string&quot;&gt;'spec/qunit-tests.js'&lt;/span&gt;)
-.run({ formatter : JSpec.formatters.Terminal })
+.run({ &lt;span class=&quot;attr&quot;&gt;formatter&lt;/span&gt; : JSpec.formatters.Terminal })
 .report()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Notice how the QUnit test file is exec’d exactly as you would a normal spec
@@ -530,29 +530,29 @@ interference.&lt;/p&gt;
 &lt;p&gt;And for running the tests within a browser your &lt;code&gt;spec.dom.html&lt;/code&gt; file would look
 like:&lt;/p&gt;
 &lt;h4 id=&quot;spec-dom-html&quot;&gt;spec.dom.html&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.css&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../lib/QUnitAdapter.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;actionscript&quot;&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.css&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;../lib/QUnitAdapter.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;actionscript&quot;&gt;
             &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;runSuites&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;{
                 JSpec
                 .exec(&lt;span class=&quot;string&quot;&gt;'qunit-tests.js'&lt;/span&gt;)
                 .run()
                 .report()
             }
-        &lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;jspec&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;onLoad&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;runSuites();&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;jspec-top&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;jspec&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;onLoad&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;runSuites();&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;jspec-top&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
 
-## JSpec _&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(JSpec.version)&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;_
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;jspec&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;jspec-bottom&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
+## JSpec _&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(JSpec.version)&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;_
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;jspec&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;jspec-bottom&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;running-the-tests&quot;&gt;Running the tests&lt;/h2&gt;
 &lt;p&gt;To run the tests just launch JSpec as normal. My prefered method is to run the
@@ -636,32 +636,32 @@ test(&lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;, &lt;span class=&quot;
 &lt;p&gt;This guide assumes you already have JS Test Driver and some tests set up on your local machine. If not see this &lt;a href=&quot;http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/&quot;&gt;introduction to JS Test Driver by Miško Hevery&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Just make sure that the JS Test Driver config file is set to connect to the local machine, on port 9876 (on another port of your choice).
 E.g.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;server: http://localhost:9876
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;server:&lt;/span&gt; http://localhost:&lt;span class=&quot;number&quot;&gt;9876&lt;/span&gt;
 
-load:
-  # list of files to load here...
+&lt;span class=&quot;attr&quot;&gt;load:&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;# list of files to load here...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;configure-your-build-process-to-call-js-test-driver&quot;&gt;Configure your build process to call JS Test Driver&lt;/h2&gt;
 &lt;p&gt;Now that we have JS Test Driver installed on our build machines, and configured correctly, let’s call it from our build process. At 7digital we are using MSBuild, so we can create a JSTestDriver Target as so:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;JSTestDriver&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Text&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;##teamcity[progressMessage 'Running JS Test Driver']&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Importance&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;high&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Text&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;-------- Running JS Test Driver --------&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Importance&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;high&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;JSTestDriver&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;##teamcity[progressMessage 'Running JS Test Driver']&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Importance&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;high&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;-------- Running JS Test Driver --------&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Importance&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;high&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 
-  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;PropertyGroup&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;JSTestDriverJar&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;$(BuildToolsPath)\JSTestDriver\jsTestDriver.jar&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;JSTestDriverJar&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;ConfigFile&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;$(SolutionFolder)\jsTestDriver.conf&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;ConfigFile&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;IEPath&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;C:\Program Files\Internet Explorer\iexplore.exe&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;IEPath&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;OutputDir&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;$(SolutionFolder)\output\JSTestDriver&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;OutputDir&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;PropertyGroup&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;PropertyGroup&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;JSTestDriverJar&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;$(BuildToolsPath)\JSTestDriver\jsTestDriver.jar&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;JSTestDriverJar&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ConfigFile&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;$(SolutionFolder)\jsTestDriver.conf&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ConfigFile&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;IEPath&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;C:\Program Files\Internet Explorer\iexplore.exe&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;IEPath&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;OutputDir&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;$(SolutionFolder)\output\JSTestDriver&quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;OutputDir&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;PropertyGroup&lt;/span&gt;&amp;gt;&lt;/span&gt;
 
-  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;Exec&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Command&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;java -jar $(JSTestDriverJar) --port 9876 --browser $(IEPath) --config $(ConfigFile) --tests all --testOutput $(OutputDir)&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Exec&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Command&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;java -jar $(JSTestDriverJar) --port 9876 --browser $(IEPath) --config $(ConfigFile) --tests all --testOutput $(OutputDir)&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;Target&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;Target&lt;/span&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The important points here are that you have the properties configured correctly (JSTestDriverJar, ConfigFile, etc) for your individual setup.&lt;/p&gt;
 &lt;p&gt;The Exec command will automatically create a JS Test Driver server, launch IE, and run all the tests. The test results will be output to the OutputDir in a JUnit compatible xml format. See the &lt;a href=&quot;http://code.google.com/p/js-test-driver/wiki/ContinuousBuild&quot;&gt;JS Test Driver continuous integration page&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;p&gt;Once you have created this Target, ensure it is called by your standard bulid Target by adding it as a dependancy:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;Name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;BuildAndUnitTest&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;DependsOnTargets&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;Compile;JSLint;JSTestDriver;NUnit&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;Name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;BuildAndUnitTest&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;DependsOnTargets&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Compile;JSLint;JSTestDriver;NUnit&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;have-teamcity-pick-up-the-test-results&quot;&gt;Have TeamCity pick up the test results&lt;/h2&gt;
 &lt;p&gt;If you run your build through TeamCity now, you will see that it runs all your Javascript tests using JS Test Driver. But it doesn’t report any results. And test failures don’t stop the build.&lt;/p&gt;
@@ -714,7 +714,7 @@ load:
 &lt;h2 id=&quot;choose-the-right-growlnotify-&quot;&gt;Choose the Right &lt;code&gt;growlnotify&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;I decide which growlnotify to use by checking which platform we are running on:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;is_windows?&lt;/span&gt;&lt;/span&gt;
-    processor, platform, *rest = &lt;span class=&quot;constant&quot;&gt;RUBY_PLATFORM&lt;/span&gt;.split(&lt;span class=&quot;string&quot;&gt;&quot;-&quot;&lt;/span&gt;)
+    processor, platform, *rest = RUBY_PLATFORM.split(&lt;span class=&quot;string&quot;&gt;&quot;-&quot;&lt;/span&gt;)
     platform == &lt;span class=&quot;string&quot;&gt;'mswin32'&lt;/span&gt;
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
@@ -722,10 +722,10 @@ load:
   &lt;span class=&quot;comment&quot;&gt;# Execute +args+ against the binary.&lt;/span&gt;
 
   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;args&lt;/span&gt;&lt;/span&gt;
-    bin = &lt;span class=&quot;constant&quot;&gt;PACKAGED_BIN&lt;/span&gt;
+    bin = PACKAGED_BIN
     bin += &lt;span class=&quot;string&quot;&gt;'.com'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; is_windows?
 
-    &lt;span class=&quot;constant&quot;&gt;Kernel&lt;/span&gt;.system bin, *args
+    Kernel.system bin, *args
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;different-switches-on-different-operating-systems&quot;&gt;Different Switches on Different Operating Systems&lt;/h2&gt;
@@ -752,25 +752,25 @@ load:
     switch &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt;,      &lt;span class=&quot;symbol&quot;&gt;:i&lt;/span&gt;
     switch &lt;span class=&quot;symbol&quot;&gt;:identifier&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:id&lt;/span&gt;
 
-    switch &lt;span class=&quot;symbol&quot;&gt;:iconpath&lt;/span&gt;,   &lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;
-    switch &lt;span class=&quot;symbol&quot;&gt;:appIcon&lt;/span&gt;,    &lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;
-    switch &lt;span class=&quot;symbol&quot;&gt;:icon&lt;/span&gt;,       &lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;
+    switch &lt;span class=&quot;symbol&quot;&gt;:iconpath&lt;/span&gt;,   &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;
+    switch &lt;span class=&quot;symbol&quot;&gt;:appIcon&lt;/span&gt;,    &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;
+    switch &lt;span class=&quot;symbol&quot;&gt;:icon&lt;/span&gt;,       &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;
 
-    switch &lt;span class=&quot;symbol&quot;&gt;:udp&lt;/span&gt;,        &lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;
+    switch &lt;span class=&quot;symbol&quot;&gt;:udp&lt;/span&gt;,        &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;
     switch &lt;span class=&quot;symbol&quot;&gt;:auth&lt;/span&gt;,       &lt;span class=&quot;symbol&quot;&gt;:hash&lt;/span&gt;
-    switch &lt;span class=&quot;symbol&quot;&gt;:crypt&lt;/span&gt;,      &lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;
+    switch &lt;span class=&quot;symbol&quot;&gt;:crypt&lt;/span&gt;,      &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As you can see, not all OSX switches are available in the Windows version of &lt;code&gt;growlnotify&lt;/code&gt;. I dealt with this at the moment, by just stripping out any switches that won’t work in Windows.&lt;/p&gt;
 &lt;p&gt;Finally I altered (hacked?) the Growl &lt;code&gt;run&lt;/code&gt; method, to produce parameter strings for either OSX or Windows.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;run&lt;/span&gt;&lt;/span&gt;
-      raise &lt;span class=&quot;constant&quot;&gt;Error&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'message required'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; message
-      &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;.switches.each &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |name, win_name|
+      raise Error, &lt;span class=&quot;string&quot;&gt;'message required'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; message
+      &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt;.switches.each &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|name, win_name|&lt;/span&gt;
         &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; send(&lt;span class=&quot;symbol&quot;&gt;:&lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{name}&lt;/span&gt;?&quot;&lt;/span&gt;&lt;/span&gt;)
-          value = send(name).to_s &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; send(name) &amp;amp;&amp;amp; !(&lt;span class=&quot;constant&quot;&gt;TrueClass&lt;/span&gt; === send(name))
+          value = send(name).to_s &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; send(name) &amp;amp;&amp;amp; !(TrueClass === send(name))
           &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; is_windows?
-            &lt;span class=&quot;keyword&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; win_name.&lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;?
+            &lt;span class=&quot;keyword&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; win_name.&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;?
 
-            switch = (win_name == &lt;span class=&quot;symbol&quot;&gt;:EMPTY&lt;/span&gt;) ? &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;/&lt;span class=&quot;subst&quot;&gt;#{win_name}&lt;/span&gt;:&quot;&lt;/span&gt;
+            switch = (win_name == &lt;span class=&quot;symbol&quot;&gt;:EMPTY&lt;/span&gt;) ? &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;/&lt;span class=&quot;subst&quot;&gt;#{win_name}&lt;/span&gt;:&quot;&lt;/span&gt;
             args &amp;lt;&amp;lt; switch + value
           &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
             args &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;--&lt;span class=&quot;subst&quot;&gt;#{name}&lt;/span&gt;&quot;&lt;/span&gt;
@@ -778,7 +778,7 @@ load:
           &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
         &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
-      &lt;span class=&quot;constant&quot;&gt;Growl&lt;/span&gt;.exec *args
+      Growl.exec *args
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The main points of interest here are the The windows switches don’t have any space between the switch name and the value. So instead they are concatenated together into a single string.&lt;/p&gt;
@@ -788,9 +788,9 @@ load:
 &lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;sudo gem install karl-growl --source http://gems.github.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And used in your Ruby program as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;&lt;span class=&quot;constant&quot;&gt;Growl&lt;/span&gt;.notify {
+&lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;Growl.notify {
     &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.message = &lt;span class=&quot;string&quot;&gt;'Hello World'&lt;/span&gt;
-    &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.image = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.join &lt;span class=&quot;string&quot;&gt;'path'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'to'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'image.png'&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.image = File.join &lt;span class=&quot;string&quot;&gt;'path'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'to'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'image.png'&lt;/span&gt;
   }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For more usage examples see the &lt;a href=&quot;http://github.com/karl/growl/tree/master&quot;&gt;karl-growl site&lt;/a&gt;.&lt;/p&gt;
@@ -829,22 +829,22 @@ load:
 &lt;p&gt;Updating Autotest Growl turns out to be pretty simple. We need to download &lt;a href=&quot;http://www.growlforwindows.com/gfw/help/growlnotify.aspx&quot;&gt;growlnotify for Windows&lt;/a&gt;, and add it to the &lt;code&gt;growl/&lt;/code&gt; directory.&lt;/p&gt;
 &lt;p&gt;Then we can update the &lt;code&gt;autotest-growl&lt;/code&gt; code to decide which &lt;code&gt;growlnotify&lt;/code&gt; to use depending on the Operating System.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;is_windows?&lt;/span&gt;&lt;/span&gt;
-    processor, platform, *rest = &lt;span class=&quot;constant&quot;&gt;RUBY_PLATFORM&lt;/span&gt;.split(&lt;span class=&quot;string&quot;&gt;&quot;-&quot;&lt;/span&gt;)
+    processor, platform, *rest = RUBY_PLATFORM.split(&lt;span class=&quot;string&quot;&gt;&quot;-&quot;&lt;/span&gt;)
     platform == &lt;span class=&quot;string&quot;&gt;'mswin32'&lt;/span&gt;
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
   &lt;span class=&quot;comment&quot;&gt;##&lt;/span&gt;
   &lt;span class=&quot;comment&quot;&gt;# Display a message through Growl.&lt;/span&gt;
   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;growl&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;message&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;icon&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;priority=&lt;/span&gt;0, &lt;span class=&quot;title&quot;&gt;stick=&lt;/span&gt;&quot;&quot;&lt;/span&gt;
-    growl = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.join(&lt;span class=&quot;constant&quot;&gt;GEM_PATH&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'growl'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'growlnotify'&lt;/span&gt;)
-    image = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.join(&lt;span class=&quot;constant&quot;&gt;ENV&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;'HOME'&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;'.autotest-growl'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;)
-    image = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.join(&lt;span class=&quot;constant&quot;&gt;GEM_PATH&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'img'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.exists?(image)
+    growl = File.join(GEM_PATH, &lt;span class=&quot;string&quot;&gt;'growl'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'growlnotify'&lt;/span&gt;)
+    image = File.join(ENV[&lt;span class=&quot;string&quot;&gt;'HOME'&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;'.autotest-growl'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;)
+    image = File.join(GEM_PATH, &lt;span class=&quot;string&quot;&gt;'img'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; File.exists?(image)
 
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; is_windows?
       growl += &lt;span class=&quot;string&quot;&gt;'.com'&lt;/span&gt;
       cmd = &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{growl}&lt;/span&gt; &lt;span class=&quot;subst&quot;&gt;#{message.inspect}&lt;/span&gt; /a:\&quot;autotest\&quot; /r:\&quot;Autotest\&quot; /n:\&quot;Autotest\&quot; /i:\&quot;&lt;span class=&quot;subst&quot;&gt;#{image}&lt;/span&gt;\&quot; /p:&lt;span class=&quot;subst&quot;&gt;#{priority}&lt;/span&gt; /t:\&quot;&lt;span class=&quot;subst&quot;&gt;#{title}&lt;/span&gt;\&quot;&quot;&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
-      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;@@remote_notification&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; @@remote_notification
         cmd = &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{growl}&lt;/span&gt; -H localhost -n autotest --image '&lt;span class=&quot;subst&quot;&gt;#{image}&lt;/span&gt;' -p &lt;span class=&quot;subst&quot;&gt;#{priority}&lt;/span&gt; -m &lt;span class=&quot;subst&quot;&gt;#{message.inspect}&lt;/span&gt; '&lt;span class=&quot;subst&quot;&gt;#{title}&lt;/span&gt;' &lt;span class=&quot;subst&quot;&gt;#{stick}&lt;/span&gt;&quot;&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
         cmd = &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{growl}&lt;/span&gt; -n autotest --image '&lt;span class=&quot;subst&quot;&gt;#{image}&lt;/span&gt;' -p &lt;span class=&quot;subst&quot;&gt;#{priority}&lt;/span&gt; -m &lt;span class=&quot;subst&quot;&gt;#{message.inspect}&lt;/span&gt; '&lt;span class=&quot;subst&quot;&gt;#{title}&lt;/span&gt;' &lt;span class=&quot;subst&quot;&gt;#{stick}&lt;/span&gt;&quot;&lt;/span&gt;
@@ -977,8 +977,8 @@ gem install karl-autotest-growl --source http://gems.github.com
     };
 
     &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.QUnit = {
-        equiv: &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.equiv,
-        ok: &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.ok
+        &lt;span class=&quot;attr&quot;&gt;equiv&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.equiv,
+        &lt;span class=&quot;attr&quot;&gt;ok&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.ok
     };
 
 })();
@@ -987,19 +987,19 @@ gem install karl-autotest-growl --source http://gems.github.com
 &lt;h2 id=&quot;configuring-js-test-driver&quot;&gt;Configuring JS Test Driver&lt;/h2&gt;
 &lt;p&gt;To run your qunit tests in JS Test Driver you need to configure it to load the adapter before your qunit tests.&lt;/p&gt;
 &lt;p&gt;Update your &lt;code&gt;jsTestDriver.conf&lt;/code&gt; to load the files:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;server: http://localhost:9876
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;server:&lt;/span&gt; http://localhost:&lt;span class=&quot;number&quot;&gt;9876&lt;/span&gt;
 
-load:
-  # Add these lines to load the equiv function and adapter in order, before the tests
-  # (assuming they are saved to tests/qunit/)
-  - tests/qunit/equiv.js
-  - tests/qunit/QUnitAdapter.js
+&lt;span class=&quot;attr&quot;&gt;load:&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;# Add these lines to load the equiv function and adapter in order, before the tests&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;# (assuming they are saved to tests/qunit/)&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/qunit/equiv.js
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/qunit/QUnitAdapter.js
 
-  # This is where we load the qunit tests
-  - tests/js/*.js
+  &lt;span class=&quot;comment&quot;&gt;# This is where we load the qunit tests&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/js/*.js
 
-  # And this loads the source files we are testing
-  - src/js/*.js
+  &lt;span class=&quot;comment&quot;&gt;# And this loads the source files we are testing&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; src/js/*.js
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;running-js-test-driver-with-qunit-tests&quot;&gt;Running JS Test Driver with qunit tests&lt;/h2&gt;
 &lt;p&gt;Now we can run JS Test Driver and watch as it runs all our qunit tests!&lt;/p&gt;
@@ -1036,14 +1036,14 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;    QUnit: {
         &lt;span class=&quot;comment&quot;&gt;// Add the following 3 lines&lt;/span&gt;
         runTest: runTest,
-        config: config,
-        validTest: validTest,
+        &lt;span class=&quot;attr&quot;&gt;config&lt;/span&gt;: config,
+        &lt;span class=&quot;attr&quot;&gt;validTest&lt;/span&gt;: validTest,
 
         &lt;span class=&quot;comment&quot;&gt;// This is existing code&lt;/span&gt;
         equiv: equiv,
-        ok: ok,
-        done: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;failures, total&lt;/span&gt;)&lt;/span&gt;{},
-        log: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;result, message&lt;/span&gt;)&lt;/span&gt;{}
+        &lt;span class=&quot;attr&quot;&gt;ok&lt;/span&gt;: ok,
+        &lt;span class=&quot;attr&quot;&gt;done&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;failures, total&lt;/span&gt;)&lt;/span&gt;{},
+        &lt;span class=&quot;attr&quot;&gt;log&lt;/span&gt;: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;result, message&lt;/span&gt;)&lt;/span&gt;{}
     },
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next &lt;a href=&quot;/blog/articles/qunit-and-js-test-driver/QUnitToTestCases.js&quot;&gt;download QUnitToTestCases.js&lt;/a&gt; and save it to the same folder as &lt;code&gt;testrunner.js&lt;/code&gt;. This is the file which converts the qunit tests into TestCases that JS Test Driver understands.&lt;/p&gt;
@@ -1051,19 +1051,19 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
 &lt;h2 id=&quot;configuring-js-test-driver&quot;&gt;Configuring JS Test Driver&lt;/h2&gt;
 &lt;p&gt;Once you have the patched &lt;code&gt;testrunner.js&lt;/code&gt; and &lt;code&gt;QUnitToTestCases.js&lt;/code&gt;, you just need to let JS Test Driver know to load them before your qunit tests. They need to be loaded in order, with  &lt;code&gt;testrunner.js&lt;/code&gt; first, followed by &lt;code&gt;QUnitTiTestCases.js&lt;/code&gt;, as the converter modifies some of the testrunner methods.&lt;/p&gt;
 &lt;p&gt;Update your &lt;code&gt;jsTestDriver.conf&lt;/code&gt; to load the files:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;server: http://localhost:9876
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;server:&lt;/span&gt; http://localhost:&lt;span class=&quot;number&quot;&gt;9876&lt;/span&gt;
 
-load:
-  # Add these lines to load the testrunner and converter in order, before the tests
-  # (assuming the files are saved to tests/qunit/)
-  - tests/qunit/testrunner.js
-  - tests/qunit/QUnitToTestCases.js
+&lt;span class=&quot;attr&quot;&gt;load:&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;# Add these lines to load the testrunner and converter in order, before the tests&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;# (assuming the files are saved to tests/qunit/)&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/qunit/testrunner.js
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/qunit/QUnitToTestCases.js
 
-  # This is where we load the qunit tests
-  - tests/js/*.js
+  &lt;span class=&quot;comment&quot;&gt;# This is where we load the qunit tests&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/js/*.js
 
-  # And this loads the source files we are testing
-  - src/js/*.js
+  &lt;span class=&quot;comment&quot;&gt;# And this loads the source files we are testing&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; src/js/*.js
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;running-js-test-driver-with-qunit-tests&quot;&gt;Running JS Test Driver with qunit tests&lt;/h2&gt;
 &lt;p&gt;Now we can run JS Test Driver and watch as it runs all our qunit tests!&lt;/p&gt;
@@ -1107,10 +1107,10 @@ gem install autotest-growl
 
   &lt;span class=&quot;comment&quot;&gt;# Display a message through Snarl.&lt;/span&gt;
   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;growl&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;message&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;icon&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;priority=&lt;/span&gt;0, &lt;span class=&quot;title&quot;&gt;stick=&lt;/span&gt;&quot;&quot;&lt;/span&gt;
-    image = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.join(&lt;span class=&quot;constant&quot;&gt;ENV&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;'HOME'&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;'.autotest-growl'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;)
-    image = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.join(&lt;span class=&quot;constant&quot;&gt;GEM_PATH&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'img'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.exists?(image)
+    image = File.join(ENV[&lt;span class=&quot;string&quot;&gt;'HOME'&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;'.autotest-growl'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;)
+    image = File.join(GEM_PATH, &lt;span class=&quot;string&quot;&gt;'img'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;subst&quot;&gt;#{icon}&lt;/span&gt;.png&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; File.exists?(image)
 
-    &lt;span class=&quot;constant&quot;&gt;Snarl&lt;/span&gt;.show_message(title, message.inspect, image)
+    Snarl.show_message(title, message.inspect, image)
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
 &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
@@ -1152,28 +1152,28 @@ autotest
 
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Autotest::JsTestDriver&lt;/span&gt;&lt;/span&gt;
 
-    &lt;span class=&quot;variable&quot;&gt;@@jar&lt;/span&gt; = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/JsTestDriver-1.0b.jar'&lt;/span&gt;
-    &lt;span class=&quot;variable&quot;&gt;@@config_file&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;'jsTestDriver.conf'&lt;/span&gt;
+    @@jar = File.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/JsTestDriver-1.0b.jar'&lt;/span&gt;
+    @@config_file = &lt;span class=&quot;string&quot;&gt;'jsTestDriver.conf'&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;jar=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(string)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@jar&lt;/span&gt; = string
+        @@jar = string
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;config_file=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(string)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@config_file&lt;/span&gt; = string
+        @@config_file = string
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;show_success=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(bool)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@show_success&lt;/span&gt;=bool
+        @@show_success=bool
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
-    &lt;span class=&quot;constant&quot;&gt;Autotest&lt;/span&gt;.add_hook &lt;span class=&quot;symbol&quot;&gt;:run_command&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |at|
+    Autotest.add_hook &lt;span class=&quot;symbol&quot;&gt;:run_command&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|at|&lt;/span&gt;
         &lt;span class=&quot;comment&quot;&gt;# run js test driver&lt;/span&gt;
         results = &lt;span class=&quot;string&quot;&gt;'JS Test Driver:'&lt;/span&gt;
-        results += &lt;span class=&quot;string&quot;&gt;`java -jar &quot;&lt;span class=&quot;subst&quot;&gt;#{&lt;span class=&quot;variable&quot;&gt;@@jar&lt;/span&gt;}&lt;/span&gt;&quot; --config &quot;&lt;span class=&quot;subst&quot;&gt;#{&lt;span class=&quot;variable&quot;&gt;@@config_file&lt;/span&gt;}&lt;/span&gt;&quot; --tests all --verbose`&lt;/span&gt;
+        results += &lt;span class=&quot;string&quot;&gt;`java -jar &quot;&lt;span class=&quot;subst&quot;&gt;#{@@jar}&lt;/span&gt;&quot; --config &quot;&lt;span class=&quot;subst&quot;&gt;#{@@config_file}&lt;/span&gt;&quot; --tests all --verbose`&lt;/span&gt;
         puts results
 
-        at.results = [] &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; at.results.&lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;?
+        at.results = [] &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; at.results.&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;?
         at.results.concat(results.split(&lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;))
 
         at.hook &lt;span class=&quot;symbol&quot;&gt;:ran_js_test_driver&lt;/span&gt;
@@ -1184,29 +1184,29 @@ autotest
 
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Autotest::Growl&lt;/span&gt;&lt;/span&gt;
 
-    &lt;span class=&quot;variable&quot;&gt;@@show_js_test_success&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;
+    @@show_js_test_success = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;show_js_test_success=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(bool)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@show_js_test_success&lt;/span&gt;=bool
+        @@show_js_test_success=bool
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
   &lt;span class=&quot;comment&quot;&gt;# Growl results of JS Test Driver&lt;/span&gt;
-  &lt;span class=&quot;constant&quot;&gt;Autotest&lt;/span&gt;.add_hook &lt;span class=&quot;symbol&quot;&gt;:ran_js_test_driver&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |autotest|
+  Autotest.add_hook &lt;span class=&quot;symbol&quot;&gt;:ran_js_test_driver&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|autotest|&lt;/span&gt;
 
     gist = autotest.results.grep( &lt;span class=&quot;regexp&quot;&gt;/Total\s+\d+\s+tests/&lt;/span&gt; ).join(&lt;span class=&quot;string&quot;&gt;&quot; / &quot;&lt;/span&gt;).strip()
 
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; gist == &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
-      growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Cannot run JS Test Driver.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'error'&lt;/span&gt;
+      growl @label + &lt;span class=&quot;string&quot;&gt;'Cannot run JS Test Driver.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'error'&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; gist =~ &lt;span class=&quot;regexp&quot;&gt;/Errors:\s+[1-9]\d*/&lt;/span&gt;
-        growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Error running some JS tests.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
+        growl @label + &lt;span class=&quot;string&quot;&gt;'Error running some JS tests.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; gist =~ &lt;span class=&quot;regexp&quot;&gt;/Fails:\s+[1-9]\d*/&lt;/span&gt;
-        growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'JS Test: Some tests failed.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
-      &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;@@show_js_test_success&lt;/span&gt;
-        growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'JS Test: All files are clean.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'passed'&lt;/span&gt;
+        growl @label + &lt;span class=&quot;string&quot;&gt;'JS Test: Some tests failed.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; @@show_js_test_success
+        growl @label + &lt;span class=&quot;string&quot;&gt;'JS Test: All files are clean.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'passed'&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
-    &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
 &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
@@ -1214,11 +1214,11 @@ autotest
 &lt;h2 id=&quot;configuring-autotest-and-js-test-driver&quot;&gt;Configuring Autotest and JS Test Driver&lt;/h2&gt;
 &lt;p&gt;JS Test Driver uses a configuration file to connect with the JS Test Driver server, and to decide which javscript files to load.&lt;/p&gt;
 &lt;p&gt;Create a &lt;code&gt;jsTestDriver.conf&lt;/code&gt; file in the project root directory as follows.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;server: http://localhost:9876
+&lt;pre&gt;&lt;code class=&quot;lang-yaml&quot;&gt;&lt;span class=&quot;attr&quot;&gt;server:&lt;/span&gt; http://localhost:&lt;span class=&quot;number&quot;&gt;9876&lt;/span&gt;
 
-load:
-  - src/js/*.js
-  - tests/js/*.js
+&lt;span class=&quot;attr&quot;&gt;load:&lt;/span&gt;
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; src/js/*.js
+&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; tests/js/*.js
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This assumes that you have our javascript source files will be in the &lt;code&gt;src/js/&lt;/code&gt; directory, and our javascript test files will be in the &lt;code&gt;src/js/&lt;/code&gt; directory. We will create a test file, and associated code later.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;server:&lt;/code&gt; lets JS Test Driver know we will be connecting to a server on our local machine, on port 9876. We’ll get this server running later.&lt;/p&gt;
@@ -1227,7 +1227,7 @@ load:
 &lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'lib/autotest/js-test-driver'&lt;/span&gt;
 
 &lt;span class=&quot;comment&quot;&gt;# Set the location of the JS Test Driver jar&lt;/span&gt;
-&lt;span class=&quot;constant&quot;&gt;Autotest::JsTestDriver::&lt;/span&gt;jar = &lt;span class=&quot;string&quot;&gt;'./lib/jsTestDriver-1.0b.jar'&lt;/span&gt;
+Autotest::JsTestDriver::jar = &lt;span class=&quot;string&quot;&gt;'./lib/jsTestDriver-1.0b.jar'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can also configure the location of the JS Test Driver config file, and whether or not to show successful test runs.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Uncomment this if you have autotest-growl, and Growl installed&lt;/span&gt;
@@ -1244,7 +1244,7 @@ load:
 &lt;p&gt;Now that all the installation and configuration is done, let get everything running.&lt;/p&gt;
 &lt;h2 id=&quot;running-autotest-with-js-test-driver&quot;&gt;Running Autotest with JS Test Driver&lt;/h2&gt;
 &lt;p&gt;First up we need to get our JS Test Driver server up and running. Open a Terminal, and navigate to the directory containing the JS Test Driver jar. Run the following to start a server:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;java -jar JsTestDriver-&lt;span class=&quot;number&quot;&gt;1.0&lt;/span&gt;b.jar --port &lt;span class=&quot;number&quot;&gt;9876&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;java -jar JsTestDriver-1.0b.jar --port 9876
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now we need to capture a browser to use for testing. Open a browser and automatically capture it for use with JS Test Driver by going to the following URL:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://localhost:9876/capture
@@ -1382,29 +1382,29 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
 &lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'autotest'&lt;/span&gt;
 
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Autotest::JavascriptLint&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;variable&quot;&gt;@@js_dir&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
-    &lt;span class=&quot;variable&quot;&gt;@@jsl_dir&lt;/span&gt; = &lt;span class=&quot;constant&quot;&gt;File&lt;/span&gt;.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;
-    &lt;span class=&quot;variable&quot;&gt;@@config_file&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
+    @@js_dir = &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
+    @@jsl_dir = File.dirname(__FILE_&lt;span class=&quot;number&quot;&gt;_&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;'/'&lt;/span&gt;
+    @@config_file = &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;js_dir=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(string)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@js_dir&lt;/span&gt; = string
+        @@js_dir = string
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;jsl_dir=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(string)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@jsl_dir&lt;/span&gt; = string
+        @@jsl_dir = string
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;config_file=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(string)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@config_file&lt;/span&gt; = string
+        @@config_file = string
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
-    &lt;span class=&quot;constant&quot;&gt;Autotest&lt;/span&gt;.add_hook &lt;span class=&quot;symbol&quot;&gt;:run_command&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |at|
+    Autotest.add_hook &lt;span class=&quot;symbol&quot;&gt;:run_command&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|at|&lt;/span&gt;
 
         &lt;span class=&quot;comment&quot;&gt;# run javascript lint&lt;/span&gt;
-        results = &lt;span class=&quot;string&quot;&gt;`&lt;span class=&quot;subst&quot;&gt;#{&lt;span class=&quot;variable&quot;&gt;@@jsl_dir&lt;/span&gt;}&lt;/span&gt;jsl -conf &quot;&lt;span class=&quot;subst&quot;&gt;#{&lt;span class=&quot;variable&quot;&gt;@@config_file&lt;/span&gt;}&lt;/span&gt;&quot;  -process &quot;&lt;span class=&quot;subst&quot;&gt;#{&lt;span class=&quot;variable&quot;&gt;@@js_dir&lt;/span&gt;}&lt;/span&gt;*.js&quot; +recurse`&lt;/span&gt;
+        results = &lt;span class=&quot;string&quot;&gt;`&lt;span class=&quot;subst&quot;&gt;#{@@jsl_dir}&lt;/span&gt;jsl -conf &quot;&lt;span class=&quot;subst&quot;&gt;#{@@config_file}&lt;/span&gt;&quot;  -process &quot;&lt;span class=&quot;subst&quot;&gt;#{@@js_dir}&lt;/span&gt;*.js&quot; +recurse`&lt;/span&gt;
         puts results
 
-        at.results = [] &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; at.results.&lt;span class=&quot;keyword&quot;&gt;nil&lt;/span&gt;?
+        at.results = [] &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; at.results.&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;?
         at.results.concat(results.split(&lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;))
 
         at.hook &lt;span class=&quot;symbol&quot;&gt;:ran_javascript_lint&lt;/span&gt;
@@ -1414,28 +1414,28 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
 
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Autotest::Growl&lt;/span&gt;&lt;/span&gt;
 
-    &lt;span class=&quot;variable&quot;&gt;@@show_js_lint_success&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;
+    @@show_js_lint_success = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
 
     &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;show_js_lint_success=&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(bool)&lt;/span&gt;&lt;/span&gt;
-        &lt;span class=&quot;variable&quot;&gt;@@show_js_lint_success&lt;/span&gt;=bool
+        @@show_js_lint_success=bool
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
     &lt;span class=&quot;comment&quot;&gt;# Growl results of Javscript Lint&lt;/span&gt;
-    &lt;span class=&quot;constant&quot;&gt;Autotest&lt;/span&gt;.add_hook &lt;span class=&quot;symbol&quot;&gt;:ran_javascript_lint&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |autotest|
+    Autotest.add_hook &lt;span class=&quot;symbol&quot;&gt;:ran_javascript_lint&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|autotest|&lt;/span&gt;
         gist = autotest.results.grep(&lt;span class=&quot;regexp&quot;&gt;/\d+\s+error.*,\s+\d+\s+warning.*/&lt;/span&gt;).join(&lt;span class=&quot;string&quot;&gt;&quot; / &quot;&lt;/span&gt;).strip()
 
         &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; gist == &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
-            growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Cannot run javascript lint.'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'error'&lt;/span&gt;
+            growl @label + &lt;span class=&quot;string&quot;&gt;'Cannot run javascript lint.'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'error'&lt;/span&gt;
         &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
             &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; gist =~ &lt;span class=&quot;regexp&quot;&gt;/[1-9]\d*\s+(error)/&lt;/span&gt;
-                growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Lint: Some files have errors.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
+                growl @label + &lt;span class=&quot;string&quot;&gt;'Lint: Some files have errors.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
             &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; gist =~ &lt;span class=&quot;regexp&quot;&gt;/[1-9]\d*\s+(warning)/&lt;/span&gt;
-                growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Lint: Some files have warnings.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'pending'&lt;/span&gt;
-            &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;@@show_js_lint_success&lt;/span&gt;
-                growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Lint: All files are clean.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'passed'&lt;/span&gt;
+                growl @label + &lt;span class=&quot;string&quot;&gt;'Lint: Some files have warnings.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'pending'&lt;/span&gt;
+            &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; @@show_js_lint_success
+                growl @label + &lt;span class=&quot;string&quot;&gt;'Lint: All files are clean.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'passed'&lt;/span&gt;
             &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
         &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
-        &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;
+        &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
 &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
@@ -1471,21 +1471,21 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
 &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Autotest::Growl&lt;/span&gt;&lt;/span&gt;
 
   &lt;span class=&quot;comment&quot;&gt;# Growl results of Cucumber&lt;/span&gt;
-  &lt;span class=&quot;constant&quot;&gt;Autotest&lt;/span&gt;.add_hook &lt;span class=&quot;symbol&quot;&gt;:ran_features&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; |autotest|
+  Autotest.add_hook &lt;span class=&quot;symbol&quot;&gt;:ran_features&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|autotest|&lt;/span&gt;
 
     gist = autotest.results.grep(&lt;span class=&quot;regexp&quot;&gt;/\d+\s+scenario.*\)/&lt;/span&gt;).join(&lt;span class=&quot;string&quot;&gt;&quot; / &quot;&lt;/span&gt;).strip()
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; gist == &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;
-      growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Cannot run features.'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'error'&lt;/span&gt;
+      growl @label + &lt;span class=&quot;string&quot;&gt;'Cannot run features.'&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;''&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;'error'&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; gist =~ &lt;span class=&quot;regexp&quot;&gt;/[1-9]\d*\s+(failed)/&lt;/span&gt;
-        growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Some features have failed.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
+        growl @label + &lt;span class=&quot;string&quot;&gt;'Some features have failed.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'failed'&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;elsif&lt;/span&gt; gist =~ &lt;span class=&quot;regexp&quot;&gt;/pending/&lt;/span&gt;
-        growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'Some features are skipped.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'skipped'&lt;/span&gt;
+        growl @label + &lt;span class=&quot;string&quot;&gt;'Some features are skipped.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'skipped'&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;
-        growl &lt;span class=&quot;variable&quot;&gt;@label&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;'All features have passed.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'passed'&lt;/span&gt;
+        growl @label + &lt;span class=&quot;string&quot;&gt;'All features have passed.'&lt;/span&gt;, gist, &lt;span class=&quot;string&quot;&gt;'passed'&lt;/span&gt;
       &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
-    &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;
   &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
 
 &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;

@@ -339,32 +339,32 @@ code.lang-markdown .bullet {
 <h2 id="configure-js-test-driver">Configure <span class="caps">JS</span> Test&nbsp;Driver</h2>
 <p>This guide assumes you already have <span class="caps">JS</span> Test Driver and some tests set up on your local machine. If not see this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a>.</p>
 <p>Just make sure that the <span class="caps">JS</span> Test Driver config file is set to connect to the local machine, on port 9876 (on another port of your choice).&nbsp;E.g.</p>
-<pre><code class="lang-yaml">server: http://localhost:9876
+<pre><code class="lang-yaml"><span class="attr">server:</span> http://localhost:<span class="number">9876</span>
 
-load:
-  # list of files to load here...
+<span class="attr">load:</span>
+  <span class="comment"># list of files to load here...</span>
 </code></pre>
 <h2 id="configure-your-build-process-to-call-js-test-driver">Configure your build process to call <span class="caps">JS</span> Test&nbsp;Driver</h2>
 <p>Now that we have <span class="caps">JS</span> Test Driver installed on our build machines, and configured correctly, let’s call it from our build process. At 7digital we are using MSBuild, so we can create a JSTestDriver Target as&nbsp;so:</p>
-<pre><code class="lang-xml"><span class="tag">&lt;<span class="title">Target</span> <span class="attribute">Name</span>=<span class="value">"JSTestDriver"</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">Message</span> <span class="attribute">Text</span>=<span class="value">"##teamcity[progressMessage 'Running <span class="caps">JS</span> Test Driver']"</span> <span class="attribute">Importance</span>=<span class="value">"high"</span> /&gt;</span>
-  <span class="tag">&lt;<span class="title">Message</span> <span class="attribute">Text</span>=<span class="value">"-------- Running <span class="caps">JS</span> Test Driver --------"</span> <span class="attribute">Importance</span>=<span class="value">"high"</span> /&gt;</span>
+<pre><code class="lang-xml"><span class="tag">&lt;<span class="name">Target</span> <span class="attr">Name</span>=<span class="string">"JSTestDriver"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">Message</span> <span class="attr">Text</span>=<span class="string">"##teamcity[progressMessage 'Running <span class="caps">JS</span> Test Driver']"</span> <span class="attr">Importance</span>=<span class="string">"high"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="name">Message</span> <span class="attr">Text</span>=<span class="string">"-------- Running <span class="caps">JS</span> Test Driver --------"</span> <span class="attr">Importance</span>=<span class="string">"high"</span> /&gt;</span>
 
-  <span class="tag">&lt;<span class="title">PropertyGroup</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">JSTestDriverJar</span>&gt;</span>"$(BuildToolsPath)\JSTestDriver\jsTestDriver.jar"<span class="tag">&lt;/<span class="title">JSTestDriverJar</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ConfigFile</span>&gt;</span>"$(SolutionFolder)\jsTestDriver.conf"<span class="tag">&lt;/<span class="title">ConfigFile</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">IEPath</span>&gt;</span>"C:\Program Files\Internet Explorer\iexplore.exe"<span class="tag">&lt;/<span class="title">IEPath</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">OutputDir</span>&gt;</span>"$(SolutionFolder)\output\JSTestDriver"<span class="tag">&lt;/<span class="title">OutputDir</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">PropertyGroup</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">JSTestDriverJar</span>&gt;</span>"$(BuildToolsPath)\JSTestDriver\jsTestDriver.jar"<span class="tag">&lt;/<span class="name">JSTestDriverJar</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">ConfigFile</span>&gt;</span>"$(SolutionFolder)\jsTestDriver.conf"<span class="tag">&lt;/<span class="name">ConfigFile</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">IEPath</span>&gt;</span>"C:\Program Files\Internet Explorer\iexplore.exe"<span class="tag">&lt;/<span class="name">IEPath</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">OutputDir</span>&gt;</span>"$(SolutionFolder)\output\JSTestDriver"<span class="tag">&lt;/<span class="name">OutputDir</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span>
 
-  <span class="tag">&lt;<span class="title">Exec</span> <span class="attribute">Command</span>=<span class="value">"java -jar $(JSTestDriverJar) --port 9876 --browser $(IEPath) --config $(ConfigFile) --tests all --testOutput $(OutputDir)"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="name">Exec</span> <span class="attr">Command</span>=<span class="string">"java -jar $(JSTestDriverJar) --port 9876 --browser $(IEPath) --config $(ConfigFile) --tests all --testOutput $(OutputDir)"</span> /&gt;</span>
 
-<span class="tag">&lt;/<span class="title">Target</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">Target</span>&gt;</span>
 </code></pre>
 <p>The important points here are that you have the properties configured correctly (JSTestDriverJar, ConfigFile, etc) for your individual&nbsp;setup.</p>
 <p>The Exec command will automatically create a <span class="caps">JS</span> Test Driver server, launch IE, and run all the tests. The test results will be output to the OutputDir in a JUnit compatible xml format. See the <a href="http://code.google.com/p/js-test-driver/wiki/ContinuousBuild"><span class="caps">JS</span> Test Driver continuous integration page</a> for more&nbsp;information.</p>
 <p>Once you have created this Target, ensure it is called by your standard bulid Target by adding it as a&nbsp;dependancy:</p>
-<pre><code class="lang-xml"><span class="tag">&lt;<span class="title">Target</span> <span class="attribute">Name</span>=<span class="value">"BuildAndUnitTest"</span> <span class="attribute">DependsOnTargets</span>=<span class="value">"Compile;JSLint;JSTestDriver;NUnit"</span> /&gt;</span>
+<pre><code class="lang-xml"><span class="tag">&lt;<span class="name">Target</span> <span class="attr">Name</span>=<span class="string">"BuildAndUnitTest"</span> <span class="attr">DependsOnTargets</span>=<span class="string">"Compile;JSLint;JSTestDriver;NUnit"</span> /&gt;</span>
 </code></pre>
 <h2 id="have-teamcity-pick-up-the-test-results">Have TeamCity pick up the test&nbsp;results</h2>
 <p>If you run your build through TeamCity now, you will see that it runs all your Javascript tests using <span class="caps">JS</span> Test Driver. But it doesn’t report any results. And test failures don’t stop the&nbsp;build.</p>
