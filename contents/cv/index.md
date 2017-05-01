@@ -12,11 +12,11 @@ template: article.jade
 
 I'm currently part of the front end team at Geckoboard where we are building an amazing dashboard product.
 
-I'm a JavaScript (and CoffeeScript) guru who has developed large scale web apps with rich interfaces for Geckoboard, Qumu, 7digital, and Philips. I also have experience and passion in Interaction Design and User Experience, advocating heavily for the user. I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers (even the shoddy ones). I strongly believe in using tooling to improve the development experience, from transpilers to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
+I'm a JavaScript expert who has developed large scale single page applications for Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at my last two companies. I also have experience and passion in Interaction Design and User Experience, advocating heavily for the user. I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers (even the shoddy ones). I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
 
-I also feel it is important to understand all levels of development, and have ensured I have real work experience in server side development, project management, testing, and automating deployment.
+I also feel it is important to understand all levels of development, and have ensured I have real work experience in server side development, project management, leading teams, testing, and automating deployment.
 
-I’m looking to focus my career on creating rich web applications that rival their desktop counterparts. I want to be developing using standards based technologies (Javascript and HTML 5), ideally for a large user base. I want to be working on the User Interaction Design and steering the design and behaviour of the apps. I want to be getting rapid feedback from short development iterations, A/B testing, and usability reviews.
+I'm interested in moving into contracting as an opportunity to work with more teams to improve both the quality of the software they build and the way in which they build it. I'm passionate about the benefit improved development processes and tooling can make to the quality and speed at which software is built.
 
 ## Experience
 
@@ -25,6 +25,18 @@ I’m looking to focus my career on creating rich web applications that rival th
 _November 2015 – Current_
 
 Geckoboard helps companies turn their key performance data into beautiful, accessible KPI dashboards that keep teams informed, motivated and data-driven.
+
+### Tasks & Responsibilities
+
+Leading a team of 6 (one of the two dev teams at Geckoboard). Including regular 1 to 1's with team members, and advocating for the team to the leadership group. Recruiting new front end developers from screening to organising interviews. Running fortnightly retrospectives, providing a safe place to discuss and take aciton on issues facing the development teams. Mentoring junior developers with architecture discussions and code reviews.
+
+### Achievements
+
+Introducing React Storybook for rapid feedback when building new UI components. Enabling hot reloading of react components in a large existing codebase, tightening the development feedback loop. Creating a dedicated 2 week on-boarding process for new developers. Introducing a monthly front end discussion group. This served as a space where we could discuss new ideas and ensure the team had a shared vision and understanding. Migrating from a custom flux implementation to Redux. Developing a framework for testing async code synchronously using mock clocks, dates, and promises. This allowed explicit control of timing while ensuring tests ran as fast as possible.
+
+### Technologies Used
+
+react, javascript, es6, redux, sass, d3
 
 ### Lead Front End Developer | Qumu, London
 
