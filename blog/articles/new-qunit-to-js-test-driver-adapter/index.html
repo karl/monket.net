@@ -383,8 +383,8 @@ code.lang-markdown .bullet {
     };
 
     <span class="built_in">window</span>.QUnit = {
-        equiv: <span class="built_in">window</span>.equiv,
-        ok: <span class="built_in">window</span>.ok
+        <span class="attr">equiv</span>: <span class="built_in">window</span>.equiv,
+        <span class="attr">ok</span>: <span class="built_in">window</span>.ok
     };
 
 })();
@@ -393,19 +393,19 @@ code.lang-markdown .bullet {
 <h2 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test&nbsp;Driver</h2>
 <p>To run your qunit tests in <span class="caps">JS</span> Test Driver you need to configure it to load the adapter before your qunit&nbsp;tests.</p>
 <p>Update your <code>jsTestDriver.conf</code> to load the&nbsp;files:</p>
-<pre><code class="lang-yaml">server: http://localhost:9876
+<pre><code class="lang-yaml"><span class="attr">server:</span> http://localhost:<span class="number">9876</span>
 
-load:
-  # Add these lines to load the equiv function and adapter in order, before the tests
-  # (assuming they are saved to tests/qunit/)
-  - tests/qunit/equiv.js
-  - tests/qunit/QUnitAdapter.js
+<span class="attr">load:</span>
+  <span class="comment"># Add these lines to load the equiv function and adapter in order, before the tests</span>
+  <span class="comment"># (assuming they are saved to tests/qunit/)</span>
+<span class="bullet">  -</span> tests/qunit/equiv.js
+<span class="bullet">  -</span> tests/qunit/QUnitAdapter.js
 
-  # This is where we load the qunit tests
-  - tests/js/*.js
+  <span class="comment"># This is where we load the qunit tests</span>
+<span class="bullet">  -</span> tests/js/*.js
 
-  # And this loads the source files we are testing
-  - src/js/*.js
+  <span class="comment"># And this loads the source files we are testing</span>
+<span class="bullet">  -</span> src/js/*.js
 </code></pre>
 <h2 id="running-js-test-driver-with-qunit-tests">Running <span class="caps">JS</span> Test Driver with qunit&nbsp;tests</h2>
 <p>Now we can run <span class="caps">JS</span> Test Driver and watch as it runs all our qunit&nbsp;tests!</p>
