@@ -151,14 +151,6 @@ Dancing Monkeys was my individual project while at Imperial College London. It i
 
 Created as part of my final year project at university. Released as open source and maintained for a few years by another developer.
 
-**Sign Monkey**, [http://www.signmonkey.net/](http://www.signmonkey.net/)
-
-British Sign Language video dictionary.
-
-**Beneebs - Random Name Picker for the Classroom**, [https://www.beneebs.com/](https://www.beneebs.com/)
-
-A tool I created for my teacher wife, to allow her pick students at random from her class when asking questions.
-
 ## Writing
 
 **Blog**, [https://monket.net/blog/](https://monket.net/blog/)
