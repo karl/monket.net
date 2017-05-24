@@ -12,11 +12,15 @@
   box-sizing: border-box;
   color: #333;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 11px; /* For the PDF CV */
   letter-spacing: 0.2px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
+}
+
+.page {
+  font-size: 16px; /* For the Website */
 }
 
 a {
@@ -311,7 +315,7 @@ code.lang-markdown .bullet {
 
     </style>
   </head>
-  <body>
+  <body class="page">
     <header class="header">
       <div class="content-wrap">
         <div class="logo">
@@ -330,6 +334,7 @@ code.lang-markdown .bullet {
 <li>London, United&nbsp;Kingdom</li>
 <li><a href="mailto:karl@monket.net">karl@monket.net</a></li>
 <li><a href="https://monket.net">https://monket.net</a></li>
+<li><a href="/cv/Karl%20O%27Keeffe%20-%20CV.pdf"><span class="caps">CV</span> as&nbsp;PDF</a></li>
 </ul>
 <p>I’m currently part of the front end team at Geckoboard where we are building an amazing dashboard&nbsp;product.</p>
 <p>I’m a JavaScript expert who has developed large scale single page applications for Geckoboard, Qumu, 7digital, and Philips. I’ve worked across multiple teams, leading teams at my last two companies. I also have experience and passion in Interaction Design and User Experience, advocating heavily for the user. I have over 10 years solid experience coding <span class="caps">HTML</span>, JavaScript, and CSS for all browsers (even the shoddy ones). I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and&nbsp;feedback.</p>
