@@ -338,14 +338,14 @@ code.lang-markdown .bullet {
 <pre><code class="lang-javascript">    QUnit: {
         <span class="comment">// Add the following 3 lines</span>
         runTest: runTest,
-        <span class="attr">config</span>: config,
-        <span class="attr">validTest</span>: validTest,
+        config: config,
+        validTest: validTest,
 
         <span class="comment">// This is existing code</span>
         equiv: equiv,
-        <span class="attr">ok</span>: ok,
-        <span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">failures, total</span>)</span>{},
-        <span class="attr">log</span>: <span class="function"><span class="keyword">function</span>(<span class="params">result, message</span>)</span>{}
+        ok: ok,
+        done: <span class="function"><span class="keyword">function</span>(<span class="params">failures, total</span>)</span>{},
+        log: <span class="function"><span class="keyword">function</span>(<span class="params">result, message</span>)</span>{}
     },
 </code></pre>
 <p>Next <a href="/blog/articles/qunit-and-js-test-driver/QUnitToTestCases.js">download QUnitToTestCases.js</a> and save it to the same folder as <code>testrunner.js</code>. This is the file which converts the qunit tests into TestCases that <span class="caps">JS</span> Test Driver&nbsp;understands.</p>
@@ -353,19 +353,19 @@ code.lang-markdown .bullet {
 <h2 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test&nbsp;Driver</h2>
 <p>Once you have the patched <code>testrunner.js</code> and <code>QUnitToTestCases.js</code>, you just need to let <span class="caps">JS</span> Test Driver know to load them before your qunit tests. They need to be loaded in order, with  <code>testrunner.js</code> first, followed by <code>QUnitTiTestCases.js</code>, as the converter modifies some of the testrunner&nbsp;methods.</p>
 <p>Update your <code>jsTestDriver.conf</code> to load the&nbsp;files:</p>
-<pre><code class="lang-yaml"><span class="attr">server:</span> http://localhost:<span class="number">9876</span>
+<pre><code class="lang-yaml">server: http://localhost:9876
 
-<span class="attr">load:</span>
-  <span class="comment"># Add these lines to load the testrunner and converter in order, before the tests</span>
-  <span class="comment"># (assuming the files are saved to tests/qunit/)</span>
-<span class="bullet">  -</span> tests/qunit/testrunner.js
-<span class="bullet">  -</span> tests/qunit/QUnitToTestCases.js
+load:
+  # Add these lines to load the testrunner and converter in order, before the tests
+  # (assuming the files are saved to tests/qunit/)
+  - tests/qunit/testrunner.js
+  - tests/qunit/QUnitToTestCases.js
 
-  <span class="comment"># This is where we load the qunit tests</span>
-<span class="bullet">  -</span> tests/js/*.js
+  # This is where we load the qunit tests
+  - tests/js/*.js
 
-  <span class="comment"># And this loads the source files we are testing</span>
-<span class="bullet">  -</span> src/js/*.js
+  # And this loads the source files we are testing
+  - src/js/*.js
 </code></pre>
 <h2 id="running-js-test-driver-with-qunit-tests">Running <span class="caps">JS</span> Test Driver with qunit&nbsp;tests</h2>
 <p>Now we can run <span class="caps">JS</span> Test Driver and watch as it runs all our qunit&nbsp;tests!</p>

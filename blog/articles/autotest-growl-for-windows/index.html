@@ -337,22 +337,22 @@ code.lang-markdown .bullet {
 <p>Updating Autotest Growl turns out to be pretty simple. We need to download <a href="http://www.growlforwindows.com/gfw/help/growlnotify.aspx">growlnotify for Windows</a>, and add it to the <code>growl/</code> directory.</p>
 <p>Then we can update the <code>autotest-growl</code> code to decide which <code>growlnotify</code> to use depending on the Operating&nbsp;System.</p>
 <pre><code class="lang-ruby">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">is_windows?</span></span>
-    processor, platform, *rest = RUBY_PLATFORM.split(<span class="string">"-"</span>)
+    processor, platform, *rest = <span class="constant">RUBY_PLATFORM</span>.split(<span class="string">"-"</span>)
     platform == <span class="string">'mswin32'</span>
   <span class="keyword">end</span>
 
   <span class="comment">##</span>
   <span class="comment"># Display a message through Growl.</span>
   <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">growl</span> <span class="title">title</span>, <span class="title">message</span>, <span class="title">icon</span>, <span class="title">priority=</span>0, <span class="title">stick=</span>""</span>
-    growl = File.join(GEM_PATH, <span class="string">'growl'</span>, <span class="string">'growlnotify'</span>)
-    image = File.join(<span class="caps">ENV</span>[<span class="string">'<span class="caps">HOME</span>'</span>], <span class="string">'.autotest-growl'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>)
-    image = File.join(GEM_PATH, <span class="string">'img'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>) <span class="keyword">unless</span> File.exists?(image)
+    growl = <span class="constant">File</span>.join(<span class="constant">GEM_PATH</span>, <span class="string">'growl'</span>, <span class="string">'growlnotify'</span>)
+    image = <span class="constant">File</span>.join(<span class="constant"><span class="caps">ENV</span></span>[<span class="string">'<span class="caps">HOME</span>'</span>], <span class="string">'.autotest-growl'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>)
+    image = <span class="constant">File</span>.join(<span class="constant">GEM_PATH</span>, <span class="string">'img'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>) <span class="keyword">unless</span> <span class="constant">File</span>.exists?(image)
 
     <span class="keyword">if</span> is_windows?
       growl += <span class="string">'.com'</span>
       cmd = <span class="string">"<span class="subst">#{growl}</span> <span class="subst">#{message.inspect}</span> /a:\"autotest\" /r:\"Autotest\" /n:\"Autotest\" /i:\"<span class="subst">#{image}</span>\" /p:<span class="subst">#{priority}</span> /t:\"<span class="subst">#{title}</span>\""</span>
     <span class="keyword">else</span>
-      <span class="keyword">if</span> @@remote_notification
+      <span class="keyword">if</span> <span class="variable">@@remote_notification</span>
         cmd = <span class="string">"<span class="subst">#{growl}</span> -H localhost -n autotest --image '<span class="subst">#{image}</span>' -p <span class="subst">#{priority}</span> -m <span class="subst">#{message.inspect}</span> '<span class="subst">#{title}</span>' <span class="subst">#{stick}</span>"</span>
       <span class="keyword">else</span>
         cmd = <span class="string">"<span class="subst">#{growl}</span> -n autotest --image '<span class="subst">#{image}</span>' -p <span class="subst">#{priority}</span> -m <span class="subst">#{message.inspect}</span> '<span class="subst">#{title}</span>' <span class="subst">#{stick}</span>"</span>

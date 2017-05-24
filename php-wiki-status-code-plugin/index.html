@@ -334,7 +334,7 @@ code.lang-markdown .bullet {
 </ul>
 <h2 id="example">Example</h2>
 <p>Placed in a normal wiki&nbsp;page:</p>
-<pre><code class="lang-php"><span class="meta">&lt;?</span>plugin StatusCode code=<span class="string">"404"</span> <span class="meta">?&gt;</span>
+<pre><code class="lang-php"><span class="preprocessor">&lt;?</span>plugin StatusCode code=<span class="string">"404"</span> <span class="preprocessor">?&gt;</span>
 </code></pre>
 <p>this will cause the page to be returned as 404 Not&nbsp;Found.</p>
 <h2 id="parameters">Parameters</h2>
@@ -355,7 +355,7 @@ code.lang-markdown .bullet {
 </dl>
 
 <h2 id="code">Code</h2>
-<pre><code class="lang-php"><span class="meta">&lt;?php</span>
+<pre><code class="lang-php"><span class="preprocessor">&lt;?php</span>
 
 <span class="class"><span class="keyword">class</span> <span class="title">WikiPlugin_StatusCode</span> <span class="keyword">extends</span> <span class="title">WikiPlugin</span> </span>{
 
@@ -373,12 +373,12 @@ code.lang-markdown .bullet {
                      <span class="string">'text'</span> =&gt; <span class="keyword">null</span>);
     }
 
-    <span class="function"><span class="keyword">function</span> <span class="title">run</span><span class="params">($dbi, $argstr, $request)</span> </span>{
-        extract(<span class="keyword">$this</span>-&gt;getArgs($argstr, $request));
+    <span class="function"><span class="keyword">function</span> <span class="title">run</span><span class="params">(<span class="variable">$dbi</span>, <span class="variable">$argstr</span>, <span class="variable">$request</span>)</span> </span>{
+        extract(<span class="variable">$this</span>-&gt;getArgs(<span class="variable">$argstr</span>, <span class="variable">$request</span>));
 
         <span class="comment">// Return Codes copied from:</span>
         <span class="comment">// http://www.cknow.com/ckinfo/def_h/httpreturncodes.shtml</span>
-        $HttpReturnCodes = <span class="keyword">array</span>(
+        <span class="variable">$HttpReturnCodes</span> = <span class="keyword">array</span>(
             <span class="number">100</span> =&gt; <span class="string">'Continue'</span>,
             <span class="number">101</span> =&gt; <span class="string">'Switching Protocols'</span>,
 
@@ -422,19 +422,19 @@ code.lang-markdown .bullet {
             <span class="number">505</span> =&gt; <span class="string">'<span class="caps">HTTP</span> Version Not Supported'</span>
         );
 
-        settype( $code, <span class="string">'integer'</span> );
+        settype( <span class="variable">$code</span>, <span class="string">'integer'</span> );
 
-        <span class="keyword">if</span> ( $text == <span class="keyword">null</span> ) {
-            $text = $HttpReturnCodes[ $code ];
+        <span class="keyword">if</span> ( <span class="variable">$text</span> == <span class="keyword">null</span> ) {
+            <span class="variable">$text</span> = <span class="variable">$HttpReturnCodes</span>[ <span class="variable">$code</span> ];
         }
 
-        $text = str_replace( <span class="string">"\n"</span>, <span class="string">''</span>, $text );
+        <span class="variable">$text</span> = str_replace( <span class="string">"\n"</span>, <span class="string">''</span>, <span class="variable">$text</span> );
 
-        header( $_SERVER[<span class="string">'SERVER_PROTOCOL'</span>] . <span class="string">' '</span> . $code . <span class="string">' '</span> . $text);
+        header( <span class="variable">$_SERVER</span>[<span class="string">'SERVER_PROTOCOL'</span>] . <span class="string">' '</span> . <span class="variable">$code</span> . <span class="string">' '</span> . <span class="variable">$text</span>);
     }
 }
 
-<span class="meta">?&gt;</span>
+<span class="preprocessor">?&gt;</span>
 </code></pre>
 </section>
         </article>

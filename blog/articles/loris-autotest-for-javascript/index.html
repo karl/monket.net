@@ -356,14 +356,14 @@ gem tumble
 <h3 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test&nbsp;Driver</h3>
 <p>To enable <span class="caps">JS</span> Test Driver, create a <code>jsTestDriver.conf</code> file in the folder where you run Loris. This should be a standard <a href="http://code.google.com/p/js-test-driver/wiki/ConfigurationFile"><span class="caps">JS</span> Test Driver config file</a>.</p>
 <p>This should specify which files <span class="caps">JS</span> Test Driver should process, and how it connects to the JS Test Driver server. For&nbsp;example:</p>
-<pre><code class="lang-yaml"><span class="attr">server:</span> http://localhost:<span class="number">9876</span>
+<pre><code class="lang-yaml">server: http://localhost:9876
 
-<span class="attr">load:</span>
-<span class="bullet">  -</span> tests/qunit/equiv.js
-<span class="bullet">  -</span> tests/qunit/QUnitAdapter.js
+load:
+  - tests/qunit/equiv.js
+  - tests/qunit/QUnitAdapter.js
 
-<span class="bullet">  -</span> src/js/*.js
-<span class="bullet">  -</span> tests/js/*.js
+  - src/js/*.js
+  - tests/js/*.js
 </code></pre>
 <p>If no <code>jsTestDriver.conf</code> file is found, the <span class="caps">JS</span> Test Driver task is silently&nbsp;skipped.</p>
 <p>To make it really simple to run <span class="caps">JS</span> Test Driver tests, if the server is set to run on <code>localhost</code>, and Loris doesn’t detect one running, it will automatically start one, and register your default browser with&nbsp;it.</p>

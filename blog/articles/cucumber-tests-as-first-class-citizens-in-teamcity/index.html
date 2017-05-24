@@ -344,22 +344,22 @@ lib/
 <p>The formatter in my download has been tweaked to look in a new location for the teamcity support files, and has been changed to be a single class in a module named <code>JBTeamCityFormatter</code> (to ease calling it from the command&nbsp;line).</p>
 <p>The relevant changes in the file&nbsp;are:</p>
 <pre><code class="lang-ruby">
-$: &lt;&lt; File.expand_path(File.dirname(__FILE_<span class="number">_</span>) + <span class="string">'/../../lib/'</span>)
+<span class="variable">$:</span> &lt;&lt; <span class="constant">File</span>.expand_path(<span class="constant">File</span>.dirname(__FILE_<span class="number">_</span>) + <span class="string">'/../../lib/'</span>)
 <span class="keyword">require</span> <span class="string">'teamcity/runner_common'</span>
 <span class="keyword">require</span> <span class="string">'teamcity/utils/service_message_factory'</span>
 <span class="keyword">require</span> <span class="string">'teamcity/utils/runner_utils'</span>
 <span class="keyword">require</span> <span class="string">'teamcity/utils/url_formatter'</span>
 
-<span class="class"><span class="keyword">class</span> <span class="title">JBTeamCityFormatter</span> &lt; ::<span class="title">Cucumber::Ast::Visitor</span></span>
+<span class="class"><span class="keyword">class</span> <span class="title">JBTeamCityFormatter</span> <span class="inheritance">&lt; </span>::<span class="title">Cucumber::Ast::Visitor</span></span>
 </code></pre>
 <h2 id="setting-up-cucumber-to-use-the-teamcity-formatter">Setting up Cucumber to use the TeamCity&nbsp;Formatter</h2>
 <p>Once you have the formatter installed you can use it as with any Cucumber formatter by adding it as a command line&nbsp;parameter:</p>
-<pre><code class="lang-bash">cucumber features <span class="_">-f</span> JBTeamCityFormatter
+<pre><code class="lang-bash">cucumber features <span class="operator">-f</span> JBTeamCityFormatter
 </code></pre>
 <p>To use it with TeamCity, add a profile your <code>cucumber.yml</code> file that runs all your features using the new&nbsp;formatter:</p>
 <h4 id="cucumber-yml">cucumber.yml</h4>
-<pre><code class="lang-yaml"><span class="attr">default:</span> features -q
-<span class="attr">teamcity:</span> features -q --<span class="literal">no</span>-c  -f JBTeamCityFormatter
+<pre><code class="lang-yaml">default: features -q
+teamcity: features -q --no-c  -f JBTeamCityFormatter
 </code></pre>
 <h2 id="running-cucumber-with-teamcity">Running Cucumber with&nbsp;TeamCity</h2>
 <p>Now when you run Cucumber within TeamCity (using the <code>teamcity</code> profile) it will report tests in real time, with all the feedback you are used to. Just add a call to the Cucumber executable to your build script (NAnt, MSBuild, Ant, Rake,&nbsp;etc).</p>

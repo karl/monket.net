@@ -346,10 +346,10 @@ gem install autotest-growl
 
   <span class="comment"># Display a message through Snarl.</span>
   <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">growl</span> <span class="title">title</span>, <span class="title">message</span>, <span class="title">icon</span>, <span class="title">priority=</span>0, <span class="title">stick=</span>""</span>
-    image = File.join(<span class="caps">ENV</span>[<span class="string">'<span class="caps">HOME</span>'</span>], <span class="string">'.autotest-growl'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>)
-    image = File.join(GEM_PATH, <span class="string">'img'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>) <span class="keyword">unless</span> File.exists?(image)
+    image = <span class="constant">File</span>.join(<span class="constant"><span class="caps">ENV</span></span>[<span class="string">'<span class="caps">HOME</span>'</span>], <span class="string">'.autotest-growl'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>)
+    image = <span class="constant">File</span>.join(<span class="constant">GEM_PATH</span>, <span class="string">'img'</span>, <span class="string">"<span class="subst">#{icon}</span>.png"</span>) <span class="keyword">unless</span> <span class="constant">File</span>.exists?(image)
 
-    Snarl.show_message(title, message.inspect, image)
+    <span class="constant">Snarl</span>.show_message(title, message.inspect, image)
   <span class="keyword">end</span>
 
 <span class="keyword">end</span>

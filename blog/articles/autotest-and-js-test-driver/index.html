@@ -342,28 +342,28 @@ code.lang-markdown .bullet {
 
 <span class="class"><span class="keyword">module</span> <span class="title">Autotest::JsTestDriver</span></span>
 
-    @@jar = File.dirname(__FILE_<span class="number">_</span>) + <span class="string">'/JsTestDriver-1.0b.jar'</span>
-    @@config_file = <span class="string">'jsTestDriver.conf'</span>
+    <span class="variable">@@jar</span> = <span class="constant">File</span>.dirname(__FILE_<span class="number">_</span>) + <span class="string">'/JsTestDriver-1.0b.jar'</span>
+    <span class="variable">@@config_file</span> = <span class="string">'jsTestDriver.conf'</span>
 
     <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">jar=</span><span class="params">(string)</span></span>
-        @@jar = string
+        <span class="variable">@@jar</span> = string
     <span class="keyword">end</span>
 
     <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">config_file=</span><span class="params">(string)</span></span>
-        @@config_file = string
+        <span class="variable">@@config_file</span> = string
     <span class="keyword">end</span>
 
     <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">show_success=</span><span class="params">(bool)</span></span>
-        @@show_success=bool
+        <span class="variable">@@show_success</span>=bool
     <span class="keyword">end</span>
 
-    Autotest.add_hook <span class="symbol">:run_command</span> <span class="keyword">do</span> <span class="params">|at|</span>
+    <span class="constant">Autotest</span>.add_hook <span class="symbol">:run_command</span> <span class="keyword">do</span> |at|
         <span class="comment"># run js test driver</span>
         results = <span class="string">'<span class="caps">JS</span> Test Driver:'</span>
-        results += <span class="string">`java -jar "<span class="subst">#{@@jar}</span>" --config "<span class="subst">#{@@config_file}</span>" --tests all --verbose`</span>
+        results += <span class="string">`java -jar "<span class="subst">#{<span class="variable">@@jar</span>}</span>" --config "<span class="subst">#{<span class="variable">@@config_file</span>}</span>" --tests all --verbose`</span>
         puts results
 
-        at.results = [] <span class="keyword">if</span> at.results.<span class="literal">nil</span>?
+        at.results = [] <span class="keyword">if</span> at.results.<span class="keyword">nil</span>?
         at.results.concat(results.split(<span class="string">"\n"</span>))
 
         at.hook <span class="symbol">:ran_js_test_driver</span>
@@ -374,29 +374,29 @@ code.lang-markdown .bullet {
 
 <span class="class"><span class="keyword">module</span> <span class="title">Autotest::Growl</span></span>
 
-    @@show_js_test_success = <span class="literal">false</span>
+    <span class="variable">@@show_js_test_success</span> = <span class="keyword">false</span>
 
     <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">show_js_test_success=</span><span class="params">(bool)</span></span>
-        @@show_js_test_success=bool
+        <span class="variable">@@show_js_test_success</span>=bool
     <span class="keyword">end</span>
 
   <span class="comment"># Growl results of <span class="caps">JS</span> Test Driver</span>
-  Autotest.add_hook <span class="symbol">:ran_js_test_driver</span> <span class="keyword">do</span> <span class="params">|autotest|</span>
+  <span class="constant">Autotest</span>.add_hook <span class="symbol">:ran_js_test_driver</span> <span class="keyword">do</span> |autotest|
 
     gist = autotest.results.grep( <span class="regexp">/Total\s+\d+\s+tests/</span> ).join(<span class="string">" / "</span>).strip()
 
     <span class="keyword">if</span> gist == <span class="string">''</span>
-      growl @label + <span class="string">'Cannot run <span class="caps">JS</span> Test Driver.'</span>, gist, <span class="string">'error'</span>
+      growl <span class="variable">@label</span> + <span class="string">'Cannot run <span class="caps">JS</span> Test Driver.'</span>, gist, <span class="string">'error'</span>
     <span class="keyword">else</span>
       <span class="keyword">if</span> gist =~ <span class="regexp">/Errors:\s+[1-9]\d*/</span>
-        growl @label + <span class="string">'Error running some <span class="caps">JS</span> tests.'</span>, gist, <span class="string">'failed'</span>
+        growl <span class="variable">@label</span> + <span class="string">'Error running some <span class="caps">JS</span> tests.'</span>, gist, <span class="string">'failed'</span>
       <span class="keyword">elsif</span> gist =~ <span class="regexp">/Fails:\s+[1-9]\d*/</span>
-        growl @label + <span class="string">'<span class="caps">JS</span> Test: Some tests failed.'</span>, gist, <span class="string">'failed'</span>
-      <span class="keyword">elsif</span> @@show_js_test_success
-        growl @label + <span class="string">'<span class="caps">JS</span> Test: All files are clean.'</span>, gist, <span class="string">'passed'</span>
+        growl <span class="variable">@label</span> + <span class="string">'<span class="caps">JS</span> Test: Some tests failed.'</span>, gist, <span class="string">'failed'</span>
+      <span class="keyword">elsif</span> <span class="variable">@@show_js_test_success</span>
+        growl <span class="variable">@label</span> + <span class="string">'<span class="caps">JS</span> Test: All files are clean.'</span>, gist, <span class="string">'passed'</span>
       <span class="keyword">end</span>
     <span class="keyword">end</span>
-    <span class="literal">false</span>
+    <span class="keyword">false</span>
   <span class="keyword">end</span>
 
 <span class="keyword">end</span>
@@ -404,11 +404,11 @@ code.lang-markdown .bullet {
 <h2 id="configuring-autotest-and-js-test-driver">Configuring Autotest and <span class="caps">JS</span> Test&nbsp;Driver</h2>
 <p><span class="caps">JS</span> Test Driver uses a configuration file to connect with the JS Test Driver server, and to decide which javscript files to&nbsp;load.</p>
 <p>Create a <code>jsTestDriver.conf</code> file in the project root directory as&nbsp;follows.</p>
-<pre><code class="lang-yaml"><span class="attr">server:</span> http://localhost:<span class="number">9876</span>
+<pre><code class="lang-yaml">server: http://localhost:9876
 
-<span class="attr">load:</span>
-<span class="bullet">  -</span> src/js/*.js
-<span class="bullet">  -</span> tests/js/*.js
+load:
+  - src/js/*.js
+  - tests/js/*.js
 </code></pre>
 <p>This assumes that you have our javascript source files will be in the <code>src/js/</code> directory, and our javascript test files will be in the <code>src/js/</code> directory. We will create a test file, and associated code&nbsp;later.</p>
 <p>The <code>server:</code> lets <span class="caps">JS</span> Test Driver know we will be connecting to a server on our local machine, on port 9876. We’ll get this server running&nbsp;later.</p>
@@ -417,7 +417,7 @@ code.lang-markdown .bullet {
 <span class="keyword">require</span> <span class="string">'lib/autotest/js-test-driver'</span>
 
 <span class="comment"># Set the location of the <span class="caps">JS</span> Test Driver jar</span>
-Autotest::JsTestDriver::jar = <span class="string">'./lib/jsTestDriver-1.0b.jar'</span>
+<span class="constant">Autotest::JsTestDriver::</span>jar = <span class="string">'./lib/jsTestDriver-1.0b.jar'</span>
 </code></pre>
 <p>You can also configure the location of the <span class="caps">JS</span> Test Driver config file, and whether or not to show successful test&nbsp;runs.</p>
 <pre><code class="lang-ruby"><span class="comment"># Uncomment this if you have autotest-growl, and Growl installed</span>
@@ -434,7 +434,7 @@ Autotest::JsTestDriver::jar = <span class="string">'./lib/jsTestDriver-1.0b.jar'
 <p>Now that all the installation and configuration is done, let get everything&nbsp;running.</p>
 <h2 id="running-autotest-with-js-test-driver">Running Autotest with <span class="caps">JS</span> Test&nbsp;Driver</h2>
 <p>First up we need to get our <span class="caps">JS</span> Test Driver server up and running. Open a Terminal, and navigate to the directory containing the JS Test Driver jar. Run the following to start a&nbsp;server:</p>
-<pre><code class="lang-bash">java -jar JsTestDriver-1.0b.jar --port 9876
+<pre><code class="lang-bash">java -jar JsTestDriver-<span class="number">1.0</span>b.jar --port <span class="number">9876</span>
 </code></pre>
 <p>Now we need to capture a browser to use for testing. Open a browser and automatically capture it for use with <span class="caps">JS</span> Test Driver by going to the following&nbsp;URL:</p>
 <pre><code>http://localhost:9876/capture
