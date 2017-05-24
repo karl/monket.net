@@ -9,6 +9,7 @@ template: article.jade
 * London, United Kingdom
 * [karl@monket.net](mailto:karl@monket.net)
 * [https://monket.net](https://monket.net)
+* [CV as PDF](Karl%20O'Keeffe%20-%20CV.pdf)
 
 I'm currently part of the front end team at Geckoboard where we are building an amazing dashboard product.
 
@@ -36,7 +37,7 @@ Introducing React Storybook for rapid feedback when building new UI components. 
 
 ### Technologies Used
 
-react, javascript, es6, redux, sass, d3
+`react`, `javascript`, `es6`, `redux`, `sass`, `webpack`, `d3`, `storybook`
 
 ### Lead Front End Developer | Qumu, London
 
@@ -54,7 +55,7 @@ Designing and building the widgets project from scratch in CoffeeScript and PHP.
 
 #### Technologies Used
 
-angular, javascript, coffeescript, jquery, less, jenkins, html, css, php
+`angular`, `javascript`, `coffeescript`, `jquery`, `less`, `jenkins`, `html`, `css`, `php`
 
 ### Front End Web Developer | 7 Digital, London
 
@@ -72,7 +73,7 @@ Building Locker Plus UI from scratch in Javascript using the ExtJS framework Int
 
 #### Technologies Used
 
-javascript, jquery, extjs, qunit, jstestdriver, teamcity, html, css, balsamiq, c#, ruby, cucumber
+`javascript`, `jquery`, `extjs`, `qunit`, `jstestdriver`, `teamcity`, `html`, `css`, `balsamiq`, `c#`, `ruby`, `cucumber`
 
 ### Front End Web Developer | CWA New Media, New Zealand
 
@@ -90,7 +91,7 @@ Created a new JavaScript web based timesheet system, with streamlined auto savin
 
 #### Technologies Used
 
-javascript, xhtml, css, php
+`javascript`, `xhtml`, `css`, `php`
 
 ### User Interface Consultant (Contract) | Philips, Singapore
 
@@ -108,7 +109,7 @@ Demo UI created from scratch in six weeks as a JavaScript web based interface, r
 
 #### Technologies Used
 
-javascript, opera, jsp, java, philips-tv-api
+`javascript`, `opera`, `jsp`, `java`, `philips-tv-api`
 
 ### Systems Engineer | Formicary, London
 
@@ -126,7 +127,7 @@ Created the Java Swing UI for a bond trading app. This was multi-threaded for re
 
 #### Technogogies Used
 
-java, swing, swiftmq, html, css, javascript
+`java`, `swing`, `swiftmq`, `html`, `css`, `javascript`
 
 ## Education
 
@@ -165,4 +166,4 @@ I have made a number of major trips around the world to visit and work in other 
 
 ### Interests
 
-Parkour (free-running), Capoeira (Brazilian dance/fight/game), Inline skating, Flatland BMX, Snowboarding, Skateboarding, Yoga, Diving and Freediving (breath-hold diving), Climbing, Thai Massage, Intelligent movies, User interface design and usability, Travel, Psychology and Social Behaviour.
+Improv, Parkour (free-running), Capoeira (Brazilian dance/fight/game), Inline skating, Snowboarding, Yoga, Diving and Freediving (breath-hold diving), Thai Massage, Travel, Psychology and Social Behaviour.

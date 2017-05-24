@@ -2,11 +2,15 @@ body {
   box-sizing: border-box;
   color: #333;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 11px; /* For the PDF CV */
   letter-spacing: 0.2px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
+}
+
+.page {
+  font-size: 16px; /* For the Website */
 }
 
 a {

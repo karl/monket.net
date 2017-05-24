@@ -1,3 +1,4 @@
 node_modules
-build/.DS_Store
+build/*
 npm-debug.log
+/contents/cv/Karl O'Keeffe - CV.pdf
