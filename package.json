@@ -1,20 +1,26 @@
 {
-  "scripts": {
-    "start": "wintersmith preview",
-    "build": "wintersmith build && yarn run create-pdf",
-    "create-pdf": "node ./create-pdf.js",
-    "deploy": "./deploy.sh"
-  },
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "markdown-pdf": "7.0.0",
-    "moment": "2.3.x",
-    "typogr": "0.5.x",
-    "underscore": "1.4.x"
+    "gatsby": "^1.9.202",
+    "gatsby-link": "^1.6.37",
+    "gatsby-plugin-react-helmet": "^2.0.5",
+    "react-helmet": "^5.2.0"
   },
-  "private": "true",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
-    "wintersmith": "2.2.4",
-    "wintersmith-livereload": "0.2.2",
-    "wintersmith-redirect": "0.1.0"
+    "prettier": "^1.10.2"
   }
 }

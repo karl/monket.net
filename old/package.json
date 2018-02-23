@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "wintersmith preview",
+    "build": "wintersmith build && yarn run create-pdf",
+    "create-pdf": "node ./create-pdf.js",
+    "deploy": "./deploy.sh"
+  },
+  "dependencies": {
+    "markdown-pdf": "7.0.0",
+    "moment": "2.3.x",
+    "typogr": "0.5.x",
+    "underscore": "1.4.x"
+  },
+  "private": "true",
+  "devDependencies": {
+    "wintersmith": "2.2.4",
+    "wintersmith-livereload": "0.2.2",
+    "wintersmith-redirect": "0.1.0"
+  }
+}
