@@ -152,6 +152,18 @@ Dancing Monkeys was my individual project while at Imperial College London. It i
 
 Created as part of my final year project at university. Released as open source and maintained for a few years by another developer.
 
+**React Storybook Talk**, [https://www.youtube.com/watch?v=UxbQ-cGnoCE](https://www.youtube.com/watch?v=UxbQ-cGnoCE)
+
+An introduction to React Storybook, what it is, how to use it, and some of the benefits we have seen from adopting it here at Geckoboard.
+
+A talk I gave as part of the React London Meetup at the Facebook offices.
+
+**Prettier**, [https://github.com/prettier/prettier](https://github.com/prettier/prettier)
+
+A code formatter for JavaScript (and other languages). Prettier is an open source
+project that I have contributed to. I've focused on improving the formatting
+of JSX.
+
 ## Writing
 
 **Blog**, [https://monket.net/blog/](https://monket.net/blog/)
