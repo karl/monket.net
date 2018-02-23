@@ -8,11 +8,7 @@ Personal Homepage of Karl O'Keeffe.
 
 ## [Blog](blog/)
 
-My programming blog.
-
-## [Sign Monkey](http://signmonkey.net/)
-
-An incomplete, badly signed, low quality video dictionary of British Sign Language :)
+My programming blog (no longer updated).
 
 ## [Dancing Monkeys](dancing-monkeys/)
 
