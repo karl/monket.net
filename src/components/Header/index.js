@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
-const Header = () => (
+const Header = ({ title }) => (
   <div
     style={{
       padding: '2em',
@@ -23,11 +23,11 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Karl O'Keeffe
+          {title}
         </Link>
       </h1>
     </div>
   </div>
-)
+);
 
-export default Header
+export default Header;
