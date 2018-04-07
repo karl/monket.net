@@ -11,19 +11,44 @@ template: article.jade
 * [https://monket.net](https://monket.net)
 * [CV as PDF](Karl%20O'Keeffe%20-%20CV.pdf)
 
-I'm currently part of the front end team at Geckoboard where we are building an amazing dashboard product.
 
-I'm a JavaScript expert who has developed large scale single page applications for Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at my last two companies. I also have experience and passion in Interaction Design and User Experience, advocating heavily for the user. I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers (even the shoddy ones). I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
+I'm a front end developer available for hire as a contractor.
+
+I'm a JavaScript expert who has developed large scale single page applications for Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at my last two companies. I also have experience and passion in Interaction Design and User Experience, advocating heavily for the user. I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers (even the shoddy ones).
+
+I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
 
 I also feel it is important to understand all levels of development, and have ensured I have real work experience in server side development, project management, leading teams, testing, and automating deployment.
 
-I'm interested in moving into contracting as an opportunity to work with more teams to improve both the quality of the software they build and the way in which they build it. I'm passionate about the benefit improved development processes and tooling can make to the quality and speed at which software is built.
-
 ## Experience
+
+### Senior Developer (Contract) | Sky, London
+
+_July 2017 - Current_
+
+Sky is a multi faceted media company with a multinational reach.
+
+### Tasks & Responsibilities
+
+Developing the Sky Go Desktop app for macOS and Windows, an Electron app for watching
+video and live TV. Interviewing candidates and mentoring new hires. Helping
+management implement new development processes within the team.
+
+### Achievements
+
+Streamlining the hiring process for new developers, including a stronger focus
+on technical skills and cultural fit. Improving the speed and reliability of the
+CI process, reducing time to merge PRs from 4+ hours to 20 minutes. Leading
+change in development process by example, with increased focus on tackling risks
+early.
+
+### Technologies Used
+
+`react`, `javascript`, `electron`, `redux`, `redux-saga`, `webpack`, `es6`, `jenkins`
 
 ### Team Lead & Front End Developer | Geckoboard, London
 
-_November 2015 – Current_
+_November 2015 – July 2017_
 
 Geckoboard helps companies turn their key performance data into beautiful, accessible KPI dashboards that keep teams informed, motivated and data-driven.
 
@@ -163,6 +188,12 @@ A talk I gave as part of the React London Meetup at the Facebook offices.
 A code formatter for JavaScript (and other languages). Prettier is an open source
 project that I have contributed to. I've focused on improving the formatting
 of JSX.
+
+**React Async I/O Testbed**, [https://github.com/karl/react-async-io-testbed](https://github.com/karl/react-async-io-testbed)
+
+This repo attempts to recreate the the IO demo from Dan Abramov's Beyond React 16 talk
+using the React 16. It shows how to implement suspense style async UI behaviours
+using React 16.
 
 ## Writing
 
