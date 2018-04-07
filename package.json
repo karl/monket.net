@@ -11,7 +11,7 @@
     "typogr": "0.5.x",
     "underscore": "1.4.x"
   },
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "wintersmith": "2.2.4",
     "wintersmith-livereload": "0.2.2",
