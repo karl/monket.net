@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Dancing Monkeys Change Log - Karl O'Keeffe
+    </title>
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <style>body {
+  box-sizing: border-box;
+  color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px; /* For the PDF CV */
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+}
+
+.page {
+  font-size: 16px; /* For the Website */
+}
+
+a {
+  color: #2469C8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre {
+  margin: 0; padding: 0; border: 0;
+}
+
+body {
+  background-color: #ffffff;
+  /*text-rendering: optimizeLegibility;*/
+}
+
+.content-wrap {
+  width: 34em;
+  margin: 0 auto;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  padding-bottom: .3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+h3 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+ol, ul {
+  padding: 0;
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+blockquote {
+  margin: 1.2em 3em;
+  padding-left: 1em;
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed #d2d2d2;
+  height: 0;
+  margin: 1.6em 0;
+}
+
+/* page header */
+
+.header {
+  padding: 2em;
+  background: #FFA91A;
+}
+
+.header h1 {
+  font-size: 2.6em;
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header a, .header a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* page footer */
+
+footer {
+  margin: 3em 0;
+}
+
+footer .nav {
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 3.5em;
+}
+
+footer .nav a {
+  padding: 0 0.5em;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+footer .about {
+  padding: 2.2em 3em;
+  text-align: center;
+  color: #888;
+}
+
+/* article */
+
+.article {
+  margin: 3em 0 4em;
+}
+
+.article header .date {
+  text-align: center;
+  margin-top: -0.7em;
+}
+
+.article .content img {
+  display: block;
+  width: 100%;
+}
+
+/* code styling */
+
+p code,
+h2 code {
+  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  padding: 0;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+h2 code:before,
+h2 code:after,
+p code:before,
+p code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+pre {
+  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  word-wrap: normal;
+  padding: 16px;
+  overflow: auto;
+  /*font-size: 100%;*/
+  font-size: 13.6px;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+  /*font-size: 100%;*/
+  white-space: pre;
+  background: transparent;
+  border-radius: 3px;
+}
+
+/* syntax hl stuff */
+
+code.lang-markdown {
+  color: #424242;
+}
+
+code.lang-markdown .header,
+code.lang-markdown .strong {
+  font-weight: bold;
+}
+
+code.lang-markdown .emphasis {
+  font-style: italic;
+}
+
+code.lang-markdown .horizontal_rule,
+code.lang-markdown .link_label,
+code.lang-markdown .code,
+code.lang-markdown .header,
+code.lang-markdown .link_url {
+  color: #555;
+}
+
+code.lang-markdown .blockquote,
+code.lang-markdown .bullet {
+  color: #bbb;
+}
+
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+.tomorrow-comment, pre .comment, pre .title {
+  color: #8e908c;
+}
+
+.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+  color: #c82829;
+}
+
+.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+  color: #f5871f;
+}
+
+.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
+  color: #eab700;
+}
+
+.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+  color: #718c00;
+}
+
+.tomorrow-aqua, pre .css .hexcolor {
+  color: #3e999f;
+}
+
+.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+  color: #4271ae;
+}
+
+.tomorrow-purple, pre .keyword, pre .javascript .function {
+  color: #8959a8;
+}
+
+/* media queries */
+
+@media (max-width: 690px) {
+  .content-wrap {
+    width: auto;
+    padding: 0 1em;
+  }
+  .header {
+    padding: 1em;
+  }
+  .header h1 {
+    font-size: 1.4em;
+  }
+  .article {
+    margin: 1em 0 2.5em;
+  }
+  .archive {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .archive * {
+    float: none !important;
+    line-height: 1.6 !important;
+    width: auto !important;
+    height: auto !important;
+    text-align: left !important;
+    border: 0 !important;
+    margin: 0 !important;
+  }
+  footer .nav {
+    margin: 1em 0;
+  }
+  footer .about {
+    padding: 0;
+    padding-top: 1.6em;
+  }
+  footer .about p {
+    margin-bottom: 1em;
+  }
+}
+
+    </style>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="content-wrap">
+        <div class="logo">
+          <h1><a href="/">Karl O'Keeffe</a></h1>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <header>
+            <h2><a href="/dancing-monkeys/command-line/">Dancing Monkeys Change Log</a></h2>
+          </header>
+          <section class="content"><h2 id="command-line-control">Command-Line&nbsp;Control</h2>
+<p>We recommend using Gorilla, but direct use of Dancing Monkeys itself is available from the command-line. Extensive instructions follow on how to do just&nbsp;this.</p>
+<p>For example purposes, say you unzip Dancing Monkeys to the C:\ root directory (the topmost directory). You’ll have a directory tree like&nbsp;this:</p>
+<pre><code>C:\Dancing Monkeys - where Gorilla.exe is located
+    \bin
+        \win32 – where the program is located, &quot;DancingMonkeys.exe&quot;
+    \LAME – this is the free LAME MP3 decoder
+        \html – documentation for LAME
+    \Output – this is where song step files and output log are placed by default
+    \Temp Music – a temporary working directory, where the latest created .WAV file is put
+    \toolbox – MATLAB related DLLs, just leave these be
+</code></pre><p>To run Dancing Monkeys from the command-line, you want to go to “C:\Dancing Monkeys\bin\win32” and run the DancingMonkeys.exe program there. For Windows pros, you want to create a <span class="caps">DOS</span> window, go to this directory, then run the program as&nbsp;follows:</p>
+<pre><code>    DancingMonkeys [options] input [L S H [output]]
+</code></pre><p>Items in []’s are optional. The input file is a full path to an <span class="caps">MP3</span> or WAV file, or a directory, or an M3U playlist. All MP3 and WAV files in the directory and its subdirectories are processed; try the “-t” option before a full run to see what music files will be processed. The “L S H” values you replace with the feet difficulty you want, from 1-9 (not 10). The “output” is the directory where you want to put the results. It is critical to put double-quotes around the filenames. Here is an example of a reasonable way to run the&nbsp;program:</p>
+<pre><code>    DancingMonkeys -es 3 &quot;C:\temp\My Steps\Barney.mp3&quot; 3 5 8
+</code></pre><p>The option “-es 3” tells the program to not create a step file if 3 or more stops are created in the stepfile generated - this is usually a sign that Dancing Monkeys cannot currently convert the song well. If successful, the result will be put in the directory “C:\Dancing Monkeys\Output” in a directory labeled “Barney”. Move this directory to your own created subdirectory in StepMania’s “Songs” and you’re&nbsp;done.</p>
+<p>Here’s the foolproof step-by-step for beginners, along with more information about what’s&nbsp;happening:</p>
+<p>1. Click on the Start button in the lower left of your screen and select&nbsp;“Run…”.</p>
+<p>2. In the dialog that pops up type:&nbsp;cmd</p>
+<p>3. A black (<span class="caps">DOS</span>) window pops up that says “C:\WINDOWS\System32\cmd.exe” as its title. Select it and type (including the&nbsp;double-quotes):</p>
+<pre><code>        cd &quot;C:\Dancing Monkeys\bin\win32&quot;
+</code></pre><p>4. You’re ready to run the program. Let’s say you put the <span class="caps">MP3</span> you want to convert in a directory “C:\temp\My Steps”, and it’s called “Barney.mp3”. You want to convert the song so that it produces feet difficulty ratings of 3, 5, and 8 for light, standard, and heavy.&nbsp;Type:</p>
+<pre><code>        DancingMonkeys &quot;C:\temp\My Steps\Barney.mp3&quot; 3 5 8
+</code></pre><p>5. Go get a drink and cross your fingers. Processing can take anywhere from a few minutes to a few hours. Typical is 5-15 minutes, but if you run out of physical memory things can get slow. Now and then the program will fail; sometimes it’s your fault, sometimes there’s nothing you can do. See Common Errors, at the&nbsp;bottom.</p>
+<p>6. Once processing completes successfully, go to the “C:\Dancing Monkeys\Output” directory. You should find a directory named “Barney” for your song there, with the resulting .mp3/.wav file and step files (.sm, .dwi) inside. If you do not find any files, look at the dm_log.txt file in the output directory for what happened. Note that the output .mp3/.wav file is normally a shortened version of your song, it’s a maximum of 105 seconds long, and the steps generated go with it. There is an option to change the output song length (e.g. ‘-l 300’); see the HomePage’s options documentation for more&nbsp;details.</p>
+<p>7. Using the file explorer, go to wherever StepMania’s “Songs” directory is on your machine, e.g. “C:\Program&nbsp;Files\StepMania\Songs”.</p>
+<p>8. Create a new directory in the “Songs” directory, e.g. “My&nbsp;Mix”.</p>
+<p>9. Move or copy the new song directory just created in “C:\Dancing Monkeys\Output” (e.g. “Barney”) to “C:\Program&nbsp;Files\StepMania\Songs”.</p>
+<p>10. Play StepMania. You should see “My Mix” as a new group, and your song in this group. You may need to reload, if they do not: in StepMania, go to Options, then select “Reload Songs/Courses” near the&nbsp;bottom.</p>
+<p>Step #4, where you actually run the program, is where bad things most often occur. See the Common Errors area on the <a href="/dancing-monkeys/tutorial/">tutorial page</a> if something goes&nbsp;wrong.</p>
+<h2 id="command-line-arguments">Command Line&nbsp;Arguments</h2>
+<p>What follows are the command-line arguments for Dancing&nbsp;Monkeys.</p>
+<p>This same list is available by typing “DancingMonkeys -?” in the command&nbsp;window.</p>
+<pre><code>Dancing Monkeys version 1.06
+
+usage: DancingMonkeys [options] &lt;infile&gt; [basic medium hard [outdirectory]]
+
+    &lt;infile&gt; is an MP3 or WAV file, a directory, or an M3U playlist.
+    [basic medium hard] are values from 1 to 9 for step difficulty.
+    [outdirectory] is the results directory. This is .\output by default.
+    [options] can actually be placed anywhere in the command line.
+
+Recommended usage: DancingMonkeys -es 3 -x 1 infile
+
+Options:
+
+-i (--important) - Important message mode. No output except for errors
+and file processing basics.
+
+-v (--version) - Return version to the screen (only) and exit without
+further processing.
+
+-n (--noID3) - Do not attempt to parse the incoming MP3 file ID3 tag for
+title and artist. Dancing Monkeys&#39; parser is pretty good, but can
+sometimes get tripped up, so avoid this problem by setting this argument.
+
+-oc &quot;text string&quot; (--outputcredit &quot;text string&quot;) - Instead of the default
+&quot;Dancing Monkeys v1.06&quot; text, put your own text for the CREDIT field in
+the .sm steps file.
+
+-onc (--outputnocredit) - Do not include the CREDIT string in the .sm
+steps file. Normally this says &quot;Dancing Monkeys v1.06&quot;.
+
+-oms (--outputmusicsame) - Use the same music file format when writing a
+song, i.e. if a WAV file is read in, a WAV file is output; MP3 gives
+MP3\. Normally output files are always MP3&#39;s.
+
+-omw (--outputmusicwav) - Always create output music files as WAV&#39;s.
+This is what v1.01 used by default.
+
+-onl (--outputnolog) - Do not output to a log file.
+
+-ob (--outputBPM) - Output the beats per minute and gap value, but end
+processing and output nothing else (no steps files). Useful for people
+writing manual steps for a song who want just the beat and gap
+calculated.
+
+-t (--test) - Show which music files would be processed, but do no work.
+For use when a directory or playlist is used as input, to check input.
+
+-ons (--outputnostops) - Do not output any stops (pauses) in the steps
+files. Can be used in conjunction with &quot;-es #&quot;; the number of stops are
+detected for purposes of checking for a bad song conversion, but if
+good are still not output.
+
+-es # (--errorstops #) - If the number of stops found is &gt; #, then
+consider the process unsuccessful and exit. Off by default; 3 is
+recommended. When Dancing Monkeys detects many stops, this is usually
+a sign that it is failing to find the information it wants for making
+steps, so the resulting steps file is (sometimes extremely) poor.
+
+-l # (--length #) - Maximum song length. Songs longer than this value
+are truncated, faded out at the end. Default is 105 seconds. WARNING:
+currently this feature tends to result in songs with sparse step
+patterns, and needs to be fixed.
+
+-f # (--fade #) - How far from the end of the song to start fading out
+the music, when the original track is too long. Default is 5 seconds.
+
+-c # (--confidence #) - A confidence level is computed for the beats
+per minute value computed. If the confidence is below this level, abort
+song creation for this file. Default is 10\. Set to 0 to never abort and
+always use the best BPM value found (no matter how poor).
+
+-m # (--measure #) - Number of beats per measure of music. Default is 4.
+
+-b #:# (--BPM #:#) - Give a range to search the song for BPM. Default
+is 89:205.
+
+-g # (--gapadjust #) - Gap adjust, in seconds. This value is added to
+the gap factor on output. Default is 0\. If songs generated feel like
+the steps come slightly before the musical beat, set a positive gap
+value, e.g. &quot;-g 0.05&quot;.
+
+-x # (--execution #) - Change mode of execution. A value of 1 means to
+try refining the BPM as best as possible once a BPM is found.
+</code></pre></section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
+
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>PHP Wiki Status Code Plugin - Karl O'Keeffe
+    </title>
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <style>body {
+  box-sizing: border-box;
+  color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px; /* For the PDF CV */
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+}
+
+.page {
+  font-size: 16px; /* For the Website */
+}
+
+a {
+  color: #2469C8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre {
+  margin: 0; padding: 0; border: 0;
+}
+
+body {
+  background-color: #ffffff;
+  /*text-rendering: optimizeLegibility;*/
+}
+
+.content-wrap {
+  width: 34em;
+  margin: 0 auto;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  padding-bottom: .3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+h3 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+ol, ul {
+  padding: 0;
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+blockquote {
+  margin: 1.2em 3em;
+  padding-left: 1em;
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed #d2d2d2;
+  height: 0;
+  margin: 1.6em 0;
+}
+
+/* page header */
+
+.header {
+  padding: 2em;
+  background: #FFA91A;
+}
+
+.header h1 {
+  font-size: 2.6em;
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header a, .header a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* page footer */
+
+footer {
+  margin: 3em 0;
+}
+
+footer .nav {
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 3.5em;
+}
+
+footer .nav a {
+  padding: 0 0.5em;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+footer .about {
+  padding: 2.2em 3em;
+  text-align: center;
+  color: #888;
+}
+
+/* article */
+
+.article {
+  margin: 3em 0 4em;
+}
+
+.article header .date {
+  text-align: center;
+  margin-top: -0.7em;
+}
+
+.article .content img {
+  display: block;
+  width: 100%;
+}
+
+/* code styling */
+
+p code,
+h2 code {
+  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  padding: 0;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+h2 code:before,
+h2 code:after,
+p code:before,
+p code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+pre {
+  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  word-wrap: normal;
+  padding: 16px;
+  overflow: auto;
+  /*font-size: 100%;*/
+  font-size: 13.6px;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+  /*font-size: 100%;*/
+  white-space: pre;
+  background: transparent;
+  border-radius: 3px;
+}
+
+/* syntax hl stuff */
+
+code.lang-markdown {
+  color: #424242;
+}
+
+code.lang-markdown .header,
+code.lang-markdown .strong {
+  font-weight: bold;
+}
+
+code.lang-markdown .emphasis {
+  font-style: italic;
+}
+
+code.lang-markdown .horizontal_rule,
+code.lang-markdown .link_label,
+code.lang-markdown .code,
+code.lang-markdown .header,
+code.lang-markdown .link_url {
+  color: #555;
+}
+
+code.lang-markdown .blockquote,
+code.lang-markdown .bullet {
+  color: #bbb;
+}
+
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+.tomorrow-comment, pre .comment, pre .title {
+  color: #8e908c;
+}
+
+.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+  color: #c82829;
+}
+
+.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+  color: #f5871f;
+}
+
+.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
+  color: #eab700;
+}
+
+.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+  color: #718c00;
+}
+
+.tomorrow-aqua, pre .css .hexcolor {
+  color: #3e999f;
+}
+
+.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+  color: #4271ae;
+}
+
+.tomorrow-purple, pre .keyword, pre .javascript .function {
+  color: #8959a8;
+}
+
+/* media queries */
+
+@media (max-width: 690px) {
+  .content-wrap {
+    width: auto;
+    padding: 0 1em;
+  }
+  .header {
+    padding: 1em;
+  }
+  .header h1 {
+    font-size: 1.4em;
+  }
+  .article {
+    margin: 1em 0 2.5em;
+  }
+  .archive {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .archive * {
+    float: none !important;
+    line-height: 1.6 !important;
+    width: auto !important;
+    height: auto !important;
+    text-align: left !important;
+    border: 0 !important;
+    margin: 0 !important;
+  }
+  footer .nav {
+    margin: 1em 0;
+  }
+  footer .about {
+    padding: 0;
+    padding-top: 1.6em;
+  }
+  footer .about p {
+    margin-bottom: 1em;
+  }
+}
+
+    </style>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="content-wrap">
+        <div class="logo">
+          <h1><a href="/">Karl O'Keeffe</a></h1>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <header>
+            <h2><a href="/php-wiki-status-code-plugin/">PHP Wiki Status Code Plugin</a></h2>
+          </header>
+          <section class="content"><h2 id="description">Description</h2>
+<p>A plugin to give a wiki page an alternate http return&nbsp;code.</p>
+<p>e.g. 404 Not Found - when a wiki page has no&nbsp;revisions.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li><a href="/php-wiki-status-code-plugin/StatusCode.php">StatusCode.php</a></li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Placed in a normal wiki&nbsp;page:</p>
+<pre><code class="lang-php"><span class="preprocessor">&lt;?</span>plugin StatusCode code=<span class="string">"404"</span> <span class="preprocessor">?&gt;</span>
+</code></pre>
+<p>this will cause the page to be returned as 404 Not&nbsp;Found.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+
+<dt>code</dt>
+
+<dd>The http return code to&nbsp;use.</dd>
+
+</dl>
+
+<dl>
+
+<dt>text</dt>
+
+<dd>The text to return with the code. If this is not present a look up table is used to find the correct text for that error&nbsp;code.</dd>
+
+</dl>
+
+<h2 id="code">Code</h2>
+<pre><code class="lang-php"><span class="preprocessor">&lt;?php</span>
+
+<span class="class"><span class="keyword">class</span> <span class="title">WikiPlugin_StatusCode</span> <span class="keyword">extends</span> <span class="title">WikiPlugin</span> </span>{
+
+    <span class="function"><span class="keyword">function</span> <span class="title">getName</span> <span class="params">()</span> </span>{
+        <span class="keyword">return</span> _(<span class="string">"StatusCode"</span>);
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">getDescription</span> <span class="params">()</span> </span>{
+        <span class="keyword">return</span> _(<span class="string">"Return the Page with an alternate status code (e.g. 404 for page not found)"</span>);
+
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">getDefaultArguments</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'code'</span> =&gt; <span class="number">200</span>,
+                     <span class="string">'text'</span> =&gt; <span class="keyword">null</span>);
+    }
+
+    <span class="function"><span class="keyword">function</span> <span class="title">run</span><span class="params">(<span class="variable">$dbi</span>, <span class="variable">$argstr</span>, <span class="variable">$request</span>)</span> </span>{
+        extract(<span class="variable">$this</span>-&gt;getArgs(<span class="variable">$argstr</span>, <span class="variable">$request</span>));
+
+        <span class="comment">// Return Codes copied from:</span>
+        <span class="comment">// http://www.cknow.com/ckinfo/def_h/httpreturncodes.shtml</span>
+        <span class="variable">$HttpReturnCodes</span> = <span class="keyword">array</span>(
+            <span class="number">100</span> =&gt; <span class="string">'Continue'</span>,
+            <span class="number">101</span> =&gt; <span class="string">'Switching Protocols'</span>,
+
+            <span class="number">200</span> =&gt; <span class="string">'<span class="caps">OK</span>'</span>,
+            <span class="number">201</span> =&gt; <span class="string">'Created'</span>,
+            <span class="number">202</span> =&gt; <span class="string">'Accepted'</span>,
+            <span class="number">203</span> =&gt; <span class="string">'Non-Authoritative Information'</span>,
+            <span class="number">204</span> =&gt; <span class="string">'No New Content'</span>,
+            <span class="number">205</span> =&gt; <span class="string">'Reset Content'</span>,
+            <span class="number">206</span> =&gt; <span class="string">'Partial Content'</span>,
+
+            <span class="number">300</span> =&gt; <span class="string">'Multiple Choice'</span>,
+            <span class="number">301</span> =&gt; <span class="string">'Moved Permanently'</span>,
+            <span class="number">302</span> =&gt; <span class="string">'Moved Temporarily'</span>,
+            <span class="number">303</span> =&gt; <span class="string">'See Other'</span>,
+            <span class="number">304</span> =&gt; <span class="string">'Not Modified'</span>,
+            <span class="number">305</span> =&gt; <span class="string">'Use Proxy'</span>,
+
+            <span class="number">400</span> =&gt; <span class="string">'Bad Request'</span>,
+            <span class="number">401</span> =&gt; <span class="string">'Unauthorized'</span>,
+            <span class="number">402</span> =&gt; <span class="string">'Payment Required'</span>,
+            <span class="number">403</span> =&gt; <span class="string">'Forbidden'</span>,
+            <span class="number">404</span> =&gt; <span class="string">'Not Found'</span>,
+            <span class="number">405</span> =&gt; <span class="string">'Method Not Allowed'</span>,
+            <span class="number">406</span> =&gt; <span class="string">'Not Acceptable'</span>,
+            <span class="number">407</span> =&gt; <span class="string">'Proxy Authentication Required'</span>,
+            <span class="number">408</span> =&gt; <span class="string">'Request Timeout'</span>,
+            <span class="number">409</span> =&gt; <span class="string">'Conflict'</span>,
+            <span class="number">410</span> =&gt; <span class="string">'Gone'</span>,
+            <span class="number">411</span> =&gt; <span class="string">'Length Required'</span>,
+            <span class="number">412</span> =&gt; <span class="string">'Precondition Failed'</span>,
+            <span class="number">413</span> =&gt; <span class="string">'Request Entity Too Large'</span>,
+            <span class="number">414</span> =&gt; <span class="string">'Request-<span class="caps">URI</span> Too Long'</span>,
+            <span class="number">415</span> =&gt; <span class="string">'Unsupported Media Type'</span>,
+
+            <span class="number">500</span> =&gt; <span class="string">'Internal Server Error'</span>,
+            <span class="number">501</span> =&gt; <span class="string">'Not Implemented'</span>,
+            <span class="number">502</span> =&gt; <span class="string">'Bad Gateway'</span>,
+            <span class="number">503</span> =&gt; <span class="string">'Service Unavailable'</span>,
+            <span class="number">504</span> =&gt; <span class="string">'Gateway Timeout'</span>,
+            <span class="number">505</span> =&gt; <span class="string">'<span class="caps">HTTP</span> Version Not Supported'</span>
+        );
+
+        settype( <span class="variable">$code</span>, <span class="string">'integer'</span> );
+
+        <span class="keyword">if</span> ( <span class="variable">$text</span> == <span class="keyword">null</span> ) {
+            <span class="variable">$text</span> = <span class="variable">$HttpReturnCodes</span>[ <span class="variable">$code</span> ];
+        }
+
+        <span class="variable">$text</span> = str_replace( <span class="string">"\n"</span>, <span class="string">''</span>, <span class="variable">$text</span> );
+
+        header( <span class="variable">$_SERVER</span>[<span class="string">'SERVER_PROTOCOL'</span>] . <span class="string">' '</span> . <span class="variable">$code</span> . <span class="string">' '</span> . <span class="variable">$text</span>);
+    }
+}
+
+<span class="preprocessor">?&gt;</span>
+</code></pre>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
+
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
