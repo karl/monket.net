@@ -330,16 +330,16 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/autotest-growl-for-windows/">Autotest Growl for Windows</a></h2>
             <p class="date"><span>10. July 2009</span></p>
           </header>
-          <section class="content"><p>In a previous blog post I detailed <a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">how to get Autotest Growl notifications on Windows using Snarl</a>. But, there now exists an <a href="http://www.growlforwindows.com/gfw/">official Growl client for Windows</a>.</p>
-<p>So how about we update <code>autotest-growl</code> to support Windows (on top of it’s existing support for&nbsp;<span class="caps">OSX</span>).</p>
-<p>If you don’t want to know all the gory details, you can just install my fork of the <code>autotest-growl</code> gem, that includes native Growl Windows&nbsp;support:</p>
+          <section class="content"><p>In a previous blog post I detailed <a href="/articles/autotest-growl-notifications-on-windows-using-snarl/">how to get Autotest Growl notifications on Windows using Snarl</a>. But, there now exists an <a href="http://www.growlforwindows.com/gfw/">official Growl client for<span class="widont">&nbsp;</span>Windows</a>.</p>
+<p>So how about we update <code>autotest-growl</code> to support Windows (on top of it’s existing support for<span class="widont">&nbsp;</span><span class="caps">OSX</span>).</p>
+<p>If you don’t want to know all the gory details, you can just install my fork of the <code>autotest-growl</code> gem, that includes native Growl Windows<span class="widont">&nbsp;</span>support:</p>
 <pre><code class="lang-bash">gem install karl-autotest-growl --source http://gems.github.com
 </code></pre>
-<p>Obviously, you’ll need to have <a href="http://www.growlforwindows.com/gfw/">Growl for Windows</a> installed as&nbsp;well!</p>
-<h2 id="updating-autotest-growl-to-support-windows">Updating Autotest Growl to support&nbsp;Windows</h2>
-<p>First up <a href="http://www.growlforwindows.com/gfw/">download and install Growl for Windows</a> (if you haven’t&nbsp;already).</p>
+<p>Obviously, you’ll need to have <a href="http://www.growlforwindows.com/gfw/">Growl for Windows</a> installed as<span class="widont">&nbsp;</span>well!</p>
+<h2 id="updating-autotest-growl-to-support-windows">Updating Autotest Growl to support<span class="widont">&nbsp;</span>Windows</h2>
+<p>First up <a href="http://www.growlforwindows.com/gfw/">download and install Growl for Windows</a> (if you haven’t<span class="widont">&nbsp;</span>already).</p>
 <p>Updating Autotest Growl turns out to be pretty simple. We need to download <a href="http://www.growlforwindows.com/gfw/help/growlnotify.aspx">growlnotify for Windows</a>, and add it to the <code>growl/</code> directory.</p>
-<p>Then we can update the <code>autotest-growl</code> code to decide which <code>growlnotify</code> to use depending on the Operating&nbsp;System.</p>
+<p>Then we can update the <code>autotest-growl</code> code to decide which <code>growlnotify</code> to use depending on the Operating<span class="widont">&nbsp;</span>System.</p>
 <pre><code class="lang-ruby">  <span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">is_windows?</span></span>
     processor, platform, *rest = <span class="constant">RUBY_PLATFORM</span>.split(<span class="string">"-"</span>)
     platform == <span class="string">'mswin32'</span>
@@ -367,14 +367,14 @@ code.lang-markdown .bullet {
   <span class="keyword">end</span>
 </code></pre>
 <p>You’ll notice that the command line flags are slightly different for the Windows version of <code>growlnotify</code>, the using the <code>/x:</code> format, rather than the <span class="caps">OSX</span> <code>-x</code> format.</p>
-<p>The Windows version also adds the flat <code>/r:&quot;Autotest&quot;</code> to ensure the Autotest application is registered the first time it is&nbsp;run.</p>
-<p>There is no need to deal with the <code>@@remote_notification</code> settings, as Growl for Windows does not have the same problem with <a href="https://bugs.launchpad.net/growl/+bug/267767">intermittent notification loss</a> that <span class="caps">OSX</span>&nbsp;does.</p>
-<h2 id="installing-updated-autotest-growl-gem">Installing updated Autotest Growl&nbsp;gem</h2>
-<p>I have rolled all these changes into my fork of <code>autotest-growl</code>. To switch over to this fork, open a Windows command prompt and&nbsp;enter:</p>
+<p>The Windows version also adds the flat <code>/r:&quot;Autotest&quot;</code> to ensure the Autotest application is registered the first time it is<span class="widont">&nbsp;</span>run.</p>
+<p>There is no need to deal with the <code>@@remote_notification</code> settings, as Growl for Windows does not have the same problem with <a href="https://bugs.launchpad.net/growl/+bug/267767">intermittent notification loss</a> that <span class="caps">OSX</span><span class="widont">&nbsp;</span>does.</p>
+<h2 id="installing-updated-autotest-growl-gem">Installing updated Autotest Growl<span class="widont">&nbsp;</span>gem</h2>
+<p>I have rolled all these changes into my fork of <code>autotest-growl</code>. To switch over to this fork, open a Windows command prompt and<span class="widont">&nbsp;</span>enter:</p>
 <pre><code class="lang-bash">gem uninstall autotest-growl
 gem install karl-autotest-growl --source http://gems.github.com
 </code></pre>
-<p>And then watch the notifications roll&nbsp;in!</p>
+<p>And then watch the notifications roll<span class="widont">&nbsp;</span>in!</p>
 </section>
         </article>
       </div>

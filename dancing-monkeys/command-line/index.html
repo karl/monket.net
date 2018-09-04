@@ -329,9 +329,9 @@ code.lang-markdown .bullet {
           <header>
             <h2><a href="/dancing-monkeys/command-line/">Dancing Monkeys Change Log</a></h2>
           </header>
-          <section class="content"><h2 id="command-line-control">Command-Line&nbsp;Control</h2>
-<p>We recommend using Gorilla, but direct use of Dancing Monkeys itself is available from the command-line. Extensive instructions follow on how to do just&nbsp;this.</p>
-<p>For example purposes, say you unzip Dancing Monkeys to the C:\ root directory (the topmost directory). You’ll have a directory tree like&nbsp;this:</p>
+          <section class="content"><h2 id="command-line-control">Command-Line Control</h2>
+<p>We recommend using Gorilla, but direct use of Dancing Monkeys itself is available from the command-line. Extensive instructions follow on how to do just<span class="widont">&nbsp;</span>this.</p>
+<p>For example purposes, say you unzip Dancing Monkeys to the C:\ root directory (the topmost directory). You’ll have a directory tree like<span class="widont">&nbsp;</span>this:</p>
 <pre><code>C:\Dancing Monkeys - where Gorilla.exe is located
     \bin
         \win32 – where the program is located, &quot;DancingMonkeys.exe&quot;
@@ -340,28 +340,28 @@ code.lang-markdown .bullet {
     \Output – this is where song step files and output log are placed by default
     \Temp Music – a temporary working directory, where the latest created .WAV file is put
     \toolbox – MATLAB related DLLs, just leave these be
-</code></pre><p>To run Dancing Monkeys from the command-line, you want to go to “C:\Dancing Monkeys\bin\win32” and run the DancingMonkeys.exe program there. For Windows pros, you want to create a <span class="caps">DOS</span> window, go to this directory, then run the program as&nbsp;follows:</p>
+</code></pre><p>To run Dancing Monkeys from the command-line, you want to go to “C:\Dancing Monkeys\bin\win32” and run the DancingMonkeys.exe program there. For Windows pros, you want to create a <span class="caps">DOS</span> window, go to this directory, then run the program as<span class="widont">&nbsp;</span>follows:</p>
 <pre><code>    DancingMonkeys [options] input [L S H [output]]
-</code></pre><p>Items in []’s are optional. The input file is a full path to an <span class="caps">MP3</span> or WAV file, or a directory, or an M3U playlist. All MP3 and WAV files in the directory and its subdirectories are processed; try the “-t” option before a full run to see what music files will be processed. The “L S H” values you replace with the feet difficulty you want, from 1-9 (not 10). The “output” is the directory where you want to put the results. It is critical to put double-quotes around the filenames. Here is an example of a reasonable way to run the&nbsp;program:</p>
+</code></pre><p>Items in []’s are optional. The input file is a full path to an <span class="caps">MP3</span> or <span class="caps">WAV</span> file, or a directory, or an <span class="caps">M3U</span> playlist. All <span class="caps">MP3</span> and <span class="caps">WAV</span> files in the directory and its subdirectories are processed; try the “-t” option before a full run to see what music files will be processed. The “L S H” values you replace with the feet difficulty you want, from 1-9 (not 10). The “output” is the directory where you want to put the results. It is critical to put double-quotes around the filenames. Here is an example of a reasonable way to run the<span class="widont">&nbsp;</span>program:</p>
 <pre><code>    DancingMonkeys -es 3 &quot;C:\temp\My Steps\Barney.mp3&quot; 3 5 8
-</code></pre><p>The option “-es 3” tells the program to not create a step file if 3 or more stops are created in the stepfile generated - this is usually a sign that Dancing Monkeys cannot currently convert the song well. If successful, the result will be put in the directory “C:\Dancing Monkeys\Output” in a directory labeled “Barney”. Move this directory to your own created subdirectory in StepMania’s “Songs” and you’re&nbsp;done.</p>
-<p>Here’s the foolproof step-by-step for beginners, along with more information about what’s&nbsp;happening:</p>
-<p>1. Click on the Start button in the lower left of your screen and select&nbsp;“Run…”.</p>
-<p>2. In the dialog that pops up type:&nbsp;cmd</p>
-<p>3. A black (<span class="caps">DOS</span>) window pops up that says “C:\WINDOWS\System32\cmd.exe” as its title. Select it and type (including the&nbsp;double-quotes):</p>
+</code></pre><p>The option “-es 3” tells the program to not create a step file if 3 or more stops are created in the stepfile generated - this is usually a sign that Dancing Monkeys cannot currently convert the song well. If successful, the result will be put in the directory “C:\Dancing Monkeys\Output” in a directory labeled “Barney”. Move this directory to your own created subdirectory in StepMania’s “Songs” and you’re<span class="widont">&nbsp;</span>done.</p>
+<p>Here’s the foolproof step-by-step for beginners, along with more information about what’s<span class="widont">&nbsp;</span>happening:</p>
+<p>1. Click on the Start button in the lower left of your screen and select<span class="widont">&nbsp;</span>“Run…”.</p>
+<p>2. In the dialog that pops up type:<span class="widont">&nbsp;</span>cmd</p>
+<p>3. A black (<span class="caps">DOS</span>) window pops up that says “C:\<span class="caps">WINDOWS</span>\System32\cmd.exe” as its title. Select it and type (including the<span class="widont">&nbsp;</span>double-quotes):</p>
 <pre><code>        cd &quot;C:\Dancing Monkeys\bin\win32&quot;
-</code></pre><p>4. You’re ready to run the program. Let’s say you put the <span class="caps">MP3</span> you want to convert in a directory “C:\temp\My Steps”, and it’s called “Barney.mp3”. You want to convert the song so that it produces feet difficulty ratings of 3, 5, and 8 for light, standard, and heavy.&nbsp;Type:</p>
+</code></pre><p>4. You’re ready to run the program. Let’s say you put the <span class="caps">MP3</span> you want to convert in a directory “C:\temp\My Steps”, and it’s called “Barney.mp3”. You want to convert the song so that it produces feet difficulty ratings of 3, 5, and 8 for light, standard, and heavy.<span class="widont">&nbsp;</span>Type:</p>
 <pre><code>        DancingMonkeys &quot;C:\temp\My Steps\Barney.mp3&quot; 3 5 8
-</code></pre><p>5. Go get a drink and cross your fingers. Processing can take anywhere from a few minutes to a few hours. Typical is 5-15 minutes, but if you run out of physical memory things can get slow. Now and then the program will fail; sometimes it’s your fault, sometimes there’s nothing you can do. See Common Errors, at the&nbsp;bottom.</p>
-<p>6. Once processing completes successfully, go to the “C:\Dancing Monkeys\Output” directory. You should find a directory named “Barney” for your song there, with the resulting .mp3/.wav file and step files (.sm, .dwi) inside. If you do not find any files, look at the dm_log.txt file in the output directory for what happened. Note that the output .mp3/.wav file is normally a shortened version of your song, it’s a maximum of 105 seconds long, and the steps generated go with it. There is an option to change the output song length (e.g. ‘-l 300’); see the HomePage’s options documentation for more&nbsp;details.</p>
-<p>7. Using the file explorer, go to wherever StepMania’s “Songs” directory is on your machine, e.g. “C:\Program&nbsp;Files\StepMania\Songs”.</p>
-<p>8. Create a new directory in the “Songs” directory, e.g. “My&nbsp;Mix”.</p>
-<p>9. Move or copy the new song directory just created in “C:\Dancing Monkeys\Output” (e.g. “Barney”) to “C:\Program&nbsp;Files\StepMania\Songs”.</p>
-<p>10. Play StepMania. You should see “My Mix” as a new group, and your song in this group. You may need to reload, if they do not: in StepMania, go to Options, then select “Reload Songs/Courses” near the&nbsp;bottom.</p>
-<p>Step #4, where you actually run the program, is where bad things most often occur. See the Common Errors area on the <a href="/dancing-monkeys/tutorial/">tutorial page</a> if something goes&nbsp;wrong.</p>
-<h2 id="command-line-arguments">Command Line&nbsp;Arguments</h2>
-<p>What follows are the command-line arguments for Dancing&nbsp;Monkeys.</p>
-<p>This same list is available by typing “DancingMonkeys -?” in the command&nbsp;window.</p>
+</code></pre><p>5. Go get a drink and cross your fingers. Processing can take anywhere from a few minutes to a few hours. Typical is 5-15 minutes, but if you run out of physical memory things can get slow. Now and then the program will fail; sometimes it’s your fault, sometimes there’s nothing you can do. See Common Errors, at the<span class="widont">&nbsp;</span>bottom.</p>
+<p>6. Once processing completes successfully, go to the “C:\Dancing Monkeys\Output” directory. You should find a directory named “Barney” for your song there, with the resulting .mp3/.wav file and step files (.sm, .dwi) inside. If you do not find any files, look at the dm_log.txt file in the output directory for what happened. Note that the output .mp3/.wav file is normally a shortened version of your song, it’s a maximum of 105 seconds long, and the steps generated go with it. There is an option to change the output song length (e.g. ‘-l 300’); see the HomePage’s options documentation for more<span class="widont">&nbsp;</span>details.</p>
+<p>7. Using the file explorer, go to wherever StepMania’s “Songs” directory is on your machine, e.g. “C:\Program<span class="widont">&nbsp;</span>Files\StepMania\Songs”.</p>
+<p>8. Create a new directory in the “Songs” directory, e.g. “My<span class="widont">&nbsp;</span>Mix”.</p>
+<p>9. Move or copy the new song directory just created in “C:\Dancing Monkeys\Output” (e.g. “Barney”) to “C:\Program<span class="widont">&nbsp;</span>Files\StepMania\Songs”.</p>
+<p>10. Play StepMania. You should see “My Mix” as a new group, and your song in this group. You may need to reload, if they do not: in StepMania, go to Options, then select “Reload Songs/Courses” near the<span class="widont">&nbsp;</span>bottom.</p>
+<p>Step #4, where you actually run the program, is where bad things most often occur. See the Common Errors area on the <a href="/dancing-monkeys/tutorial/">tutorial page</a> if something goes<span class="widont">&nbsp;</span>wrong.</p>
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+<p>What follows are the command-line arguments for Dancing<span class="widont">&nbsp;</span>Monkeys.</p>
+<p>This same list is available by typing “DancingMonkeys -?” in the command<span class="widont">&nbsp;</span>window.</p>
 <pre><code>Dancing Monkeys version 1.06
 
 usage: DancingMonkeys [options] &lt;infile&gt; [basic medium hard [outdirectory]]

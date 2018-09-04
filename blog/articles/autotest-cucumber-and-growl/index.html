@@ -330,17 +330,17 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/autotest-cucumber-and-growl/">Autotest, Cucumber, and Growl</a></h2>
             <p class="date"><span>15. June 2009</span></p>
           </header>
-          <section class="content"><p><a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a> is a great Ruby tool to speed up test driven development by automatically running your tests every time a file is&nbsp;saved.</p>
-<p><a href="http://cukes.info/">Cucumber</a> is an awesome tool for doing behavioural driven development. It allows you to write plain text automated acceptance&nbsp;tests.</p>
-<p><a href="http://wiki.github.com/aslakhellesoy/cucumber/autotest-integration">Autotest and Cucumber work together seamlessly</a>, you just need to set the <code>AUTOFEATURE</code> environment variable to&nbsp;true:</p>
+          <section class="content"><p><a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a> is a great Ruby tool to speed up test driven development by automatically running your tests every time a file is<span class="widont">&nbsp;</span>saved.</p>
+<p><a href="http://cukes.info/">Cucumber</a> is an awesome tool for doing behavioural driven development. It allows you to write plain text automated acceptance<span class="widont">&nbsp;</span>tests.</p>
+<p><a href="http://wiki.github.com/aslakhellesoy/cucumber/autotest-integration">Autotest and Cucumber work together seamlessly</a>, you just need to set the <code>AUTOFEATURE</code> environment variable to<span class="widont">&nbsp;</span>true:</p>
 <pre><code class="lang-bash">$ AUTOFEATURE=<span class="literal">true</span>
 </code></pre>
-<p><a href="http://growl.info/">Growl</a> is an excellent notification system for <span class="caps">OSX</span> that allows applications to popup unobtrusive messages on the users desktop. (<a href="http://www.fullphat.net/index.php">Snarl</a> is the equivalent for&nbsp;windows)</p>
-<p>You can <a href="http://github.com/svoop/autotest-growl/tree/master">add Growl support to Autotest (using the autotest-growl gem)</a> so that you get popup notifications of test&nbsp;results.</p>
-<p><strong>But the current version of autotest-growl doesn’t provide notifications for the result of Autotest Cucumber&nbsp;runs.</strong></p>
-<h2 id="cucumber-growl-support-in-autotest">Cucumber Growl support in&nbsp;Autotest</h2>
-<p>So I’ve added support for notification of Autotest Cucumber results using growl. It’s super simple at the moment as I’m still pretty new at&nbsp;Ruby.</p>
-<p>You need to have Autotest (part of the ZenTest gem), Autotest-Growl, and Growl already&nbsp;installed.</p>
+<p><a href="http://growl.info/">Growl</a> is an excellent notification system for <span class="caps">OSX</span> that allows applications to popup unobtrusive messages on the users desktop. (<a href="http://www.fullphat.net/index.php">Snarl</a> is the equivalent for<span class="widont">&nbsp;</span>windows)</p>
+<p>You can <a href="http://github.com/svoop/autotest-growl/tree/master">add Growl support to Autotest (using the autotest-growl gem)</a> so that you get popup notifications of test<span class="widont">&nbsp;</span>results.</p>
+<p><strong>But the current version of autotest-growl doesn’t provide notifications for the result of Autotest Cucumber<span class="widont">&nbsp;</span>runs.</strong></p>
+<h2 id="cucumber-growl-support-in-autotest">Cucumber Growl support in<span class="widont">&nbsp;</span>Autotest</h2>
+<p>So I’ve added support for notification of Autotest Cucumber results using growl. It’s super simple at the moment as I’m still pretty new at<span class="widont">&nbsp;</span>Ruby.</p>
+<p>You need to have Autotest (part of the ZenTest gem), Autotest-Growl, and Growl already<span class="widont">&nbsp;</span>installed.</p>
 <p>Save the code below to the file <code>growl-cucumber.rb</code>.</p>
 <h4 id="growl-cucumber-rb">growl-cucumber.rb</h4>
 <pre><code class="lang-ruby"><span class="keyword">require</span> <span class="string">'autotest'</span>
@@ -367,15 +367,15 @@ code.lang-markdown .bullet {
 
 <span class="keyword">end</span>
 </code></pre>
-<p>Then update your .autotest configuration file to include the new growl-cucumber&nbsp;file:</p>
+<p>Then update your .autotest configuration file to include the new growl-cucumber<span class="widont">&nbsp;</span>file:</p>
 <h4 id="-autotest">.autotest</h4>
 <pre><code class="lang-ruby"><span class="comment"># Add the growl and growl-cucumber requires to your .autotest config file </span>
 <span class="keyword">require</span> <span class="string">'autotest/growl'</span>
 <span class="keyword">require</span> <span class="string">'autotest/growl-cucumber'</span>
 </code></pre>
 <hr>
-<h2 id="to-do">To&nbsp;Do</h2>
-<p>I need to see if this can be integrated with the existing autotest-growl&nbsp;gem.</p>
+<h2 id="to-do">To Do</h2>
+<p>I need to see if this can be integrated with the existing autotest-growl<span class="widont">&nbsp;</span>gem.</p>
 </section>
         </article>
       </div>

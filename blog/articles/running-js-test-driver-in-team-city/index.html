@@ -330,26 +330,26 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/running-js-test-driver-in-team-city/">Running JS Test Driver in Team City</a></h2>
             <p class="date"><span>25. August 2009</span></p>
           </header>
-          <section class="content"><p><a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> is a great new Javascript Testing Framework from the guys at Google. It provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great&nbsp;overview.</p>
+          <section class="content"><p><a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> is a great new Javascript Testing Framework from the guys at Google. It provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great<span class="widont">&nbsp;</span>overview.</p>
 <p>Getting <span class="caps">JS</span> Test Driver up and running on your development workstation is easy enough. But how about on a continuous integration server such as <a href="http://www.jetbrains.com/teamcity/">TeamCity</a>?</p>
-<p>It’s easy, just follow the instructions&nbsp;below!</p>
-<h2 id="install-java-and-the-js-test-driver-jar-on-all-the-build-agents">Install Java and the <span class="caps">JS</span> Test Driver jar on all the build&nbsp;agents</h2>
-<p><span class="caps">JS</span> Test Driver is packaged as a Java jar, and therefore all the TeamCity build agents will need a copy of Java and the JS Test Driver jar in order to run the&nbsp;tests.</p>
+<p>It’s easy, just follow the instructions<span class="widont">&nbsp;</span>below!</p>
+<h2 id="install-java-and-the-js-test-driver-jar-on-all-the-build-agents">Install Java and the <span class="caps">JS</span> Test Driver jar on all the build<span class="widont">&nbsp;</span>agents</h2>
+<p><span class="caps">JS</span> Test Driver is packaged as a Java jar, and therefore all the TeamCity build agents will need a copy of Java and the <span class="caps">JS</span> Test Driver jar in order to run the<span class="widont">&nbsp;</span>tests.</p>
 <ul>
-<li>For each Build&nbsp;Agent</li>
-<li><a href="http://www.java.com/en/download/manual.jsp">Download Java</a> and install&nbsp;it.</li>
-<li><a href="http://code.google.com/p/js-test-driver/downloads/list">Download the <span class="caps">JS</span> Test Driver jar</a> and save it to <code>c:\TeamCityBuildTools\JSTestDriver\</code> (or whichever location you&nbsp;wish)</li>
+<li>For each Build<span class="widont">&nbsp;</span>Agent</li>
+<li><a href="http://www.java.com/en/download/manual.jsp">Download Java</a> and install<span class="widont">&nbsp;</span>it.</li>
+<li><a href="http://code.google.com/p/js-test-driver/downloads/list">Download the <span class="caps">JS</span> Test Driver jar</a> and save it to <code>c:\TeamCityBuildTools\JSTestDriver\</code> (or whichever location you<span class="widont">&nbsp;</span>wish)</li>
 </ul>
-<h2 id="configure-js-test-driver">Configure <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p>This guide assumes you already have <span class="caps">JS</span> Test Driver and some tests set up on your local machine. If not see this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a>.</p>
-<p>Just make sure that the <span class="caps">JS</span> Test Driver config file is set to connect to the local machine, on port 9876 (on another port of your choice).&nbsp;E.g.</p>
+<h2 id="configure-js-test-driver">Configure <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p>This guide assumes you already have <span class="caps">JS</span> Test Driver and some tests set up on your local machine. If not see this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško<span class="widont">&nbsp;</span>Hevery</a>.</p>
+<p>Just make sure that the <span class="caps">JS</span> Test Driver config file is set to connect to the local machine, on port 9876 (on another port of your choice).<span class="widont">&nbsp;</span>E.g.</p>
 <pre><code class="lang-yaml">server: http://localhost:9876
 
 load:
   # list of files to load here...
 </code></pre>
-<h2 id="configure-your-build-process-to-call-js-test-driver">Configure your build process to call <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p>Now that we have <span class="caps">JS</span> Test Driver installed on our build machines, and configured correctly, let’s call it from our build process. At 7digital we are using MSBuild, so we can create a JSTestDriver Target as&nbsp;so:</p>
+<h2 id="configure-your-build-process-to-call-js-test-driver">Configure your build process to call <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p>Now that we have <span class="caps">JS</span> Test Driver installed on our build machines, and configured correctly, let’s call it from our build process. At 7digital we are using MSBuild, so we can create a JSTestDriver Target as<span class="widont">&nbsp;</span>so:</p>
 <pre><code class="lang-xml"><span class="tag">&lt;<span class="title">Target</span> <span class="attribute">Name</span>=<span class="value">"JSTestDriver"</span>&gt;</span>
   <span class="tag">&lt;<span class="title">Message</span> <span class="attribute">Text</span>=<span class="value">"##teamcity[progressMessage 'Running <span class="caps">JS</span> Test Driver']"</span> <span class="attribute">Importance</span>=<span class="value">"high"</span> /&gt;</span>
   <span class="tag">&lt;<span class="title">Message</span> <span class="attribute">Text</span>=<span class="value">"-------- Running <span class="caps">JS</span> Test Driver --------"</span> <span class="attribute">Importance</span>=<span class="value">"high"</span> /&gt;</span>
@@ -365,24 +365,24 @@ load:
 
 <span class="tag">&lt;/<span class="title">Target</span>&gt;</span>
 </code></pre>
-<p>The important points here are that you have the properties configured correctly (JSTestDriverJar, ConfigFile, etc) for your individual&nbsp;setup.</p>
-<p>The Exec command will automatically create a <span class="caps">JS</span> Test Driver server, launch IE, and run all the tests. The test results will be output to the OutputDir in a JUnit compatible xml format. See the <a href="http://code.google.com/p/js-test-driver/wiki/ContinuousBuild"><span class="caps">JS</span> Test Driver continuous integration page</a> for more&nbsp;information.</p>
-<p>Once you have created this Target, ensure it is called by your standard bulid Target by adding it as a&nbsp;dependancy:</p>
+<p>The important points here are that you have the properties configured correctly (JSTestDriverJar, ConfigFile, etc) for your individual<span class="widont">&nbsp;</span>setup.</p>
+<p>The Exec command will automatically create a <span class="caps">JS</span> Test Driver server, launch <span class="caps">IE</span>, and run all the tests. The test results will be output to the OutputDir in a JUnit compatible xml format. See the <a href="http://code.google.com/p/js-test-driver/wiki/ContinuousBuild"><span class="caps">JS</span> Test Driver continuous integration page</a> for more<span class="widont">&nbsp;</span>information.</p>
+<p>Once you have created this Target, ensure it is called by your standard bulid Target by adding it as a<span class="widont">&nbsp;</span>dependancy:</p>
 <pre><code class="lang-xml"><span class="tag">&lt;<span class="title">Target</span> <span class="attribute">Name</span>=<span class="value">"BuildAndUnitTest"</span> <span class="attribute">DependsOnTargets</span>=<span class="value">"Compile;JSLint;JSTestDriver;NUnit"</span> /&gt;</span>
 </code></pre>
-<h2 id="have-teamcity-pick-up-the-test-results">Have TeamCity pick up the test&nbsp;results</h2>
-<p>If you run your build through TeamCity now, you will see that it runs all your Javascript tests using <span class="caps">JS</span> Test Driver. But it doesn’t report any results. And test failures don’t stop the&nbsp;build.</p>
-<p>Luckily TeamCity can import the <span class="caps">JS</span> Test Driver output xml, because it is JUnit&nbsp;compatible.</p>
+<h2 id="have-teamcity-pick-up-the-test-results">Have TeamCity pick up the test<span class="widont">&nbsp;</span>results</h2>
+<p>If you run your build through TeamCity now, you will see that it runs all your Javascript tests using <span class="caps">JS</span> Test Driver. But it doesn’t report any results. And test failures don’t stop the<span class="widont">&nbsp;</span>build.</p>
+<p>Luckily TeamCity can import the <span class="caps">JS</span> Test Driver output xml, because it is JUnit<span class="widont">&nbsp;</span>compatible.</p>
 <ul>
-<li>Select the build which is running the <span class="caps">JS</span> Test Driver&nbsp;tests</li>
+<li>Select the build which is running the <span class="caps">JS</span> Test Driver<span class="widont">&nbsp;</span>tests</li>
 <li>Click <code>Edit Configuration Settings</code></li>
 <li>Click on build step 3 (e.g. <code>Runner: MSBuild</code>)</li>
-<li>Under the <code>XML Report Processing</code> section, choose <code>Ant JUnit</code> from the <code>Import data</code> from&nbsp;dropdown</li>
+<li>Under the <code>XML Report Processing</code> section, choose <code>Ant JUnit</code> from the <code>Import data</code> from dropdown</li>
 <li>In the <code>Report paths</code> text area add the relative path the the <span class="caps">JS</span> Test Driver output file (e.g. <code>output\JSTestDriver\TEST-com.google.jstestdriver.1.xml</code>)</li>
 <li>Click <code>save</code>!</li>
 </ul>
-<p>Now when you run your build again you will see your <span class="caps">JS</span> Test Driver tests showing up in the Tests tab, and test failures now stop the&nbsp;build.</p>
-<p>Your Javascript unit tests now sit as first class citizens within&nbsp;TeamCity!</p>
+<p>Now when you run your build again you will see your <span class="caps">JS</span> Test Driver tests showing up in the Tests tab, and test failures now stop the<span class="widont">&nbsp;</span>build.</p>
+<p>Your Javascript unit tests now sit as first class citizens within<span class="widont">&nbsp;</span>TeamCity!</p>
 <p><a href="/blog/articles/running-js-test-driver-in-team-city/JSTestDriverFailedTest.png"><img src="/blog/articles/running-js-test-driver-in-team-city/JSTestDriverFailedTest.png" alt="JSTestDriverFailedTest" title="JSTestDriverFailedTest"></a></p>
 </section>
         </article>

@@ -330,7 +330,7 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/">Simple example of Autotest, Cucumber, and Growl</a></h2>
             <p class="date"><span>17. June 2009</span></p>
           </header>
-          <section class="content"><p>As an example of getting Autotest, Cucumber, and Growl up and running I’ve created a super simple test project. You can <a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip">download the example project</a>, or just create it from the code on this&nbsp;post.</p>
+          <section class="content"><p>As an example of getting Autotest, Cucumber, and Growl up and running I’ve created a super simple test project. You can <a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip">download the example project</a>, or just create it from the code on this<span class="widont">&nbsp;</span>post.</p>
 
             <p class="more"><a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/">more</a></p>
           </section>
@@ -340,9 +340,9 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/patched-cucumber-notifications-in-autotest-growl-gem/">Patched Cucumber notifications in autotest-growl gem</a></h2>
             <p class="date"><span>15. June 2009</span></p>
           </header>
-          <section class="content"><p>Following on to my <a href="/articles/autotest-cucumber-and-growl/">previous post on Autotest, Cucumber, and Growl</a>, I have forked the autotest-growl repository, and applied my fix for Cucumber&nbsp;notifications.</p>
-<p>You find my <a href="http://github.com/karl/autotest-growl/tree/master">patched version of autotest-growl on GitHub</a>.</p>
-<p>You can switch to this version of autotest-growl by uninstalling any existing version, and then installing from my fork on&nbsp;GitHub:</p>
+          <section class="content"><p>Following on to my <a href="/articles/autotest-cucumber-and-growl/">previous post on Autotest, Cucumber, and Growl</a>, I have forked the autotest-growl repository, and applied my fix for Cucumber<span class="widont">&nbsp;</span>notifications.</p>
+<p>You find my <a href="http://github.com/karl/autotest-growl/tree/master">patched version of autotest-growl on<span class="widont">&nbsp;</span>GitHub</a>.</p>
+<p>You can switch to this version of autotest-growl by uninstalling any existing version, and then installing from my fork on<span class="widont">&nbsp;</span>GitHub:</p>
 <pre><code class="lang-bash">sudo gem uninstall autotest-growl
 sudo gem install karl-autotest-growl --source http://gems.github.com
 </code></pre>
@@ -354,10 +354,10 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
             <h2><a href="/blog/articles/javascript-lint-with-autotest/">Javascript Lint with Autotest</a></h2>
             <p class="date"><span>15. June 2009</span></p>
           </header>
-          <section class="content"><p>As well as using <a href="/articles/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest&nbsp;cycle.</p>
-<p>My first attempt at this is a small module to run <a href="http://javascriptlint.com/">Javascript Lint</a> on all the javascript files within a project any time any file&nbsp;changes.</p>
+          <section class="content"><p>As well as using <a href="/articles/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest<span class="widont">&nbsp;</span>cycle.</p>
+<p>My first attempt at this is a small module to run <a href="http://javascriptlint.com/">Javascript Lint</a> on all the javascript files within a project any time any file<span class="widont">&nbsp;</span>changes.</p>
 <p>The module below hooks in to Autotest just before the tests are normally run. It runs javascript lint over all the <code>*.js</code> files in the project, outputs the results to the autotest results object and the standard output, and finally fires a new <code>ran_javascript_lint</code> hook</p>
-<p>Errors and warnings found by Javascript Lint will also be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a&nbsp;minimum.</p>
+<p>Errors and warnings found by Javascript Lint will also be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a<span class="widont">&nbsp;</span>minimum.</p>
 
             <p class="more"><a href="/blog/articles/javascript-lint-with-autotest/">more</a></p>
           </section>
@@ -367,14 +367,14 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
             <h2><a href="/blog/articles/autotest-cucumber-and-growl/">Autotest, Cucumber, and Growl</a></h2>
             <p class="date"><span>15. June 2009</span></p>
           </header>
-          <section class="content"><p><a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a> is a great Ruby tool to speed up test driven development by automatically running your tests every time a file is&nbsp;saved.</p>
-<p><a href="http://cukes.info/">Cucumber</a> is an awesome tool for doing behavioural driven development. It allows you to write plain text automated acceptance&nbsp;tests.</p>
-<p><a href="http://wiki.github.com/aslakhellesoy/cucumber/autotest-integration">Autotest and Cucumber work together seamlessly</a>, you just need to set the <code>AUTOFEATURE</code> environment variable to&nbsp;true:</p>
+          <section class="content"><p><a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a> is a great Ruby tool to speed up test driven development by automatically running your tests every time a file is<span class="widont">&nbsp;</span>saved.</p>
+<p><a href="http://cukes.info/">Cucumber</a> is an awesome tool for doing behavioural driven development. It allows you to write plain text automated acceptance<span class="widont">&nbsp;</span>tests.</p>
+<p><a href="http://wiki.github.com/aslakhellesoy/cucumber/autotest-integration">Autotest and Cucumber work together seamlessly</a>, you just need to set the <code>AUTOFEATURE</code> environment variable to<span class="widont">&nbsp;</span>true:</p>
 <pre><code class="lang-bash">$ AUTOFEATURE=<span class="literal">true</span>
 </code></pre>
-<p><a href="http://growl.info/">Growl</a> is an excellent notification system for <span class="caps">OSX</span> that allows applications to popup unobtrusive messages on the users desktop. (<a href="http://www.fullphat.net/index.php">Snarl</a> is the equivalent for&nbsp;windows)</p>
-<p>You can <a href="http://github.com/svoop/autotest-growl/tree/master">add Growl support to Autotest (using the autotest-growl gem)</a> so that you get popup notifications of test&nbsp;results.</p>
-<p><strong>But the current version of autotest-growl doesn’t provide notifications for the result of Autotest Cucumber&nbsp;runs.</strong></p>
+<p><a href="http://growl.info/">Growl</a> is an excellent notification system for <span class="caps">OSX</span> that allows applications to popup unobtrusive messages on the users desktop. (<a href="http://www.fullphat.net/index.php">Snarl</a> is the equivalent for<span class="widont">&nbsp;</span>windows)</p>
+<p>You can <a href="http://github.com/svoop/autotest-growl/tree/master">add Growl support to Autotest (using the autotest-growl gem)</a> so that you get popup notifications of test<span class="widont">&nbsp;</span>results.</p>
+<p><strong>But the current version of autotest-growl doesn’t provide notifications for the result of Autotest Cucumber<span class="widont">&nbsp;</span>runs.</strong></p>
 
             <p class="more"><a href="/blog/articles/autotest-cucumber-and-growl/">more</a></p>
           </section>

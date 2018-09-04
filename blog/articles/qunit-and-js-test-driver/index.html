@@ -332,13 +332,13 @@ code.lang-markdown .bullet {
           </header>
           <section class="content"><div class="info">This post has obsoleted been the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">new QUnit Adapter</a> I created, check it out!</div>
 
-<p>I was very impressed by the new Google <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> project, which provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great&nbsp;overview.</p>
-<p>I previously described how to <a href="/articles/autotest-and-js-test-driver/">run <span class="caps">JS</span> Test Driver automatically with Autotest</a>.</p>
-<p>But I have an existing project that uses the jQuery testing framework <a href="http://docs.jquery.com/QUnit">qunit</a> for testing. I didn’t really fancy rewriting 300+ tests just so I could use the <span class="caps">JS</span> Test Driver&nbsp;framework.</p>
-<p>So I wrote a converter that automatically converts qunit modules and tests into <span class="caps">JS</span> Test Driver TestCases and test&nbsp;methods.</p>
-<h2 id="download-converter-and-patched-testrunner">Download Converter and Patched&nbsp;Testrunner</h2>
+<p>I was very impressed by the new Google <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> project, which provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a> for a great<span class="widont">&nbsp;</span>overview.</p>
+<p>I previously described how to <a href="/articles/autotest-and-js-test-driver/">run <span class="caps">JS</span> Test Driver automatically with<span class="widont">&nbsp;</span>Autotest</a>.</p>
+<p>But I have an existing project that uses the jQuery testing framework <a href="http://docs.jquery.com/QUnit">qunit</a> for testing. I didn’t really fancy rewriting 300+ tests just so I could use the <span class="caps">JS</span> Test Driver<span class="widont">&nbsp;</span>framework.</p>
+<p>So I wrote a converter that automatically converts qunit modules and tests into <span class="caps">JS</span> Test Driver TestCases and test<span class="widont">&nbsp;</span>methods.</p>
+<h2 id="download-converter-and-patched-testrunner">Download Converter and Patched<span class="widont">&nbsp;</span>Testrunner</h2>
 <p>In order to convert from qunit tests I’ve had to add a few extra hooks into the qunit <code>testrunner.js</code> file.</p>
-<p>Either <a href="/blog/articles/qunit-and-js-test-driver/testrunner.js">download the patched testrunner.js</a> file, or just add the 3 lines&nbsp;below:</p>
+<p>Either <a href="/blog/articles/qunit-and-js-test-driver/testrunner.js">download the patched testrunner.js</a> file, or just add the 3 lines<span class="widont">&nbsp;</span>below:</p>
 <pre><code class="lang-javascript">    QUnit: {
         <span class="comment">// Add the following 3 lines</span>
         runTest: runTest,
@@ -352,11 +352,11 @@ code.lang-markdown .bullet {
         log: <span class="function"><span class="keyword">function</span>(<span class="params">result, message</span>)</span>{}
     },
 </code></pre>
-<p>Next <a href="/blog/articles/qunit-and-js-test-driver/QUnitToTestCases.js">download QUnitToTestCases.js</a> and save it to the same folder as <code>testrunner.js</code>. This is the file which converts the qunit tests into TestCases that <span class="caps">JS</span> Test Driver&nbsp;understands.</p>
-<p>It works by overriding the qunit <code>test()</code> function, and rather than adding the test to qunit, it creates a test method on a TestCase object which, when called by <span class="caps">JS</span> Test Driver adds the test to qunit and runs&nbsp;it.</p>
-<h2 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p>Once you have the patched <code>testrunner.js</code> and <code>QUnitToTestCases.js</code>, you just need to let <span class="caps">JS</span> Test Driver know to load them before your qunit tests. They need to be loaded in order, with  <code>testrunner.js</code> first, followed by <code>QUnitTiTestCases.js</code>, as the converter modifies some of the testrunner&nbsp;methods.</p>
-<p>Update your <code>jsTestDriver.conf</code> to load the&nbsp;files:</p>
+<p>Next <a href="/blog/articles/qunit-and-js-test-driver/QUnitToTestCases.js">download QUnitToTestCases.js</a> and save it to the same folder as <code>testrunner.js</code>. This is the file which converts the qunit tests into TestCases that <span class="caps">JS</span> Test Driver<span class="widont">&nbsp;</span>understands.</p>
+<p>It works by overriding the qunit <code>test()</code> function, and rather than adding the test to qunit, it creates a test method on a TestCase object which, when called by <span class="caps">JS</span> Test Driver adds the test to qunit and runs<span class="widont">&nbsp;</span>it.</p>
+<h2 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p>Once you have the patched <code>testrunner.js</code> and <code>QUnitToTestCases.js</code>, you just need to let <span class="caps">JS</span> Test Driver know to load them before your qunit tests. They need to be loaded in order, with  <code>testrunner.js</code> first, followed by <code>QUnitTiTestCases.js</code>, as the converter modifies some of the testrunner<span class="widont">&nbsp;</span>methods.</p>
+<p>Update your <code>jsTestDriver.conf</code> to load the<span class="widont">&nbsp;</span>files:</p>
 <pre><code class="lang-yaml">server: http://localhost:9876
 
 load:
@@ -371,10 +371,10 @@ load:
   # And this loads the source files we are testing
   - src/js/*.js
 </code></pre>
-<h2 id="running-js-test-driver-with-qunit-tests">Running <span class="caps">JS</span> Test Driver with qunit&nbsp;tests</h2>
-<p>Now we can run <span class="caps">JS</span> Test Driver and watch as it runs all our qunit&nbsp;tests!</p>
+<h2 id="running-js-test-driver-with-qunit-tests">Running <span class="caps">JS</span> Test Driver with qunit<span class="widont">&nbsp;</span>tests</h2>
+<p>Now we can run <span class="caps">JS</span> Test Driver and watch as it runs all our qunit<span class="widont">&nbsp;</span>tests!</p>
 <p>The tests will run as individual <span class="caps">JS</span> Test Driver tests, with the format <code>_Module Name_._Test Name_</code>.</p>
-<p>Example&nbsp;output:</p>
+<p>Example output:</p>
 <pre><code class="lang-plain">[PASSED] Module 1.test Test 1
 [PASSED] Module 1.test Test 2
 [PASSED] Module 2.test Test 1
@@ -382,9 +382,9 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
   Safari 530.18: Run 3 tests (Passed: 3; Fails: 0; Errors 0) (1.00 ms)
 </code></pre>
 <h2 id="limitations">Limitations</h2>
-<p>There are a few limitations on which qunit tests will successfully be&nbsp;converted.</p>
+<p>There are a few limitations on which qunit tests will successfully be<span class="widont">&nbsp;</span>converted.</p>
 <p>The tests must run synchronously (which means no use of the qunit <code>stop</code> and <code>start</code> methods).</p>
-<p>Module lifecycles are ignored at the moment, which means <code>setup</code> and <code>teardown</code> functions are not&nbsp;called.</p>
+<p>Module lifecycles are ignored at the moment, which means <code>setup</code> and <code>teardown</code> functions are not<span class="widont">&nbsp;</span>called.</p>
 </section>
         </article>
       </div>

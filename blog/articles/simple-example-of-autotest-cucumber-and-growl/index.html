@@ -330,25 +330,25 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/">Simple example of Autotest, Cucumber, and Growl</a></h2>
             <p class="date"><span>17. June 2009</span></p>
           </header>
-          <section class="content"><p>As an example of getting Autotest, Cucumber, and Growl up and running I’ve created a super simple test project. You can <a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip">download the example project</a>, or just create it from the code on this&nbsp;post.</p>
-<h2 id="install-ruby-growl-and-gems">Install Ruby, Growl, and&nbsp;Gems</h2>
-<p>First up we need to ensure that we have all our dependancies&nbsp;installed.</p>
-<p>If you haven’t already, <a href="http://www.ruby-lang.org/en/downloads/">download and install Ruby</a>.</p>
-<p>Then we need to install the Autotest, Cucumber, and Growl Ruby gems. We can do this using the <code>gem</code> command that comes packaged with&nbsp;Ruby.</p>
+          <section class="content"><p>As an example of getting Autotest, Cucumber, and Growl up and running I’ve created a super simple test project. You can <a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip">download the example project</a>, or just create it from the code on this<span class="widont">&nbsp;</span>post.</p>
+<h2 id="install-ruby-growl-and-gems">Install Ruby, Growl, and<span class="widont">&nbsp;</span>Gems</h2>
+<p>First up we need to ensure that we have all our dependancies<span class="widont">&nbsp;</span>installed.</p>
+<p>If you haven’t already, <a href="http://www.ruby-lang.org/en/downloads/">download and install<span class="widont">&nbsp;</span>Ruby</a>.</p>
+<p>Then we need to install the Autotest, Cucumber, and Growl Ruby gems. We can do this using the <code>gem</code> command that comes packaged with<span class="widont">&nbsp;</span>Ruby.</p>
 <pre><code class="lang-bash"><span class="comment"># Autotest test is part of the ZenTest gem</span>
 sudo gem install ZenTest
 sudo gem install cucumber
 <span class="comment"># Use my modified autotest-growl gem (until the changes are merged into the official gem)</span>
 sudo gem install karl-autotest-growl --source http://gems.github.com
 </code></pre>
-<p>Next we need to ensure that the Growl application itself is installed. If not <a href="http://growl.info/">download and install Growl</a>.</p>
-<h2 id="create-project">Create&nbsp;Project</h2>
-<p>Now we are ready to create our project. The either <a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip">download the example project</a> or create the file heirarchy&nbsp;below:</p>
+<p>Next we need to ensure that the Growl application itself is installed. If not <a href="http://growl.info/">download and install<span class="widont">&nbsp;</span>Growl</a>.</p>
+<h2 id="create-project">Create Project</h2>
+<p>Now we are ready to create our project. The either <a href="/blog/articles/simple-example-of-autotest-cucumber-and-growl/Autotest-Cucumber.zip">download the example project</a> or create the file heirarchy<span class="widont">&nbsp;</span>below:</p>
 <ul>
-<li><p>[dir]&nbsp;Autotest-Cucumber</p>
+<li><p>[dir] Autotest-Cucumber</p>
 <ul>
-<li>[file]&nbsp;.autotest</li>
-<li><p>[dir]&nbsp;features</p>
+<li>[file] .autotest</li>
+<li><p>[dir] features</p>
 <pre><code>*   [file] test.feature
 </code></pre></li>
 </ul>
@@ -366,15 +366,15 @@ sudo gem install karl-autotest-growl --source http://gems.github.com
         Given I save 1
         Then I have 1
 </code></pre>
-<h2 id="set-environment">Set&nbsp;Environment</h2>
+<h2 id="set-environment">Set Environment</h2>
 <p>Lastly we need to set the <span class="caps">AUTOFEATURE</span> environment variable to true, so that <a href="http://wiki.github.com/aslakhellesoy/cucumber/autotest-integration">autotest will run the Cucumber tests automatically</a>:</p>
 <pre><code class="lang-bash">AUTOFEATURE=<span class="literal">true</span>
 </code></pre>
-<h2 id="run-autotest-">Run&nbsp;Autotest!</h2>
-<p>Finally we can run autotest, and watch as it picks up the Cucumber tests, runs them, and notifies us via Growl. Open terminal and navigate to the project directory. Then run&nbsp;autotest:</p>
+<h2 id="run-autotest-">Run Autotest!</h2>
+<p>Finally we can run autotest, and watch as it picks up the Cucumber tests, runs them, and notifies us via Growl. Open terminal and navigate to the project directory. Then run<span class="widont">&nbsp;</span>autotest:</p>
 <pre><code class="lang-bash">autotest
 </code></pre>
-<p>Autotest will initiate a Cucumber run. Cucumber will pick up the <code>test.feature</code> file (because it looks for a <code>features</code> folder by default). The Cucumber run will show that you have 1 undefined scenario (and be kind enough to give you the code for your undefined steps). And finally Growl will display a notification that you have 1 undefined scenario,&nbsp;yay!</p>
+<p>Autotest will initiate a Cucumber run. Cucumber will pick up the <code>test.feature</code> file (because it looks for a <code>features</code> folder by default). The Cucumber run will show that you have 1 undefined scenario (and be kind enough to give you the code for your undefined steps). And finally Growl will display a notification that you have 1 undefined scenario,<span class="widont">&nbsp;</span>yay!</p>
 <pre><code class="lang-plain">c:/ruby/bin/ruby c:/ruby/lib/ruby/gems/1.8/gems/aslakhellesoy-cucumber-0.3.11.3/bin/cucumber --format progress --format rerun --out C:/Temp/autotest-cucumber.17824.1 features
 UU
 

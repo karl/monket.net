@@ -330,8 +330,8 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/qunitadapter-1-1-0/">QUnitAdapter 1.1.0</a></h2>
             <p class="date"><span>09. April 2010</span></p>
           </header>
-          <section class="content"><p>I’ve updated the <span class="caps">JS</span> Test Driver <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnitAdapter</a> to improve compatibility with&nbsp;QUnit.</p>
-<p>Variables set on the <code>this</code> object within are now available within setup, teardown, and the tests&nbsp;themselves.</p>
+          <section class="content"><p>I’ve updated the <span class="caps">JS</span> Test Driver <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">QUnitAdapter</a> to improve compatibility with<span class="widont">&nbsp;</span>QUnit.</p>
+<p>Variables set on the <code>this</code> object within are now available within setup, teardown, and the tests<span class="widont">&nbsp;</span>themselves.</p>
 <pre><code class="lang-javascript"><span class="built_in">module</span>(<span class="string">'Lifecycle'</span>, {
   setup: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     <span class="keyword">this</span>.mockString = <span class="string">"some string"</span>;
@@ -345,14 +345,14 @@ test(<span class="string">"Things assigned to this in setup are available in tes
   equals(<span class="keyword">this</span>.mockString, <span class="string">"some string"</span>);
 });
 </code></pre>
-<p>The <code>test</code> function now supports the optional second parameter of the expected number of&nbsp;assertions.</p>
+<p>The <code>test</code> function now supports the optional second parameter of the expected number of<span class="widont">&nbsp;</span>assertions.</p>
 <pre><code class="lang-javascript"><span class="comment">// declare that this test has expects 1 assertion</span>
 test(<span class="string">'Test with expected defined as 2<span class="ord">nd</span> param'</span>, <span class="number">1</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
   ok(<span class="literal">true</span>);
 });
 </code></pre>
-<p>My thanks go to <code>anotherhero</code> for providing the <a href="http://code.google.com/p/js-test-driver/issues/detail?id=116">patch</a> to fix both these&nbsp;issues.</p>
-<p>You can always <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">download the latest version of QUnitAdapter from Google Code</a>.</p>
+<p>My thanks go to <code>anotherhero</code> for providing the <a href="http://code.google.com/p/js-test-driver/issues/detail?id=116">patch</a> to fix both these<span class="widont">&nbsp;</span>issues.</p>
+<p>You can always <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter">download the latest version of QUnitAdapter from Google<span class="widont">&nbsp;</span>Code</a>.</p>
 </section>
         </article>
       </div>

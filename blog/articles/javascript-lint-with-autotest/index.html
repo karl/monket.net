@@ -330,12 +330,12 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/javascript-lint-with-autotest/">Javascript Lint with Autotest</a></h2>
             <p class="date"><span>15. June 2009</span></p>
           </header>
-          <section class="content"><p>As well as using <a href="/articles/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest&nbsp;cycle.</p>
-<p>My first attempt at this is a small module to run <a href="http://javascriptlint.com/">Javascript Lint</a> on all the javascript files within a project any time any file&nbsp;changes.</p>
+          <section class="content"><p>As well as using <a href="/articles/autotest-cucumber-and-growl/">Autotest to run Cucumber scenarios</a> I have also been looking into integrating lower level test into the Autotest<span class="widont">&nbsp;</span>cycle.</p>
+<p>My first attempt at this is a small module to run <a href="http://javascriptlint.com/">Javascript Lint</a> on all the javascript files within a project any time any file<span class="widont">&nbsp;</span>changes.</p>
 <p>The module below hooks in to Autotest just before the tests are normally run. It runs javascript lint over all the <code>*.js</code> files in the project, outputs the results to the autotest results object and the standard output, and finally fires a new <code>ran_javascript_lint</code> hook</p>
-<p>Errors and warnings found by Javascript Lint will also be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a&nbsp;minimum.</p>
-<h2 id="installing-autotest-javascript-lint">Installing Autotest Javascript&nbsp;Lint</h2>
-<p>First up, <a href="http://javascriptlint.com/download.htm">download Javascript Lint</a>. Extract the <code>jsl</code> executable to <code>lib/autotest/</code> within your&nbsp;project.</p>
+<p>Errors and warnings found by Javascript Lint will also be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). If there are no errors or warnings than no Growl notification is shown. This keeps distracting popups to a<span class="widont">&nbsp;</span>minimum.</p>
+<h2 id="installing-autotest-javascript-lint">Installing Autotest Javascript<span class="widont">&nbsp;</span>Lint</h2>
+<p>First up, <a href="http://javascriptlint.com/download.htm">download Javascript Lint</a>. Extract the <code>jsl</code> executable to <code>lib/autotest/</code> within your<span class="widont">&nbsp;</span>project.</p>
 <p>Copy the code below to <code>lib/autotest/javascript-lint.rb</code> within your project (the same directory where you have the <code>jsl</code> execuatable).</p>
 <h4 id="javascript-lint-rb">javascript-lint.rb</h4>
 <pre><code class="lang-ruby"><span class="comment"># Run Javascript Lint as part of autotest</span>
@@ -404,11 +404,11 @@ code.lang-markdown .bullet {
 
 <span class="keyword">end</span>
 </code></pre>
-<p>Then add Autotest Javascript Lint to your <code>.autotest</code> configuration file within the base of your&nbsp;project.</p>
+<p>Then add Autotest Javascript Lint to your <code>.autotest</code> configuration file within the base of your<span class="widont">&nbsp;</span>project.</p>
 <pre><code class="lang-ruby"><span class="keyword">require</span> <span class="string">'lib/autotest/javascript-lint'</span>
 </code></pre>
-<h2 id="to-do">To&nbsp;Do</h2>
-<p>This could be packaged as a gem for easy installation, and it could possibly be modified to only run over changed&nbsp;files.</p>
+<h2 id="to-do">To Do</h2>
+<p>This could be packaged as a gem for easy installation, and it could possibly be modified to only run over changed<span class="widont">&nbsp;</span>files.</p>
 </section>
         </article>
       </div>

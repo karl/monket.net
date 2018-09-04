@@ -332,14 +332,14 @@ code.lang-markdown .bullet {
           </header>
           <section class="content"><div class="info">The code in this post is out of date. The latest code can always be found in the <a href="http://code.google.com/p/js-test-driver/wiki/QUnitAdapter"><span class="caps">JS</span> Test Driver google code site</a></div>
 
-<p>In my <a href="/articles/qunit-and-js-test-driver/">previous post on QUnit and <span class="caps">JS</span> Test Driver</a> I showed how to run your <a href="http://docs.jquery.com/QUnit">qunit</a> tests with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>.</p>
-<p>The technique used was to run the tests with qunit, and report either their success or failure to <span class="caps">JS</span> Test Driver. This works, but you miss out on the important feedback of exactly which assertions have failed, and&nbsp;why.</p>
-<p>This problem has led me to taking a new approach to running qunit tests with <span class="caps">JS</span> Test Driver, where I don’t use any of the existing qunit code, and instead just create an interface wrapper that converts qunit style tests and assertions directly into JS Test Driver tests and&nbsp;assertions.</p>
-<p>This gives assertion level error reporting, making it much easier to write and debug tests. Essentially this adapter allows you to write native <span class="caps">JS</span> Test Driver tests, but using the less verbose qunit&nbsp;syntax.</p>
-<p>The new approach also means that qunit lifecycles (setup and teardown)&nbsp;work.</p>
-<h2 id="installing-the-qunit-adapter">Installing the QUnit&nbsp;Adapter</h2>
+<p>In my <a href="/articles/qunit-and-js-test-driver/">previous post on QUnit and <span class="caps">JS</span> Test Driver</a> I showed how to run your <a href="http://docs.jquery.com/QUnit">qunit</a> tests with <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</a>.</p>
+<p>The technique used was to run the tests with qunit, and report either their success or failure to <span class="caps">JS</span> Test Driver. This works, but you miss out on the important feedback of exactly which assertions have failed, and<span class="widont">&nbsp;</span>why.</p>
+<p>This problem has led me to taking a new approach to running qunit tests with <span class="caps">JS</span> Test Driver, where I don’t use any of the existing qunit code, and instead just create an interface wrapper that converts qunit style tests and assertions directly into <span class="caps">JS</span> Test Driver tests and<span class="widont">&nbsp;</span>assertions.</p>
+<p>This gives assertion level error reporting, making it much easier to write and debug tests. Essentially this adapter allows you to write native <span class="caps">JS</span> Test Driver tests, but using the less verbose qunit<span class="widont">&nbsp;</span>syntax.</p>
+<p>The new approach also means that qunit lifecycles (setup and teardown)<span class="widont">&nbsp;</span>work.</p>
+<h2 id="installing-the-qunit-adapter">Installing the QUnit<span class="widont">&nbsp;</span>Adapter</h2>
 <p>First up download the <a href="/blog/articles/new-qunit-to-js-test-driver-adapter/equiv.js">equiv.js</a> file, which is required for the qunit <code>same</code> assertion.</p>
-<p>Then download the <a href="/blog/articles/new-qunit-to-js-test-driver-adapter/QUnitAdapter.js">QUnitAdapter.js</a> file (or copy the code&nbsp;below).</p>
+<p>Then download the <a href="/blog/articles/new-qunit-to-js-test-driver-adapter/QUnitAdapter.js">QUnitAdapter.js</a> file (or copy the code<span class="widont">&nbsp;</span>below).</p>
 <h4 id="-qunitadapter-js-qunitadapter-js-"><a href="/blog/articles/new-qunit-to-js-test-driver-adapter/QUnitAdapter.js">QUnitAdapter.js</a></h4>
 <pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
 
@@ -394,9 +394,9 @@ code.lang-markdown .bullet {
 })();
 </code></pre>
 <p>Save both these files to your project (for example <code>tests/qunit/</code>).</p>
-<h2 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p>To run your qunit tests in <span class="caps">JS</span> Test Driver you need to configure it to load the adapter before your qunit&nbsp;tests.</p>
-<p>Update your <code>jsTestDriver.conf</code> to load the&nbsp;files:</p>
+<h2 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p>To run your qunit tests in <span class="caps">JS</span> Test Driver you need to configure it to load the adapter before your qunit<span class="widont">&nbsp;</span>tests.</p>
+<p>Update your <code>jsTestDriver.conf</code> to load the<span class="widont">&nbsp;</span>files:</p>
 <pre><code class="lang-yaml">server: http://localhost:9876
 
 load:
@@ -411,10 +411,10 @@ load:
   # And this loads the source files we are testing
   - src/js/*.js
 </code></pre>
-<h2 id="running-js-test-driver-with-qunit-tests">Running <span class="caps">JS</span> Test Driver with qunit&nbsp;tests</h2>
-<p>Now we can run <span class="caps">JS</span> Test Driver and watch as it runs all our qunit&nbsp;tests!</p>
+<h2 id="running-js-test-driver-with-qunit-tests">Running <span class="caps">JS</span> Test Driver with qunit<span class="widont">&nbsp;</span>tests</h2>
+<p>Now we can run <span class="caps">JS</span> Test Driver and watch as it runs all our qunit<span class="widont">&nbsp;</span>tests!</p>
 <p>The tests will run as individual <span class="caps">JS</span> Test Driver tests, with the format <code>_Module Name_._Test Name_</code>.</p>
-<p>Example&nbsp;output:</p>
+<p>Example output:</p>
 <pre><code class="lang-plain">[PASSED] Module 1.test Test 1
 [PASSED] Module 1.test Test 2
 [PASSED] Module 2.test Test 1
@@ -422,9 +422,9 @@ Total 3 tests (Passed: 3; Fails: 0; Errors: 0) (1.00 ms)
   Safari 530.18: Run 3 tests (Passed: 3; Fails: 0; Errors 0) (1.00 ms)
 </code></pre>
 <h2 id="limitations">Limitations</h2>
-<p>There are a few limitations on which qunit tests will successfully be&nbsp;converted.</p>
+<p>There are a few limitations on which qunit tests will successfully be<span class="widont">&nbsp;</span>converted.</p>
 <p>The tests must run synchronously (which means no use of the qunit <code>stop</code> and <code>start</code> methods).</p>
-<p>If you need to test timeouts, intervals, or other asynchronous sections of  code, consider <a href="http://googletesting.blogspot.com/2007/03/javascript-simulating-time-in-jsunit.html">using the jsUnit Clock object to deal with timeouts and&nbsp;intervals.</a></p>
+<p>If you need to test timeouts, intervals, or other asynchronous sections of  code, consider <a href="http://googletesting.blogspot.com/2007/03/javascript-simulating-time-in-jsunit.html">using the jsUnit Clock object to deal with timeouts and<span class="widont">&nbsp;</span>intervals.</a></p>
 <p>QUnit <code>DOM</code> support is not included. Consider avoiding interacting directly with the browser within your unit tests. But if you do need to, you’ll need to create and remove the <span class="caps">DOM</span> objects yourself with each test, or the <code>setup</code> and <code>teardown</code> methods.</p>
 </section>
         </article>

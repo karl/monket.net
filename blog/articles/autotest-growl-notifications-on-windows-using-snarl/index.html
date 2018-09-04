@@ -330,20 +330,20 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/autotest-growl-notifications-on-windows-using-snarl/">Autotest Growl notifications on Windows (using Snarl)</a></h2>
             <p class="date"><span>19. June 2009</span></p>
           </header>
-          <section class="content"><p><a href="/articles/simple-example-of-autotest-cucumber-and-growl/">Growl and Autotest work brilliantly together</a>. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the&nbsp;tests.</p>
-<p>But what about those users working on the Windows&nbsp;platform?</p>
-<p><a href="http://www.fullphat.net/index.php">Snarl</a> is a windows counterpart to Growl. Providing much of the same&nbsp;functionality.</p>
-<p>And there is a Snarl Ruby gem allowing us to create Snarl notifications from&nbsp;Ruby.</p>
-<p>So lets convert our Growl calls to Snarl calls, and get Autotest notifications under&nbsp;Windows.</p>
-<h2 id="installing-autotest-snarl-and-the-growl-to-snarl-converter">Installing Autotest, Snarl, and the Growl to Snarl&nbsp;converter</h2>
-<p>If you haven’t already <a href="http://www.ruby-lang.org/en/downloads/">download and install Ruby</a>.</p>
-<p>First up we need to <a href="http://www.fullphat.net/index.php">download and install Snarl</a>.</p>
-<p>Then we need to install Autotest and the autotest-growl gem (that we are later going to override). Open a command prompt, and type the following (Autotest is part of the ZenTest&nbsp;gem):</p>
+          <section class="content"><p><a href="/articles/simple-example-of-autotest-cucumber-and-growl/">Growl and Autotest work brilliantly together</a>. Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the<span class="widont">&nbsp;</span>tests.</p>
+<p>But what about those users working on the Windows<span class="widont">&nbsp;</span>platform?</p>
+<p><a href="http://www.fullphat.net/index.php">Snarl</a> is a windows counterpart to Growl. Providing much of the same<span class="widont">&nbsp;</span>functionality.</p>
+<p>And there is a Snarl Ruby gem allowing us to create Snarl notifications from<span class="widont">&nbsp;</span>Ruby.</p>
+<p>So lets convert our Growl calls to Snarl calls, and get Autotest notifications under<span class="widont">&nbsp;</span>Windows.</p>
+<h2 id="installing-autotest-snarl-and-the-growl-to-snarl-converter">Installing Autotest, Snarl, and the Growl to Snarl<span class="widont">&nbsp;</span>converter</h2>
+<p>If you haven’t already <a href="http://www.ruby-lang.org/en/downloads/">download and install<span class="widont">&nbsp;</span>Ruby</a>.</p>
+<p>First up we need to <a href="http://www.fullphat.net/index.php">download and install<span class="widont">&nbsp;</span>Snarl</a>.</p>
+<p>Then we need to install Autotest and the autotest-growl gem (that we are later going to override). Open a command prompt, and type the following (Autotest is part of the ZenTest<span class="widont">&nbsp;</span>gem):</p>
 <pre><code class="lang-bash">gem install ZenTest
 gem install ruby-snarl
 gem install autotest-growl
 </code></pre>
-<p>Then save the code below to <code>lib/autotest/growl-to-snarl.rb</code> within your project. This code converts any Growl calls to equivalent Snarl&nbsp;calls.</p>
+<p>Then save the code below to <code>lib/autotest/growl-to-snarl.rb</code> within your project. This code converts any Growl calls to equivalent Snarl<span class="widont">&nbsp;</span>calls.</p>
 <h4 id="growl-to-snarl-rb">growl-to-snarl.rb</h4>
 <pre><code class="lang-ruby"><span class="keyword">require</span> <span class="string">'snarl'</span>
 <span class="class"><span class="keyword">module</span> <span class="title">Autotest::Growl</span></span>
@@ -358,19 +358,19 @@ gem install autotest-growl
 
 <span class="keyword">end</span>
 </code></pre>
-<p>Next we need to update our <code>.autotest</code> configuration file to include the autotest-growl gem, and the Growl to Snarl converter. Add the following to your <code>.autotest</code> file in the project root&nbsp;directory.</p>
+<p>Next we need to update our <code>.autotest</code> configuration file to include the autotest-growl gem, and the Growl to Snarl converter. Add the following to your <code>.autotest</code> file in the project root<span class="widont">&nbsp;</span>directory.</p>
 <pre><code class="lang-ruby"><span class="keyword">require</span> <span class="string">'autotest-growl'</span>
 <span class="keyword">require</span> <span class="string">'snarl'</span>
 <span class="keyword">require</span> <span class="string">'lib/autotest/growl-to-snarl'</span>
 </code></pre>
-<h2 id="running-autotest-with-snarl-support">Running Autotest with Snarl&nbsp;support</h2>
-<p>First up ensure Snarl is running (check for the icon in the system&nbsp;tray).</p>
-<p>Autotest will fail to run on Windows if a <code>HOME</code> environment variable doesn’t exist, so we need to create one before we run (I’ve also noticed that the Ruby <code>gem</code> command will fail to run if the <code>HOME</code> evironment variable <em>does</em> exist, which is&nbsp;frustrating!).</p>
-<p>Open a command prompt, navigate to the project root directory. Then enter the following to set the <code>HOME</code> environment variable and run&nbsp;Autotest.</p>
+<h2 id="running-autotest-with-snarl-support">Running Autotest with Snarl<span class="widont">&nbsp;</span>support</h2>
+<p>First up ensure Snarl is running (check for the icon in the system<span class="widont">&nbsp;</span>tray).</p>
+<p>Autotest will fail to run on Windows if a <code>HOME</code> environment variable doesn’t exist, so we need to create one before we run (I’ve also noticed that the Ruby <code>gem</code> command will fail to run if the <code>HOME</code> evironment variable <em>does</em> exist, which is<span class="widont">&nbsp;</span>frustrating!).</p>
+<p>Open a command prompt, navigate to the project root directory. Then enter the following to set the <code>HOME</code> environment variable and run<span class="widont">&nbsp;</span>Autotest.</p>
 <pre><code class="lang-bash"><span class="built_in">set</span> <span class="caps">HOME</span>=<span class="string">"C:\Documents and Settings\username"</span>
 autotest
 </code></pre>
-<p>The results of your test runs should now display as Snarl&nbsp;notifications.</p>
+<p>The results of your test runs should now display as Snarl<span class="widont">&nbsp;</span>notifications.</p>
 </section>
         </article>
       </div>

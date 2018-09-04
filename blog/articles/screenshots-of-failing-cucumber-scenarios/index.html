@@ -330,16 +330,16 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/screenshots-of-failing-cucumber-scenarios/">Screenshots of Failing Cucumber Scenarios</a></h2>
             <p class="date"><span>14. September 2009</span></p>
           </header>
-          <section class="content"><p>At 7digital we use <a href="http://cukes.info/">Cucumber</a> and <a href="http://wtr.rubyforge.org/">Watir</a> for running acceptance tests on some of our&nbsp;websites.</p>
-<p>These tests can help greatly in spotting problems with configuration, databases, load balancing, etc that unit testing&nbsp;misses.</p>
-<p>But because the tests exercise the whole system, from the browser all the way through the the database, they can tend be flakier than unit tests. Then can fail one minute and work the next, which can make debugging them a&nbsp;nightmare.</p>
-<p>So, to make the task of spotting the cause of failing acceptance tests easier, how about we set up Cucumber to take a screenshot of the desktop (and therefore browser) any time a scenario&nbsp;fails.</p>
-<h2 id="install-screenshot-software">Install Screenshot&nbsp;Software</h2>
-<p>The first thing we need to do is install something that can take screenshots. The simplest solution I found is a tiny little windows app called <a href="http://90kts.com/blog/2008/capturing-screenshots-in-watir/">SnapIt</a>. It takes a single screenshot of the primary screen and saves it to a location of your choice. No more, no&nbsp;less.</p>
+          <section class="content"><p>At 7digital we use <a href="http://cukes.info/">Cucumber</a> and <a href="http://wtr.rubyforge.org/">Watir</a> for running acceptance tests on some of our<span class="widont">&nbsp;</span>websites.</p>
+<p>These tests can help greatly in spotting problems with configuration, databases, load balancing, etc that unit testing<span class="widont">&nbsp;</span>misses.</p>
+<p>But because the tests exercise the whole system, from the browser all the way through the the database, they can tend be flakier than unit tests. Then can fail one minute and work the next, which can make debugging them a<span class="widont">&nbsp;</span>nightmare.</p>
+<p>So, to make the task of spotting the cause of failing acceptance tests easier, how about we set up Cucumber to take a screenshot of the desktop (and therefore browser) any time a scenario<span class="widont">&nbsp;</span>fails.</p>
+<h2 id="install-screenshot-software">Install Screenshot Software</h2>
+<p>The first thing we need to do is install something that can take screenshots. The simplest solution I found is a tiny little windows app called <a href="http://90kts.com/blog/2008/capturing-screenshots-in-watir/">SnapIt</a>. It takes a single screenshot of the primary screen and saves it to a location of your choice. No more, no<span class="widont">&nbsp;</span>less.</p>
 <ul>
 <li><a href="http://90kts.com/blog/wp-content/uploads/2008/06/snapit.exe">Download SnapIt</a> and save it a known location (e.g. <code>C:\Tools\SnapIt.exe</code>)</li>
 </ul>
-<h2 id="tell-cucumber-to-take-a-screenshot-when-a-scenario-fails">Tell Cucumber to Take a Screenshot When a Scenario&nbsp;Fails</h2>
+<h2 id="tell-cucumber-to-take-a-screenshot-when-a-scenario-fails">Tell Cucumber to Take a Screenshot When a Scenario<span class="widont">&nbsp;</span>Fails</h2>
 <p>Now we need to tell Cucumber to take a screenshot. To do so we’ll add a function to the Cucumber <code>World</code> that will take a screenshot if needed, and run this in the <code>After</code> scenario hook. To do this modify your <code>features/support/env.rb</code> file.</p>
 <h4 id="env-rb">env.rb</h4>
 <pre><code class="lang-ruby"><span class="class"><span class="keyword">class</span> <span class="title">DefaultWorld</span></span>
@@ -375,14 +375,14 @@ code.lang-markdown .bullet {
 
 <span class="keyword">end</span>
 </code></pre>
-<p>Just modify the constants in the above code to point to the locations of SnapIt and a directory to save the screenshots&nbsp;too.</p>
-<h2 id="what-the-code-does">What the Code&nbsp;Does</h2>
-<p>The code will only take a screenshot if the scenario fails to&nbsp;pass.</p>
-<p>It then extracts the name of the scenario, and converts it to a filename friendly string (e.g. <code>Monkey&#39;s should eat &quot;things&quot;</code> =&gt; <code>Monkey s should eat things</code>). It then prepends the current date and time, and uses this string as the filename for the&nbsp;screenshot.</p>
-<p>This allows you to easily find screenshots for a specific scenario or&nbsp;time.</p>
-<h2 id="run-a-failing-test-and-check-out-the-screenshot">Run a Failing Test and Check Out the&nbsp;Screenshot</h2>
-<p>Now you can run Cucumber as normal, watch a test fail, and you should see a screenshot appear in the directory you specified. And hopefully it will help you work out what went wrong,&nbsp;enjoy!</p>
-<p>If the screenshot fails to appear, it could be because of an error in the ruby code. But Cucumber seems to hide any execptions within the After hook, so you may need to add <code>puts</code> statements to work out what is going&nbsp;wrong.</p>
+<p>Just modify the constants in the above code to point to the locations of SnapIt and a directory to save the screenshots<span class="widont">&nbsp;</span>too.</p>
+<h2 id="what-the-code-does">What the Code<span class="widont">&nbsp;</span>Does</h2>
+<p>The code will only take a screenshot if the scenario fails to<span class="widont">&nbsp;</span>pass.</p>
+<p>It then extracts the name of the scenario, and converts it to a filename friendly string (e.g. <code>Monkey&#39;s should eat &quot;things&quot;</code> =&gt; <code>Monkey s should eat things</code>). It then prepends the current date and time, and uses this string as the filename for the<span class="widont">&nbsp;</span>screenshot.</p>
+<p>This allows you to easily find screenshots for a specific scenario or<span class="widont">&nbsp;</span>time.</p>
+<h2 id="run-a-failing-test-and-check-out-the-screenshot">Run a Failing Test and Check Out the<span class="widont">&nbsp;</span>Screenshot</h2>
+<p>Now you can run Cucumber as normal, watch a test fail, and you should see a screenshot appear in the directory you specified. And hopefully it will help you work out what went wrong,<span class="widont">&nbsp;</span>enjoy!</p>
+<p>If the screenshot fails to appear, it could be because of an error in the ruby code. But Cucumber seems to hide any execptions within the After hook, so you may need to add <code>puts</code> statements to work out what is going<span class="widont">&nbsp;</span>wrong.</p>
 </section>
         </article>
       </div>

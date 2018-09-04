@@ -330,13 +330,13 @@ code.lang-markdown .bullet {
             <h2><a href="/blog/articles/autotest-and-js-test-driver/">Autotest and JS Test Driver</a></h2>
             <p class="date"><span>19. June 2009</span></p>
           </header>
-          <section class="content"><p>Google recently released a new Javascript testing framework, <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>. It provides incredibly fast execution for Javascript unit tests, and can be run from the command line without the need for manual control of browsers. Check out this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško Hevery</a>.</p>
-<p>Fast test execution and the ability to be run from the command line make it a perfect fit to integrate into the Autotest test cycle. So I&nbsp;have.</p>
+          <section class="content"><p>Google recently released a new Javascript testing framework, <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a>. It provides incredibly fast execution for Javascript unit tests, and can be run from the command line without the need for manual control of browsers. Check out this <a href="http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/">introduction to <span class="caps">JS</span> Test Driver by Miško<span class="widont">&nbsp;</span>Hevery</a>.</p>
+<p>Fast test execution and the ability to be run from the command line make it a perfect fit to integrate into the Autotest test cycle. So I<span class="widont">&nbsp;</span>have.</p>
 <p>The module below hooks into Autotest just before the normal tests are run. It runs <span class="caps">JS</span> Test Driver over all the tests in the project, outputs the results, and finally fires off a <code>:ran_js_test_driver</code> hook.</p>
-<p>Errors and failed tests will automatically be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). By default successful tests runs are not notified through Growl, in order to keep distracting popups to a&nbsp;minimum.</p>
-<h2 id="installing-autotest-js-test-driver">Installing Autotest <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p>First you need to <a href="http://code.google.com/p/js-test-driver/downloads/list">download a copy of <span class="caps">JS</span> Test Driver</a>.</p>
-<p>Save the <span class="caps">JS</span> Test Driver jar file to the <code>lib/</code> directory within your&nbsp;project.</p>
+<p>Errors and failed tests will automatically be notified through <a href="http://growl.info/">Growl</a> (if Growl and <a href="http://github.com/svoop/autotest-growl/tree/master">autotest-growl</a> are installed). By default successful tests runs are not notified through Growl, in order to keep distracting popups to a<span class="widont">&nbsp;</span>minimum.</p>
+<h2 id="installing-autotest-js-test-driver">Installing Autotest <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p>First you need to <a href="http://code.google.com/p/js-test-driver/downloads/list">download a copy of <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</a>.</p>
+<p>Save the <span class="caps">JS</span> Test Driver jar file to the <code>lib/</code> directory within your<span class="widont">&nbsp;</span>project.</p>
 <p>Then copy the code below to <code>lib/autotest/js-test-driver.rb</code></p>
 <h4 id="js-test-driver-rb">js-test-driver.rb</h4>
 <pre><code class="lang-ruby"><span class="comment"># Run <span class="caps">JS</span> Test Driver as part of autotest</span>
@@ -405,25 +405,25 @@ code.lang-markdown .bullet {
 
 <span class="keyword">end</span>
 </code></pre>
-<h2 id="configuring-autotest-and-js-test-driver">Configuring Autotest and <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p><span class="caps">JS</span> Test Driver uses a configuration file to connect with the JS Test Driver server, and to decide which javscript files to&nbsp;load.</p>
-<p>Create a <code>jsTestDriver.conf</code> file in the project root directory as&nbsp;follows.</p>
+<h2 id="configuring-autotest-and-js-test-driver">Configuring Autotest and <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p><span class="caps">JS</span> Test Driver uses a configuration file to connect with the <span class="caps">JS</span> Test Driver server, and to decide which javscript files to<span class="widont">&nbsp;</span>load.</p>
+<p>Create a <code>jsTestDriver.conf</code> file in the project root directory as<span class="widont">&nbsp;</span>follows.</p>
 <pre><code class="lang-yaml">server: http://localhost:9876
 
 load:
   - src/js/*.js
   - tests/js/*.js
 </code></pre>
-<p>This assumes that you have our javascript source files will be in the <code>src/js/</code> directory, and our javascript test files will be in the <code>src/js/</code> directory. We will create a test file, and associated code&nbsp;later.</p>
-<p>The <code>server:</code> lets <span class="caps">JS</span> Test Driver know we will be connecting to a server on our local machine, on port 9876. We’ll get this server running&nbsp;later.</p>
-<p>Next we need to configure Autotest to run <span class="caps">JS</span> Test Driver, by requiring the module and specifying the location of the JS Test Driver&nbsp;jar.</p>
+<p>This assumes that you have our javascript source files will be in the <code>src/js/</code> directory, and our javascript test files will be in the <code>src/js/</code> directory. We will create a test file, and associated code<span class="widont">&nbsp;</span>later.</p>
+<p>The <code>server:</code> lets <span class="caps">JS</span> Test Driver know we will be connecting to a server on our local machine, on port 9876. We’ll get this server running<span class="widont">&nbsp;</span>later.</p>
+<p>Next we need to configure Autotest to run <span class="caps">JS</span> Test Driver, by requiring the module and specifying the location of the <span class="caps">JS</span> Test Driver<span class="widont">&nbsp;</span>jar.</p>
 <pre><code class="lang-ruby"><span class="comment"># Require the <span class="caps">JS</span> Test Driver module</span>
 <span class="keyword">require</span> <span class="string">'lib/autotest/js-test-driver'</span>
 
 <span class="comment"># Set the location of the <span class="caps">JS</span> Test Driver jar</span>
 <span class="constant">Autotest::JsTestDriver::</span>jar = <span class="string">'./lib/jsTestDriver-1.0b.jar'</span>
 </code></pre>
-<p>You can also configure the location of the <span class="caps">JS</span> Test Driver config file, and whether or not to show successful test&nbsp;runs.</p>
+<p>You can also configure the location of the <span class="caps">JS</span> Test Driver config file, and whether or not to show successful test<span class="widont">&nbsp;</span>runs.</p>
 <pre><code class="lang-ruby"><span class="comment"># Uncomment this if you have autotest-growl, and Growl installed</span>
 <span class="comment"># And want to have notifications of <span class="caps">JS</span> Test Driver runs</span>
 <span class="comment"># require 'autotest/growl'</span>
@@ -435,19 +435,19 @@ load:
 <span class="comment"># Uncomment this to show successful test runs</span>
 <span class="comment"># Autotest::Growl::show_js_test_success = true</span>
 </code></pre>
-<p>Now that all the installation and configuration is done, let get everything&nbsp;running.</p>
-<h2 id="running-autotest-with-js-test-driver">Running Autotest with <span class="caps">JS</span> Test&nbsp;Driver</h2>
-<p>First up we need to get our <span class="caps">JS</span> Test Driver server up and running. Open a Terminal, and navigate to the directory containing the JS Test Driver jar. Run the following to start a&nbsp;server:</p>
+<p>Now that all the installation and configuration is done, let get everything<span class="widont">&nbsp;</span>running.</p>
+<h2 id="running-autotest-with-js-test-driver">Running Autotest with <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h2>
+<p>First up we need to get our <span class="caps">JS</span> Test Driver server up and running. Open a Terminal, and navigate to the directory containing the <span class="caps">JS</span> Test Driver jar. Run the following to start a<span class="widont">&nbsp;</span>server:</p>
 <pre><code class="lang-bash">java -jar JsTestDriver-<span class="number">1.0</span>b.jar --port <span class="number">9876</span>
 </code></pre>
-<p>Now we need to capture a browser to use for testing. Open a browser and automatically capture it for use with <span class="caps">JS</span> Test Driver by going to the following&nbsp;URL:</p>
+<p>Now we need to capture a browser to use for testing. Open a browser and automatically capture it for use with <span class="caps">JS</span> Test Driver by going to the following<span class="widont">&nbsp;</span><span class="caps">URL</span>:</p>
 <pre><code>http://localhost:9876/capture
-</code></pre><p>Now we can run autotest, and watch as it runs <span class="caps">JS</span> Test Driver and reports the results to us on every file&nbsp;change:</p>
+</code></pre><p>Now we can run autotest, and watch as it runs <span class="caps">JS</span> Test Driver and reports the results to us on every file<span class="widont">&nbsp;</span>change:</p>
 <pre><code class="lang-bash">autotest
 </code></pre>
-<p><span class="caps">JS</span> Test Driver will probably report that no tests were run, as we haven’t written any tests yet. Tests are written using the <a href="http://code.google.com/p/js-test-driver/wiki/TestCase"><code>TestCase</code></a> object, which exposes JUnit style&nbsp;functionality.</p>
-<h2 id="writing-some-tests">Writing Some&nbsp;Tests</h2>
-<p>Here is an example test file, and the production code it&nbsp;tests:</p>
+<p><span class="caps">JS</span> Test Driver will probably report that no tests were run, as we haven’t written any tests yet. Tests are written using the <a href="http://code.google.com/p/js-test-driver/wiki/TestCase"><code>TestCase</code></a> object, which exposes JUnit style<span class="widont">&nbsp;</span>functionality.</p>
+<h2 id="writing-some-tests">Writing Some Tests</h2>
+<p>Here is an example test file, and the production code it<span class="widont">&nbsp;</span>tests:</p>
 <h4 id="greetertest-js">GreeterTest.js</h4>
 <pre><code class="lang-javascript">GreeterTest = TestCase(<span class="string">"GreeterTest"</span>);
 
@@ -465,9 +465,9 @@ myapp.Greeter.prototype.greet = <span class="function"><span class="keyword">fun
   <span class="keyword">return</span> <span class="string">"Hello "</span> + name + <span class="string">"!"</span>;
 };
 </code></pre>
-<p>If you copy these to your <code>tests/js/</code> and <code>src/js/</code> directories respectively, Autotest should pick up the new files, run the tests and notify you that there is an error. See if you can spot it&nbsp;:P</p>
-<h2 id="to-do">To&nbsp;Do</h2>
-<p>This would be nice packaged up as a gem. It would also be nice if failed Javascript tests could stop further tests being&nbsp;run.</p>
+<p>If you copy these to your <code>tests/js/</code> and <code>src/js/</code> directories respectively, Autotest should pick up the new files, run the tests and notify you that there is an error. See if you can spot it<span class="widont">&nbsp;</span>:P</p>
+<h2 id="to-do">To Do</h2>
+<p>This would be nice packaged up as a gem. It would also be nice if failed Javascript tests could stop further tests being<span class="widont">&nbsp;</span>run.</p>
 </section>
         </article>
       </div>
