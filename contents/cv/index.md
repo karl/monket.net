@@ -14,8 +14,7 @@ template: article.jade
 
 I'm a front end developer available for hire as a contractor.
 
-I'm a JavaScript expert who has developed large scale single page applications for Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan
-and implement large architectural changes. Hiring and mentoring new developers
+I'm a JavaScript expert who has developed large scale single page applications for Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
 is one of my passions, as well as assisting with process changes within teams.
 
 I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers. I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
@@ -28,22 +27,15 @@ I also feel it is important to understand all levels of development, and have en
 
 _July 2017 - Current_
 
-Sky is a multifaceted media company with a multinational reach.
+Sky is a multinational media company empowing customers to watch content at home and on all their devices.
 
 ### Tasks & Responsibilities
 
-Developing the Sky Go Desktop app for macOS and Windows, an Electron app for watching
-video and live TV. Interviewing candidates and mentoring new hires. Helping
-management implement new development processes within the team.
+Developing the Sky Go Desktop app for macOS and Windows, an Electron app for watching video and live TV. Leading large scale improvements and architectural changes across the codebase. Interviewing candidates and mentoring new hires. Helping management implement new development processes within the team.
 
 ### Achievements
 
-Streamlining the hiring process for new developers, including a stronger focus
-on technical skills and cultural fit. Improving the speed and reliability of the
-CI process, reducing time to merge PRs from 4+ hours to 20 minutes. Leading
-change in development process by example, with increased focus on tackling risks
-early. Introducing a streamlined translation process across multiple products
-and teams.
+Streamlining the hiring process for new developers, including a stronger focus on technical skills and cultural fit. Improving the speed and reliability of the CI process, reducing time to merge PRs from 4+ hours to 20 minutes. Leading change in development process by example, with increased focus on tackling risks early. Introducing a streamlined translation process across multiple products and teams. Setting up a fortnightly tech retrospective to help empower developers to suggest and implement technical improvements. Pioneering the use of state machines to tame complex asyncronous interactions.
 
 ### Technologies Used
 
