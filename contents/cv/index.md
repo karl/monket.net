@@ -23,9 +23,28 @@ I also feel it is important to understand all levels of development, and have en
 
 ## Experience
 
+### Senior Developer (Contract) | Third Space Learning/Matr, London
+
+_October 2018 - Present_
+
+Third Space Learning offers 1-to-1 online maths tutor for schools and at home under both the Third Space Learning and Matr brands.
+
+### Tasks & Responsibilities
+
+I was brought in to help complete the main tutoring portion of the Matr project before the launch deadline. I had one month to take the tutorial web app from a prototype to a live product.
+
+### Achievements
+
+I was able to build all the required features of the tutorial app web within a month, and it went live with no major bugs. I'm currently helping to round out the product with extra features, and helping the team move from a reactive to a proactive approach to building the product.
+
+### Technologies Used
+
+`react`, `javascript`, `redux`, `redux-saga`, `material-ui`, `webpack`, `es6`, `bitbucket`
+
+
 ### Senior Developer (Contract) | Sky, London
 
-_July 2017 - Current_
+_July 2017 - October 2018_
 
 Sky is a multinational media company empowing customers to watch content at home and on all their devices.
 
