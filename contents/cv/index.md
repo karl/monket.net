@@ -14,6 +14,10 @@ template: article.pug
 
 I'm a front end developer available for hire as a contractor.
 
+**Looking for a new front end dev contract starting April 2019**
+
+## Introduction
+
 I'm a JavaScript expert who has developed large scale single page applications for Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
 is one of my passions, as well as assisting with process changes within teams.
 
@@ -25,17 +29,17 @@ I also feel it is important to understand all levels of development, and have en
 
 ### Senior Developer (Contract) | Third Space Learning/Matr, London
 
-_October 2018 - Present_
+_October 2018 - March 2019_
 
-Third Space Learning offers 1-to-1 online maths tutor for schools and at home under both the Third Space Learning and Matr brands.
+Third Space Learning offers 1-to-1 online maths tutoring for schools and at home under both the Third Space Learning and Matr brands.
 
 ### Tasks & Responsibilities
 
-I was brought in to help complete the main tutoring portion of the Matr project before the launch deadline. I had one month to take the tutorial web app from a prototype to a live product.
+I was brought in to help complete the main tutoring portion of the Matr project before the launch deadline. I had one month to take the tutorial web app from a prototype to a live product. Once launched I was then tasked with transitioning two of the technology platforms the tutorial app depended on. I was also asked to help the team with their architectural decisions.
 
 ### Achievements
 
-I was able to build all the required features of the tutorial app web within a month, and it went live with no major bugs. I'm currently helping to round out the product with extra features, and helping the team move from a reactive to a proactive approach to building the product.
+I was able to build all the required features of the tutorial app web within a month, and it went live with no major bugs. I then rounded out the product with extra product features. I lead the transition from custom code to Twilio and PubNub. I ensured that we supported running both tech stacks simultaneously allowing us to seemlessly transition tutors and students across with confidence. Moving to these third party providers helped improve the reliability of the tutorial app and reduce the maintence burden.
 
 ### Technologies Used
 
@@ -183,13 +187,13 @@ Artificial Intelligence I/II, Operating Systems I/II, Software Engineering I/II/
 * Group project redesign of departmental website.
 * Masters Thesis on automated music analysis.
 
-## Projects & Interests
+## Projects
 
-**Dancing Monkeys**, [https://monket.net/dancing-monkeys/](https://monket.net/dancing-monkeys/)
+**Redux Saga State Machine**, [https://redux-saga-state-machine.netlify.com/](https://redux-saga-state-machine.netlify.com/)
 
-Dancing Monkeys was my individual project while at Imperial College London. It is an application to automatically generate step files for DDR (Dance Dance Revolution)…
+A work in progress library to build a Redux Saga based state machine runner. Built upon xstate and Redux Saga.
 
-Created as part of my final year project at university. Released as open source and maintained for a few years by another developer.
+This was borne out of some of the work I did while at Sky.
 
 **React Storybook Talk**, [https://www.youtube.com/watch?v=UxbQ-cGnoCE](https://www.youtube.com/watch?v=UxbQ-cGnoCE)
 
@@ -199,28 +203,14 @@ A talk I gave as part of the React London Meetup at the Facebook offices.
 
 **Prettier**, [https://github.com/prettier/prettier](https://github.com/prettier/prettier)
 
-A code formatter for JavaScript (and other languages). Prettier is an open source
-project that I have contributed to. I've focused on improving the formatting
-of JSX.
+A code formatter for JavaScript (and other languages). Prettier is an open source project that I have contributed to. I've focused on improving the formatting of JSX.
 
 **React Async I/O Testbed**, [https://github.com/karl/react-async-io-testbed](https://github.com/karl/react-async-io-testbed)
 
-This repo attempts to recreate the the IO demo from Dan Abramov's Beyond React 16 talk
-using the React 16. It shows how to implement suspense style async UI behaviours
-using React 16.
+This repo attempts to recreate the the IO demo from Dan Abramov's Beyond React 16 talk using the React 16. It shows how to implement suspense style async UI behaviours using React 16.
 
-## Writing
+**Dancing Monkeys**, [https://monket.net/dancing-monkeys/](https://monket.net/dancing-monkeys/)
 
-**Blog**, [https://monket.net/blog/](https://monket.net/blog/)
+Dancing Monkeys was my individual project while at Imperial College London. It is an application to automatically generate step files for DDR (Dance Dance Revolution)…
 
-My personal blog (no longer updated).
-
-## Background
-
-### Travel
-
-I have made a number of major trips around the world to visit and work in other countries, and experience other cultures. Last year I traveled to Thailand for a yoga training workshop. Between 2005 and 2008 I traveled and worked through Asia and New Zealand, spending time to train as a dive master in Indonesia. After University I spent 6 months traveling and working in Australia, living in a camper van and diving the Great Barrier Reef.
-
-### Interests
-
-Improv, Parkour (free-running), Capoeira (Brazilian dance/fight/game), Inline skating, Snowboarding, Yoga, Diving and Freediving (breath-hold diving), Thai Massage, Travel, Psychology and Social Behaviour.
+Created as part of my final year project at university. Released as open source and maintained for a few years by another developer.
