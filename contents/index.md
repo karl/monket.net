@@ -6,6 +6,8 @@ template: article.pug
 
 Karl O'Keeffe, front end engineer, contractor for hire.
 
+![avatar.jpeg](avatar.jpeg)
+
 ### [Curriculum Vitae](cv/)
 
 ---
