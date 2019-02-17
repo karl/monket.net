@@ -1,7 +1,7 @@
 ---
 title: Hyperion
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 A small utility I wrote which provides easy access to all your music.

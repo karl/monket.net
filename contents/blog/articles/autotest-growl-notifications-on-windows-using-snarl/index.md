@@ -2,7 +2,7 @@
 title: Autotest Growl notifications on Windows (using Snarl)
 author: karl
 date: Fri, 19 Jun 2009 11:31:18 GMT
-template: article.jade
+template: article.pug
 ---
 
 [Growl and Autotest work brilliantly together](/articles/simple-example-of-autotest-cucumber-and-growl/). Autotest runs all your tests in the background every time a file changes, giving you extremely fast feedback on your test driven development. And Growl notifications save you from needing to flip back to the Terminal to see the result of each test run, you get an unobtrusive popup in the corner of your screen showing the success or failure of the tests.

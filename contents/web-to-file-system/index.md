@@ -1,7 +1,7 @@
 ---
 title: Web to File System
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 **A Firefox extension which allows you to open the File System view of a website.**

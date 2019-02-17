@@ -2,7 +2,7 @@
 title: Ruby Growl Notifications in Windows
 author: karl
 date: Fri, 17 Jul 2009 14:24:57 GMT
-template: article.jade
+template: article.pug
 ---
 
 I previously posted an update that enables [Growl notifications for Autotest in Windows](/articles/autotest-growl-for-windows/).

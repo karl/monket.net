@@ -1,7 +1,7 @@
 ---
 title: Karl O'Keeffe
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 Personal Homepage of Karl O'Keeffe.

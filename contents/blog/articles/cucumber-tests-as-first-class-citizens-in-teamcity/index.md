@@ -2,7 +2,7 @@
 title: Cucumber Tests as First Class Citizens in TeamCity
 author: karl
 date: Thu, 03 Sep 2009 11:42:47 GMT
-template: article.jade
+template: article.pug
 ---
 
 [TeamCity](http://www.jetbrains.com/teamcity/) is a great continuous integration server, and has brilliant built in support for running [NUnit](http://www.nunit.org/) tests. The web interface updates automatically as each test is run, and gives immediate feedback on which tests have failed without waiting for the entire suite to finish. It also keeps track of tests over multiple builds, showing you exactly when each test first failed, how often they fail etc.

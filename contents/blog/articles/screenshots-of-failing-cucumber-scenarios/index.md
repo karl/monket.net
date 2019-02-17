@@ -2,7 +2,7 @@
 title: Screenshots of Failing Cucumber Scenarios
 author: karl
 date: Mon, 14 Sep 2009 12:20:30 GMT
-template: article.jade
+template: article.pug
 ---
 
 At 7digital we use [Cucumber](http://cukes.info/) and [Watir](http://wtr.rubyforge.org/) for running acceptance tests on some of our websites.
@@ -40,7 +40,7 @@ class DefaultWorld
       screenshot_path = DefaultWorld::DEFAULT_SCREENSHOT_PATH + '/' +  time + ' - ' + scenario_name + '.png'
       cmd = DefaultWorld::SNAPIT_PATH + ' "' + screenshot_path + '"'
       %x{#{cmd}}
-    end    
+    end
   end
 
   # [...] Other DefaultWorld code here if needed
@@ -54,7 +54,7 @@ end
 After do |scenario|
   take_screenshot_if_failed(scenario)
 
-  # [...] Other After hook code here if needed  
+  # [...] Other After hook code here if needed
 
 end
 ```

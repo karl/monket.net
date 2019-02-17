@@ -7,14 +7,14 @@
   },
   "dependencies": {
     "markdown-pdf": "9.0.0",
-    "moment": "2.22.2",
+    "moment": "2.24.0",
     "typogr": "0.6.8",
     "underscore": "1.9.1"
   },
   "private": true,
   "devDependencies": {
-    "wintersmith": "2.2.4",
-    "wintersmith-livereload": "0.2.2",
+    "wintersmith": "2.5.0",
+    "wintersmith-livereload": "1.0.1",
     "wintersmith-redirect": "0.1.0"
   }
 }

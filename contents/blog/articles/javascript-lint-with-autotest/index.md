@@ -2,7 +2,7 @@
 title: Javascript Lint with Autotest
 author: karl
 date: Mon, 15 Jun 2009 09:00:00 GMT
-template: article.jade
+template: article.pug
 ---
 
 As well as using [Autotest to run Cucumber scenarios](/articles/autotest-cucumber-and-growl/) I have also been looking into integrating lower level test into the Autotest cycle.

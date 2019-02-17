@@ -2,7 +2,7 @@
 title: Loris Autotest for Javascript
 author: karl
 date: Fri, 06 Nov 2009 14:26:54 GMT
-template: article.jade
+template: article.pug
 ---
 
 I've previously written a number of posts on javascript and autotest. Explaining how to integrate javascript lint, unit tests, and growl with the ruby [Autotest](http://ph7spot.com/articles/getting_started_with_autotest) project.

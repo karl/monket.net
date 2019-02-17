@@ -1,7 +1,7 @@
 ---
 title: Dancing Monkeys Change Log
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 ## Command-Line Control

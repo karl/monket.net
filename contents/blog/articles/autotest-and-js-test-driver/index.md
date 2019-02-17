@@ -2,7 +2,7 @@
 title: Autotest and JS Test Driver
 author: karl
 date: Fri, 19 Jun 2009 10:51:26 GMT
-template: article.jade
+template: article.pug
 ---
 
 Google recently released a new Javascript testing framework, [JS Test Driver](http://code.google.com/p/js-test-driver/). It provides incredibly fast execution for Javascript unit tests, and can be run from the command line without the need for manual control of browsers. Check out this [introduction to JS Test Driver by Miško Hevery](http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/).

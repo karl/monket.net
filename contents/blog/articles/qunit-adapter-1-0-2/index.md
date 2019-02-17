@@ -2,10 +2,10 @@
 title: QUnit Adapter 1.0.2
 author: karl
 date: Sun, 30 Aug 2009 20:14:51 GMT
-template: article.jade
+template: article.pug
 ---
 
-A new version of the [JS Test Driver QUnit Adapter](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter) is available. 
+A new version of the [JS Test Driver QUnit Adapter](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter) is available.
 
 Version 1.0.2 fixes a small bug where a module lifecycle object without Setup or Teardown methods would cause a test to error. For example:
 

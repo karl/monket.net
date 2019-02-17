@@ -2,7 +2,7 @@
 title: QUnit to JSpec Adapter
 author: karl
 date: Thu, 03 Sep 2009 08:07:16 GMT
-template: article.jade
+template: article.pug
 ---
 
 [JSpec][1] is a Javascript BDD framework with a lot of great things going for it: It can run without a browser (great for continuous integration servers), it

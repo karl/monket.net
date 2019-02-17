@@ -1,7 +1,7 @@
 ---
 title: JavaScript Logging Framework
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 A simple javascript logging framework.

@@ -2,7 +2,7 @@
 title: jsUnit Mock Timeouts and JS Test Driver
 author: karl
 date: Wed, 01 Jul 2009 16:45:30 GMT
-template: article.jade
+template: article.pug
 ---
 
 As part of my experimenting with [JS Test Driver](http://code.google.com/p/js-test-driver/), I have been porting over a suite of about 300 existing tests.

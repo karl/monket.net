@@ -2,7 +2,7 @@
 title: Simple example of Autotest, Cucumber, and Growl
 author: karl
 date: Wed, 17 Jun 2009 15:47:09 GMT
-template: article.jade
+template: article.pug
 ---
 
 As an example of getting Autotest, Cucumber, and Growl up and running I've created a super simple test project. You can [download the example project](Autotest-Cucumber.zip), or just create it from the code on this post.

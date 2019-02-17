@@ -2,7 +2,7 @@
 title: Small Update to Loris (0.1.3)
 author: karl
 date: Mon, 12 Apr 2010 13:11:21 GMT
-template: article.jade
+template: article.pug
 ---
 
 A few months ago [I wrote about Loris](/articles/loris-autotest-for-javascript/), a small tool that will automatically run your javascript tests whenever a file changes.

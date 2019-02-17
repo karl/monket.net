@@ -1,7 +1,7 @@
 ---
 title: Curriculum Vitae
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 # Karl O'Keeffe

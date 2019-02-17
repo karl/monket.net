@@ -2,7 +2,7 @@
 title: New QUnit to JS Test Driver adapter
 author: karl
 date: Tue, 23 Jun 2009 07:56:28 GMT
-template: article.jade
+template: article.pug
 ---
 
 <div class="info">The code in this post is out of date. The latest code can always be found in the [JS Test Driver google code site](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter)</div>

@@ -2,7 +2,7 @@
 title: Autotest, Cucumber, and Growl
 author: karl
 date: Mon, 15 Jun 2009 06:19:17 GMT
-template: article.jade
+template: article.pug
 ---
 
 [Autotest](http://ph7spot.com/articles/getting_started_with_autotest) is a great Ruby tool to speed up test driven development by automatically running your tests every time a file is saved.
@@ -62,7 +62,7 @@ Then update your .autotest configuration file to include the new growl-cucumber 
 #### .autotest
 
 ```ruby
-# Add the growl and growl-cucumber requires to your .autotest config file 
+# Add the growl and growl-cucumber requires to your .autotest config file
 require 'autotest/growl'
 require 'autotest/growl-cucumber'
 ```

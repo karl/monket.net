@@ -2,7 +2,7 @@
 title: Autotest Growl for Windows
 author: karl
 date: Fri, 10 Jul 2009 10:32:48 GMT
-template: article.jade
+template: article.pug
 ---
 
 In a previous blog post I detailed [how to get Autotest Growl notifications on Windows using Snarl](/articles/autotest-growl-notifications-on-windows-using-snarl/). But, there now exists an [official Growl client for Windows](http://www.growlforwindows.com/gfw/).

@@ -1,7 +1,7 @@
 ---
 title: Dancing Monkeys
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 ## Automatically Generate step files for Stepmania

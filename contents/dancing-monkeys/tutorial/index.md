@@ -1,7 +1,7 @@
 ---
 title: Dancing Monkeys Tutorial
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 What follows is a summary of the use of the [Dancing Gorilla](../) program, how to get around various problems, and some easier ways to use the programs. Let me, [Eric](http://erich.realtimerendering.com/), know of any corrections and additions you have.
@@ -192,10 +192,10 @@ You normally won't run into the following errors with Dancing Gorilla, they are 
 
 **ERROR: Unable to find LAME mp3 decoder.** You must run Dancing Monkeys from its "bin\win32" location. That is, you must change to this directory (see step #3 above) and then run it from there. Don't try to run it from the desktop or the Run command line. You also need to have the full distribution, that includes the LAME MP3 encoder/decoder in the proper place.
 
-**Error: Expected a variable, function, or constant, found "]".**  
-**ERROR: Unable to find music file.**  
-**WARNING: Unable to Output truncated version of song. Please copy original to output directory.**  
-**ERROR: Invalid fid.**  
+**Error: Expected a variable, function, or constant, found "]".**
+**ERROR: Unable to find music file.**
+**WARNING: Unable to Output truncated version of song. Please copy original to output directory.**
+**ERROR: Invalid fid.**
 You get a "FID" warning or error of any sort. These sorts of errors are caused by a bad input file name or output directory. For input and output, you need to put double-quotes ("") around the name. For output, the parent directory must exist and be writable; the output directory itself will be created if it does not already exist. You can also try omitting the output directory altogether, in which case the output goes to the default "Output" directory in the Dancing Monkeys area.
 
 **ERROR: A memory allocation request failed.** You've run out of virtual memory. One quick fix is to try a reboot and then run the program again; your system may have lost memory to other applications, and rebooting will clean up. Dancing Monkeys is a huge memory hog, it likes a gigabyte but is often happier with more. Also, buying more physical memory is a way to also possibly speed things up. Using virtual memory and hitting the disk swap file slows processing down considerably. Anyway, here's how to get more virtual memory in Windows XP, from [PedanticOmbudsman's post](http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&postdays=0&postorder=asc&start=319 "http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&postdays=0&postorder=asc&start=319"):
@@ -216,9 +216,9 @@ You get a "FID" warning or error of any sort. These sorts of errors are caused b
 
 You'll now have 1GB of virtual memory, which should be more than enough to make Dancing Monkeys happy. Half a gigabyte would probably be enough, but if you want to guarantee that the program won't crash from lack of memory, 1GB will definitely do it. It seems to use vastly different amounts of memory based on what song you give it, so there's really no way to predict how much it will need. Finally, if you're processing a long song and set the program to output a full-length step file for it, you might just be out of luck, period. Personally, I've tried to process an 8 minute song and always run out of memory, even with 1.6 GB free.
 
-**ERROR: Error decoding music.**  
-**ERROR: conversion of MP3 to WAV failed.**  
-**Error: sample frequency has changed in MP3 file - not supported**  
+**ERROR: Error decoding music.**
+**ERROR: conversion of MP3 to WAV failed.**
+**Error: sample frequency has changed in MP3 file - not supported**
 [Cyan Garamonde writes](http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&postdays=0&postorder=asc&start=196): Open up your original mp3 in something like [Audacity](http://audacity.sourceforge.net/) (which is free) or [GoldWave](http://www.goldwave.com/), then without making any changes to it, save it as a brand new mp3\. DM has trouble decoding mp3's with variable bitrates, so if you resave the mp3, it should get a steady bitrate that won't make DM crap out.
 
 **NOTE:** For all of the following errors, Cyan's advice of reading in your music file and writing it out again could be helpful.

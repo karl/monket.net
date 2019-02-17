@@ -1,7 +1,7 @@
 ---
 title: Screen Edge Task Switcher
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 Provides a more efficient way of switching tasks in Windows using the mouse.

@@ -2,7 +2,7 @@
 title: New version of Autotest Growl (with Window support)
 author: karl
 date: Fri, 24 Jul 2009 09:16:35 GMT
-template: article.jade
+template: article.pug
 ---
 
 In a previous post I detailed changes I made to [add Growl for Windows support to Autotest Growl](/articles/autotest-growl-for-windows/).

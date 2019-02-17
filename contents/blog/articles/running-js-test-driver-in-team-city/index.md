@@ -2,7 +2,7 @@
 title: Running JS Test Driver in Team City
 author: karl
 date: Tue, 25 Aug 2009 14:16:43 GMT
-template: article.jade
+template: article.pug
 ---
 
 [JS Test Driver](http://code.google.com/p/js-test-driver/) is a great new Javascript Testing Framework from the guys at Google. It provides a blisteringly fast, and easily automated way of running your Javascript unit tests. See this [introduction to JS Test Driver by Miško Hevery](http://misko.hevery.com/2009/05/22/yet-another-javascript-testing-framework/) for a great overview.

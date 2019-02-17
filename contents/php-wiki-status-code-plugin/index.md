@@ -1,7 +1,7 @@
 ---
 title: PHP Wiki Status Code Plugin
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 ## Description

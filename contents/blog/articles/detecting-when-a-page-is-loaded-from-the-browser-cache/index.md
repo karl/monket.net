@@ -2,7 +2,7 @@
 title: Detecting when a page is loaded from the browser cache
 author: karl
 date: Fri, 12 Feb 2010 13:55:50 GMT
-template: article.jade
+template: article.pug
 ---
 
 When a user presses the back button in their browser to return to a previous page, that page is usually loaded straight from the browser's cache, without any requests being made to the server. When that page shows information that could be out of date (such a an old list of products in your basket) this can cause problems.

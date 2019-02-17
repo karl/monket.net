@@ -2,7 +2,7 @@
 title: QUnit and JS Test Driver
 author: karl
 date: Sun, 21 Jun 2009 17:18:04 GMT
-template: article.jade
+template: article.pug
 ---
 
 <div class="info">This post has obsoleted been the [new QUnit Adapter](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter) I created, check it out!</div>

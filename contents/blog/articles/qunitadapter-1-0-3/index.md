@@ -2,7 +2,7 @@
 title: QUnitAdapter 1.0.3
 author: karl
 date: Tue, 10 Nov 2009 07:32:34 GMT
-template: article.jade
+template: article.pug
 ---
 
 Just a small update to the JS Test Driver [QUnitAdapter](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter). Version 1.0.3 has been released, and fixes a single bug:

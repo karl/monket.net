@@ -2,7 +2,7 @@
 title: Update to QUnit Adapter
 author: karl
 date: Thu, 02 Jul 2009 06:32:25 GMT
-template: article.jade
+template: article.pug
 ---
 
 I've made a small update to the [QUnit Adapter for JS Test Driver](http://code.google.com/p/js-test-driver/wiki/QUnitAdapter).

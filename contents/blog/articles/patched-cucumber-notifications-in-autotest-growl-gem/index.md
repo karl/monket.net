@@ -2,7 +2,7 @@
 title: Patched Cucumber notifications in autotest-growl gem
 author: karl
 date: Mon, 15 Jun 2009 20:17:30 GMT
-template: article.jade
+template: article.pug
 ---
 
 Following on to my [previous post on Autotest, Cucumber, and Growl](/articles/autotest-cucumber-and-growl/), I have forked the autotest-growl repository, and applied my fix for Cucumber notifications.

@@ -1,7 +1,7 @@
 ---
 title: Monket Calendar (old)
 author: karl
-template: article.jade
+template: article.pug
 ---
 
 ## This is an old version
