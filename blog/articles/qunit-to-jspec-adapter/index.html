@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title>QUnit to JSpec Adapter - Karl O'Keeffe
-    </title>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <style>body {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width"><title>QUnit to JSpec Adapter - Karl O'Keeffe</title><link rel="alternate" href="/feed.xml" type="application/rss+xml" title=""><link rel="apple-touch-icon" href="/apple-touch-icon.png"><style>body {
   box-sizing: border-box;
   color: #333;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -312,38 +302,20 @@ code.lang-markdown .bullet {
     margin-bottom: 1em;
   }
 }
-
-    </style>
-  </head>
-  <body class="page">
-    <header class="header">
-      <div class="content-wrap">
-        <div class="logo">
-          <h1><a href="/">Karl O'Keeffe</a></h1>
-        </div>
-      </div>
-    </header>
-    <div id="content">
-      <div class="content-wrap">
-        <article class="article">
-          <header>
-            <h2><a href="/blog/articles/qunit-to-jspec-adapter/">QUnit to JSpec Adapter</a></h2>
-            <p class="date"><span>03. September 2009</span></p>
-          </header>
-          <section class="content"><p><a href="/articles/new-qunit-to-js-test-driver-adapter/">JSpec</a> is a Javascript <span class="caps">BDD</span> framework with a lot of great things going for it: It can run without a browser (great for continuous integration servers), it
+</style></head><body class="page"><header class="header"><div class="content-wrap"><div class="logo"><h1><a href="/">Karl O'Keeffe</a></h1></div></div></header><div id="content"><div class="content-wrap"><article class="article"><header><h2><a href="/blog/articles/qunit-to-jspec-adapter/">QUnit to JSpec Adapter</a></h2><p class="date"><span>03. September 2009</span></p></header><section class="content"><p><a href="http://visionmedia.github.com/jspec/">JSpec</a> is a Javascript <span class="caps">BDD</span> framework with a lot of great things going for it: It can run without a browser (great for continuous integration servers), it
 has a Ruby style custom syntax which makes tests easier to write and read, and
 it uses a <span class="caps">BDD</span> style describe/should<span class="widont">&nbsp;</span>syntax.</p>
 <p>It’s a very tempting framework to use, but I already have a large collection
 of tests using qunit. I don’t want to use two frameworks for one project, and I
 don’t want to rewrite 300+ tests, so what to<span class="widont">&nbsp;</span>do?</p>
 <p>How about a QUnit to JSpec Adapter, in the vein of my
-<a href="http://github.com/visionmedia/js-mock-timers/tree/master">QUnit to <span class="caps">JS</span> Test Driver Adapter</a>. Just load the adapter into JSpec as a
+<a href="/articles/new-qunit-to-js-test-driver-adapter/">QUnit to <span class="caps">JS</span> Test Driver Adapter</a>. Just load the adapter into JSpec as a
 normal javascript file, and you can now<code>exec()</code> qunit test files in<span class="widont">&nbsp;</span>JSpec.</p>
 <h2 id="downloading-the-qunit-to-jspec-adapter">Downloading the QUnit to JSpec<span class="widont">&nbsp;</span>Adapter</h2>
 <p>First up <a href="/blog/articles/qunit-to-jspec-adapter/QUnitToJSpecAdapter.js">download the QUnit to JSpec Adapter</a>, or copy the code below, and
 save it somewhere in your project (e.g. a <code>lib</code> folder).</p>
-<h4 id="-qunittojspecadapter-js-3-"><a href="/blog/articles/qunit-to-jspec-adapter/QUnitToJSpecAdapter.js">QUnitToJSpecAdapter.js</a></h4>
-<pre><code class="lang-javascript"><span class="comment">/*
+<h4 id="qunittojspecadapter-js"><a href="/blog/articles/qunit-to-jspec-adapter/QUnitToJSpecAdapter.js">QUnitToJSpecAdapter.js</a></h4>
+<pre><code class="language-javascript"><span class="comment">/*
 QUnitToJSpecAdapter
 Version: 1.0.0
 
@@ -361,21 +333,21 @@ you need to set it up and tear it down in each test.
 (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
 
     JSpec.addMatchers({
-        be_ok : <span class="string">'!!actual'</span>
+        <span class="attr">be_ok</span> : <span class="string">'!!actual'</span>
     });
 
     JSpec.context = JSpec.defaultContext;
     JSpec.context.QUnitAdapter = {
-        modules: []
+        <span class="attr">modules</span>: []
     };
 
     <span class="built_in">module</span> = <span class="function"><span class="keyword">function</span>(<span class="params">name, lifecycle</span>) </span>{
 
         JSpec.context.QUnitAdapter.modules.push({
-            name: name,
-            tests: [],
-            setup:    (lifecycle &amp;&amp; lifecycle.setup)    ? lifecycle.setup    : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{},
-            teardown: (lifecycle &amp;&amp; lifecycle.teardown) ? lifecycle.teardown : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{}
+            <span class="attr">name</span>: name,
+            <span class="attr">tests</span>: [],
+            <span class="attr">setup</span>:    (lifecycle &amp;&amp; lifecycle.setup)    ? lifecycle.setup    : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{},
+            <span class="attr">teardown</span>: (lifecycle &amp;&amp; lifecycle.teardown) ? lifecycle.teardown : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{}
         });
 
         JSpec.describe(name, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
@@ -384,45 +356,45 @@ you need to set it up and tear it down in each test.
             <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; length; i++) {
                 it(QUnitAdapter.modules[<span class="number">0</span>].tests[i].name, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
                     <span class="keyword">var</span> adapter = {
-                        expectedAsserts: <span class="number">0</span>,
-                        calledAsserts: <span class="number">0</span>,
+                        <span class="attr">expectedAsserts</span>: <span class="number">0</span>,
+                        <span class="attr">calledAsserts</span>: <span class="number">0</span>,
 
-                        expect: <span class="function"><span class="keyword">function</span>(<span class="params">count</span>) </span>{
+                        <span class="attr">expect</span>: <span class="function"><span class="keyword">function</span>(<span class="params">count</span>) </span>{
                             adapter.expectedAsserts = count;
                         },
 
-                        ok: <span class="function"><span class="keyword">function</span>(<span class="params">actual, msg</span>) </span>{
+                        <span class="attr">ok</span>: <span class="function"><span class="keyword">function</span>(<span class="params">actual, msg</span>) </span>{
                             adapter.calledAsserts++;
                             JSpec.expect(actual).to(JSpec.matchers.be_ok);
                         },
 
-                        equals: <span class="function"><span class="keyword">function</span>(<span class="params">a, b, msg</span>) </span>{
+                        <span class="attr">equals</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a, b, msg</span>) </span>{
                             adapter.calledAsserts++;
                             JSpec.expect(a).to(JSpec.matchers.be, b);
                         },
 
-                        start: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+                        <span class="attr">start</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
                             <span class="keyword">throw</span> <span class="string">'start and stop methods are not available when using JSpec.\n'</span> +
                                 <span class="string">'Use the JSpec timer to deal with timeouts and intervals:\n'</span> +
                                 <span class="string">'http://github.com/visionmedia/jspec/tree/master'</span>;
                         },
 
-                        stop: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+                        <span class="attr">stop</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
                             <span class="keyword">throw</span> <span class="string">'start and stop methods are not available when using JSpec.\n'</span> +
                                 <span class="string">'Use the JSpec timer to deal with timeouts and intervals:\n'</span> +
                                 <span class="string">'http://github.com/visionmedia/jspec/tree/master'</span>;
                         },
 
-                        same: <span class="function"><span class="keyword">function</span>(<span class="params">a, b, msg</span>) </span>{
+                        <span class="attr">same</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a, b, msg</span>) </span>{
                             adapter.calledAsserts++;
                             JSpec.expect(a).to(JSpec.matchers.eql, b);
                         },
 
-                        reset: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+                        <span class="attr">reset</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
                             <span class="keyword">throw</span> <span class="string">'reset method is not available when using JSpec'</span>;
                         },
 
-                        isLocal: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+                        <span class="attr">isLocal</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
                             <span class="keyword">return</span> <span class="literal">false</span>;
                         }
                     };
@@ -455,19 +427,18 @@ you need to set it up and tear it down in each test.
 
     test = <span class="function"><span class="keyword">function</span>(<span class="params">name, testCallback</span>) </span>{
         JSpec.context.QUnitAdapter.modules[JSpec.context.QUnitAdapter.modules.length - <span class="number">1</span>].tests.push({
-            name: name,
-            testCallback: testCallback
+            <span class="attr">name</span>: name,
+            <span class="attr">testCallback</span>: testCallback
         });
     };
 
-})();
-</code></pre>
+})();</code></pre>
 <h2 id="having-some-qunit-tests">Having some QUnit<span class="widont">&nbsp;</span>tests</h2>
 <p>First up you need some qunit tests. Having the qunit test files in the <code>spec</code>
 directory helps simplify loading<span class="widont">&nbsp;</span>them.</p>
 <p>As an example you can use the<span class="widont">&nbsp;</span>following:</p>
 <h4 id="qunit-tests-js">qunit-tests.js</h4>
-<pre><code class="lang-javascript"><span class="built_in">module</span>(<span class="string">'Examples'</span>);
+<pre><code class="language-javascript"><span class="built_in">module</span>(<span class="string">'Examples'</span>);
 
 test(<span class="string">'True is ok'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
   expect(<span class="number">1</span>);
@@ -475,10 +446,10 @@ test(<span class="string">'True is ok'</span>, <span class="function"><span clas
 });
 
 <span class="built_in">module</span>(<span class="string">'Examples with lifecycle'</span>, {
-  setup: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="attr">setup</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     started = <span class="string">'yes'</span>;
   },
-  teardown: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="attr">teardown</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     ok(started);
     started = <span class="literal">null</span>;
   }
@@ -487,72 +458,67 @@ test(<span class="string">'True is ok'</span>, <span class="function"><span clas
 test(<span class="string">'Test has started'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
   expect(<span class="number">2</span>);
   equals(started, <span class="string">'yes'</span>);
-});
-</code></pre>
+});</code></pre>
 <h2 id="configuring-qunit-support">Configuring QUnit Support</h2>
 <p>Then to enable QUnit tests to be run in JSpec, you must have JSpec load the
 adapater as a normal javascript file, and<code>exec()</code> the QUnit test file as you
 would a JSpec spec<span class="widont">&nbsp;</span>file.</p>
 <p>For JSpec rhino support your <code>spec.rhino.js</code> file would look<span class="widont">&nbsp;</span>like:</p>
 <h4 id="spec-rhino-js">spec.rhino.js</h4>
-<pre><code class="lang-javascript">load(<span class="string">'/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.10.0/lib/jspec.js'</span>)
+<pre><code class="language-javascript">load(<span class="string">'/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.10.0/lib/jspec.js'</span>)
 load(<span class="string">'lib/QUnitAdapter.js'</span>)
 
 JSpec
 .exec(<span class="string">'spec/qunit-tests.js'</span>)
-.run({ formatter : JSpec.formatters.Terminal })
-.report()
-</code></pre>
+.run({ <span class="attr">formatter</span> : JSpec.formatters.Terminal })
+.report()</code></pre>
 <p>Notice how the QUnit test file is exec’d exactly as you would a normal spec
 file. You can run specs and Qunit tests along side each other without any<span class="widont">&nbsp;</span>interference.</p>
 <p>And for running the tests within a browser your <code>spec.dom.html</code> file would look<span class="widont">&nbsp;</span>like:</p>
 <h4 id="spec-dom-html">spec.dom.html</h4>
-<pre><code class="lang-html"><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.css"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../lib/QUnitAdapter.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript">
+<pre><code class="language-html"><span class="tag">&lt;<span class="name">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.css"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/Library/Ruby/Gems/1.8/gems/visionmedia-jspec-2.2.1/lib/jspec.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../lib/QUnitAdapter.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">
             <span class="function"><span class="keyword">function</span> <span class="title">runSuites</span><span class="params">()</span> </span>{
                 JSpec
                 .exec(<span class="string">'qunit-tests.js'</span>)
                 .run()
                 .report()
             }
-        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"jspec"</span> <span class="attribute">onLoad</span>=<span class="value">"runSuites();"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"jspec-top"</span>&gt;</span>
+        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"jspec"</span> <span class="attr">onLoad</span>=<span class="string">"runSuites();"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"jspec-top"</span>&gt;</span>
 
-## JSpec _<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">document</span>.write(JSpec.version)</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>_
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"jspec"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"jspec-bottom"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre>
+## JSpec _<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="built_in">document</span>.write(JSpec.version)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>_
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"jspec"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"jspec-bottom"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">html</span>&gt;</span></code></pre>
 <h2 id="running-the-tests">Running the tests</h2>
 <p>To run the tests just launch JSpec as normal. My prefered method is to run the
 tests using rhino, to do this navigate to your project root directory in a
 terminal window and<span class="widont">&nbsp;</span>run:</p>
-<pre><code class="lang-bash">jspec run --rhino
-</code></pre>
+<pre><code class="language-bash">jspec run --rhino</code></pre>
 <p>And you should now see your QUnit tests running in<span class="widont">&nbsp;</span>JSpec:</p>
-<pre><code class="lang-plain"> Passes: 5 Failures: 0
+<pre><code class="language-plain"> Passes: 5 Failures: 0
 
  Examples
   True is ok..
 
  Examples with lifecycle
-  Test has started...
-</code></pre>
+  Test has started...</code></pre>
 <h2 id="limitations">Limitations</h2>
 <p>This adapter has many of the same limitations and my
-<a href="/articles/new-qunit-to-js-test-driver-adapter/">QUnit to <span class="caps">JS</span> Test Driver<span class="widont">&nbsp;</span>adapter</a>.</p>
+<a href="http://visionmedia.github.com/jspec/">QUnit to <span class="caps">JS</span> Test Driver<span class="widont">&nbsp;</span>adapter</a>.</p>
 <p>The tests must run synchronously (which means no use of the qunit <code>stop</code> and
 <code>start</code> methods).</p>
 <p>If you need to test timeouts, intervals, or other asynchronous sections of code
-, you can use the<a href="http://github.com/visionmedia/js-mock-timers/tree/master">mock timers that come with<span class="widont">&nbsp;</span>JSpec</a>.</p>
+, you can use the<a href="/articles/new-qunit-to-js-test-driver-adapter/">mock timers that come with<span class="widont">&nbsp;</span>JSpec</a>.</p>
 <p>QUnit <span class="caps">DOM</span> support is not included. Consider avoiding interacting directly with
 the browser within your unit tests. But if you do need to, you’ll need to create
 and remove the <span class="caps">DOM</span> objects yourself with each test, or the setup and teardown<span class="widont">&nbsp;</span>methods.</p>
@@ -560,7 +526,7 @@ and remove the <span class="caps">DOM</span> objects yourself with each test, or
 they lose access to any closure variables. For example, the follow test would
 work in QUnit, but not in JSpec. When running in JSpec access to the<code>setup</code>
 variable is<span class="widont">&nbsp;</span>lost.</p>
-<pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+<pre><code class="language-javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
   <span class="keyword">var</span> setup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     <span class="comment">// do setup...</span>
   };
@@ -568,19 +534,6 @@ variable is<span class="widont">&nbsp;</span>lost.</p>
   test(<span class="string">'name'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
     setup();
   });
-})();
-</code></pre>
-</section>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <div class="content-wrap">
-        <div class="nav"><a href="/blog/">Full blog</a></div>
-        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
-
-        </section>
-      </div>
-    </footer>
-  </body>
-</html>
+})();</code></pre>
+</section></article></div></div><footer><div class="content-wrap"><div class="nav"><a href="/blog/">Full blog</a></div><section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
+</section></div></footer></body></html>

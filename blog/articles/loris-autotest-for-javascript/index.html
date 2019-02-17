@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title>Loris Autotest for Javascript - Karl O'Keeffe
-    </title>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <style>body {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width"><title>Loris Autotest for Javascript - Karl O'Keeffe</title><link rel="alternate" href="/feed.xml" type="application/rss+xml" title=""><link rel="apple-touch-icon" href="/apple-touch-icon.png"><style>body {
   box-sizing: border-box;
   color: #333;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -312,73 +302,50 @@ code.lang-markdown .bullet {
     margin-bottom: 1em;
   }
 }
-
-    </style>
-  </head>
-  <body class="page">
-    <header class="header">
-      <div class="content-wrap">
-        <div class="logo">
-          <h1><a href="/">Karl O'Keeffe</a></h1>
-        </div>
-      </div>
-    </header>
-    <div id="content">
-      <div class="content-wrap">
-        <article class="article">
-          <header>
-            <h2><a href="/blog/articles/loris-autotest-for-javascript/">Loris Autotest for Javascript</a></h2>
-            <p class="date"><span>06. November 2009</span></p>
-          </header>
-          <section class="content"><p>I’ve previously written a number of posts on javascript and autotest. Explaining how to integrate javascript lint, unit tests, and growl with the ruby <a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a><span class="widont">&nbsp;</span>project.</p>
+</style></head><body class="page"><header class="header"><div class="content-wrap"><div class="logo"><h1><a href="/">Karl O'Keeffe</a></h1></div></div></header><div id="content"><div class="content-wrap"><article class="article"><header><h2><a href="/blog/articles/loris-autotest-for-javascript/">Loris Autotest for Javascript</a></h2><p class="date"><span>06. November 2009</span></p></header><section class="content"><p>I’ve previously written a number of posts on javascript and autotest. Explaining how to integrate javascript lint, unit tests, and growl with the ruby <a href="http://ph7spot.com/articles/getting_started_with_autotest">Autotest</a><span class="widont">&nbsp;</span>project.</p>
 <p>While this all worked, it felt a little clunky as Autotest doesn’t natively support the idea of running multiple tasks one after the other. Rather than hack at the Autotest codebase, I thought I’d get some ruby experience by rolling my own autotest-style framework. Not great for reuse of code, but a great way for me to learn<span class="widont">&nbsp;</span>:)</p>
 <h2 id="loris">Loris</h2>
 <p>Loris will monitor your project and run <a href="http://www.javascriptlint.com/">Javascript Lint</a> and <a href="http://code.google.com/p/js-test-driver/"><span class="caps">JS</span> Test Driver</a> whenever a file changes, it will report the results to the command line and using <a href="http://growl.info/">Growl</a>. If required, Loris will automatically start the <span class="caps">JS</span> Test Driver server and register your default browser with<span class="widont">&nbsp;</span>it.</p>
 <h3 id="installing">Installing</h3>
 <p>Loris is hosted on <a href="http://gemcutter.org/">Gemcutter</a>, so you need to install their gem if you haven’t<span class="widont">&nbsp;</span>already.</p>
-<pre><code class="lang-bash">sudo gem update --system
+<pre><code class="language-bash">sudo gem update --system
 sudo gem install gemcutter
-gem tumble
-</code></pre>
+gem tumble</code></pre>
 <p>Then to install Loris, just run the<span class="widont">&nbsp;</span>following:</p>
-<pre><code class="lang-bash">sudo gem install loris
-</code></pre>
+<pre><code class="language-bash">sudo gem install loris</code></pre>
 <p>Loris has no command line options, and no configuration file (at the moment). It looks for configurations files to decide which tasks to<span class="widont">&nbsp;</span>run.</p>
 <h3 id="configuring-javascript-lint">Configuring Javascript Lint</h3>
 <p>To enable Javascript Lint, create a <code>jsl.conf</code> file in the folder where you run Loris. This should be a standard Javascript Lint config file. If you need here is an <a href="http://mike.kruckenberg.com/archives/2009/03/configuration-options-for-javascript-lint.html">example Javascript Lint config<span class="widont">&nbsp;</span>file</a></p>
 <p>You just need to specify which files Javascipt Lint should process. For<span class="widont">&nbsp;</span>example:</p>
-<pre><code class="lang-plain">### Files
+<pre><code class="language-plain">### Files
 # Specify which files to lint
 # Use &quot;+recurse&quot; to enable recursion (disabled by default).
 # To add a set of files, use &quot;+process FileName&quot;, &quot;+process Folder\Path\*.js&quot;,
 # or &quot;+process Folder\Path\*.htm&quot;.
 #
 +process src/js/*.js
-+process tests/js/*.js
-</code></pre>
++process tests/js/*.js</code></pre>
 <p>If no <code>jsl.conf</code> file is found, the Javascript Lint task is silently<span class="widont">&nbsp;</span>skipped.</p>
 <h3 id="configuring-js-test-driver">Configuring <span class="caps">JS</span> Test<span class="widont">&nbsp;</span>Driver</h3>
 <p>To enable <span class="caps">JS</span> Test Driver, create a <code>jsTestDriver.conf</code> file in the folder where you run Loris. This should be a standard <a href="http://code.google.com/p/js-test-driver/wiki/ConfigurationFile"><span class="caps">JS</span> Test Driver config<span class="widont">&nbsp;</span>file</a>.</p>
 <p>This should specify which files <span class="caps">JS</span> Test Driver should process, and how it connects to the <span class="caps">JS</span> Test Driver server. For<span class="widont">&nbsp;</span>example:</p>
-<pre><code class="lang-yaml">server: http://localhost:9876
+<pre><code class="language-yaml"><span class="attr">server:</span> <span class="attr">http://localhost:9876</span>
 
-load:
-  - tests/qunit/equiv.js
-  - tests/qunit/QUnitAdapter.js
+<span class="attr">load:</span>
+<span class="bullet">  -</span> <span class="string">tests/qunit/equiv.js</span>
+<span class="bullet">  -</span> <span class="string">tests/qunit/QUnitAdapter.js</span>
 
-  - src/js/*.js
-  - tests/js/*.js
-</code></pre>
+<span class="bullet">  -</span> <span class="string">src/js/*.js</span>
+<span class="bullet">  -</span> <span class="string">tests/js/*.js</span></code></pre>
 <p>If no <code>jsTestDriver.conf</code> file is found, the <span class="caps">JS</span> Test Driver task is silently<span class="widont">&nbsp;</span>skipped.</p>
 <p>To make it really simple to run <span class="caps">JS</span> Test Driver tests, if the server is set to run on <code>localhost</code>, and Loris doesn’t detect one running, it will automatically start one, and register your default browser with<span class="widont">&nbsp;</span>it.</p>
 <p>This makes it a one step process to get automated tests up and<span class="widont">&nbsp;</span>running.</p>
 <h3 id="running">Running</h3>
 <p>To run, open a command line window, navigate to the root folder of your project, and<span class="widont">&nbsp;</span>run:</p>
-<pre><code class="lang-bash">loris
-</code></pre>
+<pre><code class="language-bash">loris</code></pre>
 <p>Loris will run Javascript Lint, and <span class="caps">JS</span> Test Driver tasks (if it finds their configuration files), and will output the results on the command<span class="widont">&nbsp;</span>line.</p>
 <h4 id="example-output">Example output</h4>
-<pre><code class="lang-plain">Javascript Lint
+<pre><code class="language-plain">Javascript Lint
 success
 All files are clean
 
@@ -397,8 +364,7 @@ All tests pass
 [PASSED] Asserts.test Same assert succeeds
 [PASSED] Lifecycle.test Setup and Teardown are run, and can contain assertions
 Total 8 tests (Passed: 8; Fails: 0; Errors: 0) (3.00 ms)
-  Firefox 1.9.1.4 MacIntel: Run 8 tests (Passed: 8; Fails: 0; Errors 0) (3.00 ms)
-</code></pre>
+  Firefox 1.9.1.4 MacIntel: Run 8 tests (Passed: 8; Fails: 0; Errors 0) (3.00 ms)</code></pre>
 <p>Every time you make a change to a Javascript file, or a configuration file, Loris will automatically re-run Javascript Lint and <span class="caps">JS</span> Test Driver. So you can instant feedback on your<span class="widont">&nbsp;</span>changes.</p>
 <p>Loris will clear the command line when re-running tasks. So the latest run is always at the top of you command<span class="widont">&nbsp;</span>line.</p>
 <p>Loris will also report a summary of each task using <a href="http://growl.info/">Growl</a> (if it is installed). This allows you to get quick feedback without needing to refer back to the command line on every<span class="widont">&nbsp;</span>change.</p>
@@ -411,17 +377,5 @@ Total 8 tests (Passed: 8; Fails: 0; Errors: 0) (3.00 ms)
 <p>Loris only comes with a few tasks (Javascript Lint, <span class="caps">JS</span> Test Driver, JSpec, and RSpec), but I hope to allow it have new tasks added via new gems (kind of similar to<span class="widont">&nbsp;</span>Autotest).</p>
 <p>It comes packaged with a version of Javascript Lint, and <span class="caps">JS</span> Test Driver, and will use it’s own versions. It only includes the <span class="caps">OSX</span> and Windows versions of Javascript<span class="widont">&nbsp;</span>Lint.</p>
 <p>If you want to modify the code, just fork the <a href="http://github.com/karl/loris">Loris github<span class="widont">&nbsp;</span>project</a></p>
-</section>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <div class="content-wrap">
-        <div class="nav"><a href="/blog/">Full blog</a></div>
-        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
-
-        </section>
-      </div>
-    </footer>
-  </body>
-</html>
+</section></article></div></div><footer><div class="content-wrap"><div class="nav"><a href="/blog/">Full blog</a></div><section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
+</section></div></footer></body></html>

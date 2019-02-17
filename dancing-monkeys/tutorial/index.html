@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title>Dancing Monkeys Tutorial - Karl O'Keeffe
-    </title>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <style>body {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width"><title>Dancing Monkeys Tutorial - Karl O'Keeffe</title><link rel="alternate" href="/feed.xml" type="application/rss+xml" title=""><link rel="apple-touch-icon" href="/apple-touch-icon.png"><style>body {
   box-sizing: border-box;
   color: #333;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -312,24 +302,7 @@ code.lang-markdown .bullet {
     margin-bottom: 1em;
   }
 }
-
-    </style>
-  </head>
-  <body class="page">
-    <header class="header">
-      <div class="content-wrap">
-        <div class="logo">
-          <h1><a href="/">Karl O'Keeffe</a></h1>
-        </div>
-      </div>
-    </header>
-    <div id="content">
-      <div class="content-wrap">
-        <article class="article">
-          <header>
-            <h2><a href="/dancing-monkeys/tutorial/">Dancing Monkeys Tutorial</a></h2>
-          </header>
-          <section class="content"><p>What follows is a summary of the use of the <a href="/dancing-monkeys/">Dancing Gorilla</a> program, how to get around various problems, and some easier ways to use the programs. Let me, <a href="http://erich.realtimerendering.com/">Eric</a>, know of any corrections and additions you<span class="widont">&nbsp;</span>have.</p>
+</style></head><body class="page"><header class="header"><div class="content-wrap"><div class="logo"><h1><a href="/">Karl O'Keeffe</a></h1></div></div></header><div id="content"><div class="content-wrap"><article class="article"><header><h2><a href="/dancing-monkeys/tutorial/">Dancing Monkeys Tutorial</a></h2></header><section class="content"><p>What follows is a summary of the use of the <a href="/dancing-monkeys/">Dancing Gorilla</a> program, how to get around various problems, and some easier ways to use the programs. Let me, <a href="http://erich.realtimerendering.com/">Eric</a>, know of any corrections and additions you<span class="widont">&nbsp;</span>have.</p>
 <h2 id="installing-and-running">Installing and Running</h2>
 <p>Download the latest version of Dancing Monkeys and Gorilla from the <a href="/dancing-monkeys/">Dancing Monkeys website</a>. <a href="http://www.download.com/WinZip/3000-2250_4-10454671.html?tag=lst-0-2">Unzip</a> (a.k.a. extract) the file and run the executable inside (e.g. double-click). Follow the installation instructions. If you made a desktop icon for the program, it will be labelled “DancingGorilla”. If not, you will find Gorilla.exe in the topmost directory wherever you unpacked Dancing<span class="widont">&nbsp;</span>Monkeys.</p>
 <p><strong>Quick Start:</strong> Run Gorilla. Hit “<span class="caps">OK</span>” to finish with the Configure screen. Drag and drop <span class="caps">MP3</span> and <span class="caps">WAV</span> songs and directories of songs into the white window. Hit “<span class="caps">GO</span>” and come back a good long while later (it takes 5-15 minutes to convert each song). Some songs convert, some don’t, it’s about 50/50. Start StepMania and you’ll see a new collection of step files in “My<span class="widont">&nbsp;</span>Music”.</p>
@@ -406,14 +379,12 @@ code.lang-markdown .bullet {
 #OFFSET:-0.699320;
 #BPMS:0=145.280843;
 #MUSIC:03 Booker Tease.wav;
-#STOPS:27.000000=1.651973;
-</code></pre><p>Most of the fields are pretty obvious. Say I want the file to have a nicer title, getting rid of the “03” track number. I also want to put in the artist’s name, and I want to get rid of the stop found in the music. Here’s the edited<span class="widont">&nbsp;</span>header:</p>
+#STOPS:27.000000=1.651973;</code></pre><p>Most of the fields are pretty obvious. Say I want the file to have a nicer title, getting rid of the “03” track number. I also want to put in the artist’s name, and I want to get rid of the stop found in the music. Here’s the edited<span class="widont">&nbsp;</span>header:</p>
 <pre><code>#TITLE:Booker Tease;
 #ARTIST:The Residents;
 #OFFSET:-0.699320;
 #BPMS:0=145.280843;
-#MUSIC:03 Booker Tease.wav;
-</code></pre><p>So all I did was edit the first two lines and delete the “#<span class="caps">STOPS</span>” line (by the way, excessive stops pretty much means Dancing Monkeys failed to latch onto the tune for large parts of the song). There are plenty of other fields you could add to the header, see the documentation on the <a href="http://www.stepmania.com/wiki/The_.SM_file_format">StepMania</a><span class="widont">&nbsp;</span>site.</p>
+#MUSIC:03 Booker Tease.wav;</code></pre><p>So all I did was edit the first two lines and delete the “#<span class="caps">STOPS</span>” line (by the way, excessive stops pretty much means Dancing Monkeys failed to latch onto the tune for large parts of the song). There are plenty of other fields you could add to the header, see the documentation on the <a href="http://www.stepmania.com/wiki/The_.SM_file_format">StepMania</a><span class="widont">&nbsp;</span>site.</p>
 <p>You can obviously continue on from there, adding and changing arrows, etc. In fact, most manual step creators agree: Dancing Monkeys does excellent beat detection and gap offset computations (when it can find the beat). Computation of these two numbers can save an author hours of manual search, so even if you hate the resulting steps of Dancing Monkeys, you can always just use the resulting step file as a starting<span class="widont">&nbsp;</span>point.</p>
 <h2 id="album-art">Album Art</h2>
 <p>Dancing Monkeys and Gorilla attempt to find and save album art inside the <span class="caps">MP3</span> file itself or the directory and store it with your step file. Note that <a href="http://www.tuaw.com/2006/09/14/itunes-7-cover-art-tidbits">iTunes 7 album art</a> is not currently supported. If you want to put album art with your step files, find an image you want to use for the song, e.g. visit Amazon. Then just copy the <span class="caps">PNG</span> or <span class="caps">JPEG</span> file to where the step file is located and change the name to “banner.png” or “banner.jpg”. This will show album art for when the song is selected. You can copy this image file and rename it “background.png” or “background.jpg”, which will then also show the album cover at the start and end of the song itself. See the <a href="http://www.stepmania.com/wiki/Song_Banners_and_Backgrounds">StepMania site</a> for more<span class="widont">&nbsp;</span>information.</p>
@@ -448,7 +419,11 @@ code.lang-markdown .bullet {
 <p>You normally won’t run into the following errors with Dancing Gorilla, they are more likely when runnig Dancing Monkeys itself from the command<span class="widont">&nbsp;</span>line:</p>
 <p><strong><span class="caps">ERROR</span>: Too many arguments in command line.</strong> You need to put double-quotes around your input and output file/directory<span class="widont">&nbsp;</span>names.</p>
 <p><strong><span class="caps">ERROR</span>: Unable to find <span class="caps">LAME</span> mp3 decoder.</strong> You must run Dancing Monkeys from its “bin\win32” location. That is, you must change to this directory (see step #3 above) and then run it from there. Don’t try to run it from the desktop or the Run command line. You also need to have the full distribution, that includes the <span class="caps">LAME</span> <span class="caps">MP3</span> encoder/decoder in the proper<span class="widont">&nbsp;</span>place.</p>
-<p><strong>Error: Expected a variable, function, or constant, found “]”.</strong><br><strong><span class="caps">ERROR</span>: Unable to find music file.</strong><br><strong><span class="caps">WARNING</span>: Unable to Output truncated version of song. Please copy original to output directory.</strong><br><strong><span class="caps">ERROR</span>: Invalid fid.</strong><br>You get a “<span class="caps">FID</span>” warning or error of any sort. These sorts of errors are caused by a bad input file name or output directory. For input and output, you need to put double-quotes (“”) around the name. For output, the parent directory must exist and be writable; the output directory itself will be created if it does not already exist. You can also try omitting the output directory altogether, in which case the output goes to the default “Output” directory in the Dancing Monkeys<span class="widont">&nbsp;</span>area.</p>
+<p><strong>Error: Expected a variable, function, or constant, found “]”.</strong>
+<strong><span class="caps">ERROR</span>: Unable to find music file.</strong>
+<strong><span class="caps">WARNING</span>: Unable to Output truncated version of song. Please copy original to output directory.</strong>
+<strong><span class="caps">ERROR</span>: Invalid fid.</strong>
+You get a “<span class="caps">FID</span>” warning or error of any sort. These sorts of errors are caused by a bad input file name or output directory. For input and output, you need to put double-quotes (“”) around the name. For output, the parent directory must exist and be writable; the output directory itself will be created if it does not already exist. You can also try omitting the output directory altogether, in which case the output goes to the default “Output” directory in the Dancing Monkeys<span class="widont">&nbsp;</span>area.</p>
 <p><strong><span class="caps">ERROR</span>: A memory allocation request failed.</strong> You’ve run out of virtual memory. One quick fix is to try a reboot and then run the program again; your system may have lost memory to other applications, and rebooting will clean up. Dancing Monkeys is a huge memory hog, it likes a gigabyte but is often happier with more. Also, buying more physical memory is a way to also possibly speed things up. Using virtual memory and hitting the disk swap file slows processing down considerably. Anyway, here’s how to get more virtual memory in Windows <span class="caps">XP</span>, from <a href="http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&amp;postdays=0&amp;postorder=asc&amp;start=319" title="http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&amp;postdays=0&amp;postorder=asc&amp;start=319">PedanticOmbudsman’s post</a>:</p>
 <p>1. Right click on the “My Computer” icon on the desktop and click “Properties”, or enter the Control Panel and go to<span class="widont">&nbsp;</span>System.</p>
 <p>2. In the System properties window that opens, Click on the Advanced<span class="widont">&nbsp;</span>tab.</p>
@@ -458,7 +433,10 @@ code.lang-markdown .bullet {
 <p>6. In the Virtual Memory window, click Custom Size, and set both numbers to <span class="caps">1024MB</span>, then click<span class="widont">&nbsp;</span>Set.</p>
 <p>7. Click Okay on all the windows you opened, and reboot the computer if<span class="widont">&nbsp;</span>prompted.</p>
 <p>You’ll now have <span class="caps">1GB</span> of virtual memory, which should be more than enough to make Dancing Monkeys happy. Half a gigabyte would probably be enough, but if you want to guarantee that the program won’t crash from lack of memory, <span class="caps">1GB</span> will definitely do it. It seems to use vastly different amounts of memory based on what song you give it, so there’s really no way to predict how much it will need. Finally, if you’re processing a long song and set the program to output a full-length step file for it, you might just be out of luck, period. Personally, I’ve tried to process an 8 minute song and always run out of memory, even with 1.6 <span class="caps">GB</span><span class="widont">&nbsp;</span>free.</p>
-<p><strong><span class="caps">ERROR</span>: Error decoding music.</strong><br><strong><span class="caps">ERROR</span>: conversion of <span class="caps">MP3</span> to <span class="caps">WAV</span> failed.</strong><br><strong>Error: sample frequency has changed in <span class="caps">MP3</span> file - not supported</strong><br><a href="http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&amp;postdays=0&amp;postorder=asc&amp;start=196">Cyan Garamonde writes</a>: Open up your original mp3 in something like <a href="http://audacity.sourceforge.net/">Audacity</a> (which is free) or <a href="http://www.goldwave.com/">GoldWave</a>, then without making any changes to it, save it as a brand new mp3. <span class="caps">DM</span> has trouble decoding mp3’s with variable bitrates, so if you resave the mp3, it should get a steady bitrate that won’t make <span class="caps">DM</span> crap<span class="widont">&nbsp;</span>out.</p>
+<p><strong><span class="caps">ERROR</span>: Error decoding music.</strong>
+<strong><span class="caps">ERROR</span>: conversion of <span class="caps">MP3</span> to <span class="caps">WAV</span> failed.</strong>
+<strong>Error: sample frequency has changed in <span class="caps">MP3</span> file - not supported</strong>
+<a href="http://www.ddrfreak.com/phpBB2/viewtopic.php?t=76391&amp;postdays=0&amp;postorder=asc&amp;start=196">Cyan Garamonde writes</a>: Open up your original mp3 in something like <a href="http://audacity.sourceforge.net/">Audacity</a> (which is free) or <a href="http://www.goldwave.com/">GoldWave</a>, then without making any changes to it, save it as a brand new mp3. <span class="caps">DM</span> has trouble decoding mp3’s with variable bitrates, so if you resave the mp3, it should get a steady bitrate that won’t make <span class="caps">DM</span> crap<span class="widont">&nbsp;</span>out.</p>
 <p><strong><span class="caps">NOTE</span>:</strong> For all of the following errors, Cyan’s advice of reading in your music file and writing it out again could be<span class="widont">&nbsp;</span>helpful.</p>
 <p><strong><span class="caps">ERROR</span>: Index exceeds matrix dimensions.</strong> Some weird glitch. In the output you’ll typically see something like this: Frame# 4999/4987 128 kbps <span class="caps">MS</span>. However, notice how in this example the first number is greater than the second – this should never<span class="widont">&nbsp;</span>happen.</p>
 <p><strong><span class="caps">ERROR</span>: Subscript indices must either be real positive integers or logicals.</strong> No idea, sounds like an internal defect of some sort. If you see this sort of error, please send any additional information (code file name, e.g. “DancingMonkeys.m”, and line number) to<span class="widont">&nbsp;</span>EricHaines.</p>
@@ -468,16 +446,5 @@ code.lang-markdown .bullet {
 <p><strong><span class="caps">ERROR</span>: Sorry. No help in figuring out the problem &#8230;</strong> Best error message ever. Sorry, no help from me either, at this point. Send <a href="http://erich.realtimerendering.com/">Eric</a> the file and line number information, as well as the dm_log.txt in your output<span class="widont">&nbsp;</span>directory.</p>
 <p>Amazing the thing runs at all! But really, 99% of the time you’ll never see these errors (except the dreaded <span class="caps">BPM</span> error) if you avoid the output directory, put double-quotes around the input file, and run from the bin\win32<span class="widont">&nbsp;</span>directory.</p>
 <p>If all else fails, <strong><a href="http://erich.realtimerendering.com/">email<span class="widont">&nbsp;</span>Eric</a></strong>.</p>
-</section>
-        </article>
-      </div>
-    </div>
-    <footer>
-      <div class="content-wrap">
-        <section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
-
-        </section>
-      </div>
-    </footer>
-  </body>
-</html>
+</section></article></div></div><footer><div class="content-wrap"><section class="about"><p>Personal homepage of <a href="/">Karl O’Keeffe</a>.</p>
+</section></div></footer></body></html>
