@@ -14,7 +14,7 @@ template: article.pug
 
 I'm a front end developer available for hire as a contractor.
 
-**Looking for a new front end dev contract starting April 2019**
+**Currently in a contract due to finish at the end of June 2019**
 
 ## Introduction
 
