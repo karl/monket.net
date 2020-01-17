@@ -14,11 +14,11 @@ template: article.pug
 
 I'm a front end developer available for hire as a contractor.
 
-**Currently in a contract due to finish at the end of June 2019**
+**Currently in a contract due to finish at the end of February 2020**
 
 ## Introduction
 
-I'm a JavaScript expert who has developed large scale single page applications for Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
+I'm a JavaScript expert who has developed large scale single page applications for Thirs Space Learning, Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
 is one of my passions, as well as assisting with process changes within teams.
 
 I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers. I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
@@ -29,21 +29,23 @@ I also feel it is important to understand all levels of development, and have en
 
 ### Senior Developer (Contract) | Third Space Learning/Matr, London
 
-_October 2018 - March 2019_
+_October 2018 - February 2020_
 
 Third Space Learning offers 1-to-1 online maths tutoring for schools and at home under both the Third Space Learning and Matr brands.
 
 ### Tasks & Responsibilities
 
-I was brought in to help complete the main tutoring portion of the Matr project before the launch deadline. I had one month to take the tutorial web app from a prototype to a live product. Once launched I was then tasked with transitioning two of the technology platforms the tutorial app depended on. I was also asked to help the team with their architectural decisions.
+I was brought in to help complete the main tutoring portion of the Matr project before the launch deadline. I had one month to take the classroom web app from a prototype to a live product. Once launched I was then tasked with transitioning two of the technology platforms the tutorial app depended on. I spearheaded architectural improvement to the codebase to increase developer productivity and page speed.
 
 ### Achievements
 
-I was able to build all the required features of the tutorial app web within a month, and it went live with no major bugs. I then rounded out the product with extra product features. I lead the transition from custom code to Twilio and PubNub. I ensured that we supported running both tech stacks simultaneously allowing us to seemlessly transition tutors and students across with confidence. Moving to these third party providers helped improve the reliability of the tutorial app and reduce the maintence burden.
+I was able to build all the required features of the classroom app web within a month, and it went live with no major bugs. I then rounded out the product with extra product features. I lead the transition from custom code to Twilio and PubNub. I ensured that we supported running both tech stacks simultaneously allowing us to seemlessly transition tutors and students across with confidence. Moving to these third party providers helped improve the reliability of the tutorial app and reduce the maintence burden.
+
+I lead the migration of the parent app from Create React App to Next.js. This drastically improved the page speed of the app, with pages moving from 20 seconds for first contentful paint to 2 seconds.
 
 ### Technologies Used
 
-`react`, `javascript`, `redux`, `redux-saga`, `material-ui`, `webpack`, `es6`, `bitbucket`
+`react`, `next.js`, `javascript`, `redux`, `redux-saga`, `material-ui`, `webpack`, `es6`, `bitbucket`
 
 
 ### Senior Developer (Contract) | Sky, London
