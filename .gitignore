@@ -2,3 +2,4 @@ node_modules
 build/*
 npm-debug.log
 /contents/cv/Karl O'Keeffe - CV.pdf
+.DS_Store
