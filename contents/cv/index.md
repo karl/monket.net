@@ -18,7 +18,7 @@ I'm a front end developer available for hire as a contractor.
 
 ## Introduction
 
-I'm a JavaScript expert who has developed large scale single page applications for Thirs Space Learning, Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
+I'm a JavaScript expert who has developed large scale single page applications for Third Space Learning, Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
 is one of my passions, as well as assisting with process changes within teams.
 
 I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers. I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
@@ -27,9 +27,27 @@ I also feel it is important to understand all levels of development, and have en
 
 ## Experience
 
+### React Consultant (Contract) | Funding Xchange, London
+
+_Jan 2020 - Present_
+
+Funding Xchange is marketplace to connect small businesses with lenders.
+
+### Tasks & Responsibilities
+
+I was brought in as a React expert to assist Funding Xchange migrate their front end from Java JSP pages to React.
+
+### Achievements
+
+I set up a custom mobile optimised version of Storybook to provide a faster feedback loop when developing React components. I refined the build system, including adding linting and code formatting. I mentored members on the team on the React development best practices and patterns.
+
+### Technologies Used
+
+`react`, `storybook`, `eslint`, `prettier`, `axios`
+
 ### Senior Developer (Contract) | Third Space Learning/Matr, London
 
-_October 2018 - February 2020_
+_October 2018 - Present_
 
 Third Space Learning offers 1-to-1 online maths tutoring for schools and at home under both the Third Space Learning and Matr brands.
 
