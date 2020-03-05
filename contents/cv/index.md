@@ -12,38 +12,23 @@ template: article.pug
 * [CV as PDF](Karl%20O'Keeffe%20-%20CV.pdf)
 
 
-I'm a front end developer available for hire as a contractor.
+I'm a senior software developer with a front end focus, looking for contract or permanent roles.
 
 **Currently in a contract due to finish on the 17th of March 2020**
 
 ## Introduction
 
-I'm a JavaScript expert who has developed large scale single page applications for Third Space Learning, Sky, Geckoboard, Qumu, 7digital, and Philips. I've worked across multiple teams, leading teams at both Geckoboard and Qumu. I've helped teams manage framework transitions in large codebases and plan and implement large architectural changes. Hiring and mentoring new developers
-is one of my passions, as well as assisting with process changes within teams.
+I’m a senior developer with over 15 years of experience across a variety of businesses and roles (e.g. team lead, front end, server side, tooling, dev ops).
 
-I have over 10 years solid experience coding HTML, JavaScript, and CSS for all browsers. I strongly believe in using tooling to improve the development experience, from storybooks to hot code reloading. I enjoy working with continuous integration and short iterations of improvement and feedback.
+I’ve built large web apps in a variety of frameworks and languages (you see a lot come and go in 15 years!). Most recently I’ve been working with React and TypeScript, a very productive combination. I have lead technology transitions in a sustainable way, helping teams switch to modern tech and practices without slowing down development speed. I’ve introduced techniques such as state charts to help bring rigour and tame the complexity of UI development.
 
-I also feel it is important to understand all levels of development, and have ensured I have real work experience in server side development, project management, leading teams, testing, and automating deployment.
+I've also been a team lead, empowering team to make excellent technical decisions and helping them grow as individuals. I’ve reworked hiring processes to help bring in the best team members, and run regular tech discussions to share knowledge and experience and help teams grow. Outside of individual teams I’ve given a talk at Facebook on the benefits of Storybook as a dev and test tool.
+
+My passion for providing the best user experience has driven me to work on all levels on the tech stack including server side, tooling, and dev ops. I’ve built everything from cloud functions running Node to PHP servers with smart caching.  I’ve even built a custom browser testing framework to support a complex app that spans multiple domains and authentication strategies.
+
+On the tooling side I’m passionate increasing developer productivity by speeding up feedback loops (using tools like Storybook and hot reloading). My biggest contribution to tooling was probably writing the JSX formatting in Prettier, a tool now used by most teams writing React. If you don’t like how React is formatted now, that is my fault and I’m sorry 😂
 
 ## Experience
-
-### React Consultant (Contract) | Funding Xchange, London
-
-_Jan 2020 - Present_
-
-Funding Xchange is marketplace to connect small businesses with lenders.
-
-### Tasks & Responsibilities
-
-I was brought in as a React expert to assist Funding Xchange migrate their front end from Java JSP pages to React.
-
-### Achievements
-
-I set up a custom mobile optimised version of Storybook to provide a faster feedback loop when developing React components. I refined the build system, including adding linting and code formatting. I mentored members on the team on the React development best practices and patterns.
-
-### Technologies Used
-
-`react`, `storybook`, `eslint`, `prettier`, `axios`
 
 ### Senior Developer (Contract) | Third Space Learning/Matr, London
 
@@ -64,6 +49,25 @@ I lead the migration of the parent app from Create React App to Next.js. This dr
 ### Technologies Used
 
 `react`, `next.js`, `javascript`, `redux`, `redux-saga`, `material-ui`, `webpack`, `es6`, `bitbucket`
+
+
+### React Consultant (Contract) | Funding Xchange, London
+
+_Jan 2020 - Feb 2020_
+
+Funding Xchange is marketplace to connect small businesses with lenders.
+
+### Tasks & Responsibilities
+
+I was brought in on a short term contract in as a React expert to assist Funding Xchange migrate their front end from Java JSP pages to React.
+
+### Achievements
+
+I set up a custom mobile optimised version of Storybook to provide a faster feedback loop when developing React components. I refined the build system, including adding linting and code formatting. I mentored members on the team on the React development best practices and patterns.
+
+### Technologies Used
+
+`react`, `storybook`, `eslint`, `prettier`, `axios`
 
 
 ### Senior Developer (Contract) | Sky, London
@@ -209,11 +213,11 @@ Artificial Intelligence I/II, Operating Systems I/II, Software Engineering I/II/
 
 ## Projects
 
-**Redux Saga State Machine**, [https://redux-saga-state-machine.netlify.com/](https://redux-saga-state-machine.netlify.com/)
+**Prettier**, [https://github.com/prettier/prettier](https://github.com/prettier/prettier)
 
-A work in progress library to build a Redux Saga based state machine runner. Built upon xstate and Redux Saga.
+A code formatter for JavaScript (and other languages). Prettier is an open source project that I have contributed to. I focused on improving the formatting of JSX.
 
-This was borne out of some of the work I did while at Sky.
+The improvements I made to JSX formatting in Prettier is probably the most impactful work I've done (in terms of number of people who benefit). Prettier is now used by most teams that use React.
 
 **React Storybook Talk**, [https://www.youtube.com/watch?v=UxbQ-cGnoCE](https://www.youtube.com/watch?v=UxbQ-cGnoCE)
 
@@ -221,13 +225,17 @@ An introduction to React Storybook, what it is, how to use it, and some of the b
 
 A talk I gave as part of the React London Meetup at the Facebook offices.
 
-**Prettier**, [https://github.com/prettier/prettier](https://github.com/prettier/prettier)
-
-A code formatter for JavaScript (and other languages). Prettier is an open source project that I have contributed to. I've focused on improving the formatting of JSX.
-
 **React Async I/O Testbed**, [https://github.com/karl/react-async-io-testbed](https://github.com/karl/react-async-io-testbed)
 
 This repo attempts to recreate the the IO demo from Dan Abramov's Beyond React 16 talk using the React 16. It shows how to implement suspense style async UI behaviours using React 16.
+
+**Redux Saga State Machine**, [https://redux-saga-state-machine.netlify.com/](https://redux-saga-state-machine.netlify.com/)
+
+A prototype of a library to build a Redux Saga based state machine runner. Built upon xstate and Redux Saga.
+
+This was borne out of some of the work I did while at Sky.
+
+Note I built this before I had experience with TypeScript, it doesn't reflect how I now write TypeScript!
 
 **Dancing Monkeys**, [https://monket.net/dancing-monkeys/](https://monket.net/dancing-monkeys/)
 
