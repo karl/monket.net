@@ -314,90 +314,132 @@ code.lang-markdown .bullet {
 <h2 id="introduction">Introduction</h2>
 <p>I’m a senior developer with over 15 years of experience across a variety of businesses and roles (e.g. team lead, front end, server side, tooling, dev<span class="widont">&nbsp;</span>ops).</p>
 <p>I’ve built large web apps in a variety of frameworks and languages (you see a lot come and go in 15 years!). Most recently I’ve been working with React and TypeScript, a very productive combination. I have lead technology transitions in a sustainable way, helping teams switch to modern tech and practices without slowing down development speed. I’ve introduced techniques such as state charts to help bring rigour and tame the complexity of <span class="caps">UI</span><span class="widont">&nbsp;</span>development.</p>
-<p>I’ve also been a team lead, empowering team to make excellent technical decisions and helping them grow as individuals. I’ve reworked hiring processes to help bring in the best team members, and run regular tech discussions to share knowledge and experience and help teams grow. Outside of individual teams I’ve given a talk at Facebook on the benefits of Storybook as a dev and test<span class="widont">&nbsp;</span>tool.</p>
-<p>My passion for providing the best user experience has driven me to work on all levels on the tech stack including server side, tooling, and dev ops. I’ve built everything from cloud functions running Node to <span class="caps">PHP</span> servers with smart caching.  I’ve even built a custom browser testing framework to support a complex app that spans multiple domains and authentication<span class="widont">&nbsp;</span>strategies.</p>
+<p>I’ve also been a team lead, empowering teams to make excellent technical decisions and helping them grow as individuals. I’ve reworked hiring processes to help bring in the best team members, and run regular tech discussions to share knowledge and experience and help teams grow. Outside of individual teams I’ve given a talk at Facebook on the benefits of Storybook as a dev and test<span class="widont">&nbsp;</span>tool.</p>
+<p>My passion for providing the best user experiences has driven me to work on all levels on the tech stack including server side, tooling, and dev ops. I’ve built everything from cloud functions running Node to <span class="caps">PHP</span> servers with smart caching.  I’ve even built a custom browser testing framework to support a complex app that spans multiple domains and authentication<span class="widont">&nbsp;</span>strategies.</p>
 <p>On the tooling side I’m passionate increasing developer productivity by speeding up feedback loops (using tools like Storybook and hot reloading). My biggest contribution to tooling was probably writing the <span class="caps">JSX</span> formatting in Prettier, a tool now used by most teams writing React. If you don’t like how React is formatted now, that is my fault and I’m sorry<span class="widont">&nbsp;</span>😂</p>
 <h2 id="experience">Experience</h2>
 <h3 id="senior-developer-contract-third-space-learning-matr-london">Senior Developer (Contract) | Third Space Learning/Matr,<span class="widont">&nbsp;</span>London</h3>
 <p><em>October 2018 -<span class="widont">&nbsp;</span>Present</em></p>
 <p>Third Space Learning offers 1-to-1 online maths tutoring for schools and at home under both the Third Space Learning and Matr<span class="widont">&nbsp;</span>brands.</p>
-<h3 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h3>
-<p>I was brought in to help complete the main tutoring portion of the Matr project before the launch deadline. I had one month to take the classroom web app from a prototype to a live product. Once launched I was then tasked with transitioning two of the technology platforms the tutorial app depended on. I spearheaded architectural improvement to the codebase to increase developer productivity and page<span class="widont">&nbsp;</span>speed.</p>
-<h3 id="achievements">Achievements</h3>
-<p>I was able to build all the required features of the classroom app web within a month, and it went live with no major bugs. I then rounded out the product with extra product features. I lead the transition from custom code to Twilio and PubNub. I ensured that we supported running both tech stacks simultaneously allowing us to seemlessly transition tutors and students across with confidence. Moving to these third party providers helped improve the reliability of the tutorial app and reduce the maintence<span class="widont">&nbsp;</span>burden.</p>
-<p>I lead the migration of the parent app from Create React App to Next.js. This drastically improved the page speed of the app, with pages moving from 20 seconds for first contentful paint to 2<span class="widont">&nbsp;</span>seconds.</p>
-<h3 id="technologies-used">Technologies Used</h3>
-<p><code>react</code>, <code>next.js</code>, <code>javascript</code>, <code>redux</code>, <code>redux-saga</code>, <code>material-ui</code>, <code>webpack</code>, <code>es6</code>, <code>bitbucket</code></p>
+<h4 id="achievements">Achievements</h4>
+<ul>
+<li>Built online classroom web app in React and TypeScript, using WebRTC for audio and web sockets for real time message passing. Hit our 1 month deadline and released to customers with no major<span class="widont">&nbsp;</span>issues.</li>
+<li>Added support for third party solutions for audio (with Twilio) and message passing (with PubNub), using feature flags to allow quick switching between available<span class="widont">&nbsp;</span>solutions.</li>
+<li>Used React hooks and context to provide easy time travel functionality to whiteboard <span class="caps">UI</span><span class="widont">&nbsp;</span>components.</li>
+<li>Built out server side functionality in Node running on Google Cloud functions to manage secure interactions with Twilio, PubNub, and <span class="caps">GCP</span><span class="widont">&nbsp;</span>Storage.</li>
+<li>Improved site load speed from 20s to 2s by migrating from Create React App to Next.js utilising server rendering, and bundle<span class="widont">&nbsp;</span>splitting.</li>
+<li>Starting building out a React based component library to be used across the<span class="widont">&nbsp;</span>app.</li>
+<li>Built a custom end to end testing framework based on Jest and Puppeteer to test in browser with automated screenshots and<span class="widont">&nbsp;</span>logging.</li>
+<li>Built a client/server logging library in TypeScript that support browser console logging and batched sending to the<span class="widont">&nbsp;</span>server.</li>
+<li>Prototyped a React based whiteboard <span class="caps">UI</span> using Immer patches to provide real time shared interaction with eventual<span class="widont">&nbsp;</span>consistency.</li>
+</ul>
+<h4 id="technologies-used">Technologies Used</h4>
+<p><code>react</code>, <code>next.js</code>, <code>typescript</code>, <code>node</code>, <code>redux</code>, <code>redux-saga</code>, <code>material-ui</code>, <code>webpack</code>, <code>es6</code>, <code>jest</code>, <code>bitbucket</code>, <code>twilio</code>, <code>pubnub</code></p>
 <h3 id="react-consultant-contract-funding-xchange-london">React Consultant (Contract) | Funding Xchange,<span class="widont">&nbsp;</span>London</h3>
 <p><em>Jan 2020 - Feb<span class="widont">&nbsp;</span>2020</em></p>
 <p>Funding Xchange is marketplace to connect small businesses with<span class="widont">&nbsp;</span>lenders.</p>
-<h3 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h3>
-<p>I was brought in on a short term contract in as a React expert to assist Funding Xchange migrate their front end from Java <span class="caps">JSP</span> pages to<span class="widont">&nbsp;</span>React.</p>
-<h3 id="achievements">Achievements</h3>
-<p>I set up a custom mobile optimised version of Storybook to provide a faster feedback loop when developing React components. I refined the build system, including adding linting and code formatting. I mentored members on the team on the React development best practices and<span class="widont">&nbsp;</span>patterns.</p>
-<h3 id="technologies-used">Technologies Used</h3>
-<p><code>react</code>, <code>storybook</code>, <code>eslint</code>, <code>prettier</code>, <code>axios</code></p>
+<p>I was brought in on a short term contract to kick start a transition to<span class="widont">&nbsp;</span>React.</p>
+<h4 id="achievements">Achievements</h4>
+<ul>
+<li>Detailed potential migration routes (embedded iframe/route splitting/integrating into existing<span class="widont">&nbsp;</span>monolith).</li>
+<li>Detailed React build strategies (Create React App/Next.js/custom Webpack <span class="amp">&amp;</span> Babel<span class="widont">&nbsp;</span>config).</li>
+<li>Detailed styling options available (<span class="caps">CSS</span> modules/Styled-<span class="caps">JSX</span>/existing monolith<span class="widont">&nbsp;</span><span class="caps">CSS</span>).</li>
+<li>Set up eslint and <span class="caps">CI</span> guard rails to assist with good code<span class="widont">&nbsp;</span>practices.</li>
+<li>Mentored members of the team on React development best practices and patterns (none of them had used React<span class="widont">&nbsp;</span>before).</li>
+<li>Built a custom mobile optimised version of Storybook to work with constraints from their existing<span class="widont">&nbsp;</span>codebase.</li>
+<li>Built some components to demonstrate good use of Storybook, testing, and React<span class="widont">&nbsp;</span>hooks.</li>
+</ul>
+<h4 id="technologies-used">Technologies Used</h4>
+<p><code>react</code>, <code>storybook</code>, <code>eslint</code>, <code>prettier</code>, <code>axios</code>, <code>jest</code></p>
 <h3 id="senior-developer-contract-sky-london">Senior Developer (Contract) | Sky,<span class="widont">&nbsp;</span>London</h3>
 <p><em>July 2017 - October<span class="widont">&nbsp;</span>2018</em></p>
 <p>Sky is a multinational media company empowing customers to watch content at home and on all their<span class="widont">&nbsp;</span>devices.</p>
-<h3 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h3>
-<p>Developing the Sky Go Desktop app for macOS and Windows, an Electron app for watching video and live <span class="caps">TV</span>. Leading large scale improvements and architectural changes across the codebase. Interviewing candidates and mentoring new hires. Helping management implement new development processes within the<span class="widont">&nbsp;</span>team.</p>
-<h3 id="achievements">Achievements</h3>
-<p>Streamlining the hiring process for new developers, including a stronger focus on technical skills and cultural fit. Improving the speed and reliability of the <span class="caps">CI</span> process, reducing time to merge PRs from 4+ hours to 20 minutes. Leading change in development process by example, with increased focus on tackling risks early. Introducing a streamlined translation process across multiple products and teams. Setting up a fortnightly tech retrospective to help empower developers to suggest and implement technical improvements. Pioneering the use of state machines to tame complex asyncronous<span class="widont">&nbsp;</span>interactions.</p>
-<h3 id="technologies-used">Technologies Used</h3>
-<p><code>react</code>, <code>javascript</code>, <code>electron</code>, <code>redux</code>, <code>redux-saga</code>, <code>webpack</code>, <code>es6</code>, <code>jenkins</code></p>
+<h4 id="achievements">Achievements</h4>
+<ul>
+<li>Built functionality for the Electron based Sky Go Desktop<span class="widont">&nbsp;</span>app.</li>
+<li>Took charge of the hiring process, introducing a new technical test and stronger evaulation of tech skills and cultural<span class="widont">&nbsp;</span>fit.</li>
+<li>Introduced yarn workspaces, reducing duplication in node_modules and bringing unit test run time down from 9 minutes to 1<span class="widont">&nbsp;</span>minute.</li>
+<li>Systematically fixed flaky end to end tests and added automated re-running, this reduced <span class="caps">PR</span> merge time from 4+ hours to 20<span class="widont">&nbsp;</span>minutes.</li>
+<li>Introduced POEditor to streamline the translation process. The was so successful it was immediately adopted by the Sky Go mobile<span class="widont">&nbsp;</span>team.</li>
+<li>Pioneered the use of state machines (based on XState) with Redux Saga to manage async interactions. Extracted into a work in progress library <a href="https://redux-saga-state-machine.netlify.com">https://redux-saga-state-machine.netlify.com</a></li>
+<li>Set up a fortnightly tech retrospective to help empower developers to suggest and implement technical<span class="widont">&nbsp;</span>improvements.</li>
+</ul>
+<h4 id="technologies-used">Technologies Used</h4>
+<p><code>react</code>, <code>javascript</code>, <code>electron</code>, <code>redux</code>, <code>redux-saga</code>, <code>xstate</code>, <code>jest</code>, <code>webpack</code>, <code>es6</code>, <code>jenkins</code></p>
 <h3 id="team-lead-front-end-developer-geckoboard-london">Team Lead <span class="amp">&amp;</span> Front End Developer | Geckoboard,<span class="widont">&nbsp;</span>London</h3>
 <p><em>November 2015 – July<span class="widont">&nbsp;</span>2017</em></p>
 <p>Geckoboard helps companies turn their key performance data into beautiful, accessible <span class="caps">KPI</span> dashboards that keep teams informed, motivated and<span class="widont">&nbsp;</span>data-driven.</p>
-<h3 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h3>
-<p>Leading a team of 6 (one of the two dev teams at Geckoboard). Including regular 1 to 1’s with team members, and advocating for the team to the leadership group. Recruiting new front end developers from screening to organising interviews. Running fortnightly retrospectives, providing a safe place to discuss and take aciton on issues facing the development teams. Mentoring junior developers with architecture discussions and code<span class="widont">&nbsp;</span>reviews.</p>
-<h3 id="achievements">Achievements</h3>
-<p>Introducing React Storybook for rapid feedback when building new <span class="caps">UI</span> components. Enabling hot reloading of react components in a large existing codebase, tightening the development feedback loop. Creating a dedicated 2 week on-boarding process for new developers. Introducing a monthly front end discussion group. This served as a space where we could discuss new ideas and ensure the team had a shared vision and understanding. Migrating from a custom flux implementation to Redux. Developing a framework for testing async code synchronously using mock clocks, dates, and promises. This allowed explicit control of timing while ensuring tests ran as fast as<span class="widont">&nbsp;</span>possible.</p>
-<h3 id="technologies-used">Technologies Used</h3>
-<p><code>react</code>, <code>javascript</code>, <code>es6</code>, <code>redux</code>, <code>sass</code>, <code>webpack</code>, <code>d3</code>, <code>storybook</code></p>
+<h4 id="achievements">Achievements</h4>
+<ul>
+<li>Lead a team of 6 (one of the two dev teams at Geckoboard). Including regular 1 to 1’s with team members, and advocating for the team to the leadership<span class="widont">&nbsp;</span>group.</li>
+<li>Mentoring junior developers and leading<span class="widont">&nbsp;</span>retrospectives.</li>
+<li>Introducing Storybook for rapid dev feedback, and improved testing. I gave a talk on this at<span class="widont">&nbsp;</span>Facebook.</li>
+<li>Migrating a custom flux implementation to<span class="widont">&nbsp;</span>Redux.</li>
+<li>Built a framework in Jest for testing async code synchronously (using Lolex, Bluebird, and Babel to mock clocks, promises, and<span class="widont">&nbsp;</span>async/await).</li>
+<li>Implemented a new layout strategy in Prettier to revamp how <span class="caps">JSX</span> code is formatted. Done during Geckboard’s “innovation”<span class="widont">&nbsp;</span>days.</li>
+<li>Re-built Geckoboard’s automated chart labelling algorithm in<span class="widont">&nbsp;</span>D3.</li>
+</ul>
+<h4 id="technologies-used">Technologies Used</h4>
+<p><code>react</code>, <code>javascript</code>, <code>es6</code>, <code>redux</code>, <code>sass</code>, <code>prettier</code>, <code>webpack</code>, <code>d3</code>, <code>storybook</code></p>
 <h3 id="lead-front-end-developer-qumu-london">Lead Front End Developer | Qumu,<span class="widont">&nbsp;</span>London</h3>
 <p><em>April 2010 – November<span class="widont">&nbsp;</span>2015</em></p>
-<p>Qumu provide a web app for businesses to create and share videos and presentations. This is used by a diverse range of clients from small businesses to multinational banks. Easily embeddable Widgets are provided to allow businesses to seamlessly share videos and presentations within their own sites, while the <span class="caps">REST</span> based <span class="caps">API</span> allows clients to customise their interaction with the<span class="widont">&nbsp;</span>product.</p>
-<h4 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h4>
-<p>Building the front end for the Qumu online video editing platform, including online video trimming. Leading the front end team, from architecture to code reviews. Migrating from an in house JavaScript framework to Angular, while always being able to release. Building high performance embedded <span class="caps">JS</span> widgets for client sites (written in CoffeeScript). Designing the server and client <span class="caps">API</span>. Implementing automated build process with one click deploy and<span class="widont">&nbsp;</span>rollback.</p>
+<p>Qumu provide a web app for businesses to create and share videos and presentations. This is used by a diverse range of clients from small businesses to multinational<span class="widont">&nbsp;</span>banks.</p>
 <h4 id="achievements">Achievements</h4>
-<p>Designing and building the widgets project from scratch in CoffeeScript and <span class="caps">PHP</span>. Architecting a no-downtime one click deployment process that allows the widgets to be updated as needed without affecting any of the client sites they are used on. Introducing shorter development and deployment cycles to increase the speed of feedback and the pace at which improvements reach customers. Migrating to Angular without stalling the development process or doing a parallel<span class="widont">&nbsp;</span>implementation.</p>
+<ul>
+<li>Built embeddable video widgets using CoffeeScript and <span class="caps">PHP</span>. I built the client and server components. Implemented a stale-while-revalidating caching<span class="widont">&nbsp;</span>layer.</li>
+<li>Built a deploy process to pre-populate cache entries to ensure no drop in performance post<span class="widont">&nbsp;</span>release.</li>
+<li>Incrementally transitioning a custom <span class="caps">UI</span> framework to Angular. We approached this inside out, graduly migrating the <span class="caps">UI</span> while still regularly releasing and adding new<span class="widont">&nbsp;</span>features.</li>
+<li>Desiging a new <span class="caps">REST</span> based <span class="caps">API</span>. Initially used by customers, we migrated the <span class="caps">UI</span> to this and decomissioned the old<span class="widont">&nbsp;</span><span class="caps">API</span>.</li>
+</ul>
 <h4 id="technologies-used">Technologies Used</h4>
 <p><code>angular</code>, <code>javascript</code>, <code>coffeescript</code>, <code>jquery</code>, <code>less</code>, <code>jenkins</code>, <code>html</code>, <code>css</code>, <code>php</code></p>
 <h3 id="front-end-web-developer-7-digital-london">Front End Web Developer | 7 Digital,<span class="widont">&nbsp;</span>London</h3>
 <p><em>May 2008 – April<span class="widont">&nbsp;</span>2010</em></p>
-<p>7digital sell music online, direct to the consumer at 7digital.com, and business to business. They offer bespoke tailored sites (such as hmvdigital.com), white label stores (1000+ at last count), and a full catalogue and download <span class="caps">API</span> for 3<span class="ord">rd</span> party apps (such as<span class="widont">&nbsp;</span>Spotify).</p>
-<h4 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h4>
-<p>Designing and creating the <span class="caps">UI</span> for a soon to be released Locker Plus rich client web app. <span class="caps">UI</span> development for 7digital.com and hmvdigital.com. Project management of download manager app. User Interaction Design and wire<span class="widont">&nbsp;</span>framing.</p>
+<p>7digital sell music online, direct to the consumer at 7digital.com, and business to business. They offer bespoke tailored sites and white label<span class="widont">&nbsp;</span>stores.</p>
 <h4 id="achievements">Achievements</h4>
-<p>Building Locker Plus <span class="caps">UI</span> from scratch in Javascript using the ExtJS framework Integrating qUnit, <span class="caps">JS</span> Test Driver, and TeamCity to automate the build and test process. User Interaction Design of Locker Plus, ensuring no modal dialogs, and hiding complexity. Seamless integration of desktop download manager functionality into web<span class="widont">&nbsp;</span>site.</p>
+<ul>
+<li>Building an online music locker in JavaScript using<span class="widont">&nbsp;</span>ExtJS.</li>
+<li>Created an infinite scrolling component to make it quick to scroll through many thousands of<span class="widont">&nbsp;</span>songs.</li>
+<li>Used qUnit and <span class="caps">JS</span> Test Driver to run automated tests across multiple browsers<span class="widont">&nbsp;</span>simultaneously.</li>
+<li>Wrote <span class="caps">UI</span> and server side components using<span class="widont">&nbsp;</span>C#.</li>
+<li>Managed a remote team building the desktop download manager<span class="widont">&nbsp;</span>app.</li>
+</ul>
 <h4 id="technologies-used">Technologies Used</h4>
 <p><code>javascript</code>, <code>jquery</code>, <code>extjs</code>, <code>qunit</code>, <code>jstestdriver</code>, <code>teamcity</code>, <code>html</code>, <code>css</code>, <code>balsamiq</code>, <code>c#</code>, <code>ruby</code>, <code>cucumber</code></p>
 <h3 id="front-end-web-developer-cwa-new-media-new-zealand">Front End Web Developer | <span class="caps">CWA</span> New Media, New<span class="widont">&nbsp;</span>Zealand</h3>
 <p><em>June 2006 – March<span class="widont">&nbsp;</span>2007</em></p>
-<p><span class="caps">CWA</span> New Media develop web sites for education. They run <span class="caps">TKI</span>.org.nz, the largest education portal in New Zealand and the reference location for the national curriculum. They also run a number of education and technology<span class="widont">&nbsp;</span>initiatives.</p>
-<h4 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h4>
-<p>Developing accessible <span class="caps">XHTML</span> and <span class="caps">CSS</span> templates and designs to stringent government guidelines. Working on internal productivity tools, web based and desktop. Developing a new version of the Digital Conversations site<span class="widont">&nbsp;</span>(digitalconversations.org.nz).</p>
+<p><span class="caps">CWA</span> New Media develop web sites for education. They run <span class="caps">TKI</span>.org.nz, the largest education portal in New<span class="widont">&nbsp;</span>Zealand.</p>
 <h4 id="achievements">Achievements</h4>
-<p>Created a new JavaScript web based timesheet system, with streamlined auto saving interface. Developing and launching redesigned Digital Conversations site with a clean content focused <span class="caps">UI</span>. Producing productivity tools including a Firefox plugin, and tools for working with <span class="caps">HTML</span> that sped up content creation six<span class="widont">&nbsp;</span>fold.</p>
+<ul>
+<li>Built a JavaScript based timesheets system with automated saving using ajax<span class="widont">&nbsp;</span>calls.</li>
+<li>Built and launched a redesigned Digital Conversations site with embedded<span class="widont">&nbsp;</span>videos.</li>
+<li>Produced a Firefox plugin to automate switching between live and staging server to facilitate faster regression<span class="widont">&nbsp;</span>testing.</li>
+<li>Built a custom <span class="caps">HTML</span> to Markdown converter. This reduced the time to make edits on the site by a factor of<span class="widont">&nbsp;</span>6.</li>
+</ul>
 <h4 id="technologies-used">Technologies Used</h4>
 <p><code>javascript</code>, <code>xhtml</code>, <code>css</code>, <code>php</code></p>
 <h3 id="user-interface-consultant-contract-philips-singapore">User Interface Consultant (Contract) | Philips,<span class="widont">&nbsp;</span>Singapore</h3>
 <p><em>April 2006 – May<span class="widont">&nbsp;</span>2006</em></p>
 <p>Philips is a huge consumer electronics company, developing a wide range of electronic devices including<span class="widont">&nbsp;</span>televisions.</p>
-<h4 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h4>
-<p>Hired for a 6 week project to develop a demo user interface to show off the power of a new interactive <span class="caps">TV</span> chip. The <span class="caps">UI</span> included <span class="caps">TV</span> channel browsing, on-demand movies, split screen web browsing, and a music player. It needed to work on Pal and <span class="caps">HD</span><span class="widont">&nbsp;</span>TVs.</p>
+<p>This was a short contract to build a prototype smart <span class="caps">TV</span><span class="widont">&nbsp;</span>interface.</p>
 <h4 id="achievements">Achievements</h4>
-<p>Demo <span class="caps">UI</span> created from scratch in six weeks as a JavaScript web based interface, running in embedded Opera. Pre-loaded data and images provided excellent performance on constrained hardware. All functionality completed within tight<span class="widont">&nbsp;</span>deadline.</p>
+<ul>
+<li>Built a smart <span class="caps">TV</span> interface in Opera mobile to show off the capabilities of a new interactive <span class="caps">TV</span><span class="widont">&nbsp;</span>chip.</li>
+<li>The <span class="caps">UI</span> included <span class="caps">TV</span> channel browsing, on-demand movies, split screen web browsing, and a music<span class="widont">&nbsp;</span>player.</li>
+<li>Used pre-loading of images and data to provide immediate feedback to user interactions (no interminable loading<span class="widont">&nbsp;</span>spinners!).</li>
+<li>Add support for <span class="caps">SD</span> and <span class="caps">HD</span><span class="widont">&nbsp;</span>TVs.</li>
+</ul>
 <h4 id="technologies-used">Technologies Used</h4>
 <p><code>javascript</code>, <code>opera</code>, <code>jsp</code>, <code>java</code>, <code>philips-tv-api</code></p>
 <h3 id="systems-engineer-formicary-london">Systems Engineer | Formicary,<span class="widont">&nbsp;</span>London</h3>
 <p><em>June 2004 – June<span class="widont">&nbsp;</span>2005</em></p>
 <p>Formicary provide <span class="caps">IT</span> solutions for the Financial Services industry. Providing both bespoke solutions, and customisable software<span class="widont">&nbsp;</span>products.</p>
-<h4 id="tasks-responsibilities">Tasks <span class="amp">&amp;</span> Responsibilities</h4>
-<p>Developing a web based inter-bank bond trading system. Providing bespoke software solutions, including a browser based chat client and server side data processing app. Consulting on User Interaction Design for sites and<span class="widont">&nbsp;</span>apps.</p>
 <h4 id="achievements">Achievements</h4>
-<p>Created the Java Swing <span class="caps">UI</span> for a bond trading app. This was multi-threaded for responsiveness and non-modal allowing multiple trades at a time. Developed a browser based chat client using <span class="caps">COMET</span> long polling to provide instant push of messages to every client. Developed a server side data processing app in Java using SwiftMQ to provide eventually reliable data transfer between disparate<span class="widont">&nbsp;</span>systems.</p>
+<ul>
+<li>Created the Java Swing <span class="caps">UI</span> for a bond trading app. This was multi-threaded for responsiveness and non-modal allowing multiple trades at a<span class="widont">&nbsp;</span>time.</li>
+<li>Developed a browser based chat client using <span class="caps">COMET</span> long polling to provide instant push of messages to every<span class="widont">&nbsp;</span>client.</li>
+<li>Built a server side data processing app in Java using SwiftMQ to provide eventually reliable data transfer between disparate<span class="widont">&nbsp;</span>systems.</li>
+</ul>
 <h4 id="technogogies-used">Technogogies Used</h4>
 <p><code>java</code>, <code>swing</code>, <code>swiftmq</code>, <code>html</code>, <code>css</code>, <code>javascript</code></p>
 <h2 id="education">Education</h2>
