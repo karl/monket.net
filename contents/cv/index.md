@@ -12,9 +12,7 @@ template: article.pug
 * [CV as PDF](Karl%20O'Keeffe%20-%20CV.pdf)
 
 
-I'm a senior software developer with a front end focus, looking for contract or permanent roles.
-
-**Currently in a contract due to finish on the 17th of March 2020**
+I'm a senior software developer with a front end focus.
 
 ## Introduction
 
@@ -43,7 +41,7 @@ Third Space Learning offers 1-to-1 online maths tutoring for schools and at home
 - Used React hooks and context to provide easy time travel functionality to whiteboard UI components.
 - Built out server side functionality in Node running on Google Cloud functions to manage secure interactions with Twilio, PubNub, and GCP Storage.
 - Improved site load speed from 20s to 2s by migrating from Create React App to Next.js utilising server rendering, and bundle splitting.
-- Starting building out a React based component library to be used across the app.
+- Started building out a React based component library to be used across the app.
 - Built a custom end to end testing framework based on Jest and Puppeteer to test in browser with automated screenshots and logging.
 - Built a client/server logging library in TypeScript that support browser console logging and batched sending to the server.
 - Prototyped a React based whiteboard UI using Immer patches to provide real time shared interaction with eventual consistency.
