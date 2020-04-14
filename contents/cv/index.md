@@ -28,9 +28,26 @@ On the tooling side I’m passionate increasing developer productivity by speedi
 
 ## Experience
 
+### Senior Developer (Contract) | Unmind, London
+
+_March 2020 - Present_
+
+Unmind help organisations and employee to measurably improve their mental wellbeing. They offer short tools and longer series to help manage your mental health.
+
+#### Achievements
+
+It's still early days!
+
+- Introduce Storybook examples with multiple copies of a component at different sizes with CSS media queries correctly applied (using iframes).
+
+#### Technologies Used
+
+`react`, `react-native`, `typescript`, `graphql`
+
+
 ### Senior Developer (Contract) | Third Space Learning/Matr, London
 
-_October 2018 - Present_
+_October 2018 - March 2020_
 
 Third Space Learning offers 1-to-1 online maths tutoring for schools and at home under both the Third Space Learning and Matr brands.
 
@@ -93,7 +110,7 @@ Sky is a multinational media company empowing customers to watch content at home
 
 #### Technologies Used
 
-`react`, `javascript`, `electron`, `redux`, `redux-saga`, `xstate`, `jest`, `webpack`, `es6`, `jenkins`
+`react`, `javascript`, `electron`, `rxjs`, `redux`, `redux-saga`, `xstate`, `jest`, `webpack`, `es6`, `jenkins`
 
 ### Team Lead & Front End Developer | Geckoboard, London
 
