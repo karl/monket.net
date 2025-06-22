@@ -16,9 +16,9 @@ I'm a senior software developer with a front end focus.
 
 ## Introduction
 
-I’m a senior developer with over 15 years of experience across a variety of businesses and roles (e.g. team lead, front end, server side, tooling, dev ops).
+I’m a senior developer with over 20 years of experience across a variety of businesses and roles (e.g. team lead, front end, server side, tooling, dev ops).
 
-I’ve built large web apps in a variety of frameworks and languages (you see a lot come and go in 15 years!). Most recently I’ve been working with React and TypeScript, a very productive combination. I have lead technology transitions in a sustainable way, helping teams switch to modern tech and practices without slowing down development speed. I’ve introduced techniques such as state charts to help bring rigour and tame the complexity of UI development.
+I’ve built large web apps in a variety of frameworks and languages (you see a lot come and go in 20 years!). Most recently I’ve been working with React and TypeScript, a very productive combination. I have lead technology transitions in a sustainable way, helping teams switch to modern tech and practices without slowing down development speed. I’ve introduced techniques such as state charts to help bring rigour and tame the complexity of UI development.
 
 I've also been a team lead, empowering teams to make excellent technical decisions and helping them grow as individuals. I’ve reworked hiring processes to help bring in the best team members, and run regular tech discussions to share knowledge and experience and help teams grow. Outside of individual teams I’ve given a talk at Facebook on the benefits of Storybook as a dev and test tool.
 
@@ -28,17 +28,36 @@ On the tooling side I’m passionate increasing developer productivity by speedi
 
 ## Experience
 
-### Senior Developer (Contract) | Unmind, London
+### Software Developer (Permanent) | Coremont, London
 
-_March 2020 - Present_
+_June 2020 - Present_
 
-Unmind help organisations and employee to measurably improve their mental wellbeing. They offer short tools and longer series to help manage your mental health.
+Coremont provides portfolio management and order management to hedge funds, banks, and other financial institutions throught the Coremont web app.
 
 #### Achievements
 
-It's still early days!
+- Lead the project to build the Systematic Reconciliation UI using a team of external consulatants, completing the project in a limited time frame.
+- Lead the Limit Manager project to build a custom admin section into the app for one of our biggest clients.
+- Drive most of the major architecture changes to the UI code base in the last 5 years. Here I focused on changing the patterns (or libraries) to give us stronger guarantees and guardrails to avoid whole classes of bugs occuring.
+- Wrote `usePersistedState`, a custom persistence layer for React that was a drop in replacement for `useState`. This made it incredibly quick for our to team to build new sections of the app with great user experiences.
+- Worked on improving the performance of our data grid built on `ag-grid` so we could handle larger amounts of data smoothly. Although we still have some way to go with this!
+- Many improvements to developer experience (feature flag toggling from urls, logging framework for local debugging, custom `esLint` rules, etc).
+- Managing a small team of developers, and mentoring across the UI team.
+
+#### Technologies Used
+
+`react`, `typescript`, `ag-grid`, `react-query`
+
+### Senior Developer (Contract) | Unmind, London
+
+_March 2020 - June 2020_
+
+Unmind helps organisations and employee to measurably improve their mental wellbeing. They offer short tools and longer series to help manage your mental health.
+
+#### Achievements
 
 - Introduce Storybook examples with multiple copies of a component at different sizes with CSS media queries correctly applied (using iframes).
+- Made the web app navigation movile friendly as part of a project to make the whole unmind experience mobile optimised.
 
 #### Technologies Used
 
