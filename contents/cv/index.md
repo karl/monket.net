@@ -124,7 +124,7 @@ Sky is a multinational media company empowing customers to watch content at home
 - Introduced yarn workspaces, reducing duplication in node_modules and bringing unit test run time down from 9 minutes to 1 minute.
 - Systematically fixed flaky end to end tests and added automated re-running, this reduced PR merge time from 4+ hours to 20 minutes.
 - Introduced POEditor to streamline the translation process. The was so successful it was immediately adopted by the Sky Go mobile team.
-- Pioneered the use of state machines (based on XState) with Redux Saga to manage async interactions. Extracted into a work in progress library https://redux-saga-state-machine.netlify.app/
+- Pioneered the use of state machines (based on XState) with Redux Saga to manage async interactions. Extracted into a work in progress library [https://redux-saga-state-machine.netlify.app/](https://redux-saga-state-machine.netlify.app/)
 - Set up a fortnightly tech retrospective to help empower developers to suggest and implement technical improvements.
 
 #### Technologies Used
